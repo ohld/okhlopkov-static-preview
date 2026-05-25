@@ -1,3 +1,3 @@
 # Redirected
 
-This page moved to [https://static-preview.okhlopkov.com/posts/](https://static-preview.okhlopkov.com/posts/).
+This page moved to [https://okhlopkov.com/posts/](https://okhlopkov.com/posts/).

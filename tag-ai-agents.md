@@ -1,3 +1,3 @@
 # Redirected
 
-This page moved to [https://static-preview.okhlopkov.com/ai-agents/](https://static-preview.okhlopkov.com/ai-agents/).
+This page moved to [https://okhlopkov.com/ai-agents/](https://okhlopkov.com/ai-agents/).

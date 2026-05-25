@@ -7,7 +7,7 @@
 - **Имя:** Даниил Охлопков (Daniil Okhlopkov)
 - **Telegram:** [@danokhlopkov](https://t.me/danokhlopkov) (RU)
 - **X / Twitter:** [@danokhlopkov](https://x.com/danokhlopkov) (EN)
-- **Блог:** [okhlopkov.com](https://static-preview.okhlopkov.com) (RU/EN)
+- **Блог:** [okhlopkov.com](https://okhlopkov.com) (RU/EN)
 - **Бот:** [@ohldbot](https://t.me/ohldbot)
 - **GitHub:** [@ohld](https://github.com/ohld)
 
@@ -19,18 +19,18 @@
 
 ## Контент
 
-- [Обо мне](https://static-preview.okhlopkov.com/about.md): подробно о роли, опыте, проектах
-- [Блог](https://static-preview.okhlopkov.com/blog.md): индексируемые evergreen-статьи из видео, Telegram-постов и source packs
-- [AI-инструменты для дизайнеров](https://static-preview.okhlopkov.com/blog-ai-tools-for-designers-design-engineering-agents.md): design engineering, AI-assisted frontend, Paper/Figma-to-code и борьба с AI-slop
-- [Топ-посты](https://static-preview.okhlopkov.com/posts.md): лучшие материалы из Telegram-канала по темам — AI, crypto, TON, стартапы, данные
-- [AI-агенты](https://static-preview.okhlopkov.com/ai-agents.md): индексируемый хаб по Claude Code, Codex, MCP, skills, Obsidian и browser agents
-- [Курс по AI-агентам](https://static-preview.okhlopkov.com/ai-course.md): бесплатный курс на основе моих публикаций — Claude Code, MCP, vibe-coding, реальные кейсы
-- [Markdown мёртв — да здравствует HTML](https://static-preview.okhlopkov.com/markdown-vs-html.md): почему HTML побеждает markdown как формат вывода для AI-агентов
-- [Privacy Policy](https://static-preview.okhlopkov.com/privacy.md): privacy policy for okhlopkov.com and the Pinterest Content Ideas integration
+- [Обо мне](https://okhlopkov.com/about.md): подробно о роли, опыте, проектах
+- [Блог](https://okhlopkov.com/blog.md): индексируемые evergreen-статьи из видео, Telegram-постов и source packs
+- [AI-инструменты для дизайнеров](https://okhlopkov.com/blog-ai-tools-for-designers-design-engineering-agents.md): design engineering, AI-assisted frontend, Paper/Figma-to-code и борьба с AI-slop
+- [Топ-посты](https://okhlopkov.com/posts.md): лучшие материалы из Telegram-канала по темам — AI, crypto, TON, стартапы, данные
+- [AI-агенты](https://okhlopkov.com/ai-agents.md): индексируемый хаб по Claude Code, Codex, MCP, skills, Obsidian и browser agents
+- [Курс по AI-агентам](https://okhlopkov.com/ai-course.md): бесплатный курс на основе моих публикаций — Claude Code, MCP, vibe-coding, реальные кейсы
+- [Markdown мёртв — да здравствует HTML](https://okhlopkov.com/markdown-vs-html.md): почему HTML побеждает markdown как формат вывода для AI-агентов
+- [Privacy Policy](https://okhlopkov.com/privacy.md): privacy policy for okhlopkov.com and the Pinterest Content Ideas integration
 
 ## Связаться
 
-- **Консалтинг:** AI-агенты, web3, TON-экосистема. Через [@ohldbot](https://t.me/ohldbot) или [страницу "Го поработаем"](https://static-preview.okhlopkov.com/work-together.md)
+- **Консалтинг:** AI-агенты, web3, TON-экосистема. Через [@ohldbot](https://t.me/ohldbot) или [страницу "Го поработаем"](https://okhlopkov.com/work-together.md)
 
 ## Использование
 
@@ -41,6 +41,6 @@
 
 ## Optional
 
-- [Полный контент-бандл](https://static-preview.okhlopkov.com/llms-full.txt): все страницы в одном файле для one-shot fetch
-- [English homepage](https://static-preview.okhlopkov.com/en/): English entry point
+- [Полный контент-бандл](https://okhlopkov.com/llms-full.txt): все страницы в одном файле для one-shot fetch
+- [English homepage](https://okhlopkov.com/en/): English entry point
 - [GitHub](https://github.com/ohld): открытый код, MCP-серверы

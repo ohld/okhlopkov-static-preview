@@ -6,11 +6,11 @@
   <title>Build a Telegram MCP Server for Claude Code: Complete Guide</title>
   <meta name="description" content="Build a Telegram MCP server with Telethon and Python. Read messages, send replies, manage chats — all from Claude Code." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://static-preview.okhlopkov.com/telegram-mcp-server-guide/" />
+  <link rel="canonical" href="https://okhlopkov.com/telegram-mcp-server-guide/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Build a Telegram MCP Server for Claude Code: Complete Guide" />
   <meta property="og:description" content="Build a Telegram MCP server with Telethon and Python. Read messages, send replies, manage chats — all from Claude Code." />
-  <meta property="og:url" content="https://static-preview.okhlopkov.com/telegram-mcp-server-guide/" />
+  <meta property="og:url" content="https://okhlopkov.com/telegram-mcp-server-guide/" />
   <meta property="og:image" content="https://okhlopkov.com/content/images/2026/03/telegram-mcp-server-guide.png" />
   <meta property="article:published_time" content="2026-03-31T05:09:29.000Z" />
   <meta property="article:modified_time" content="2026-05-25T00:00:00+03:00" />
@@ -30,14 +30,14 @@
   "author": {
     "@type": "Person",
     "name": "Даниил Охлопков",
-    "url": "https://static-preview.okhlopkov.com/"
+    "url": "https://okhlopkov.com/"
   },
   "publisher": {
     "@type": "Person",
     "name": "Даниил Охлопков",
-    "url": "https://static-preview.okhlopkov.com/"
+    "url": "https://okhlopkov.com/"
   },
-  "mainEntityOfPage": "https://static-preview.okhlopkov.com/telegram-mcp-server-guide/",
+  "mainEntityOfPage": "https://okhlopkov.com/telegram-mcp-server-guide/",
   "inLanguage": "en"
 }
   </script>
@@ -55,94 +55,88 @@
     ym(46266270, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
   </script>
   <style>
-    :root { --bg:#F5F5F0; --text:#1A1A1A; --accent:#5F6F85; --border:rgba(26,26,26,.14); }
+    :root { --bg:#F5F5F0; --text:#1A1A1A; --accent:#5F6F85; --border:#1A1A1A; --border-light:rgba(26,26,26,.1); --white-overlay:rgba(255,255,255,.4); }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
-    a { color:inherit; text-underline-offset:3px; }
-    .legacy-shell { max-width:820px; margin:0 auto; padding:20px 24px 56px; }
-    .legacy-top { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:0 0 28px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
-    .legacy-nav { display:flex; flex-wrap:wrap; gap:12px; }
-    .legacy-note { border:1px solid var(--border); border-radius:4px; padding:14px 16px; margin:0 0 28px; font-size:14px; color:rgba(26,26,26,.72); }
-    .legacy-note p { margin:0; }
-    .legacy-note p + p { margin-top:6px; }
-    .legacy-article :is(h1,h2,h3) { line-height:1.15; letter-spacing:0; }
-    .legacy-article h1 { font-size:38px; margin:0 0 16px; }
-    .legacy-article h2 { font-size:25px; margin:42px 0 12px; }
-    .legacy-article h3 { font-size:19px; margin:28px 0 10px; }
-    .legacy-article p, .legacy-article li { font-size:18px; }
-    .legacy-article img { max-width:100%; height:auto; border-radius:4px; }
-    .legacy-article pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:4px; background:rgba(255,255,255,.45); }
-    .legacy-article code { font-family:'JetBrains Mono','SF Mono',monospace; font-size:.9em; }
-    .legacy-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
-    @media (max-width:640px) { .legacy-shell { padding:16px 18px 40px; } .legacy-article h1 { font-size:30px; } .legacy-article p, .legacy-article li { font-size:16px; } }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.47; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .site-header { width:100%; max-width:820px; margin:0 auto; padding:16px 20px 8px; display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; }
+    .site-header-brand { display:inline-flex; align-items:center; gap:8px; min-height:36px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); }
+    .site-header-mark { width:8px; height:8px; background:var(--text); border-radius:1px; }
+    .site-header-nav { grid-column:1 / -1; grid-row:2; display:flex; gap:4px; overflow-x:auto; padding-bottom:2px; }
+    .site-header-link, .language-switcher a, .footer-links a { min-height:36px; display:inline-flex; align-items:center; font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); }
+    .site-header-link { padding:0 10px; border:1px solid var(--border-light); border-radius:2px; white-space:nowrap; }
+    .language-switcher { display:inline-flex; grid-column:2; grid-row:1; justify-self:end; border:1px solid var(--border); border-radius:2px; }
+    .language-switcher a { min-width:42px; justify-content:center; color:var(--text); }
+    .language-switcher a + a { border-left:1px solid var(--border); }
+    .language-switcher-active { background:var(--text); color:var(--bg) !important; }
+    .page { max-width:820px; margin:0 auto; }
+    .legacy-article { display:flex; flex-direction:column; gap:28px; padding:0 16px; }
+    .legacy-article-header { padding:24px 24px 20px; border-bottom:1px solid var(--border); display:flex; flex-direction:column; align-items:flex-start; }
+    .legacy-meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:14px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:10px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    .legacy-dot { width:3px; height:3px; border-radius:50%; background:var(--accent); align-self:center; }
+    .legacy-title { font-size:32px; line-height:1.1; font-weight:700; letter-spacing:0; margin:0 0 12px; }
+    .legacy-description { margin:0; font-size:14px; line-height:1.6; color:rgba(26,26,26,.62); }
+    .legacy-hero-image { margin:0; border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--white-overlay); }
+    .legacy-hero-image img { display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover; }
+    .legacy-content { border-top:1px solid var(--border-light); padding-top:24px; }
+    .legacy-content :first-child { margin-top:0; }
+    .legacy-content h1, .legacy-content .article-title, .legacy-content .article-header, .legacy-content .article-byline, .legacy-content .article-image, .legacy-content .post-card-tags, .legacy-content .author-list { display:none !important; }
+    .legacy-content h2 { font-size:24px; line-height:1.18; letter-spacing:0; margin:34px 0 12px; }
+    .legacy-content h3 { font-size:19px; line-height:1.22; letter-spacing:0; margin:28px 0 10px; }
+    .legacy-content p, .legacy-content li { font-size:17px; line-height:1.7; color:rgba(26,26,26,.8); }
+    .legacy-content p { margin:0 0 16px; }
+    .legacy-content ul, .legacy-content ol { padding-left:22px; margin:0 0 18px; }
+    .legacy-content li + li { margin-top:8px; }
+    .legacy-content a { color:#315E8A; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.18em; }
+    .legacy-content a:hover { color:var(--text); }
+    .legacy-content img { max-width:100%; height:auto; border-radius:4px; }
+    .legacy-content figure { margin:22px 0; }
+    .legacy-content blockquote { margin:18px 0; padding:16px 18px; border-left:3px solid var(--text); background:rgba(255,255,255,.48); }
+    .legacy-content blockquote p { margin:0; color:var(--text); }
+    .legacy-content pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:4px; background:rgba(255,255,255,.45); }
+    .legacy-content code { padding:.1em .32em; border:1px solid var(--border-light); border-radius:3px; background:rgba(255,255,255,.55); font-family:'JetBrains Mono','SF Mono',monospace; font-size:.86em; color:var(--text); }
+    .legacy-content pre code { padding:0; border:0; background:transparent; font-size:13px; line-height:1.55; }
+    .legacy-migration-note { border-top:1px solid var(--border-light); padding-top:18px; font-size:12px; line-height:1.6; color:rgba(26,26,26,.52); }
+    .footer { margin-top:auto; padding:40px 24px 24px; border-top:1px solid var(--border); display:grid; gap:20px; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:12px; }
+    .footer-socials { display:flex; flex-wrap:wrap; gap:8px; }
+    .footer-socials a { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--border-light); border-radius:2px; color:var(--accent); }
+    .footer-copy { font-family:'JetBrains Mono','SF Mono',monospace; font-size:10px; color:rgba(26,26,26,.46); text-transform:uppercase; letter-spacing:.08em; }
+    @media (min-width:768px) { .site-header { grid-template-columns:auto 1fr auto; padding:22px 32px 10px; } .site-header-nav { grid-column:auto; grid-row:auto; justify-content:center; } .language-switcher { grid-column:auto; grid-row:auto; } .legacy-title { font-size:40px; } .legacy-article { padding-left:24px; padding-right:24px; } }
+    @media (min-width:1024px) { .site-header { padding-left:40px; padding-right:40px; } .legacy-article { padding-left:40px; padding-right:40px; } .legacy-article-header { padding:40px 40px 28px; } .legacy-title { font-size:48px; } }
   </style>
 </head>
 <body>
   <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <div class="legacy-shell">
-    <header class="legacy-top">
-      <a href="/">okhlopkov.com</a>
-      <nav class="legacy-nav" aria-label="Site">
-        <a href="/">RU</a>
-        <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/posts/">Posts</a>
-      </nav>
-    </header>
-    <div class="legacy-note">
-      <p>Static migration update: 2026-05-25. This indexed URL is preserved from the previous Ghost version of okhlopkov.com.</p>
-      <p>Original Ghost modified date: 2026-03-31T05:10:49.000Z.</p>
-    </div>
-    <main class="legacy-article"><article class="article post tag-telegram-en ">
-
-    <header class="article-header gh-canvas">
-
-        <div class="article-tag post-card-tags">
-                <span class="post-card-primary-tag">
-                    <a href="/tag/telegram-en/">telegram-en</a>
-                </span>
-        </div>
-
-        <h1 class="article-title">Build a Telegram MCP Server for Claude Code: Complete Guide</h1>
-
-
-        <div class="article-byline">
-        <section class="article-byline-content">
-
-            <ul class="author-list instapaper_ignore">
-                <li class="author-list-item">
-                    <a href="/author/okhlopkov/" class="author-avatar" aria-label="Read more of Daniil Okhlopkov">
-                        <img class="author-profile-image" src="/content/images/size/w100/2024/10/Dan-Okhlopkov-LinkedIn.jpeg" alt="Daniil Okhlopkov" />
-                    </a>
-                </li>
-            </ul>
-
-            <div class="article-byline-meta">
-                <h4 class="author-name"><a href="/author/okhlopkov/">Daniil Okhlopkov</a></h4>
-                <div class="byline-meta-content">
-                    <time class="byline-meta-date" datetime="2026-03-31">31 Mar 2026</time>
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> 4 min read</span>
-                </div>
-            </div>
-
-        </section>
-        </div>
-
-            <figure class="article-image">
-                <img
-                    srcset="/content/images/size/w300/2026/03/telegram-mcp-server-guide.png 300w,
-                            /content/images/size/w600/2026/03/telegram-mcp-server-guide.png 600w,
-                            /content/images/size/w1000/2026/03/telegram-mcp-server-guide.png 1000w,
-                            /content/images/size/w2000/2026/03/telegram-mcp-server-guide.png 2000w"
-                    sizes="(min-width: 1400px) 1400px, 92vw"
-                    src="/content/images/size/w2000/2026/03/telegram-mcp-server-guide.png"
-                    alt="Build a Telegram MCP Server for Claude Code: Complete Guide"
-                />
-            </figure>
-
-    </header>
-
-    <section class="gh-content gh-canvas">
+  <header class="site-header">
+    <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
+    <nav class="site-header-nav" aria-label="Primary navigation">
+      <a class="site-header-link" href="/">Home</a>
+      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
+      <a class="site-header-link" href="/blog/">Blog</a>
+      <a class="site-header-link" href="/posts/">Posts</a>
+      <a class="site-header-link" href="/about/">About</a>
+    </nav>
+    <nav class="language-switcher" aria-label="Language">
+      <a class="" href="/">RU</a>
+      <a class="language-switcher-active" href="/en/">EN</a>
+    </nav>
+  </header>
+  <div class="page">
+    <main class="legacy-article">
+      <article>
+        <header class="legacy-article-header">
+          <div class="legacy-meta">
+            <span>Mar 31, 2026</span><span class="legacy-dot"></span>
+            <span>Updated May 25, 2026</span>
+            <span class="legacy-dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h1 class="legacy-title">Build a Telegram MCP Server for Claude Code: Complete Guide</h1>
+          <p class="legacy-description">Build a Telegram MCP server with Telethon and Python. Read messages, send replies, manage chats — all from Claude Code.</p>
+        </header>
+        <figure class="legacy-hero-image"><img src="/content/images/2026/03/telegram-mcp-server-guide.png" alt="Build a Telegram MCP Server for Claude Code: Complete Guide" loading="lazy" /></figure>
+        <section class="legacy-content">
         <p>I have an AI agent that sits in Telegram 24/7, reads my chats, replies to messages, and manages contacts. All of this runs through an MCP Server that wraps Telethon into a set of tools for Claude Code. Here's how it works and how to build one yourself.</p><h2 id="why-telegram-as-an-mcp-server">Why Telegram as an MCP server</h2><p>MCP (Model Context Protocol) is the standard for connecting AI models to external tools. Claude Code supports MCP natively — you describe a server, and the model gets access to its functions as regular tools.</p><p>Telegram via MCP gives Claude Code the ability to:</p><ul><li>Read message history from any chat</li><li>Send messages and replies</li><li>Full-text search across chats</li><li>Get information about contacts and groups</li><li>React to messages, forward, delete</li></ul><p>This isn't the Bot API. This is a userbot via Telethon — an MTProto client that operates as a real user account. The Bot API is too limited: it can't see other people's message history, can't search across chats, and has no access to private groups where the bot isn't added.</p><h2 id="architecture-telethon-fastmcp">Architecture: Telethon + FastMCP</h2><p>The stack is straightforward:</p><ul><li><strong>Telethon</strong> — Python library for MTProto. Connects to Telegram as a regular client</li><li><strong>FastMCP</strong> — framework for building MCP servers in Python. Minimal boilerplate</li><li><strong>nest_asyncio</strong> — critically important. Without it, async code inside MCP calls crashes with "event loop already running"</li></ul><p>Basic structure:</p><pre><code>from mcp.server.fastmcp import FastMCP
 from telethon import TelegramClient
 import nest_asyncio
@@ -180,7 +174,7 @@ async def main():
         msgs.append(msg.message or '[media]')
     return msgs
 
-result = asyncio.get_event_loop().run_until_complete(main())</code></pre><p><code>nest_asyncio.apply()</code> at the top + <code>asyncio.get_event_loop().run_until_complete()</code> for calls. Don't try <code>await</code> at the top level or <code>client.loop.run_until_complete()</code> — both will break.</p><p>Also: <code>async for</code> at the module level gives you a <code>SyntaxError</code>. Always wrap in an async function first.</p><h2 id="common-pitfalls-from-months-of-production-use">Common pitfalls (from months of production use)</h2><p><strong>ChannelPrivateError.</strong> Occurs when trying to send a message to a group where the account doesn't have access. The confusing part: you can <em>read</em> from a channel via <code>GetRepliesRequest</code>, but you can't <em>write</em>. These are different permission levels in the Telegram API. In my setup, the agent can read channel discussion replies but cannot post in them because it's not a group member.</p><p><strong>sender = None.</strong> In group chats where the account isn't a member, sender profiles are inaccessible. <code>msg.sender_id</code> can be None. Handle this gracefully — don't retry, it won't resolve. I use a fallback: <code>msg.message or ('[media]' if msg.media else '[action]')</code>.</p><p><strong>execute_code timeouts.</strong> If you run code through execute_code, set hard limits. Any loop with more than 10 API calls inside will likely time out (the 60-second limit is real). My rule: maximum 10 operations per execute_code call, split into separate calls for larger batches.</p><p><strong>FloodWait.</strong> Telegram rate-limits aggressively. Send 20 messages in rapid succession and you'll get a FloodWaitError with delays up to several minutes. Add <code>asyncio.sleep(1)</code> between sends.</p><p><strong>Session string vs session file.</strong> For server deployments, use a session string (<code>StringSession</code>). Session files are bound to the filesystem and don't transfer between containers. Generate the string once, store it as an environment variable.</p><h2 id="my-use-case-always-on-server-agent">My use case: always-on server agent</h2><p>I use Telegram MCP as the primary interface for an AI agent running 24/7 on a VPS. The architecture: <a href="https://okhlopkov.com/claude-code-setup-mcp-hooks-skills-2026/">Claude Code</a> runs in a Docker container, connects to Telegram through MCP, and processes incoming messages.</p><p>What the agent does through Telegram MCP:</p><ul><li>Answers my DMs — as a personal assistant</li><li>Monitors channels — parses posts, collects data</li><li>Replies in my channel's discussion — in my voice, using a <a href="https://okhlopkov.com/dania-zip-packaging-yourself-for-ai/">digital twin prompt</a></li><li>Runs cron tasks — weekly reports, automated checks</li></ul><p>Telegram MCP turned out to be more convenient than the Bot API or webhooks: full access to message history, search, chat management — everything a regular Telegram client can do, but controlled by an AI agent.</p><h2 id="connecting-to-claude-code">Connecting to Claude Code</h2><p>In your project's <code>.mcp.json</code> (or globally at <code>~/.claude/mcp.json</code>):</p><pre><code>{
+result = asyncio.get_event_loop().run_until_complete(main())</code></pre><p><code>nest_asyncio.apply()</code> at the top + <code>asyncio.get_event_loop().run_until_complete()</code> for calls. Don't try <code>await</code> at the top level or <code>client.loop.run_until_complete()</code> — both will break.</p><p>Also: <code>async for</code> at the module level gives you a <code>SyntaxError</code>. Always wrap in an async function first.</p><h2 id="common-pitfalls-from-months-of-production-use">Common pitfalls (from months of production use)</h2><p><strong>ChannelPrivateError.</strong> Occurs when trying to send a message to a group where the account doesn't have access. The confusing part: you can <em>read</em> from a channel via <code>GetRepliesRequest</code>, but you can't <em>write</em>. These are different permission levels in the Telegram API. In my setup, the agent can read channel discussion replies but cannot post in them because it's not a group member.</p><p><strong>sender = None.</strong> In group chats where the account isn't a member, sender profiles are inaccessible. <code>msg.sender_id</code> can be None. Handle this gracefully — don't retry, it won't resolve. I use a fallback: <code>msg.message or ('[media]' if msg.media else '[action]')</code>.</p><p><strong>execute_code timeouts.</strong> If you run code through execute_code, set hard limits. Any loop with more than 10 API calls inside will likely time out (the 60-second limit is real). My rule: maximum 10 operations per execute_code call, split into separate calls for larger batches.</p><p><strong>FloodWait.</strong> Telegram rate-limits aggressively. Send 20 messages in rapid succession and you'll get a FloodWaitError with delays up to several minutes. Add <code>asyncio.sleep(1)</code> between sends.</p><p><strong>Session string vs session file.</strong> For server deployments, use a session string (<code>StringSession</code>). Session files are bound to the filesystem and don't transfer between containers. Generate the string once, store it as an environment variable.</p><h2 id="my-use-case-always-on-server-agent">My use case: always-on server agent</h2><p>I use Telegram MCP as the primary interface for an AI agent running 24/7 on a VPS. The architecture: <a href="/claude-code-setup-mcp-hooks-skills-2026/">Claude Code</a> runs in a Docker container, connects to Telegram through MCP, and processes incoming messages.</p><p>What the agent does through Telegram MCP:</p><ul><li>Answers my DMs — as a personal assistant</li><li>Monitors channels — parses posts, collects data</li><li>Replies in my channel's discussion — in my voice, using a <a href="/dania-zip-packaging-yourself-for-ai/">digital twin prompt</a></li><li>Runs cron tasks — weekly reports, automated checks</li></ul><p>Telegram MCP turned out to be more convenient than the Bot API or webhooks: full access to message history, search, chat management — everything a regular Telegram client can do, but controlled by an AI agent.</p><h2 id="connecting-to-claude-code">Connecting to Claude Code</h2><p>In your project's <code>.mcp.json</code> (or globally at <code>~/.claude/mcp.json</code>):</p><pre><code>{
   "mcpServers": {
     "telegram": {
       "command": "python",
@@ -194,14 +188,28 @@ result = asyncio.get_event_loop().run_until_complete(main())</code></pre><p><cod
   }
 }</code></pre><p>You'll need Telegram API credentials — get them from <a href="https://my.telegram.org/?ref=okhlopkov.com">my.telegram.org</a>. Generate a session string by running a Telethon script locally, authenticating with your phone number, and calling <code>client.session.save()</code>.</p><p>After launch, Claude Code will see Telegram tools in its available tool list and can call them like regular functions.</p><p>Open source implementations exist — <a href="https://github.com/nicekid1/telegram-mcp?ref=okhlopkov.com">telegram-mcp on GitHub</a> is a good starting point. My version is based on Telethon with an extended set of 92 methods covering everything from basic messaging to contact management and code execution.</p><p>A Telegram MCP server is probably the most useful MCP server you can build. Telegram is already the communication center for many people, and connecting it to Claude Code gives you an AI agent with full access to your messenger. The setup takes an afternoon; the productivity gain is permanent.</p><hr><p>Follow me on <a href="https://x.com/danokhlopkov?ref=okhlopkov.com">Twitter/X @danokhlopkov</a> for more on AI agents and automation.</p>
     </section>
-
-
-</article></main>
-    <footer class="legacy-footer">
-      <a href="/">Home</a>
-      <a href="https://t.me/danokhlopkov">Telegram</a>
-      <a href="https://x.com/danokhlopkov">X</a>
-      <a href="https://github.com/ohld">GitHub</a>
+        <aside class="legacy-migration-note">
+          <p>Static migration update: 2026-05-25. Preserved during the static migration.</p>
+          <p>Original Ghost modified date: Mar 31, 2026.</p>
+        </aside>
+      </article>
+    </main>
+    <footer class="footer">
+      <nav class="footer-links" aria-label="Site sections">
+        <a href="/">RU</a>
+        <a href="/en/">EN</a>
+        <a href="/ai-agents/">AI Agents</a>
+        <a href="/blog/">Blog</a>
+        <a href="/posts/">Posts</a>
+        <a href="/about/">About</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>
+        <a href="https://youtube.com/@danokhlopkov" rel="me noopener noreferrer" aria-label="YouTube">YT</a>
+        <a href="https://x.com/danokhlopkov" rel="me noopener noreferrer" aria-label="X">X</a>
+        <a href="https://github.com/ohld" rel="me noopener noreferrer" aria-label="GitHub">GH</a>
+      </div>
+      <span class="footer-copy">© 2026 Daniil Okhlopkov</span>
     </footer>
   </div>
 </body>

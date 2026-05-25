@@ -6,11 +6,11 @@
   <title>How to parse any website</title>
   <meta name="description" content="Archived article from okhlopkov.com" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://static-preview.okhlopkov.com/how-to-parse-any-website/" />
+  <link rel="canonical" href="https://okhlopkov.com/how-to-parse-any-website/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="How to parse any website" />
   <meta property="og:description" content="Archived article from okhlopkov.com" />
-  <meta property="og:url" content="https://static-preview.okhlopkov.com/how-to-parse-any-website/" />
+  <meta property="og:url" content="https://okhlopkov.com/how-to-parse-any-website/" />
   <meta property="og:image" content="https://okhlopkov.com/content/images/size/w1200/2021/09/Screenshot-2021-09-13-at-23.54.19.png" />
   <meta property="article:published_time" content="2021-09-13T21:00:00.000Z" />
   <meta property="article:modified_time" content="2026-05-25T00:00:00+03:00" />
@@ -30,14 +30,14 @@
   "author": {
     "@type": "Person",
     "name": "Даниил Охлопков",
-    "url": "https://static-preview.okhlopkov.com/"
+    "url": "https://okhlopkov.com/"
   },
   "publisher": {
     "@type": "Person",
     "name": "Даниил Охлопков",
-    "url": "https://static-preview.okhlopkov.com/"
+    "url": "https://okhlopkov.com/"
   },
-  "mainEntityOfPage": "https://static-preview.okhlopkov.com/how-to-parse-any-website/",
+  "mainEntityOfPage": "https://okhlopkov.com/how-to-parse-any-website/",
   "inLanguage": "en"
 }
   </script>
@@ -55,95 +55,89 @@
     ym(46266270, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
   </script>
   <style>
-    :root { --bg:#F5F5F0; --text:#1A1A1A; --accent:#5F6F85; --border:rgba(26,26,26,.14); }
+    :root { --bg:#F5F5F0; --text:#1A1A1A; --accent:#5F6F85; --border:#1A1A1A; --border-light:rgba(26,26,26,.1); --white-overlay:rgba(255,255,255,.4); }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
-    a { color:inherit; text-underline-offset:3px; }
-    .legacy-shell { max-width:820px; margin:0 auto; padding:20px 24px 56px; }
-    .legacy-top { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:0 0 28px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
-    .legacy-nav { display:flex; flex-wrap:wrap; gap:12px; }
-    .legacy-note { border:1px solid var(--border); border-radius:4px; padding:14px 16px; margin:0 0 28px; font-size:14px; color:rgba(26,26,26,.72); }
-    .legacy-note p { margin:0; }
-    .legacy-note p + p { margin-top:6px; }
-    .legacy-article :is(h1,h2,h3) { line-height:1.15; letter-spacing:0; }
-    .legacy-article h1 { font-size:38px; margin:0 0 16px; }
-    .legacy-article h2 { font-size:25px; margin:42px 0 12px; }
-    .legacy-article h3 { font-size:19px; margin:28px 0 10px; }
-    .legacy-article p, .legacy-article li { font-size:18px; }
-    .legacy-article img { max-width:100%; height:auto; border-radius:4px; }
-    .legacy-article pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:4px; background:rgba(255,255,255,.45); }
-    .legacy-article code { font-family:'JetBrains Mono','SF Mono',monospace; font-size:.9em; }
-    .legacy-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
-    @media (max-width:640px) { .legacy-shell { padding:16px 18px 40px; } .legacy-article h1 { font-size:30px; } .legacy-article p, .legacy-article li { font-size:16px; } }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.47; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .site-header { width:100%; max-width:820px; margin:0 auto; padding:16px 20px 8px; display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; }
+    .site-header-brand { display:inline-flex; align-items:center; gap:8px; min-height:36px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); }
+    .site-header-mark { width:8px; height:8px; background:var(--text); border-radius:1px; }
+    .site-header-nav { grid-column:1 / -1; grid-row:2; display:flex; gap:4px; overflow-x:auto; padding-bottom:2px; }
+    .site-header-link, .language-switcher a, .footer-links a { min-height:36px; display:inline-flex; align-items:center; font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); }
+    .site-header-link { padding:0 10px; border:1px solid var(--border-light); border-radius:2px; white-space:nowrap; }
+    .language-switcher { display:inline-flex; grid-column:2; grid-row:1; justify-self:end; border:1px solid var(--border); border-radius:2px; }
+    .language-switcher a { min-width:42px; justify-content:center; color:var(--text); }
+    .language-switcher a + a { border-left:1px solid var(--border); }
+    .language-switcher-active { background:var(--text); color:var(--bg) !important; }
+    .page { max-width:820px; margin:0 auto; }
+    .legacy-article { display:flex; flex-direction:column; gap:28px; padding:0 16px; }
+    .legacy-article-header { padding:24px 24px 20px; border-bottom:1px solid var(--border); display:flex; flex-direction:column; align-items:flex-start; }
+    .legacy-meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:14px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:10px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    .legacy-dot { width:3px; height:3px; border-radius:50%; background:var(--accent); align-self:center; }
+    .legacy-title { font-size:32px; line-height:1.1; font-weight:700; letter-spacing:0; margin:0 0 12px; }
+    .legacy-description { margin:0; font-size:14px; line-height:1.6; color:rgba(26,26,26,.62); }
+    .legacy-hero-image { margin:0; border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--white-overlay); }
+    .legacy-hero-image img { display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover; }
+    .legacy-content { border-top:1px solid var(--border-light); padding-top:24px; }
+    .legacy-content :first-child { margin-top:0; }
+    .legacy-content h1, .legacy-content .article-title, .legacy-content .article-header, .legacy-content .article-byline, .legacy-content .article-image, .legacy-content .post-card-tags, .legacy-content .author-list { display:none !important; }
+    .legacy-content h2 { font-size:24px; line-height:1.18; letter-spacing:0; margin:34px 0 12px; }
+    .legacy-content h3 { font-size:19px; line-height:1.22; letter-spacing:0; margin:28px 0 10px; }
+    .legacy-content p, .legacy-content li { font-size:17px; line-height:1.7; color:rgba(26,26,26,.8); }
+    .legacy-content p { margin:0 0 16px; }
+    .legacy-content ul, .legacy-content ol { padding-left:22px; margin:0 0 18px; }
+    .legacy-content li + li { margin-top:8px; }
+    .legacy-content a { color:#315E8A; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.18em; }
+    .legacy-content a:hover { color:var(--text); }
+    .legacy-content img { max-width:100%; height:auto; border-radius:4px; }
+    .legacy-content figure { margin:22px 0; }
+    .legacy-content blockquote { margin:18px 0; padding:16px 18px; border-left:3px solid var(--text); background:rgba(255,255,255,.48); }
+    .legacy-content blockquote p { margin:0; color:var(--text); }
+    .legacy-content pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:4px; background:rgba(255,255,255,.45); }
+    .legacy-content code { padding:.1em .32em; border:1px solid var(--border-light); border-radius:3px; background:rgba(255,255,255,.55); font-family:'JetBrains Mono','SF Mono',monospace; font-size:.86em; color:var(--text); }
+    .legacy-content pre code { padding:0; border:0; background:transparent; font-size:13px; line-height:1.55; }
+    .legacy-migration-note { border-top:1px solid var(--border-light); padding-top:18px; font-size:12px; line-height:1.6; color:rgba(26,26,26,.52); }
+    .footer { margin-top:auto; padding:40px 24px 24px; border-top:1px solid var(--border); display:grid; gap:20px; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:12px; }
+    .footer-socials { display:flex; flex-wrap:wrap; gap:8px; }
+    .footer-socials a { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--border-light); border-radius:2px; color:var(--accent); }
+    .footer-copy { font-family:'JetBrains Mono','SF Mono',monospace; font-size:10px; color:rgba(26,26,26,.46); text-transform:uppercase; letter-spacing:.08em; }
+    @media (min-width:768px) { .site-header { grid-template-columns:auto 1fr auto; padding:22px 32px 10px; } .site-header-nav { grid-column:auto; grid-row:auto; justify-content:center; } .language-switcher { grid-column:auto; grid-row:auto; } .legacy-title { font-size:40px; } .legacy-article { padding-left:24px; padding-right:24px; } }
+    @media (min-width:1024px) { .site-header { padding-left:40px; padding-right:40px; } .legacy-article { padding-left:40px; padding-right:40px; } .legacy-article-header { padding:40px 40px 28px; } .legacy-title { font-size:48px; } }
   </style>
 </head>
 <body>
   <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <div class="legacy-shell">
-    <header class="legacy-top">
-      <a href="/">okhlopkov.com</a>
-      <nav class="legacy-nav" aria-label="Site">
-        <a href="/">RU</a>
-        <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/posts/">Posts</a>
-      </nav>
-    </header>
-    <div class="legacy-note">
-      <p>Static migration update: 2026-05-25. This indexed URL is preserved from the previous Ghost version of okhlopkov.com.</p>
-      <p>Original Ghost modified date: 2026-02-19T18:30:12.000Z.</p>
-    </div>
-    <main class="legacy-article"><article class="article post tag-parsing ">
-
-    <header class="article-header gh-canvas">
-
-        <div class="article-tag post-card-tags">
-                <span class="post-card-primary-tag">
-                    <a href="/tag/parsing/">parsing</a>
-                </span>
-        </div>
-
-        <h1 class="article-title">How to parse any website</h1>
-
-
-        <div class="article-byline">
-        <section class="article-byline-content">
-
-            <ul class="author-list instapaper_ignore">
-                <li class="author-list-item">
-                    <a href="/author/okhlopkov/" class="author-avatar" aria-label="Read more of Daniil Okhlopkov">
-                        <img class="author-profile-image" src="/content/images/size/w100/2024/10/Dan-Okhlopkov-LinkedIn.jpeg" alt="Daniil Okhlopkov" />
-                    </a>
-                </li>
-            </ul>
-
-            <div class="article-byline-meta">
-                <h4 class="author-name"><a href="/author/okhlopkov/">Daniil Okhlopkov</a></h4>
-                <div class="byline-meta-content">
-                    <time class="byline-meta-date" datetime="2021-09-13">13 Sep 2021</time>
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> 4 min read</span>
-                </div>
-            </div>
-
-        </section>
-        </div>
-
-            <figure class="article-image">
-                <img
-                    srcset="/content/images/size/w300/2021/09/Screenshot-2021-09-13-at-23.54.19.png 300w,
-                            /content/images/size/w600/2021/09/Screenshot-2021-09-13-at-23.54.19.png 600w,
-                            /content/images/size/w1000/2021/09/Screenshot-2021-09-13-at-23.54.19.png 1000w,
-                            /content/images/size/w2000/2021/09/Screenshot-2021-09-13-at-23.54.19.png 2000w"
-                    sizes="(min-width: 1400px) 1400px, 92vw"
-                    src="/content/images/size/w2000/2021/09/Screenshot-2021-09-13-at-23.54.19.png"
-                    alt="How to parse any website"
-                />
-            </figure>
-
-    </header>
-
-    <section class="gh-content gh-canvas">
-        <p>I'll share my approach which helps me to build reliable parsers of any website.</p><p>I'm not going to show here actual scripts but I'll describe how I extract the data from any website. It should be useful when you need to decide how and what part of the website should be parsed.</p><h1 id="tldr">TL;DR:</h1><ol><li>Find an official API</li><li>Find XHR requests in the browser's dev tools</li><li>Find JSON data in page's HTML</li><li>Render page using any headless browser</li><li>Parse HTML</li></ol><h2 id="pro-tip-dont-start-with-bs4scrapy">Pro tip: don't start with BS4/Scrapy</h2><p>Cool companies perform a ton of A/B tests to increase conversions and improve the funnels of their websites. That means the layout (the HTML) and data formatting may be easily changed next week. Ideally, you want to code the parser once and without having to adapt it to a new layout periodically.</p><blockquote>Don't parse HTML unless nothing else works. XPath &amp; Beutifulsoup are not robust agains website change.</blockquote><h2 id="find-official-api">Find official API</h2><p>Sometimes websites simply give you the API to let you extract the raw data you might need. You need to check if API exists before trying to parse anything. Don't spend time fighting with HTML and cookies if you don't need to.</p><p>Some websites still have RSS feeds. They are made to be easily parsed by machines but they are not popular anymore so most websites don't have them. If you want to extract data from some blogs or news websites - you should definitely check for RSS feeds!</p><h2 id="look-for-xhr-requests">Look for XHR requests</h2><figure class="kg-card kg-image-card"><img src="https://okhlopkov.com/content/images/2021/09/image-4.png" class="kg-image" alt loading="lazy" width="842" height="268" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image-4.png 600w, https://okhlopkov.com/content/images/2021/09/image-4.png 842w" sizes="(min-width: 720px) 720px"></figure><p>All modern websites (not on the dark web lol) use Javascript to fetch the data. It allows websites to open smoothly and load the content (data) after the basic layout is shown (HTML, skeleton).</p><p>Usually, this data is fetched by Javascript using GET/POST requests. A great example is Producthunt:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://okhlopkov.com/content/images/2021/09/image-1.png" class="kg-image" alt loading="lazy" width="2000" height="1393" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image-1.png 600w, https://okhlopkov.com/content/images/size/w1000/2021/09/image-1.png 1000w, https://okhlopkov.com/content/images/size/w1600/2021/09/image-1.png 1600w, https://okhlopkov.com/content/images/2021/09/image-1.png 2000w" sizes="(min-width: 720px) 720px"><figcaption>Just take the Raw data JSON!&nbsp;</figcaption></figure><p>Workflow is simple:</p><ol><li>Open a webpage you want to parse</li><li>Right-click --&gt; Inspect (open dev tools of your browser)</li><li>Open Network tab and select XHR filter (to display only requests you might need)</li><li>Find requests that return data you need</li><li>Copy this request as cURL and use it in your parser's code</li></ol><figure class="kg-card kg-image-card"><img src="https://okhlopkov.com/content/images/2021/09/image-2.png" class="kg-image" alt loading="lazy" width="1034" height="680" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image-2.png 600w, https://okhlopkov.com/content/images/size/w1000/2021/09/image-2.png 1000w, https://okhlopkov.com/content/images/2021/09/image-2.png 1034w" sizes="(min-width: 720px) 720px"></figure><p>Sometimes you notice that these XHR requests require large strings - tokens, cookies, and sessions. They are generated using Javascript or backend. Don't spend time looking into the JS code to understand how they were made.</p><p>Instead, you can try to simply copy-paste them from your browser to your code - they are usually valid for 7-30 days. Perhaps, this is ok for your needs. Or you may find another XHR request (e.g. <code>/login</code>) which outputs with all tokens and sessions you need. Otherwise, I'd suggest switching to browser automation (Selenium, Puppeteer, Splash, etc.).</p><h2 id="look-for-json-data-in-html-code">Look for JSON data in HTML code</h2><p>But sometimes, for SEO purposes some data is already embedded into the HTML page: If you open the page source of <a href="https://www.linkedin.com/in/danokhlopkov/?ref=okhlopkov.com">any Linkedin page</a>, you'll notice a huuuuge JSONS in its HTML.</p><figure class="kg-card kg-image-card"><img src="https://okhlopkov.com/content/images/2021/09/image.png" class="kg-image" alt loading="lazy" width="2000" height="1009" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image.png 600w, https://okhlopkov.com/content/images/size/w1000/2021/09/image.png 1000w, https://okhlopkov.com/content/images/size/w1600/2021/09/image.png 1600w, https://okhlopkov.com/content/images/2021/09/image.png 2000w" sizes="(min-width: 720px) 720px"></figure><p>Just use these JSONs from HTML code because the possibility that its structure would be changed is really-really low. Write your parser to cut extract these JSONs using simple regular expressions or basic tools you already know.</p><p>If you see JSON data in a page's HTML, you don't need to render it using headless browsers – you can simply use GET calls (e.g. <code>requests.get</code> in Python).</p><h2 id="render-js">Render JS</h2><p>For scalability and simplicity, I suggest using remote browsers clusters. Recently I found the cool remote Selenium grid automation called <a href="https://aerokube.com/selenoid/latest/?ref=okhlopkov.com">Selenoid</a>. Their support team is awful, but the microservice itself is quite easy to run on your machine. As a result, you'll have a magic URL that you'll insert in your Selenium driver to render all stuff remotely and not locally e.g. using chromedriver file. Super useful.</p><p>This is my Selenoid usage snippet (Python). Notice the <code>enable_vnc</code> param: it will open the VNC connection to actually see what is happening on the remote Selenoid browser.</p><pre><code class="language-python">def get_selenoid_driver(
+  <header class="site-header">
+    <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
+    <nav class="site-header-nav" aria-label="Primary navigation">
+      <a class="site-header-link" href="/">Home</a>
+      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
+      <a class="site-header-link" href="/blog/">Blog</a>
+      <a class="site-header-link" href="/posts/">Posts</a>
+      <a class="site-header-link" href="/about/">About</a>
+    </nav>
+    <nav class="language-switcher" aria-label="Language">
+      <a class="" href="/">RU</a>
+      <a class="language-switcher-active" href="/en/">EN</a>
+    </nav>
+  </header>
+  <div class="page">
+    <main class="legacy-article">
+      <article>
+        <header class="legacy-article-header">
+          <div class="legacy-meta">
+            <span>Sep 14, 2021</span><span class="legacy-dot"></span>
+            <span>Updated May 25, 2026</span>
+            <span class="legacy-dot"></span>
+            <span>4 min read</span>
+          </div>
+          <h1 class="legacy-title">How to parse any website</h1>
+          <p class="legacy-description">Archived article from okhlopkov.com</p>
+        </header>
+        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/09/Screenshot-2021-09-13-at-23.54.19.png" alt="How to parse any website" loading="lazy" /></figure>
+        <section class="legacy-content">
+        <p>I'll share my approach which helps me to build reliable parsers of any website.</p><p>I'm not going to show here actual scripts but I'll describe how I extract the data from any website. It should be useful when you need to decide how and what part of the website should be parsed.</p><h1 id="tldr">TL;DR:</h1><ol><li>Find an official API</li><li>Find XHR requests in the browser's dev tools</li><li>Find JSON data in page's HTML</li><li>Render page using any headless browser</li><li>Parse HTML</li></ol><h2 id="pro-tip-dont-start-with-bs4scrapy">Pro tip: don't start with BS4/Scrapy</h2><p>Cool companies perform a ton of A/B tests to increase conversions and improve the funnels of their websites. That means the layout (the HTML) and data formatting may be easily changed next week. Ideally, you want to code the parser once and without having to adapt it to a new layout periodically.</p><blockquote>Don't parse HTML unless nothing else works. XPath &amp; Beutifulsoup are not robust agains website change.</blockquote><h2 id="find-official-api">Find official API</h2><p>Sometimes websites simply give you the API to let you extract the raw data you might need. You need to check if API exists before trying to parse anything. Don't spend time fighting with HTML and cookies if you don't need to.</p><p>Some websites still have RSS feeds. They are made to be easily parsed by machines but they are not popular anymore so most websites don't have them. If you want to extract data from some blogs or news websites - you should definitely check for RSS feeds!</p><h2 id="look-for-xhr-requests">Look for XHR requests</h2><figure class="kg-card kg-image-card"><img src="/content/images/2021/09/image-4.png" class="kg-image" alt loading="lazy" width="842" height="268" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image-4.png 600w, https://okhlopkov.com/content/images/2021/09/image-4.png 842w" sizes="(min-width: 720px) 720px"></figure><p>All modern websites (not on the dark web lol) use Javascript to fetch the data. It allows websites to open smoothly and load the content (data) after the basic layout is shown (HTML, skeleton).</p><p>Usually, this data is fetched by Javascript using GET/POST requests. A great example is Producthunt:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/2021/09/image-1.png" class="kg-image" alt loading="lazy" width="2000" height="1393" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image-1.png 600w, https://okhlopkov.com/content/images/size/w1000/2021/09/image-1.png 1000w, https://okhlopkov.com/content/images/size/w1600/2021/09/image-1.png 1600w, https://okhlopkov.com/content/images/2021/09/image-1.png 2000w" sizes="(min-width: 720px) 720px"><figcaption>Just take the Raw data JSON!&nbsp;</figcaption></figure><p>Workflow is simple:</p><ol><li>Open a webpage you want to parse</li><li>Right-click --&gt; Inspect (open dev tools of your browser)</li><li>Open Network tab and select XHR filter (to display only requests you might need)</li><li>Find requests that return data you need</li><li>Copy this request as cURL and use it in your parser's code</li></ol><figure class="kg-card kg-image-card"><img src="/content/images/2021/09/image-2.png" class="kg-image" alt loading="lazy" width="1034" height="680" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image-2.png 600w, https://okhlopkov.com/content/images/size/w1000/2021/09/image-2.png 1000w, https://okhlopkov.com/content/images/2021/09/image-2.png 1034w" sizes="(min-width: 720px) 720px"></figure><p>Sometimes you notice that these XHR requests require large strings - tokens, cookies, and sessions. They are generated using Javascript or backend. Don't spend time looking into the JS code to understand how they were made.</p><p>Instead, you can try to simply copy-paste them from your browser to your code - they are usually valid for 7-30 days. Perhaps, this is ok for your needs. Or you may find another XHR request (e.g. <code>/login</code>) which outputs with all tokens and sessions you need. Otherwise, I'd suggest switching to browser automation (Selenium, Puppeteer, Splash, etc.).</p><h2 id="look-for-json-data-in-html-code">Look for JSON data in HTML code</h2><p>But sometimes, for SEO purposes some data is already embedded into the HTML page: If you open the page source of <a href="https://www.linkedin.com/in/danokhlopkov/?ref=okhlopkov.com">any Linkedin page</a>, you'll notice a huuuuge JSONS in its HTML.</p><figure class="kg-card kg-image-card"><img src="/content/images/2021/09/image.png" class="kg-image" alt loading="lazy" width="2000" height="1009" srcset="https://okhlopkov.com/content/images/size/w600/2021/09/image.png 600w, https://okhlopkov.com/content/images/size/w1000/2021/09/image.png 1000w, https://okhlopkov.com/content/images/size/w1600/2021/09/image.png 1600w, https://okhlopkov.com/content/images/2021/09/image.png 2000w" sizes="(min-width: 720px) 720px"></figure><p>Just use these JSONs from HTML code because the possibility that its structure would be changed is really-really low. Write your parser to cut extract these JSONs using simple regular expressions or basic tools you already know.</p><p>If you see JSON data in a page's HTML, you don't need to render it using headless browsers – you can simply use GET calls (e.g. <code>requests.get</code> in Python).</p><h2 id="render-js">Render JS</h2><p>For scalability and simplicity, I suggest using remote browsers clusters. Recently I found the cool remote Selenium grid automation called <a href="https://aerokube.com/selenoid/latest/?ref=okhlopkov.com">Selenoid</a>. Their support team is awful, but the microservice itself is quite easy to run on your machine. As a result, you'll have a magic URL that you'll insert in your Selenium driver to render all stuff remotely and not locally e.g. using chromedriver file. Super useful.</p><p>This is my Selenoid usage snippet (Python). Notice the <code>enable_vnc</code> param: it will open the VNC connection to actually see what is happening on the remote Selenoid browser.</p><pre><code class="language-python">def get_selenoid_driver(
     enable_vnc=False, browser_name="firefox"
 ):
     capabilities = {
@@ -173,14 +167,28 @@
     return driver</code></pre><p>After page rendering, you may accidentally find the JSON with all data you need in the page's HTML. Again, try to extract this JSON and take all the data you need from it instead of trying to parse HTML tags &amp; fields that might change next week.</p><pre><code class="language-python">driver.get(url_to_open)
 html = driver.page_source</code></pre><h2 id="parse-html">Parse HTML</h2><p>If you can find neither proper XHR query nor JSON in the page's HTML, that means the website use SSR which prefills all the data. In this <strong>rare</strong> case (probably the old website), the only thing left is to try to extract the data you need using CSS or XPath selectors. My only advice here is to try to minimize the queries &amp; filters used to prevent overfitting and having NULL output if some page blocks become switched or slightly changed.</p><hr><p>Hope this was useful. Please <a href="https://twitter.com/danokhlopkov?ref=okhlopkov.com">tweet me</a> the comments and questions. See you soon for more parsing &amp; ELT tutorials! 👋</p><hr><p><strong>Dan Okhlopkov</strong> — AI agent practitioner. Building tools for TON Blockchain analysis and Telegram automation.</p><p><a href="https://t.me/danokhlopkov?ref=okhlopkov.com" rel="noopener">Telegram</a> · <a href="https://x.com/danokhlopkov?ref=okhlopkov.com" rel="noopener">Twitter/X</a> · <a href="https://instagram.com/d7733o?ref=okhlopkov.com" rel="noopener">Instagram</a> · <a href="https://threads.net/d7733o?ref=okhlopkov.com" rel="noopener">Threads</a> · <a href="https://youtube.com/@danokhlopkov?ref=okhlopkov.com" rel="noopener">YouTube</a></p>
     </section>
-
-
-</article></main>
-    <footer class="legacy-footer">
-      <a href="/">Home</a>
-      <a href="https://t.me/danokhlopkov">Telegram</a>
-      <a href="https://x.com/danokhlopkov">X</a>
-      <a href="https://github.com/ohld">GitHub</a>
+        <aside class="legacy-migration-note">
+          <p>Static migration update: 2026-05-25. Preserved during the static migration.</p>
+          <p>Original Ghost modified date: Feb 19, 2026.</p>
+        </aside>
+      </article>
+    </main>
+    <footer class="footer">
+      <nav class="footer-links" aria-label="Site sections">
+        <a href="/">RU</a>
+        <a href="/en/">EN</a>
+        <a href="/ai-agents/">AI Agents</a>
+        <a href="/blog/">Blog</a>
+        <a href="/posts/">Posts</a>
+        <a href="/about/">About</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>
+        <a href="https://youtube.com/@danokhlopkov" rel="me noopener noreferrer" aria-label="YouTube">YT</a>
+        <a href="https://x.com/danokhlopkov" rel="me noopener noreferrer" aria-label="X">X</a>
+        <a href="https://github.com/ohld" rel="me noopener noreferrer" aria-label="GitHub">GH</a>
+      </div>
+      <span class="footer-copy">© 2026 Daniil Okhlopkov</span>
     </footer>
   </div>
 </body>

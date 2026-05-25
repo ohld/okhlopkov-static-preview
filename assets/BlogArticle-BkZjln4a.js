@@ -1,4 +1,4 @@
-import{d as c,g as a,j as e,N as o,u as d,a as h,f as x,h as j,L as i,F as p,i as u}from"./index-DHJ5Gf7w.js";import{B as b}from"./BackButton-Dm-U3Ein.js";const g=`Ты помогаешь сделать frontend экран не похожим на AI-slop.
+import{d as c,g as a,j as e,N as o,u as d,a as h,f as x,h as j,L as i,F as p,i as u}from"./index-BCjVVPqJ.js";import{B as b}from"./BackButton-Bj8ZsxAY.js";const g=`Ты помогаешь сделать frontend экран не похожим на AI-slop.
 
 Контекст:
 - пользователь: [кто открывает экран]

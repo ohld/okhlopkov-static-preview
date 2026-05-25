@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-агенты: с чего начать в 2026 — карта материалов, Claude Code, Codex и живые кейсы</title>
+    <meta name="description" content="Маршрут по материалам Дана Охлопкова про AI-агентов: Claude Code, Codex, промпты, Obsidian, Paperclip, реальные стримы и что читать первым." />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://telegram.org https://www.googletagmanager.com https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org https://ohldbot.swanrate.com https://www.google-analytics.com https://mc.yandex.ru wss://mc.yandex.ru;" />
+    <meta name="yandex-verification" content="1b82de56693018c1" />
+    <meta name="yandex-verification" content="3553f1209d48d2c4" />
+    <link rel="canonical" href="https://okhlopkov.com/blog/ai-agents-s-chego-nachat/" />
+    <link rel="icon" href="/favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="alternate" hreflang="ru" href="https://okhlopkov.com/blog/ai-agents-s-chego-nachat/" />
+    <link rel="alternate" hreflang="x-default" href="https://okhlopkov.com/blog/ai-agents-s-chego-nachat/" />
+    <link rel="alternate" type="text/markdown" href="/blog-ai-agents-s-chego-nachat.md" /><!-- alternate-md -->
+    <meta property="og:title" content="AI-агенты: с чего начать в 2026 — карта материалов, Claude Code, Codex и живые кейсы" />
+    <meta property="og:description" content="Маршрут по материалам Дана Охлопкова про AI-агентов: Claude Code, Codex, промпты, Obsidian, Paperclip, реальные стримы и что читать первым." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://okhlopkov.com/blog/ai-agents-s-chego-nachat/" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="https://github.com/ohld.png" />
+    <meta property="og:image:alt" content="Даниил Охлопков" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="AI-агенты: с чего начать в 2026 — карта материалов, Claude Code, Codex и живые кейсы" />
+    <meta name="twitter:description" content="Маршрут по материалам Дана Охлопкова про AI-агентов: Claude Code, Codex, промпты, Obsidian, Paperclip, реальные стримы и что читать первым." />
+    <meta name="twitter:image" content="https://github.com/ohld.png" />
+    <meta name="twitter:image:alt" content="Даниил Охлопков" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://okhlopkov.com/#person",
+      "name": "Даниил Охлопков",
+      "alternateName": "Daniil Okhlopkov",
+      "description": "Head of Analytics @ TON Foundation. Пишу про AI-агентов, данные и крипту. Forbes 30 Under 30 Russia (2022). Бывший CTO Via Protocol ($1.5B annual volume), фаундер InstaBot и Shazam-ботсетей (13.7M юзеров).",
+      "jobTitle": "Head of Analytics",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "TON Foundation",
+        "url": "https://ton.org"
+      },
+      "url": "https://okhlopkov.com/",
+      "image": "https://github.com/ohld.png",
+      "award": "Forbes 30 Under 30 Russia, 2022",
+      "sameAs": [
+        "https://t.me/danokhlopkov",
+        "https://x.com/danokhlopkov",
+        "https://github.com/ohld",
+        "https://okhlopkov.com",
+        "https://youtube.com/@danokhlopkov",
+        "https://instagram.com/d7733o",
+        "https://www.linkedin.com/in/danokhlopkov/",
+        "https://habr.com/ru/users/danokhlopkov/"
+      ],
+      "knowsAbout": [
+        "AI Agents",
+        "Blockchain Analytics",
+        "TON",
+        "Telegram Bots",
+        "Data Engineering",
+        "x402 Agent Economy"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Moscow Institute of Physics and Technology"
+      },
+      "mainEntityOfPage": "https://okhlopkov.com/blog/ai-agents-s-chego-nachat/"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9Z5T725JJD');
+    </script>
+    <script>
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(46266270, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <script>
+      // SPA GitHub Pages decode — paired with public/404.html (rafgraph/spa-github-pages)
+      // Restores the real path that the user requested before the 404 redirect.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, '',
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-DHJ5Gf7w.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-ieUwgUYB.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI-агенты: с чего начать в 2026 — карта материалов, Claude Code, Codex и живые кейсы",
+  "description": "Маршрут по материалам Дана Охлопкова про AI-агентов: Claude Code, Codex, промпты, Obsidian, Paperclip, реальные стримы и что читать первым.",
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-25",
+  "author": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://okhlopkov.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://okhlopkov.com/"
+  },
+  "image": "https://github.com/ohld.png",
+  "mainEntityOfPage": "https://okhlopkov.com/blog/ai-agents-s-chego-nachat/",
+  "inLanguage": "ru",
+  "keywords": [
+    "ai агенты",
+    "ai agent",
+    "claude code",
+    "codex cli",
+    "claude code skills"
+  ],
+  "isBasedOn": "https://t.me/danokhlopkov/1671",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/ViewAction",
+      "userInteractionCount": 7295
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/ShareAction",
+      "userInteractionCount": 478
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/CommentAction",
+      "userInteractionCount": 21
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://okhlopkov.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://okhlopkov.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI-агенты: с чего начать в 2026 — карта материалов, Claude Code, Codex и живые кейсы",
+      "item": "https://okhlopkov.com/blog/ai-agents-s-chego-nachat/"
+    }
+  ]
+}
+</script>
+  </head>
+  <body>
+    <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <div id="root"><header><h1>AI-агенты: с чего начать в 2026 — карта материалов, Claude Code, Codex и живые кейсы</h1></header><article><h2>Коротко</h2>
+<p>Это входная карта по моим материалам про AI-агентов. Не “что такое AI” и не очередной список инструментов, а маршрут для человека, который хочет руками собрать рабочий флоу: Claude Code, Codex, Obsidian, skills, промпты, видео с живым сетапом и community loop вокруг всего этого.</p>
+<p>С точки зрения SEO эта страница целится не в широкий запрос “нейросети”, а в более практичный кластер: <code>ai агенты</code>, <code>Claude Code</code>, <code>Codex CLI</code>, <code>Claude Code skills</code>. По Wordstat рядом с этим уже есть понятный спрос: люди ищут не философию, а “с чего начать”, “какой инструмент выбрать” и “как не утонуть в настройках”.</p>
+<h2>Оригинальный Telegram-пост</h2>
+<blockquote>
+<p>Черновик v2</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>топ моих материалов про AI agents</strong></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>Собрал карту входа: посты, которые реально пересылали, плюс видосы, где я показывал сетап руками.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>Не просто “почитать про AI”, а маршрут, после которого можно уже идти и навайбкодить что-нибудь живое.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>читать</strong></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://t.me/danokhlopkov/1582">Claude Code: пост, с которого у меня начался кринжовый e/acc период</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://t.me/danokhlopkov/1583">Флоу работы с AI coding agent: идея → спека → plan mode → новый чат без context rot</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="/blog/improve-codebase-architecture-prompt/">Что кидать агенту, когда очевидные таски закончились: “почисти код, сделай лучше”</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="/prompty-uluchshili-opyt-ai-agenty-5-lajfhakov/">Промпты, которые улучшили мой опыт работы с AI агентами</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://t.me/danokhlopkov/1628">21 неудобный вопрос для агента — чтобы он не просто кодил, а думал</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="/vtoroj-mozg-ai-assistent-obsidian-claude-code/">Claude Code + Obsidian + голосовой ввод — всё, я в 2030</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://t.me/danokhlopkov/1637">Paperclip: AI-организация, где ты уже не “пишешь промпты”, а нанимаешь агентов</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://t.me/danokhlopkov/1641">AI-инструменты, которые я реально попробовал: что осталось, что выкинул</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://t.me/danokhlopkov/1660">Не обновлял AI-сетап 2 недели — опоздал. Фомо по инструментам после отпуска</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>смотреть</strong></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://www.youtube.com/watch?v=yJuzI2u-AnM">AI-сетап с @og_mishgun: какие инструменты реально используем</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://youtu.be/E3P0a03mN8A">AI-агенты ведут проект, пока я в отпуске: Claude Code, Paperclip, gstack</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>▪ <a href="https://www.youtube.com/watch?v=Fxw6IQuL36o">Self-hosted AI с @technotears: приватность, локальные модели и Doom голосом</a></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>Если нужен самый короткий маршрут, я бы шел так:</p>
+<p><a href="https://t.me/danokhlopkov/1582">Claude Code</a> → <a href="https://t.me/danokhlopkov/1583">рабочий флоу</a> → <a href="/blog/improve-codebase-architecture-prompt/">промпты для докрутки проекта</a> → <a href="https://youtu.be/E3P0a03mN8A">видос с реальным сетапом</a>.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>О чем еще написать? Где больше всего непонятно: с чего начать, как промптить, как сетапить, как не утонуть в инструментах или как применять это в работе?</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>~ @danokhlopkov ~</p>
+</blockquote>
+<h2>Как читать эту карту</h2>
+<p>Если вы только заходите в тему AI-агентов, не начинайте с выбора “лучшей модели”. Это почти всегда тупик. Инструменты меняются быстрее, чем вы успеваете привыкнуть к хоткеям, а рабочий флоу остается примерно тем же:</p>
+<ol>
+<li>Сформулировать задачу как маленький проект, а не как один промпт.</li>
+<li>Дать агенту контекст: код, заметки, ограничения, стиль, ссылки, критерии готовности.</li>
+<li>Попросить план до кода.</li>
+<li>Разбить работу на короткие итерации.</li>
+<li>После первой версии прогнать ревью, тесты и отдельный “а что я не вижу?” раунд.</li>
+</ol>
+<p>Поэтому короткий маршрут из поста лучше читать как последовательность навыков, а не как подборку ссылок. Сначала понять, как выглядит нормальная работа с Claude Code/Codex. Потом взять промпты и skills для докрутки проекта. Потом посмотреть видео, где это не в вакууме, а в живом сетапе.</p>
+<h2>Что обсуждали в Telegram-чате</h2>
+<p>Из discussion context в <code>ohldbot</code> видно, что людям важны не только названия инструментов. Самый частый полезный паттерн: “я вроде поставил агента, но не понимаю, что ему давать и как понять, что он сделал хорошо”. Это не проблема интерфейса. Это проблема контекста, ожиданий и ревью.</p>
+<p>В чате также всплывает сильный practical angle: многие уже используют Claude Code, Codex, Cursor и локальные заметки, но знания остаются на уровне личных привычек. Один человек нашел удачную команду, второй собрал skill, третий понял, как экономить контекст, но все это быстро тонет в ленте. Поэтому сайт должен превращать такие находки в индексируемые страницы и связывать их внутренними ссылками.</p>
+<p>Для этой страницы это значит: она должна быть не “архивом поста”, а входной развилкой. Если человеку нужен setup, он идет в материалы про Claude Code. Если нужен выбор инструмента, идет в сравнение <a href="/blog/claude-code-vs-codex-perehod/">Claude Code vs Codex</a>. Если хочется улучшить уже собранный проект, идет в пост про <a href="/blog/improve-codebase-architecture-prompt/">improve-codebase-architecture</a>.</p>
+<h2>Где здесь SEO-смысл</h2>
+<p>Широкий запрос <code>ai агенты</code> сам по себе слишком общий. Но в русскоязычной выдаче вокруг него пока мало живого контента от людей, которые правда работают с агентами каждый день. Это шанс: не пытаться победить Википедию, а закрывать практические next-step запросы.</p>
+<table><thead><tr><th>Интент</th><th>Что должна дать страница</th></tr></thead><tbody><tr><td>“AI-агенты с чего начать”</td><td>Маршрут чтения и первый рабочий флоу</td></tr><tr><td>“Claude Code или Codex”</td><td>Честное сравнение на базе опыта, а не таблица из README</td></tr><tr><td>“Claude Code skills”</td><td>Примеры skills и зачем они нужны</td></tr><tr><td>“AI coding agent workflow”</td><td>Как вести задачу: спека, plan mode, отдельный чат, ревью</td></tr></tbody></table>
+<h2>Связанные материалы</h2>
+<ul>
+<li><a href="/blog/claude-code-vs-codex-perehod/">Claude Code vs Codex: почему я на две недели перешёл на Codex</a></li>
+<li><a href="/blog/improve-codebase-architecture-prompt/">Что попросить AI-агента сделать, когда задачи закончились</a></li>
+<li><a href="/vtoroj-mozg-ai-assistent-obsidian-claude-code/">Второй мозг: Obsidian и Claude Code</a></li>
+<li><a href="/prompty-uluchshili-opyt-ai-agenty-5-lajfhakov/">Промпты, которые улучшили опыт работы с AI-агентами</a></li>
+<li><a href="/articles/ai-tools-for-designers-design-engineering-agents/">AI-инструменты для дизайнеров: design engineering и агенты</a></li>
+</ul>
+<h2>FAQ</h2>
+<h3>С какого AI-агента начать?</h3>
+<p>Если вы разработчик, начните с того инструмента, который проще встроить в ваш текущий репозиторий: Claude Code, Codex CLI или Cursor. Важнее не бренд, а привычка давать агенту контекст, просить план и проверять результат.</p>
+<h3>Нужно ли сразу ставить MCP и skills?</h3>
+<p>Нет. Сначала добейтесь стабильного флоу на простых задачах. MCP и skills нужны, когда вы уже понимаете, какие повторяющиеся операции хотите автоматизировать.</p>
+<h3>Почему Telegram-пост перенесен в блог?</h3>
+<p>Потому что Telegram отлично работает как лента и community loop, но плохо работает как долговременная база знаний. На сайте этот текст становится индексируемым, получает внутренние ссылки и может обновляться после новых обсуждений.</p></article><nav><a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/articles/">Статьи</a> · <a href="/about/">Обо мне</a> · <a href="/en/">English</a> · <a href="/privacy/">Privacy</a></nav><footer><a href="https://t.me/danokhlopkov" rel="me">Telegram</a> · <a href="https://youtube.com/@danokhlopkov" rel="me">YouTube</a> · <a href="https://instagram.com/d7733o" rel="me">Instagram</a> · <a href="https://x.com/danokhlopkov" rel="me">X</a> · <a href="https://www.linkedin.com/in/danokhlopkov/" rel="me">LinkedIn</a> · <a href="https://github.com/ohld" rel="me">GitHub</a></footer></div>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude Code vs Codex: почему я на две недели перешёл на Codex</title>
+    <meta name="description" content="Личный snapshot про переход с Claude Code на Codex: контекст, субагенты, desktop app, риски банов и что поменялось в рабочем флоу." />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://telegram.org https://www.googletagmanager.com https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org https://ohldbot.swanrate.com https://www.google-analytics.com https://mc.yandex.ru wss://mc.yandex.ru;" />
+    <meta name="yandex-verification" content="1b82de56693018c1" />
+    <meta name="yandex-verification" content="3553f1209d48d2c4" />
+    <link rel="canonical" href="https://okhlopkov.com/blog/claude-code-vs-codex-perehod/" />
+    <link rel="icon" href="/favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="alternate" hreflang="ru" href="https://okhlopkov.com/blog/claude-code-vs-codex-perehod/" />
+    <link rel="alternate" hreflang="x-default" href="https://okhlopkov.com/blog/claude-code-vs-codex-perehod/" />
+    <link rel="alternate" type="text/markdown" href="/blog-claude-code-vs-codex-perehod.md" /><!-- alternate-md -->
+    <meta property="og:title" content="Claude Code vs Codex: почему я на две недели перешёл на Codex" />
+    <meta property="og:description" content="Личный snapshot про переход с Claude Code на Codex: контекст, субагенты, desktop app, риски банов и что поменялось в рабочем флоу." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://okhlopkov.com/blog/claude-code-vs-codex-perehod/" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="https://github.com/ohld.png" />
+    <meta property="og:image:alt" content="Даниил Охлопков" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Claude Code vs Codex: почему я на две недели перешёл на Codex" />
+    <meta name="twitter:description" content="Личный snapshot про переход с Claude Code на Codex: контекст, субагенты, desktop app, риски банов и что поменялось в рабочем флоу." />
+    <meta name="twitter:image" content="https://github.com/ohld.png" />
+    <meta name="twitter:image:alt" content="Даниил Охлопков" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://okhlopkov.com/#person",
+      "name": "Даниил Охлопков",
+      "alternateName": "Daniil Okhlopkov",
+      "description": "Head of Analytics @ TON Foundation. Пишу про AI-агентов, данные и крипту. Forbes 30 Under 30 Russia (2022). Бывший CTO Via Protocol ($1.5B annual volume), фаундер InstaBot и Shazam-ботсетей (13.7M юзеров).",
+      "jobTitle": "Head of Analytics",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "TON Foundation",
+        "url": "https://ton.org"
+      },
+      "url": "https://okhlopkov.com/",
+      "image": "https://github.com/ohld.png",
+      "award": "Forbes 30 Under 30 Russia, 2022",
+      "sameAs": [
+        "https://t.me/danokhlopkov",
+        "https://x.com/danokhlopkov",
+        "https://github.com/ohld",
+        "https://okhlopkov.com",
+        "https://youtube.com/@danokhlopkov",
+        "https://instagram.com/d7733o",
+        "https://www.linkedin.com/in/danokhlopkov/",
+        "https://habr.com/ru/users/danokhlopkov/"
+      ],
+      "knowsAbout": [
+        "AI Agents",
+        "Blockchain Analytics",
+        "TON",
+        "Telegram Bots",
+        "Data Engineering",
+        "x402 Agent Economy"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Moscow Institute of Physics and Technology"
+      },
+      "mainEntityOfPage": "https://okhlopkov.com/blog/claude-code-vs-codex-perehod/"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9Z5T725JJD');
+    </script>
+    <script>
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(46266270, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <script>
+      // SPA GitHub Pages decode — paired with public/404.html (rafgraph/spa-github-pages)
+      // Restores the real path that the user requested before the 404 redirect.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, '',
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-DHJ5Gf7w.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-ieUwgUYB.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude Code vs Codex: почему я на две недели перешёл на Codex",
+  "description": "Личный snapshot про переход с Claude Code на Codex: контекст, субагенты, desktop app, риски банов и что поменялось в рабочем флоу.",
+  "datePublished": "2026-05-14",
+  "dateModified": "2026-05-25",
+  "author": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://okhlopkov.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://okhlopkov.com/"
+  },
+  "image": "https://github.com/ohld.png",
+  "mainEntityOfPage": "https://okhlopkov.com/blog/claude-code-vs-codex-perehod/",
+  "inLanguage": "ru",
+  "keywords": [
+    "codex vs claude code",
+    "claude code или codex",
+    "openai codex",
+    "codex cli"
+  ],
+  "isBasedOn": "https://t.me/danokhlopkov/1676",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/ViewAction",
+      "userInteractionCount": 5353
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/ShareAction",
+      "userInteractionCount": 81
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/CommentAction",
+      "userInteractionCount": 27
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://okhlopkov.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://okhlopkov.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Claude Code vs Codex: почему я на две недели перешёл на Codex",
+      "item": "https://okhlopkov.com/blog/claude-code-vs-codex-perehod/"
+    }
+  ]
+}
+</script>
+  </head>
+  <body>
+    <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <div id="root"><header><h1>Claude Code vs Codex: почему я на две недели перешёл на Codex</h1></header><article><h2>Коротко</h2>
+<p>Это не вечный рейтинг “что лучше: Claude Code или Codex”. Это snapshot на середину мая 2026: почему я временно переехал с Claude Code на Codex, что стало хуже, что стало лучше и какие привычки пришлось поменять.</p>
+<p>По Wordstat у запроса <code>codex vs claude code</code> есть небольшой, но очень точный спрос. Это как раз формат страницы, где сухая таблица мало помогает: людям важнее понять, как ощущается ежедневная работа, что ломает контекст, где приходится менять флоу и где инструмент начинает бесить.</p>
+<h2>Оригинальный Telegram-пост</h2>
+<blockquote>
+<p><strong>2 недели назад я перешел на Codex</strong></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>TL:DR; Claude Code увидели клюшку в метриках. Не справились с ростом - на помощь пришли серверы Илона. Ранее добавили кеширование и «оптимизации» в опус 4.7 - юзеры стали чувствовать, что СС тупит жоска. Весь апрель длилась <a href="https://t.me/danokhlopkov/1661">не смешная</a> шутка не только со мной в главной роли, но и в <a href="https://t.me/ohld_chat">нашем чате</a> и во всем тви. Вот и решил перейти на Codex.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>Сами CC объясняют свой тупизм количеством наших установленных скилов, mcp и др контекстной грязи.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>Они, конечно, добавили /doctor для чистки и поливают дождем из кредитов и больших лимитов, но я уже чёрнулся, сори. Fuck you, pay me to return. Пока такой вайбик, ждем релиза mythos.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>Мой фидбек по Кодексу:</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>1. Дал задачу - Долго думает - Выдает хороший ответ, но контекст уже заполнен. Приходится чаще явно начинать новую сессию и менять привычки.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>2. Чтобы экономить контекст, приходится напоминать использовать субагентов. Немного надоело, нужно найти норм поваренную книгу по кодексу.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>3. В кодексе сижу через их десктоп прилу. Чувствую себя корпоратом, <a href="https://t.me/insuline_eth/903">скучаю</a> по CC CLI. Микрофончик есть, но продолжаю юзать <a href="https://t.me/danokhlopkov/1660">Spokenly</a> на правый command.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>4. Нет рисков словить бан из-за экспериментов с другими тулами. Пока что.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>В планах научиться работать с контекстом через gbrain/openbrain, а не просто md с вики-ссылками. И тогда переезжать туда-сюда будет проще, как и шерить фрагменты коллегам. Ну и t3code, ладно, попробую тоже.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><a href="https://t.me/ohld_chat/29104">Опрос в чате</a> показывал тогда баланс CC/C : ~50/50, вот новый:</p>
+</blockquote>
+<h2>Что важно в этом сравнении</h2>
+<p>Сравнение Claude Code и Codex быстро устаревает, если обсуждать только “какая модель умнее”. Сегодня один релиз, завтра другой лимит, послезавтра поменялась политика доступа, а через неделю весь Twitter уже ругает новый regression.</p>
+<p>Более стабильные критерии такие:</p>
+<table><thead><tr><th>Критерий</th><th>Почему важно</th></tr></thead><tbody><tr><td>Работа с контекстом</td><td>Агент может быть умным, но если сессия быстро забивается, вы платите вниманием за cleanup</td></tr><tr><td>Субагенты</td><td>Для длинных задач важно уметь разгружать основной контекст и не превращать чат в кашу</td></tr><tr><td>CLI/Desktop привычки</td><td>Интерфейс влияет на скорость: голос, хоткеи, файлы, permissions, рабочие директории</td></tr><tr><td>Риск блокировок и экспериментов</td><td>Если вы подключаете другие тулзы, важно понимать, где вас может наказать платформа</td></tr><tr><td>Переносимость знаний</td><td>GBrain/OpenBrain/markdown-вики нужны, чтобы не быть заложником одного клиента</td></tr></tbody></table>
+<h2>Что обсуждали в Telegram-чате</h2>
+<p>В <code>ohld_chat</code> вокруг этого периода шло много сравнений Claude Code и Codex. Полезный сигнал не в том, что “один точно победил”, а в том, что опыт стал примерно поляризованным: часть людей оставалась на Claude Code из-за привычного CLI и качества флоу, часть уходила в Codex из-за стабильности, доступности и меньших рисков.</p>
+<p>Еще один повторяющийся community insight: люди недооценивают стоимость context hygiene. Когда в Claude Code лежит много MCP, skills и локальной грязи, деградация ощущается как “модель тупит”, хотя часть проблемы может быть в среде. В Codex похожая проблема выглядит иначе: ответ хороший, но контекст быстрее заполняется, и нужно дисциплинированнее начинать новые сессии.</p>
+<p>Из донорских каналов в тот же период видно похожее направление: обсуждали обновления Codex, <code>goal</code>-режимы, computer-use сценарии и деградации Claude-моделей. Это не доказательство, что Codex лучше. Это доказательство, что рынок живет короткими циклами, а сравнения нужно обновлять как changelog, а не как вечный мануал.</p>
+<h2>Мой текущий вывод</h2>
+<p>Если вы выбираете “Claude Code или Codex”, не выбирайте по чужому фанатству. Сделайте маленький benchmark на своем проекте:</p>
+<ol>
+<li>Один и тот же issue или рефакторинг.</li>
+<li>Один и тот же контекст: README, relevant files, constraints.</li>
+<li>Один и тот же критерий готовности: тесты, diff size, читаемость, риск.</li>
+<li>Отдельный раунд ревью: “что ты мог сломать?”.</li>
+<li>Замер не только качества ответа, но и того, сколько раз вы вмешивались.</li>
+</ol>
+<p>И уже потом решайте, где жить каждый день. Для меня на момент поста Codex стал способом не зависеть от просадки Claude Code, но не снял проблему контекста. Он просто поменял ее форму.</p>
+<h2>Связанные материалы</h2>
+<ul>
+<li><a href="/blog/ai-agents-s-chego-nachat/">AI-агенты: с чего начать в 2026</a></li>
+<li><a href="/blog/gstack-goal-office-hours-ai-workflow/">GStack, /goal и office hours: рабочий цикл для AI-агента</a></li>
+<li><a href="/claude-codex-dual-review/">Claude Code + Codex: двойное ревью AI-агентов</a></li>
+<li><a href="/claude-code-nastrojka-mcp-hooks-skills-2026/">Мой сетап Claude Code после 4 месяцев ежедневной работы</a></li>
+</ul>
+<h2>FAQ</h2>
+<h3>Claude Code хуже Codex?</h3>
+<p>Не универсально. В мае 2026 у меня был сильный reason попробовать Codex из-за ощущаемой деградации Claude Code и вопросов к контексту. Но это не финальный verdict, а рабочий snapshot.</p>
+<h3>Что важнее: модель или флоу?</h3>
+<p>Флоу. Хорошая модель с грязным контекстом и мутной задачей будет делать странные вещи. Средняя модель с нормальной спецификацией, тестами и ревью часто даст более полезный результат.</p>
+<h3>Зачем здесь GBrain/OpenBrain?</h3>
+<p>Чтобы рабочий контекст не жил только в одной сессии Claude Code или Codex. Если знания проекта лежат в отдельной базе/вики, проще переезжать между агентами и шарить фрагменты коллегам.</p></article><nav><a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/articles/">Статьи</a> · <a href="/about/">Обо мне</a> · <a href="/en/">English</a> · <a href="/privacy/">Privacy</a></nav><footer><a href="https://t.me/danokhlopkov" rel="me">Telegram</a> · <a href="https://youtube.com/@danokhlopkov" rel="me">YouTube</a> · <a href="https://instagram.com/d7733o" rel="me">Instagram</a> · <a href="https://x.com/danokhlopkov" rel="me">X</a> · <a href="https://www.linkedin.com/in/danokhlopkov/" rel="me">LinkedIn</a> · <a href="https://github.com/ohld" rel="me">GitHub</a></footer></div>
+  </body>
+</html>

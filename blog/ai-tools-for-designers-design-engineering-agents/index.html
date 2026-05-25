@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code</title>
+    <meta name="description" content="Разбор стрима про design engineering: как дизайнерам работать с AI-агентами, почему появляется AI-slop, зачем нужны design tokens, Paper, Mobbin MCP и хороший контекст для Codex/Claude Code." />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://telegram.org https://www.googletagmanager.com https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org https://ohldbot.swanrate.com https://www.google-analytics.com https://mc.yandex.ru wss://mc.yandex.ru;" />
+    <meta name="yandex-verification" content="1b82de56693018c1" />
+    <meta name="yandex-verification" content="3553f1209d48d2c4" />
+    <link rel="canonical" href="https://static-preview.okhlopkov.com/blog/ai-tools-for-designers-design-engineering-agents/" />
+    <link rel="icon" href="/favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="alternate" hreflang="ru" href="https://static-preview.okhlopkov.com/blog/ai-tools-for-designers-design-engineering-agents/" />
+    <link rel="alternate" hreflang="x-default" href="https://static-preview.okhlopkov.com/blog/ai-tools-for-designers-design-engineering-agents/" />
+    <link rel="alternate" type="text/markdown" href="/blog-ai-tools-for-designers-design-engineering-agents.md" /><!-- alternate-md -->
+    <meta property="og:title" content="AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code" />
+    <meta property="og:description" content="Разбор стрима про design engineering: как дизайнерам работать с AI-агентами, почему появляется AI-slop, зачем нужны design tokens, Paper, Mobbin MCP и хороший контекст для Codex/Claude Code." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://static-preview.okhlopkov.com/blog/ai-tools-for-designers-design-engineering-agents/" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="https://github.com/ohld.png" />
+    <meta property="og:image:alt" content="Даниил Охлопков" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code" />
+    <meta name="twitter:description" content="Разбор стрима про design engineering: как дизайнерам работать с AI-агентами, почему появляется AI-slop, зачем нужны design tokens, Paper, Mobbin MCP и хороший контекст для Codex/Claude Code." />
+    <meta name="twitter:image" content="https://github.com/ohld.png" />
+    <meta name="twitter:image:alt" content="Даниил Охлопков" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://static-preview.okhlopkov.com/#person",
+      "name": "Даниил Охлопков",
+      "alternateName": "Daniil Okhlopkov",
+      "description": "Head of Analytics @ TON Foundation. Пишу про AI-агентов, данные и крипту. Forbes 30 Under 30 Russia (2022). Бывший CTO Via Protocol ($1.5B annual volume), фаундер InstaBot и Shazam-ботсетей (13.7M юзеров).",
+      "jobTitle": "Head of Analytics",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "TON Foundation",
+        "url": "https://ton.org"
+      },
+      "url": "https://static-preview.okhlopkov.com/",
+      "image": "https://github.com/ohld.png",
+      "award": "Forbes 30 Under 30 Russia, 2022",
+      "sameAs": [
+        "https://t.me/danokhlopkov",
+        "https://x.com/danokhlopkov",
+        "https://github.com/ohld",
+        "https://static-preview.okhlopkov.com",
+        "https://youtube.com/@danokhlopkov",
+        "https://instagram.com/d7733o",
+        "https://www.linkedin.com/in/danokhlopkov/",
+        "https://habr.com/ru/users/danokhlopkov/"
+      ],
+      "knowsAbout": [
+        "AI Agents",
+        "Blockchain Analytics",
+        "TON",
+        "Telegram Bots",
+        "Data Engineering",
+        "x402 Agent Economy"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Moscow Institute of Physics and Technology"
+      },
+      "mainEntityOfPage": "https://static-preview.okhlopkov.com/blog/ai-tools-for-designers-design-engineering-agents/"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9Z5T725JJD');
+    </script>
+    <script>
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(46266270, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <script>
+      // SPA GitHub Pages decode — paired with public/404.html (rafgraph/spa-github-pages)
+      // Restores the real path that the user requested before the 404 redirect.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, '',
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-Bm98NCdl.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-KCoNoREv.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code",
+  "description": "Разбор стрима про design engineering: как дизайнерам работать с AI-агентами, почему появляется AI-slop, зачем нужны design tokens, Paper, Mobbin MCP и хороший контекст для Codex/Claude Code.",
+  "datePublished": "2026-05-25",
+  "dateModified": "2026-05-25",
+  "author": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "image": "https://i.ytimg.com/vi/fIEMOzz0_AI/hqdefault.jpg",
+  "mainEntityOfPage": "https://static-preview.okhlopkov.com/blog/ai-tools-for-designers-design-engineering-agents/",
+  "inLanguage": "ru",
+  "video": {
+    "@type": "VideoObject",
+    "name": "ИИ не вывозит норм дизайн или это skill issue? | Подкаст «Мой AI сетап»",
+    "thumbnailUrl": [
+      "https://i.ytimg.com/vi/fIEMOzz0_AI/hqdefault.jpg"
+    ],
+    "uploadDate": "2026-05-21",
+    "embedUrl": "https://www.youtube.com/embed/fIEMOzz0_AI",
+    "url": "https://www.youtube.com/watch?v=fIEMOzz0_AI"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://static-preview.okhlopkov.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://static-preview.okhlopkov.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI-инструменты для дизайнеров",
+      "item": "https://static-preview.okhlopkov.com/blog/ai-tools-for-designers-design-engineering-agents/"
+    }
+  ]
+}
+</script>
+  </head>
+  <body>
+    <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <div id="root"><header><h1>AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code</h1></header><article><blockquote>
+<p>Разбор стрима про design engineering: как дизайнерам работать с AI-агентами, почему появляется AI-slop, зачем нужны design tokens, Paper, Mobbin MCP и хороший контекст для Codex/Claude Code.</p>
+</blockquote>
+<p>Last updated: 2026-05-25</p>
+<p><img src="https://i.ytimg.com/vi/fIEMOzz0_AI/hqdefault.jpg" alt="YouTube thumbnail: ИИ не вывозит норм дизайн или это skill issue?" loading="lazy" /></p>
+<p>YouTube source: <a href="https://www.youtube.com/watch?v=fIEMOzz0_AI">ИИ не вывозит норм дизайн или это skill issue?</a></p>
+<h2>Коротко</h2>
+<ul>
+<li>Дизайнеру уже мало просто рисовать в Figma: ценность сдвигается к prototype-first и code-aware работе.</li>
+<li>AI-агентам нужен не магический промпт, а контекст: tokens, states, references, constraints и критерии вкуса.</li>
+<li>Главный враг — AI-slop: generic карточки, случайные gradients, непонятная иерархия и отсутствие живого feedback.</li>
+</ul>
+<h2>Что реально поменялось</h2>
+<p>Разговор был не про то, что AI «заменит дизайнеров». Скорее наоборот: становится ценнее человек, который умеет соединять вкус, продуктовую задачу и код.</p>
+<p>Design engineer — это не фронтендер с красивыми кнопками и не дизайнер, который случайно открыл Cursor. Это роль на стыке: быстро собрать прототип, понять ограничения интерфейса, дать агенту нормальный контекст и довести идею ближе к работающему продукту.</p>
+<blockquote>
+<p>Команда «сделай красиво» почти всегда проигрывает хорошему контексту.</p>
+</blockquote>
+<h2>Почему агенты делают AI-slop</h2>
+<p>Codex, Claude Code, Lovable, v0 и похожие инструменты умеют быстро собрать интерфейс. Проблема в том, что без ограничений они тянут усреднённый интернет: одинаковые карточки, случайную типографику, декоративные блоки и визуальный шум.</p>
+<p>Практический вывод: агенту нужно дать не только задачу, но и язык дизайна: семантические токены, состояния компонентов, анти-референсы, примеры хороших flow и критерии, по которым результат считается готовым.</p>
+<h2>Инструменты и где они полезны</h2>
+<table><thead><tr><th>Инструмент</th><th>Для чего</th><th>Риск</th></tr></thead><tbody><tr><td>Paper</td><td>Design-to-code и импорт живых сайтов ближе к HTML/CSS модели.</td><td>Не заменяет продуктовую логику и responsive states.</td></tr><tr><td>Mobbin MCP</td><td>Реальные UX-референсы для onboarding, paywall, checkout, settings.</td><td>Можно скопировать паттерн без понимания контекста.</td></tr><tr><td>Codex / Claude Code</td><td>Сборка route, ревью, перенос UI в код, работа с существующим проектом.</td><td>Без дизайн-системы быстро скатываются в generic UI.</td></tr></tbody></table>
+<h2>Промпт, который можно дать агенту</h2>
+<pre><code>Ты помогаешь сделать frontend экран не похожим на AI-slop.
+
+Контекст:
+- пользователь: [кто открывает экран]
+- задача: [что он должен сделать]
+- продуктовый риск: [что нельзя сломать]
+- референсы: [2-5 ссылок или описаний]
+
+Правила:
+1. Используй semantic tokens: text-primary, text-secondary, bg, surface-100, border, accent.
+2. Покажи empty/loading/error/success states.
+3. Не добавляй декоративные карточки без функции.
+4. Добавь micro-interactions только там, где они дают feedback.
+5. Перед финалом проверь mobile и desktop viewport.</code></pre>
+<h2>Что делать дальше</h2>
+<ol>
+<li>Собрать <code>design.md</code> для проекта: tokens, typography, spacing, radius, components, anti-patterns.</li>
+<li>Для каждого нового UI task давать агенту не только задачу, но и референсы.</li>
+<li>Проверять mobile/desktop, empty/loading/error states и микроинтеракции до финала.</li>
+<li>Сохранять созвоны, решения и дизайн-обсуждения как будущую память для агентов.</li>
+</ol>
+<h2>Source pack</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=fIEMOzz0_AI">YouTube-запись стрима</a></li>
+<li><a href="https://paper.design/">Paper</a> и <a href="https://paper.design/docs/mcp">Paper MCP</a></li>
+<li><a href="https://mobbin.com/mcp">Mobbin MCP</a></li>
+<li><a href="https://github.com/emilkowalski/skill">Agents with Taste skill</a></li>
+</ul>
+<h2>Дальше по теме</h2>
+<ul>
+<li><a href="/ai-agents/">AI Agents hub</a></li>
+<li><a href="/ai-course/">AI Agents курс</a></li>
+<li><a href="/claude-code-nastrojka-mcp-hooks-skills-2026/">Мой сетап Claude Code 2026</a></li>
+<li><a href="/luchshie-skills-mcp-claude-code-agent-browser/">Лучшие skills и MCP для Claude Code</a></li>
+</ul></article><nav><a href="/">Главная</a> · <a href="/about/">Обо мне</a> · <a href="/blog/">Блог</a> · <a href="/posts/">Посты</a> · <a href="/ai-agents/">AI Agents</a> · <a href="/ai-course/">Курс</a> · <a href="/work-together/">Го поработаем</a> · <a href="/en/">English</a> · <a href="/privacy/">Privacy</a></nav><footer><a href="https://t.me/danokhlopkov" rel="me">Telegram</a> · <a href="https://youtube.com/@danokhlopkov" rel="me">YouTube</a> · <a href="https://instagram.com/d7733o" rel="me">Instagram</a> · <a href="https://x.com/danokhlopkov" rel="me">X</a> · <a href="https://www.linkedin.com/in/danokhlopkov/" rel="me">LinkedIn</a> · <a href="https://github.com/ohld" rel="me">GitHub</a></footer></div>
+  </body>
+</html>

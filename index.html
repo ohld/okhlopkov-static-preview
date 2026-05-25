@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Даниил Охлопков — AI-агенты, данные, TON и Telegram</title>
+    <meta name="description" content="Практические разборы AI-агентов, Claude Code, Codex, MCP, TON-аналитики и Telegram-автоматизаций от Даниила Охлопкова." />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://telegram.org https://www.googletagmanager.com https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org https://ohldbot.swanrate.com https://www.google-analytics.com https://mc.yandex.ru wss://mc.yandex.ru;" />
+    <meta name="yandex-verification" content="1b82de56693018c1" />
+    <meta name="yandex-verification" content="3553f1209d48d2c4" />
+    <link rel="canonical" href="https://static-preview.okhlopkov.com/" />
+    <link rel="alternate" hreflang="ru" href="https://static-preview.okhlopkov.com/" />
+    <link rel="alternate" hreflang="en" href="https://static-preview.okhlopkov.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://static-preview.okhlopkov.com/" />
+    <link rel="icon" href="/favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="alternate" type="text/markdown" href="/llms.txt" /><!-- alternate-md -->
+    <meta property="og:title" content="Даниил Охлопков — AI-агенты, данные, TON и Telegram" />
+    <meta property="og:description" content="Практические разборы AI-агентов, Claude Code, Codex, MCP, TON-аналитики и Telegram-автоматизаций от Даниила Охлопкова." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://static-preview.okhlopkov.com/" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="https://github.com/ohld.png" />
+    <meta property="og:image:alt" content="Даниил Охлопков" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Даниил Охлопков — AI-агенты, данные, TON и Telegram" />
+    <meta name="twitter:description" content="Практические разборы AI-агентов, Claude Code, Codex, MCP, TON-аналитики и Telegram-автоматизаций от Даниила Охлопкова." />
+    <meta name="twitter:image" content="https://github.com/ohld.png" />
+    <meta name="twitter:image:alt" content="Даниил Охлопков" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://static-preview.okhlopkov.com/#person",
+      "name": "Даниил Охлопков",
+      "alternateName": "Daniil Okhlopkov",
+      "description": "Head of Analytics @ TON Foundation. Пишу про AI-агентов, данные и крипту. Forbes 30 Under 30 Russia (2022). Бывший CTO Via Protocol ($1.5B annual volume), фаундер InstaBot и Shazam-ботсетей (13.7M юзеров).",
+      "jobTitle": "Head of Analytics",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "TON Foundation",
+        "url": "https://ton.org"
+      },
+      "url": "https://static-preview.okhlopkov.com/",
+      "image": "https://github.com/ohld.png",
+      "award": "Forbes 30 Under 30 Russia, 2022",
+      "sameAs": [
+        "https://t.me/danokhlopkov",
+        "https://x.com/danokhlopkov",
+        "https://github.com/ohld",
+        "https://static-preview.okhlopkov.com",
+        "https://youtube.com/@danokhlopkov",
+        "https://instagram.com/d7733o",
+        "https://www.linkedin.com/in/danokhlopkov/",
+        "https://habr.com/ru/users/danokhlopkov/"
+      ],
+      "knowsAbout": ["AI Agents", "Blockchain Analytics", "TON", "Telegram Bots", "Data Engineering", "x402 Agent Economy"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Moscow Institute of Physics and Technology"
+      }
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9Z5T725JJD');
+    </script>
+    <script>
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(46266270, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <script>
+      // SPA GitHub Pages decode — paired with public/404.html (rafgraph/spa-github-pages)
+      // Restores the real path that the user requested before the 404 redirect.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, '',
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-Bm98NCdl.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-KCoNoREv.css">
+  </head>
+  <body>
+    <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <div id="root"><header><h1>Даниил Охлопков</h1></header><article><blockquote>
+<p>Head of Analytics @ TON Foundation. AI-агенты, on-chain аналитика, Telegram/TON, лучшие посты и консалтинг.</p>
+</blockquote>
+<h2>Коротко</h2>
+<p>Я Даниил Охлопков. Сейчас веду аналитику в TON Foundation: on-chain данные, Dune, research, метрики экосистемы и инструменты, которые помогают людям быстрее понимать блокчейн. До этого был CTO Via Protocol, строил data platform для VC, делал Telegram-ботов и попал в Forbes 30 Under 30 Russia.</p>
+<p>Этот сайт — входная точка во всё, что я публикую: бесплатный курс по AI-агентам, лучшие посты из Telegram, рабочие форматы для консалтинга и ссылки на соцсети. Если нужно понять, чем я занимаюсь и где со мной пересечься, здесь меньше шума, чем в ленте.</p>
+<h2>Фокус</h2>
+<h3>AI-агенты</h3>
+<p>Пишу и собираю реальные флоу с Claude Code, MCP, Obsidian и локальными автоматизациями. Не про магию в промптах, а про то, как агентам давать контекст, задачи, ревью и рабочий контур.</p>
+<h3>TON и данные</h3>
+<p>В TON Foundation занимаюсь аналитикой, on-chain research и инструментами для аналитиков. Мне интересны понятные метрики, нормальные датасеты и инфраструктура, на которой можно принимать продуктовые решения.</p>
+<h3>Telegram ecosystem</h3>
+<p>Давно живу внутри Telegram: боты, Mini Apps, каналы, Ads, TG+TON связки. До TON строил ботовые продукты с миллионами пользователей и до сих пор смотрю на Telegram как на самый живой интерфейс для AI.</p>
+<h2>Что открыть</h2>
+<p>Если ты пришёл за практикой — начинай с AI Agents хаба, блога и курса. Если нужен бэкграунд — открой «Обо мне». Если хочешь быстро понять мой стиль мышления, лучше всего работают топовые посты: там AI, стартапы, TON, Telegram и немного личного опыта без корпоративного слопа.</p>
+<h2>С чего начать</h2>
+<p>Для AI-агентов я собрал маршрут из своих постов, стримов и лонгридов: от «что вообще поменялось» до конкретных рабочих флоу с Claude Code, plan mode, worktrees, MCP и личным вторым мозгом в Obsidian. Это не академический курс, а набор материалов, после которого можно пойти и навайбкодить что-то живое.</p>
+<p>Для TON и данных я чаще показываю подход: как смотреть на экосистему через метрики, где искать источники, как не путать красивый график с выводом и почему нормальная аналитика начинается с вопроса, а не с SQL. Для Telegram — пишу про распределение, Mini Apps, ботов, каналы и то, как AI постепенно становится нормальным пользовательским интерфейсом.</p>
+<p>Если нужен не контент, а работа руками, есть отдельная страница «Го поработаем»: консалтинг по AI-агентам, web3/TON, Telegram и рекламе в канале. Обычно я полезен там, где нужно быстро собрать картину, превратить хаос в план и довести до первого живого прототипа.</p>
+<p>Основная лента у меня в Telegram: там быстрые мысли, тесты инструментов, ссылки и рабочие заметки. YouTube — для разговоров и стримов с людьми, которые реально используют AI в работе. X — международный контекст про crypto, AI и data. Instagram живёт отдельно: больше личного и travel, меньше профессиональной инфы. Я не пытаюсь тащить одно и то же во все сети; каждая площадка нужна под свой формат, а сайт остаётся картой evergreen материалов, которые не должны утонуть в ленте.</p>
+<h2>Видео</h2>
+<p><a href="/blog/ai-tools-for-designers-design-engineering-agents/">AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code</a> — статья на основе подкаста про design engineering, AI-агентов, Figma/Paper-to-code, design tokens и борьбу с AI-slop.</p>
+<p><a href="https://www.youtube.com/watch?v=E3P0a03mN8A">Отдал свой бизнес AI агенту в свой отпуск</a> — Claude Code, Paperclip, gstack и практика agent-first работы.</p></article><nav><a href="/">Главная</a> · <a href="/about/">Обо мне</a> · <a href="/blog/">Блог</a> · <a href="/posts/">Посты</a> · <a href="/ai-agents/">AI Agents</a> · <a href="/ai-course/">Курс</a> · <a href="/work-together/">Го поработаем</a> · <a href="/en/">English</a> · <a href="/privacy/">Privacy</a></nav><footer><a href="https://t.me/danokhlopkov" rel="me">Telegram</a> · <a href="https://youtube.com/@danokhlopkov" rel="me">YouTube</a> · <a href="https://instagram.com/d7733o" rel="me">Instagram</a> · <a href="https://x.com/danokhlopkov" rel="me">X</a> · <a href="https://www.linkedin.com/in/danokhlopkov/" rel="me">LinkedIn</a> · <a href="https://github.com/ohld" rel="me">GitHub</a></footer></div>
+  </body>
+</html>

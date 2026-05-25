@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://static-preview.okhlopkov.com/sitemap.xml

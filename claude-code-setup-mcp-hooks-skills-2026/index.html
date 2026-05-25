@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Claude Code Setup After 4 Months of Daily Use (2026)</title>
+  <meta name="description" content="My daily Claude Code config: MCP servers, custom hooks, skills, and real costs. Practitioner setup, not rewritten docs." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://static-preview.okhlopkov.com/claude-code-setup-mcp-hooks-skills-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="My Claude Code Setup After 4 Months of Daily Use (2026)" />
+  <meta property="og:description" content="My daily Claude Code config: MCP servers, custom hooks, skills, and real costs. Practitioner setup, not rewritten docs." />
+  <meta property="og:url" content="https://static-preview.okhlopkov.com/claude-code-setup-mcp-hooks-skills-2026/" />
+  <meta property="og:image" content="https://okhlopkov.com/content/images/2026/02/claude-code-setup-mcp-hooks-skills-2026.png" />
+  <meta property="article:published_time" content="2026-02-23T10:04:17.000Z" />
+  <meta property="article:modified_time" content="2026-05-25T00:00:00+03:00" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Claude Code Setup After 4 Months of Daily Use (2026)" />
+  <meta name="twitter:description" content="My daily Claude Code config: MCP servers, custom hooks, skills, and real costs. Practitioner setup, not rewritten docs." />
+  <meta name="twitter:image" content="https://okhlopkov.com/content/images/2026/02/claude-code-setup-mcp-hooks-skills-2026.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My Claude Code Setup After 4 Months of Daily Use (2026)",
+  "description": "My daily Claude Code config: MCP servers, custom hooks, skills, and real costs. Practitioner setup, not rewritten docs.",
+  "image": "https://okhlopkov.com/content/images/2026/02/claude-code-setup-mcp-hooks-skills-2026.png",
+  "datePublished": "2026-02-23T10:04:17.000Z",
+  "dateModified": "2026-05-25T00:00:00+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "mainEntityOfPage": "https://static-preview.okhlopkov.com/claude-code-setup-mcp-hooks-skills-2026/",
+  "inLanguage": "en"
+}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9Z5T725JJD');
+  </script>
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(46266270, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  </script>
+  <style>
+    :root { --bg:#F5F5F0; --text:#1A1A1A; --accent:#5F6F85; --border:rgba(26,26,26,.14); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-underline-offset:3px; }
+    .legacy-shell { max-width:820px; margin:0 auto; padding:20px 24px 56px; }
+    .legacy-top { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:0 0 28px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    .legacy-nav { display:flex; flex-wrap:wrap; gap:12px; }
+    .legacy-note { border:1px solid var(--border); border-radius:4px; padding:14px 16px; margin:0 0 28px; font-size:14px; color:rgba(26,26,26,.72); }
+    .legacy-note p { margin:0; }
+    .legacy-note p + p { margin-top:6px; }
+    .legacy-article :is(h1,h2,h3) { line-height:1.15; letter-spacing:0; }
+    .legacy-article h1 { font-size:38px; margin:0 0 16px; }
+    .legacy-article h2 { font-size:25px; margin:42px 0 12px; }
+    .legacy-article h3 { font-size:19px; margin:28px 0 10px; }
+    .legacy-article p, .legacy-article li { font-size:18px; }
+    .legacy-article img { max-width:100%; height:auto; border-radius:4px; }
+    .legacy-article pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:4px; background:rgba(255,255,255,.45); }
+    .legacy-article code { font-family:'JetBrains Mono','SF Mono',monospace; font-size:.9em; }
+    .legacy-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    @media (max-width:640px) { .legacy-shell { padding:16px 18px 40px; } .legacy-article h1 { font-size:30px; } .legacy-article p, .legacy-article li { font-size:16px; } }
+  </style>
+</head>
+<body>
+  <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <div class="legacy-shell">
+    <header class="legacy-top">
+      <a href="/">okhlopkov.com</a>
+      <nav class="legacy-nav" aria-label="Site">
+        <a href="/">RU</a>
+        <a href="/en/">EN</a>
+        <a href="/ai-agents/">AI Agents</a>
+        <a href="/posts/">Posts</a>
+      </nav>
+    </header>
+    <div class="legacy-note">
+      <p>Static migration update: 2026-05-25. This indexed URL is preserved from the previous Ghost version of okhlopkov.com.</p>
+      <p>Original Ghost modified date: 2026-02-23T10:04:30.000Z.</p>
+    </div>
+    <main class="legacy-article"><article class="article post tag-claude-code tag-ai-tools-2 tag-tutorial ">
+
+    <header class="article-header gh-canvas">
+
+        <div class="article-tag post-card-tags">
+                <span class="post-card-primary-tag">
+                    <a href="/tag/claude-code/">claude-code</a>
+                </span>
+        </div>
+
+        <h1 class="article-title">My Claude Code Setup in 2026: MCP Servers, Hooks, Skills, and What I Actually Use</h1>
+
+
+        <div class="article-byline">
+        <section class="article-byline-content">
+
+            <ul class="author-list instapaper_ignore">
+                <li class="author-list-item">
+                    <a href="/author/okhlopkov/" class="author-avatar" aria-label="Read more of Daniil Okhlopkov">
+                        <img class="author-profile-image" src="/content/images/size/w100/2024/10/Dan-Okhlopkov-LinkedIn.jpeg" alt="Daniil Okhlopkov" />
+                    </a>
+                </li>
+            </ul>
+
+            <div class="article-byline-meta">
+                <h4 class="author-name"><a href="/author/okhlopkov/">Daniil Okhlopkov</a></h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="2026-02-23">23 Feb 2026</time>
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> 7 min read</span>
+                </div>
+            </div>
+
+        </section>
+        </div>
+
+            <figure class="article-image">
+                <img
+                    srcset="/content/images/size/w300/2026/02/claude-code-setup-mcp-hooks-skills-2026.png 300w,
+                            /content/images/size/w600/2026/02/claude-code-setup-mcp-hooks-skills-2026.png 600w,
+                            /content/images/size/w1000/2026/02/claude-code-setup-mcp-hooks-skills-2026.png 1000w,
+                            /content/images/size/w2000/2026/02/claude-code-setup-mcp-hooks-skills-2026.png 2000w"
+                    sizes="(min-width: 1400px) 1400px, 92vw"
+                    src="/content/images/size/w2000/2026/02/claude-code-setup-mcp-hooks-skills-2026.png"
+                    alt="My Claude Code Setup in 2026: MCP Servers, Hooks, Skills, and What I Actually Use"
+                />
+            </figure>
+
+    </header>
+
+    <section class="gh-content gh-canvas">
+        <p>Claude Code is Anthropic's AI agent that runs in your terminal. It reads your files, runs shell commands, browses the web, and calls APIs. You type what you want, it figures out the how. I've been using it daily for 4 months, and this is my actual setup — not a tutorial rewritten from docs, but how I work.</p><h2 id="what-claude-code-actually-is-and-isnt">What Claude Code Actually Is (and Isn't)</h2><p>Claude Code is not a chatbot. It's not autocomplete. It's basically a <code>while True</code> loop in your terminal — the agent gets a task, picks a tool, runs it, looks at what happened, figures out the next move. Keeps going until done or until it gets stuck and asks you.</p><p>The tools are real: file access, <code>bash</code>, web search, MCP servers. No IDE in between. You <code>cd</code> into your project, type <code>claude</code>, and that's it — you're talking to something that can see your entire codebase and actually do things with it.</p><p>Pricing: $20/month gets you the Pro plan with limited usage. $100/month (Max) is unlimited — that's what I use. There's no free tier for Claude Code specifically. You need a Claude subscription, then install it via <code>npm install -g @anthropic-ai/claude-code</code>.</p><h2 id="how-i-use-claude-code-daily">How I Use Claude Code Daily</h2><p>My daily workflow looks nothing like traditional coding. I record a voice note in Telegram describing what I need. My server agent (Claude Code running 24/7 on a Hetzner VPS) picks it up, reads the voice transcription, and starts working.</p><p>For analytics work, I describe the research question and agent just goes. Writes SQL for Dune Analytics, pulls the data, makes charts, puts together a report. What used to be 3-4 hours of me writing SQL and formatting stuff is now 20 minutes of talking and reviewing.</p><p>For code — same thing. I describe what I need, it reads the files, writes the code, runs tests, commits. I look at the diff. Usually accept. Sometimes push back on something in plain English.</p><p>Before Claude Code, I'd have 15 browser tabs open: docs, Stack Overflow, GitHub issues, API references. Now I have one terminal window. The agent reads the docs for me.</p><h2 id="my-claudemd-%E2%80%94-the-file-that-makes-it-work">My CLAUDE.md — The File That Makes It Work</h2><p>Every Claude Code project has a <code>CLAUDE.md</code> file in the root. When the agent starts, it reads this file first. Think of it as an operating system for your agent, not a prompt.</p><p>Here's part of mine (106 lines total):</p><pre><code># Personal Obsidian Vault
+
+## Architecture
+- **Keep files short** (&lt;150 lines). Use [[links]] for navigation.
+- **AI never edits raw content.** Voice notes stay pristine.
+
+## Voice Messages
+When receiving a voice note:
+- If about a specific project → save to: projects/X/ai-docs/
+- If personal → save to: personal/diary/
+
+Then:
+1. Add tags and project links below raw text
+2. Extract TODOs → project-specific tasks.md
+3. Facts about projects → projects/X/overview.md</code></pre><p>This file routes everything. Voice notes, tasks, credentials, project structure — the agent figures out where stuff goes based on these rules. I update it maybe once a week when something in my workflow changes.</p><p>The key insight: <code>CLAUDE.md</code> is not about telling the agent what it <em>is</em>. It's about telling the agent how your world <em>works</em>. Project structure, naming conventions, where things live, what to never touch. I wrote more about this pattern in <a href="https://okhlopkov.com/second-brain-obsidian-claude-code/">Building a Second Brain with Obsidian and Claude Code</a>.</p><h2 id="mcp-servers-i-use-daily">MCP Servers I Use Daily</h2><p>MCP (Model Context Protocol) lets Claude Code talk to external services. You define servers in <code>.mcp.json</code>, and the agent gets new tools — basically giving it extra capabilities beyond just reading files and running bash.</p><p>Here's my actual <code>.mcp.json</code>:</p><pre><code>{
+  "mcpServers": {
+    "coolify": {
+      "command": "npx",
+      "args": ["-y", "@masonator/coolify-mcp"],
+      "env": {
+        "COOLIFY_ACCESS_TOKEN": "${COOLIFY_ACCESS_TOKEN}",
+        "COOLIFY_BASE_URL": "${COOLIFY_BASE_URL}"
+      }
+    },
+    "telegram": {
+      "command": "python",
+      "args": ["telegram_mcp_proxy.py"],
+      "env": {}
+    }
+  }
+}</code></pre><p><strong>Coolify MCP</strong> — my deployment server. The agent can deploy apps, restart services, check logs, manage databases. When I update the agent's own config, it redeploys itself. An AI agent that deploys itself to production.</p><p><strong>Telegram MCP</strong> — full Telegram access. Read messages, send replies, manage channels. My server agent uses this to answer questions in my Telegram channel discussion while I sleep.</p><p>I also use <strong>Codex MCP</strong> for dual-model review. Claude writes a plan, sends it to OpenAI's Codex for an independent review, then incorporates the feedback. Two AI agents cross-checking each other. I wrote about this setup in <a href="https://okhlopkov.com/en-claude-codex-dual-review/">Claude Code + Codex Dual Review</a>.</p><h2 id="skills-%E2%80%94-markdown-that-gives-your-agent-superpowers">Skills — Markdown That Gives Your Agent Superpowers</h2><p>A skill is a <code>.md</code> file in <code>~/.claude/skills/</code>. No SDK, no API, no build step. You write instructions in markdown, and Claude Code follows them when relevant.</p><p>Skills I've built:</p><ul><li><strong>ton-analyst</strong> — writes Dune SQL queries for TON blockchain analysis. Knows the schema, the gotchas (like filtering <code>direction = 'in'</code> to avoid double-counting messages), and how to poll the Dune API for results.</li><li><strong>ton-profiler</strong> — investigates TON wallet connections. Calls our internal API, builds graph data, identifies clusters of related addresses.</li><li><strong>crosspost</strong> — publishes content across Telegram, Ghost blog, Twitter/X in three languages (RU, EN, CN).</li></ul><p>The skill file for ton-analyst is about 200 lines of markdown. It includes SQL templates, API endpoints, common mistakes to avoid, and example queries. No code — just instructions that the agent interprets and executes.</p><p>I made a lot of mistakes building these. If you're starting, read <a href="https://okhlopkov.com/en-write-claude-code-skills-7-mistakes/">7 Common Mistakes When Writing Claude Code Skills</a> first.</p><h2 id="hooks-%E2%80%94-code-that-runs-on-every-action">Hooks — Code That Runs on Every Action</h2><p>Hooks are shell commands that fire automatically on specific events inside Claude Code. Before a commit, after a tool call, when the agent tries to edit certain files — you can intercept pretty much anything.</p><p>Example from my setup — a pre-commit hook that prevents the agent from committing sensitive files:</p><pre><code># .claude/hooks/pre-commit.sh
+# Block commits that include credential files
+if git diff --cached --name-only | grep -qE '\.(env|key|pem)$|creds\.md'; then
+  echo "BLOCKED: Attempting to commit sensitive files"
+  exit 1
+fi</code></pre><p>This is what makes it possible to run Claude Code unattended. My server agent works 24/7 and I don't worry about it leaking credentials or pushing to the wrong branch — because hooks won't let it.</p><h2 id="subagents-and-teams">Subagents and Teams</h2><p>Claude Code can spawn sub-agents — think of it as a lead who delegates. The main agent splits the work, launches a few workers, and they all run in parallel with their own context windows.</p><p>I use this for blockchain research. The lead agent gets a question like "analyze this wallet's activity over the last 30 days." It spawns:</p><ul><li>A data agent that writes and runs SQL queries on Dune</li><li>A profiling agent that checks our internal wallet database</li><li>A report agent that takes both outputs and builds the final analysis</li></ul><p>Three agents working in parallel, each with their own context. The lead coordinates. What would take me half a day finishes in 15 minutes.</p><p>Teams take this further — multiple named agents with persistent task lists, working on a shared project. I've used teams for large research reports where one agent gathers data, another writes sections, and a third does quality review.</p><h2 id="claude-code-vs-cursor-%E2%80%94-when-i-use-each">Claude Code vs Cursor — When I Use Each</h2><p>I still have Cursor installed. Here's when I use what:</p><p><strong>Cursor wins for:</strong></p><ul><li>Quick inline edits — you see the code, highlight a block, ask for a change. Visual and fast.</li><li>Exploring unfamiliar codebases — Cursor's UI lets you click through files while the AI explains things.</li><li>When you know exactly what you want changed and where — pointing is faster than describing.</li></ul><p><strong>Claude Code wins for:</strong></p><ul><li>Anything that needs more than just editing code — if the task involves bash, API calls, file reads, and edits all together, Cursor can't really do that.</li><li>Autonomous workflows — background agents, server deployments, scheduled tasks. Cursor needs you sitting in front of it.</li><li>Large-scale changes — refactoring across 20 files, running tests after each change, fixing what breaks. The terminal is faster than the GUI for this.</li><li>Integration with external systems — MCP servers let the agent talk to Telegram, deploy to production, query databases. Cursor's tool integration is more limited.</li></ul><p>My ratio: 90% Claude Code, 10% Cursor. But that's because most of my work is data analysis and agent orchestration, not UI development. If I was building React components all day, Cursor would probably win.</p><h2 id="costs-%E2%80%94-is-100month-worth-it">Costs — Is $100/Month Worth It?</h2><p>Claude Pro ($20/month) gives you limited Claude Code access. Good for trying it out, learning the workflow, running simple tasks. You'll hit rate limits on heavy days.</p><p>Claude Max ($100/month) removes the limits. I switched after 2 weeks on Pro because I was hitting the ceiling daily. At $100, I never think about usage — I just use it.</p><p>Is it worth it? My time at work costs way more than $50/hour. If the tool saves me even 2 hours a month it's already paid for. And honestly it saves me closer to 2 hours per <em>day</em>. SQL queries alone used to eat hours. Now the agent handles data formatting, charts, report writing — all of it.</p><p>Real numbers from February 2026: I ran the agent for a blockchain research project that produced a 30-page report with 15 charts and 40+ SQL queries. Doing this manually would have taken me a full work week. The agent did it in one evening while I reviewed the output.</p><h2 id="the-second-brain-pattern">The Second Brain Pattern</h2><p>Everything above connects through one idea: the agent lives inside my Obsidian vault. My notes, project files, tasks, voice transcripts — they're all in one directory. Claude Code reads them and <em>knows</em> what I'm working on, what's pending, and how my projects are structured.</p><p>I call it a "second brain" because that's literally what it is. I dump thoughts into voice notes, the agent organizes them. I have ideas at 2am, the agent picks them up in the morning. My project context is never lost — it's in markdown files that both the agent and I can read.</p><p>The deeper version of this — packaging your entire professional identity into a format AI can work with — is what I wrote about in <a href="https://okhlopkov.com/dania-zip-packaging-yourself-for-ai/">dania.zip: Packaging Yourself for AI Agents</a>.</p><h2 id="what-this-actually-changed">What This Actually Changed</h2><p>Four months in, the biggest shift isn't productivity. It's that I stopped context-switching. I used to juggle between SQL editor, terminal, browser, Slack, Notion, and my code editor. Now I sit in one terminal and describe what I need. The agent handles the rest.</p><p>I'm not writing less code — I'm writing <em>no</em> code for most tasks. Agent writes, I review. The job became less about typing and more about knowing what needs to exist and wether it's correct.</p><p>If you want the full deep dive into my workflow, start with <a href="https://okhlopkov.com/claude-code-workflow-2026/">my workflow post</a>. For the Obsidian integration, see <a href="https://okhlopkov.com/second-brain-obsidian-claude-code/">the second brain post</a>. And if you want to build skills, <a href="https://okhlopkov.com/en-write-claude-code-skills-7-mistakes/">start here</a>.</p><hr><p><em>Daniil Okhlopkov — Head of Analytics at TON Foundation. Building AI agent workflows, blockchain analytics tools, and writing about it.</em></p><p><a href="https://t.me/danokhlopkov?ref=okhlopkov.com">Telegram</a> · <a href="https://x.com/danokhlopkov?ref=okhlopkov.com">Twitter/X</a> · <a href="https://youtube.com/@danokhlopkov?ref=okhlopkov.com">YouTube</a> · <a href="https://instagram.com/d7733o?ref=okhlopkov.com">Instagram</a></p>
+    </section>
+
+
+</article></main>
+    <footer class="legacy-footer">
+      <a href="/">Home</a>
+      <a href="https://t.me/danokhlopkov">Telegram</a>
+      <a href="https://x.com/danokhlopkov">X</a>
+      <a href="https://github.com/ohld">GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>

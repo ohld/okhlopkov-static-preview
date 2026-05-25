@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-агенты: Claude Code, Codex, MCP и практические гайды</title>
+    <meta name="description" content="Практический хаб Даниила Охлопкова про AI-агентов: Claude Code, Codex, MCP, skills, Obsidian, browser agents и рабочие флоу без AI-слопа." />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://telegram.org https://www.googletagmanager.com https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org https://ohldbot.swanrate.com https://www.google-analytics.com https://mc.yandex.ru wss://mc.yandex.ru;" />
+    <meta name="yandex-verification" content="1b82de56693018c1" />
+    <meta name="yandex-verification" content="3553f1209d48d2c4" />
+    <link rel="canonical" href="https://static-preview.okhlopkov.com/ai-agents/" />
+    <link rel="icon" href="/favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="alternate" hreflang="ru" href="https://static-preview.okhlopkov.com/ai-agents/" />
+    <link rel="alternate" hreflang="x-default" href="https://static-preview.okhlopkov.com/ai-agents/" />
+    <link rel="alternate" type="text/markdown" href="/ai-agents.md" /><!-- alternate-md -->
+    <meta property="og:title" content="AI-агенты: Claude Code, Codex, MCP и практические гайды" />
+    <meta property="og:description" content="Практический хаб Даниила Охлопкова про AI-агентов: Claude Code, Codex, MCP, skills, Obsidian, browser agents и рабочие флоу без AI-слопа." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://static-preview.okhlopkov.com/ai-agents/" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="https://github.com/ohld.png" />
+    <meta property="og:image:alt" content="Даниил Охлопков" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="AI-агенты: Claude Code, Codex, MCP и практические гайды" />
+    <meta name="twitter:description" content="Практический хаб Даниила Охлопкова про AI-агентов: Claude Code, Codex, MCP, skills, Obsidian, browser agents и рабочие флоу без AI-слопа." />
+    <meta name="twitter:image" content="https://github.com/ohld.png" />
+    <meta name="twitter:image:alt" content="Даниил Охлопков" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://static-preview.okhlopkov.com/#person",
+      "name": "Даниил Охлопков",
+      "alternateName": "Daniil Okhlopkov",
+      "description": "Head of Analytics @ TON Foundation. Пишу про AI-агентов, данные и крипту. Forbes 30 Under 30 Russia (2022). Бывший CTO Via Protocol ($1.5B annual volume), фаундер InstaBot и Shazam-ботсетей (13.7M юзеров).",
+      "jobTitle": "Head of Analytics",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "TON Foundation",
+        "url": "https://ton.org"
+      },
+      "url": "https://static-preview.okhlopkov.com/",
+      "image": "https://github.com/ohld.png",
+      "award": "Forbes 30 Under 30 Russia, 2022",
+      "sameAs": [
+        "https://t.me/danokhlopkov",
+        "https://x.com/danokhlopkov",
+        "https://github.com/ohld",
+        "https://static-preview.okhlopkov.com",
+        "https://youtube.com/@danokhlopkov",
+        "https://instagram.com/d7733o",
+        "https://www.linkedin.com/in/danokhlopkov/",
+        "https://habr.com/ru/users/danokhlopkov/"
+      ],
+      "knowsAbout": [
+        "AI Agents",
+        "Blockchain Analytics",
+        "TON",
+        "Telegram Bots",
+        "Data Engineering",
+        "x402 Agent Economy"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Moscow Institute of Physics and Technology"
+      },
+      "mainEntityOfPage": "https://static-preview.okhlopkov.com/ai-agents/"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9Z5T725JJD');
+    </script>
+    <script>
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(46266270, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <script>
+      // SPA GitHub Pages decode — paired with public/404.html (rafgraph/spa-github-pages)
+      // Restores the real path that the user requested before the 404 redirect.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, '',
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-Bm98NCdl.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-KCoNoREv.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "AI-агенты: Claude Code, Codex, MCP и практические гайды",
+  "description": "Практический хаб Даниила Охлопкова про AI-агентов: Claude Code, Codex, MCP, skills, Obsidian, browser agents и рабочие флоу без AI-слопа.",
+  "url": "https://static-preview.okhlopkov.com/ai-agents/",
+  "isPartOf": {
+    "@id": "https://static-preview.okhlopkov.com/#website"
+  },
+  "about": [
+    "AI agents",
+    "Claude Code",
+    "Codex",
+    "MCP",
+    "OpenClaw",
+    "Hermes Agent",
+    "Obsidian"
+  ],
+  "inLanguage": "ru"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://static-preview.okhlopkov.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AI-агенты",
+      "item": "https://static-preview.okhlopkov.com/ai-agents/"
+    }
+  ]
+}
+</script>
+  </head>
+  <body>
+    <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <div id="root"><header><h1>AI-агенты: Claude Code, Codex, MCP и практические гайды</h1></header><article><blockquote>
+<p>Практический хаб про AI-агентов: Claude Code, Codex, MCP, skills, Obsidian, browser agents и рабочие флоу без AI-слопа.</p>
+</blockquote>
+<p>Это не курс и не лента. Это индексируемая карта evergreen-материалов про AI-агентов: где агент реально делает работу, какие инструменты ему нужны, как не потерять контекст и как проверять результат.</p>
+<p>Курс остаётся отдельной подборкой постов: <a href="/ai-course/">/ai-course/</a>. Здесь будет карта тем, сравнений и будущих SEO-страниц: Claude Code, Codex, OpenClaw, Hermes Agent, MCP, skills, локальные модели, второй мозг и реальные бизнес-use cases.</p>
+<h2>Кластеры</h2>
+<h3>Claude Code и Codex</h3>
+<p>Сетапы, MCP, hooks, skills, compaction, dual review и рабочие флоу с агентами в коде.</p>
+<ul>
+<li><a href="/claude-code-nastrojka-mcp-hooks-skills-2026/">Мой сетап Claude Code 2026</a></li>
+<li><a href="/claude-code-setup-mcp-hooks-skills-2026/">My Claude Code Setup 2026</a></li>
+<li><a href="/claude-codex-dual-review/">Claude Code + Codex Dual Review</a></li>
+</ul>
+<h3>MCP, skills и agent-browser</h3>
+<p>Как давать агентам инструменты, браузер, контекст проекта и проверяемые процедуры вместо одного большого промпта.</p>
+<ul>
+<li><a href="/luchshie-skills-mcp-claude-code-agent-browser/">Лучшие skills и MCP для Claude Code</a></li>
+<li><a href="/telegram-mcp-server-kak-sdelat/">Telegram MCP server</a></li>
+<li><a href="/kak-pravilno-pisat-skilly-claude-code-7-oshibok/">Как писать skills без боли</a></li>
+</ul>
+<h3>Second brain и личный ассистент</h3>
+<p>Obsidian, личная база знаний, голосовые заметки и агент, который помогает не терять контекст.</p>
+<ul>
+<li><a href="/vtoroj-mozg-ai-assistent-obsidian-claude-code/">Второй мозг с Obsidian и Claude Code</a></li>
+<li><a href="/en-second-brain-obsidian-claude-code-assistant/">Second Brain with Obsidian and Claude Code</a></li>
+<li><a href="/ai-agent-na-servere-24-7/">Always-on AI agent server</a></li>
+</ul>
+<h3>AI-инструменты и свежие агенты</h3>
+<p>Обзоры инструментов, honest review, OpenClaw/Hermes/GStack идеи и будущие сравнения под long-tail запросы.</p>
+<ul>
+<li><a href="/ai-tools-march-2026-review/">AI tools March 2026 review</a></li>
+<li><a href="/ai-tools-setup-january-2026/">My AI dev tools in 2026</a></li>
+<li><a href="/ai-course/">AI Agents курс</a></li>
+</ul>
+<h2>Ближайшие страницы</h2>
+<p>Следующие SEO-кластеры: OpenClaw vs Hermes Agent, OpenClaw с Codex, Claude Code performance, MCP server setup, skills library, AI-agent browser automation, реальные use cases AI-агентов в компаниях.</p>
+<p>Первый новый blog/example page:</p>
+<ul>
+<li><a href="/blog/ai-tools-for-designers-design-engineering-agents/">AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code</a></li>
+</ul>
+<h2>Видео как source pack</h2>
+<p>Новые YouTube-видео не должны висеть только внешними ссылками. Их надо превращать в source packs для будущих <code>/blog/</code> статей: видео, transcript/summary, Telegram-анонсы, AI notes, ссылки из выпуска и enrichment из поиска/чатов.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=fIEMOzz0_AI">ИИ не вывозит норм дизайн или это skill issue?</a> — design engineering, AI-assisted frontend, Figma/Paper-to-code, design tokens, micro-interactions и борьба с AI-slop.</li>
+<li><a href="https://www.youtube.com/watch?v=E3P0a03mN8A">Отдал свой бизнес AI агенту в свой отпуск</a> — Claude Code, Paperclip, gstack и практика agent-first работы.</li>
+</ul>
+<h2>Короткие ответы</h2>
+<h3>С чего начать с AI-агентами?</h3>
+<p>Сначала выбрать один рабочий процесс, который уже повторяется: код-ревью, ресёрч, парсинг, подготовка отчёта, второй мозг. Дальше дать агенту контекст, инструменты и понятный критерий готовности.</p>
+<h3>Чем агент отличается от обычного ChatGPT-чата?</h3>
+<p>Агент не только отвечает текстом. Он может читать файлы, запускать команды, открывать браузер, проверять результат и возвращаться к плану после ошибок.</p>
+<h3>Почему здесь много Claude Code, Codex и MCP?</h3>
+<p>Потому что это уже практический слой, где агент работает с реальными проектами, а не только генерирует советы. Такой контент проще проверять и обновлять.</p>
+<p><a href="/">← На главную</a></p></article><nav><a href="/">Главная</a> · <a href="/about/">Обо мне</a> · <a href="/blog/">Блог</a> · <a href="/posts/">Посты</a> · <a href="/ai-agents/">AI Agents</a> · <a href="/ai-course/">Курс</a> · <a href="/work-together/">Го поработаем</a> · <a href="/en/">English</a> · <a href="/privacy/">Privacy</a></nav><footer><a href="https://t.me/danokhlopkov" rel="me">Telegram</a> · <a href="https://youtube.com/@danokhlopkov" rel="me">YouTube</a> · <a href="https://instagram.com/d7733o" rel="me">Instagram</a> · <a href="https://x.com/danokhlopkov" rel="me">X</a> · <a href="https://www.linkedin.com/in/danokhlopkov/" rel="me">LinkedIn</a> · <a href="https://github.com/ohld" rel="me">GitHub</a></footer></div>
+  </body>
+</html>

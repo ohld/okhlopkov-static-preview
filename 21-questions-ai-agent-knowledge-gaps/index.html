@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>21 Questions That Expose Gaps in Your AI Agent's Knowledge</title>
+  <meta name="description" content="A curated list of uncomfortable questions to ask Claude Code, Codex, or any AI coding agent. Each answer reveals blind spots in how the agent understands you." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://static-preview.okhlopkov.com/21-questions-ai-agent-knowledge-gaps/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="21 Questions That Expose Gaps in Your AI Agent's Knowledge" />
+  <meta property="og:description" content="A curated list of uncomfortable questions to ask Claude Code, Codex, or any AI coding agent. Each answer reveals blind spots in how the agent understands you." />
+  <meta property="og:url" content="https://static-preview.okhlopkov.com/21-questions-ai-agent-knowledge-gaps/" />
+  <meta property="og:image" content="https://okhlopkov.com/content/images/2026/03/21-questions-ai-agent-knowledge-gaps.png" />
+  <meta property="article:published_time" content="2026-03-31T04:11:13.000Z" />
+  <meta property="article:modified_time" content="2026-05-25T00:00:00+03:00" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="21 Questions That Expose Gaps in Your AI Agent's Knowledge" />
+  <meta name="twitter:description" content="A curated list of uncomfortable questions to ask Claude Code, Codex, or any AI coding agent. Each answer reveals blind spots in how the agent understands you." />
+  <meta name="twitter:image" content="https://okhlopkov.com/content/images/2026/03/21-questions-ai-agent-knowledge-gaps.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "21 Questions That Expose Gaps in Your AI Agent's Knowledge",
+  "description": "A curated list of uncomfortable questions to ask Claude Code, Codex, or any AI coding agent. Each answer reveals blind spots in how the agent understands you.",
+  "image": "https://okhlopkov.com/content/images/2026/03/21-questions-ai-agent-knowledge-gaps.png",
+  "datePublished": "2026-03-31T04:11:13.000Z",
+  "dateModified": "2026-05-25T00:00:00+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "mainEntityOfPage": "https://static-preview.okhlopkov.com/21-questions-ai-agent-knowledge-gaps/",
+  "inLanguage": "en"
+}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9Z5T725JJD');
+  </script>
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(46266270, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  </script>
+  <style>
+    :root { --bg:#F5F5F0; --text:#1A1A1A; --accent:#5F6F85; --border:rgba(26,26,26,.14); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-underline-offset:3px; }
+    .legacy-shell { max-width:820px; margin:0 auto; padding:20px 24px 56px; }
+    .legacy-top { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:0 0 28px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    .legacy-nav { display:flex; flex-wrap:wrap; gap:12px; }
+    .legacy-note { border:1px solid var(--border); border-radius:4px; padding:14px 16px; margin:0 0 28px; font-size:14px; color:rgba(26,26,26,.72); }
+    .legacy-note p { margin:0; }
+    .legacy-note p + p { margin-top:6px; }
+    .legacy-article :is(h1,h2,h3) { line-height:1.15; letter-spacing:0; }
+    .legacy-article h1 { font-size:38px; margin:0 0 16px; }
+    .legacy-article h2 { font-size:25px; margin:42px 0 12px; }
+    .legacy-article h3 { font-size:19px; margin:28px 0 10px; }
+    .legacy-article p, .legacy-article li { font-size:18px; }
+    .legacy-article img { max-width:100%; height:auto; border-radius:4px; }
+    .legacy-article pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:4px; background:rgba(255,255,255,.45); }
+    .legacy-article code { font-family:'JetBrains Mono','SF Mono',monospace; font-size:.9em; }
+    .legacy-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    @media (max-width:640px) { .legacy-shell { padding:16px 18px 40px; } .legacy-article h1 { font-size:30px; } .legacy-article p, .legacy-article li { font-size:16px; } }
+  </style>
+</head>
+<body>
+  <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <div class="legacy-shell">
+    <header class="legacy-top">
+      <a href="/">okhlopkov.com</a>
+      <nav class="legacy-nav" aria-label="Site">
+        <a href="/">RU</a>
+        <a href="/en/">EN</a>
+        <a href="/ai-agents/">AI Agents</a>
+        <a href="/posts/">Posts</a>
+      </nav>
+    </header>
+    <div class="legacy-note">
+      <p>Static migration update: 2026-05-25. This indexed URL is preserved from the previous Ghost version of okhlopkov.com.</p>
+      <p>Original Ghost modified date: 2026-03-31T04:47:58.000Z.</p>
+    </div>
+    <main class="legacy-article"><article class="article post tag-telegram-en ">
+
+    <header class="article-header gh-canvas">
+
+        <div class="article-tag post-card-tags">
+                <span class="post-card-primary-tag">
+                    <a href="/tag/telegram-en/">telegram-en</a>
+                </span>
+        </div>
+
+        <h1 class="article-title">21 Questions That Expose Gaps in Your AI Agent&#x27;s Knowledge</h1>
+
+
+        <div class="article-byline">
+        <section class="article-byline-content">
+
+            <ul class="author-list instapaper_ignore">
+                <li class="author-list-item">
+                    <a href="/author/okhlopkov/" class="author-avatar" aria-label="Read more of Daniil Okhlopkov">
+                        <img class="author-profile-image" src="/content/images/size/w100/2024/10/Dan-Okhlopkov-LinkedIn.jpeg" alt="Daniil Okhlopkov" />
+                    </a>
+                </li>
+            </ul>
+
+            <div class="article-byline-meta">
+                <h4 class="author-name"><a href="/author/okhlopkov/">Daniil Okhlopkov</a></h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="2026-03-31">31 Mar 2026</time>
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> 3 min read</span>
+                </div>
+            </div>
+
+        </section>
+        </div>
+
+            <figure class="article-image">
+                <img
+                    srcset="/content/images/size/w300/2026/03/21-questions-ai-agent-knowledge-gaps.png 300w,
+                            /content/images/size/w600/2026/03/21-questions-ai-agent-knowledge-gaps.png 600w,
+                            /content/images/size/w1000/2026/03/21-questions-ai-agent-knowledge-gaps.png 1000w,
+                            /content/images/size/w2000/2026/03/21-questions-ai-agent-knowledge-gaps.png 2000w"
+                    sizes="(min-width: 1400px) 1400px, 92vw"
+                    src="/content/images/size/w2000/2026/03/21-questions-ai-agent-knowledge-gaps.png"
+                    alt="21 Questions That Expose Gaps in Your AI Agent&#x27;s Knowledge"
+                />
+            </figure>
+
+    </header>
+
+    <section class="gh-content gh-canvas">
+        <p>You're sitting there, catching FOMO, wanting to make your AI agent better. But how?</p><p>I found a <a href="https://x.com/kloss_xyz/status/2024572078314451146?ref=okhlopkov.com">list of uncomfortable questions</a> for your agent (Claude Code, Codex, Openclaw). The answers will expose gaps in the agent's knowledge about you and your projects. Or spark ideas you hadn't considered.</p><h2 id="context-and-memory">Context and memory</h2><p>The weakest spot of any agent is forgetting. Between sessions, context gets lost, assumptions accumulate, and the agent ends up working with a stale model of who you are. Ask these:</p><p>1. What assumptions about me and my priorities might be wrong right now?<br>2. What context about me do you lose between sessions due to compaction? What should be persisted so you don't get dumber over time?<br>3. Where are you filling knowledge gaps about me with assumptions instead of asking?<br>4. What's the most valuable insight or pattern in your memory that you're not using to help me?<br>5. Rate 1-10 how accurately you model my priorities and thinking. What's dragging the score down and how to fix it?<br>6. How have my priorities changed since we started working together? What in your approach is outdated?</p><h2 id="automation-opportunities">Automation opportunities</h2><p>Your agent sees your work patterns better than you do — it processes every request. But it usually stays quiet about obvious improvements until you ask directly:</p><p>7. What tools and automations am I missing, based on what you know about my workflows?<br>8. What repetitive friction points in my work have you noticed? What could be automated without me asking?<br>9. What am I still doing manually even though you have enough context to fully automate it?<br>10. What single system could you build right now that would speed up every subsequent task?<br>11. What external data sources should you connect to make better decisions on my projects?</p><h2 id="proactive-moves">Proactive moves</h2><p>A good agent doesn't wait for commands. It sees where the project is heading and suggests the next step. But it needs to understand you expect initiative:</p><p>12. Based on my request patterns — what will I need next week, and what can you prepare in advance?<br>13. What skills should you be developing right now, given where my projects are heading?<br>14. What connections between my projects, ideas, and goals do you see that I probably don't?<br>15. Based on project trajectory — what should you research or prototype right now, without me asking?<br>16. What's the highest-leverage thing you could do in the next 24 hours that I haven't asked for, but would genuinely move me forward?</p><h2 id="quality-and-self-awareness">Quality and self-awareness</h2><p>Agents often give generic answers where they already have enough context to be specific. Or repeat the same mistake you've corrected three times:</p><p>17. From all my edits and feedback — what rules should you write into your files right now to stop repeating mistakes?<br>18. If you audited all actions from the past week — which ones actually moved my goals forward, and which were wasted effort?<br>19. Where are you giving generic responses even though you have enough context about me for something specific and useful?<br>20. What mistakes have you repeated more than once? What guardrail can we build?<br>21. If a new agent replaced you tomorrow with only my documentation — what would it definitely get wrong, and how can we document that?</p><h2 id="how-to-use-this">How to use this</h2><p>Copy any question into your AI assistant. You don't need all 21 — start with what resonates. I personally started with the context loss question (#5) and got genuinely useful feedback. The agent admitted it was losing my priorities after every compaction, and we set up a persistent memory system to fix it.</p><p>Source: <a href="https://x.com/kloss_xyz/status/2024572078314451146?ref=okhlopkov.com">@kloss_xyz on X</a></p><hr><p>Follow me on <a href="https://x.com/danokhlopkov?ref=okhlopkov.com">Twitter/X @danokhlopkov</a> for more on AI agents and automation.</p>
+    </section>
+
+
+</article></main>
+    <footer class="legacy-footer">
+      <a href="/">Home</a>
+      <a href="https://t.me/danokhlopkov">Telegram</a>
+      <a href="https://x.com/danokhlopkov">X</a>
+      <a href="https://github.com/ohld">GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>

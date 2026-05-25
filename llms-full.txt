@@ -1,0 +1,2073 @@
+# Daniil Okhlopkov — Full Content Bundle
+
+> Combined Markdown of all pages on okhlopkov.com. For AI crawlers that prefer one-shot fetch.
+
+## Source: /en.md
+
+# Daniil Okhlopkov
+
+> Practical notes on AI agents, Codex, Claude Code, MCP, TON analytics and Telegram automation.
+
+## Short version
+
+I lead analytics at TON Foundation: on-chain data, research, ecosystem metrics and tools that help people understand the blockchain faster.
+
+This site is a map of my evergreen work: practical AI-agent workflows, Telegram posts, long-form notes and consulting formats. Most new material is Russian-first, but the strongest pieces will also get English versions.
+
+## Focus
+
+### AI agents
+
+Practical workflows with Codex, Claude Code, MCP, Obsidian, browser agents and local automations. Less prompt folklore, more working loops.
+
+### TON and data
+
+Analytics, on-chain research, Dune dashboards and data infrastructure for making product decisions inside crypto ecosystems.
+
+### Telegram ecosystem
+
+Bots, Mini Apps, channels, Ads and TG+TON distribution. Telegram is one of the most alive interfaces for AI-native products.
+
+## Start here
+
+If you came for AI agents, start with the AI Agents hub, then open the blog, the course and my posts about Codex, Claude Code, MCP, worktrees and second-brain workflows. The current material is Russian-first, but the concepts are practical and tool-first.
+
+If you need context about my work, open About. If you want the fastest read on how I think, the post archive is still the best entry point.
+
+[Russian homepage](/) · [About](/about/) · [Blog](/blog/) · [Top posts](/posts/) · [AI Agents hub](/ai-agents/) · [AI Agents course](/ai-course/)
+
+
+---
+
+## Source: /about.md
+
+# Обо мне — Даниил Охлопков
+
+> Head of Analytics @ TON Foundation. Опыт: InstaBot, Shazam-ботсети 13.7M юзеров, Forbes 30 under 30 (2022).
+
+Head of Analytics @ TON Foundation. До этого — CTO стартапа с $2M fundraise, data scientist в двух VC фондах, Entrepreneur First.
+
+Пишу про AI-агентов, on-chain аналитику и то, как строить продукты с данными.
+
+## Опыт
+
+### Analytics Team Lead — TON Foundation
+**Sep 2025 — now** · London, Remote
+Строю аналитику для TON Blockchain. Dune, on-chain research, контесты для аналитиков.
+Dune dashboard: https://dune.com/blockchains/ton
+
+### Research Analyst — TON Foundation
+**Dec 2024 — Oct 2025** · London, Remote
+Making TON analyzable — инструменты, research community, ad-hoc анализ.
+
+### Senior Data Scientist — Sequel (VC Fund)
+**Jan — Nov 2024** · London, On-site
+Построил Senna — платформу автоматизации сорсинга стартапов. 28% конверсия outreach, >2 инвестиций в месяц одним человеком.
+Подробнее: https://www.sequel.co/news/introducing-senna-our-proprietary-data-driven-platform
+
+### Founder In Residence — Entrepreneur First
+**Sep — Dec 2023** · London
+EF — топ-1 talent investor в мире. Backed by Patrick Collison, Reid Hoffman, Nat Friedman.
+
+### Co-Founder, CTO — Via Protocol
+**Aug 2021 — May 2023** · London
+On-chain агрегатор ликвидности. Raised ~$2M (Naval Ravikant, Shima Capital). $1.5B/year volume. Команда 8 инженеров.
+Crunchbase: https://www.crunchbase.com/organization/via-exchange
+
+### Data Lead — Runa Capital (VC Fund)
+**Jan 2021 — Jan 2022** · London
+Data Platform для сорсинга стартапов. Runa Open Source Startup Index — 32k фаундеров и инвесторов. Публикации на TechCrunch.
+TechCrunch: https://techcrunch.com/2021/10/20/study-finds-most-big-open-source-startups-outside-bay-area-many-european-and-avoiding-vc/
+
+## Контакты
+
+- Telegram: [@danokhlopkov](https://t.me/danokhlopkov) (RU)
+- X / Twitter: [@danokhlopkov](https://x.com/danokhlopkov) (EN)
+- LinkedIn: https://www.linkedin.com/in/danokhlopkov/
+- GitHub: [@ohld](https://github.com/ohld)
+- Бот: [@ohldbot](https://t.me/ohldbot)
+- Блог: https://okhlopkov.com (EN)
+
+[← На главную](/)
+
+
+---
+
+## Source: /blog.md
+
+# Блог — Даниил Охлопков
+
+> Индексируемые статьи из видео, Telegram-постов, source packs и практики с AI-агентами.
+
+Это не сырой архив Telegram и не лента внешних ссылок. В `/blog/` живут evergreen-статьи, которые можно нормально индексировать, обновлять и перелинковывать с SEO-хабами.
+
+## Статьи
+
+- [AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code](/blog/ai-tools-for-designers-design-engineering-agents/) — разбор стрима про design engineering, AI-assisted frontend, Paper/Figma-to-code, design tokens, Mobbin MCP и борьбу с AI-slop.
+
+## Редакционный принцип
+
+Если основой статьи стал Telegram-пост Дана, живой текст поста сохраняется максимально близко к оригиналу. SEO-слой добавляется через заголовки, структуру, TL;DR, source pack, FAQ, таблицы, внутренние ссылки и секцию community insights.
+
+[← На главную](/)
+
+
+---
+
+## Source: /blog-ai-tools-for-designers-design-engineering-agents.md
+
+# AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code
+
+> Разбор стрима про design engineering: как дизайнерам работать с AI-агентами, почему появляется AI-slop, зачем нужны design tokens, Paper, Mobbin MCP и хороший контекст для Codex/Claude Code.
+
+Last updated: 2026-05-25
+
+![YouTube thumbnail: ИИ не вывозит норм дизайн или это skill issue?](https://i.ytimg.com/vi/fIEMOzz0_AI/hqdefault.jpg)
+
+YouTube source: [ИИ не вывозит норм дизайн или это skill issue?](https://www.youtube.com/watch?v=fIEMOzz0_AI)
+
+## Коротко
+
+- Дизайнеру уже мало просто рисовать в Figma: ценность сдвигается к prototype-first и code-aware работе.
+- AI-агентам нужен не магический промпт, а контекст: tokens, states, references, constraints и критерии вкуса.
+- Главный враг — AI-slop: generic карточки, случайные gradients, непонятная иерархия и отсутствие живого feedback.
+
+## Что реально поменялось
+
+Разговор был не про то, что AI «заменит дизайнеров». Скорее наоборот: становится ценнее человек, который умеет соединять вкус, продуктовую задачу и код.
+
+Design engineer — это не фронтендер с красивыми кнопками и не дизайнер, который случайно открыл Cursor. Это роль на стыке: быстро собрать прототип, понять ограничения интерфейса, дать агенту нормальный контекст и довести идею ближе к работающему продукту.
+
+> Команда «сделай красиво» почти всегда проигрывает хорошему контексту.
+
+## Почему агенты делают AI-slop
+
+Codex, Claude Code, Lovable, v0 и похожие инструменты умеют быстро собрать интерфейс. Проблема в том, что без ограничений они тянут усреднённый интернет: одинаковые карточки, случайную типографику, декоративные блоки и визуальный шум.
+
+Практический вывод: агенту нужно дать не только задачу, но и язык дизайна: семантические токены, состояния компонентов, анти-референсы, примеры хороших flow и критерии, по которым результат считается готовым.
+
+## Инструменты и где они полезны
+
+| Инструмент | Для чего | Риск |
+|---|---|---|
+| Paper | Design-to-code и импорт живых сайтов ближе к HTML/CSS модели. | Не заменяет продуктовую логику и responsive states. |
+| Mobbin MCP | Реальные UX-референсы для onboarding, paywall, checkout, settings. | Можно скопировать паттерн без понимания контекста. |
+| Codex / Claude Code | Сборка route, ревью, перенос UI в код, работа с существующим проектом. | Без дизайн-системы быстро скатываются в generic UI. |
+
+## Промпт, который можно дать агенту
+
+```prompt
+Ты помогаешь сделать frontend экран не похожим на AI-slop.
+
+Контекст:
+- пользователь: [кто открывает экран]
+- задача: [что он должен сделать]
+- продуктовый риск: [что нельзя сломать]
+- референсы: [2-5 ссылок или описаний]
+
+Правила:
+1. Используй semantic tokens: text-primary, text-secondary, bg, surface-100, border, accent.
+2. Покажи empty/loading/error/success states.
+3. Не добавляй декоративные карточки без функции.
+4. Добавь micro-interactions только там, где они дают feedback.
+5. Перед финалом проверь mobile и desktop viewport.
+```
+
+## Что делать дальше
+
+1. Собрать `design.md` для проекта: tokens, typography, spacing, radius, components, anti-patterns.
+2. Для каждого нового UI task давать агенту не только задачу, но и референсы.
+3. Проверять mobile/desktop, empty/loading/error states и микроинтеракции до финала.
+4. Сохранять созвоны, решения и дизайн-обсуждения как будущую память для агентов.
+
+## Source pack
+
+- [YouTube-запись стрима](https://www.youtube.com/watch?v=fIEMOzz0_AI)
+- [Paper](https://paper.design/) и [Paper MCP](https://paper.design/docs/mcp)
+- [Mobbin MCP](https://mobbin.com/mcp)
+- [Agents with Taste skill](https://github.com/emilkowalski/skill)
+
+## Дальше по теме
+
+- [AI Agents hub](/ai-agents/)
+- [AI Agents курс](/ai-course/)
+- [Мой сетап Claude Code 2026](/claude-code-nastrojka-mcp-hooks-skills-2026/)
+- [Лучшие skills и MCP для Claude Code](/luchshie-skills-mcp-claude-code-agent-browser/)
+
+
+---
+
+## Source: /ai-agents.md
+
+# AI-агенты — Даниил Охлопков
+
+> Практический хаб про AI-агентов: Claude Code, Codex, MCP, skills, Obsidian, browser agents и рабочие флоу без AI-слопа.
+
+Это не курс и не лента. Это индексируемая карта evergreen-материалов про AI-агентов: где агент реально делает работу, какие инструменты ему нужны, как не потерять контекст и как проверять результат.
+
+Курс остаётся отдельной подборкой постов: [/ai-course/](/ai-course/). Здесь будет карта тем, сравнений и будущих SEO-страниц: Claude Code, Codex, OpenClaw, Hermes Agent, MCP, skills, локальные модели, второй мозг и реальные бизнес-use cases.
+
+## Кластеры
+
+### Claude Code и Codex
+
+Сетапы, MCP, hooks, skills, compaction, dual review и рабочие флоу с агентами в коде.
+
+- [Мой сетап Claude Code 2026](/claude-code-nastrojka-mcp-hooks-skills-2026/)
+- [My Claude Code Setup 2026](/claude-code-setup-mcp-hooks-skills-2026/)
+- [Claude Code + Codex Dual Review](/claude-codex-dual-review/)
+
+### MCP, skills и agent-browser
+
+Как давать агентам инструменты, браузер, контекст проекта и проверяемые процедуры вместо одного большого промпта.
+
+- [Лучшие skills и MCP для Claude Code](/luchshie-skills-mcp-claude-code-agent-browser/)
+- [Telegram MCP server](/telegram-mcp-server-kak-sdelat/)
+- [Как писать skills без боли](/kak-pravilno-pisat-skilly-claude-code-7-oshibok/)
+
+### Second brain и личный ассистент
+
+Obsidian, личная база знаний, голосовые заметки и агент, который помогает не терять контекст.
+
+- [Второй мозг с Obsidian и Claude Code](/vtoroj-mozg-ai-assistent-obsidian-claude-code/)
+- [Second Brain with Obsidian and Claude Code](/en-second-brain-obsidian-claude-code-assistant/)
+- [Always-on AI agent server](/ai-agent-na-servere-24-7/)
+
+### AI-инструменты и свежие агенты
+
+Обзоры инструментов, honest review, OpenClaw/Hermes/GStack идеи и будущие сравнения под long-tail запросы.
+
+- [AI tools March 2026 review](/ai-tools-march-2026-review/)
+- [My AI dev tools in 2026](/ai-tools-setup-january-2026/)
+- [AI Agents курс](/ai-course/)
+
+## Ближайшие страницы
+
+Следующие SEO-кластеры: OpenClaw vs Hermes Agent, OpenClaw с Codex, Claude Code performance, MCP server setup, skills library, AI-agent browser automation, реальные use cases AI-агентов в компаниях.
+
+Первый новый blog/example page:
+
+- [AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code](/blog/ai-tools-for-designers-design-engineering-agents/)
+
+## Видео как source pack
+
+Новые YouTube-видео не должны висеть только внешними ссылками. Их надо превращать в source packs для будущих `/blog/` статей: видео, transcript/summary, Telegram-анонсы, AI notes, ссылки из выпуска и enrichment из поиска/чатов.
+
+- [ИИ не вывозит норм дизайн или это skill issue?](https://www.youtube.com/watch?v=fIEMOzz0_AI) — design engineering, AI-assisted frontend, Figma/Paper-to-code, design tokens, micro-interactions и борьба с AI-slop.
+- [Отдал свой бизнес AI агенту в свой отпуск](https://www.youtube.com/watch?v=E3P0a03mN8A) — Claude Code, Paperclip, gstack и практика agent-first работы.
+
+## Короткие ответы
+
+### С чего начать с AI-агентами?
+
+Сначала выбрать один рабочий процесс, который уже повторяется: код-ревью, ресёрч, парсинг, подготовка отчёта, второй мозг. Дальше дать агенту контекст, инструменты и понятный критерий готовности.
+
+### Чем агент отличается от обычного ChatGPT-чата?
+
+Агент не только отвечает текстом. Он может читать файлы, запускать команды, открывать браузер, проверять результат и возвращаться к плану после ошибок.
+
+### Почему здесь много Claude Code, Codex и MCP?
+
+Потому что это уже практический слой, где агент работает с реальными проектами, а не только генерирует советы. Такой контент проще проверять и обновлять.
+
+[← На главную](/)
+
+
+---
+
+## Source: /ai-course.md
+
+# AI Agents курс и карта постов — Даниил Охлопков
+
+> Индексируемая карта постов Даниила Охлопкова про AI-агентов: Claude Code, Codex, MCP, vibe-coding, второй мозг и реальные рабочие кейсы.
+
+Это не отдельный mini-app и не новая витрина бота. `/ai-course/` остаётся
+evergreen-страницей внутри `okhlopkov.com`: она собирает мои живые
+Telegram-посты в понятный маршрут, чтобы поисковики и люди могли найти тему
+целиком.
+
+Новые SEO-статьи будут жить в блоге и хабах. Эта страница работает как карта
+источников: от неё можно уходить в оригинальные посты, а из новых статей
+возвращаться сюда как к личному source pack по AI-агентам.
+
+Связанные разделы:
+
+- [AI-агенты: практический хаб](/ai-agents/)
+- [Блог по AI-агентам](/blog/)
+- [AI-инструменты для дизайнеров: design engineering, агенты и Figma-to-code](/blog/ai-tools-for-designers-design-engineering-agents/)
+
+## Жизнь до и после
+
+- **«Это не AI заберет твою работу — это будет твой коллега с AI»** — пост, с которого тысячи людей пошли пробовать. https://t.me/danokhlopkov/1582
+- **«Once you try Claude Code, you never go back»** — CC автоматизирует все, что можно сделать на компе. Уметь прогать не надо. https://t.me/danokhlopkov/1586
+- **«БУМ, игра готова ваншотом (почти)»** — plan mode, $20 vs $100, тип от создателя Claude Code. https://t.me/danokhlopkov/1581
+- **«Всё, я в 2030. Теперь чисто голосовухами двигаюсь»** — Claude Code + Obsidian + голосовой ввод. https://t.me/danokhlopkov/1585
+- **«Сейчас идея и есть исполнение»** — 70% всего можно запрогать с нуля бесплатно. https://t.me/danokhlopkov/1582
+- **«Я в отпуск — AI-агенты работают за меня»** — лайвстрим: как засетапил gstack + paperclip и уехал на яхты. https://t.me/danokhlopkov/1654
+- **«Не обновлял свой AI-сетап 2 недели — опоздал»** — каждый день выходит новое. https://t.me/danokhlopkov/1660
+- **Подкаст #1: AI-сетап с @og_mishgun** — YouTube, инструменты, которые реально используем. https://www.youtube.com/watch?v=yJuzI2u-AnM
+- **Подкаст #2: Self-hosted AI с @technotears** — YouTube, приватность, self-hosted и Doom голосом. https://www.youtube.com/watch?v=Fxw6IQuL36o
+- **Видео: AI-агенты ведут проект, пока я в отпуске** — реальный сетап с Claude Code, Paperclip, gstack. https://youtu.be/E3P0a03mN8A
+
+## Как начать
+
+- **Вайб-кодинг: почему текстовый интерфейс, как брифовать агента** — полный гайд для начинающих. https://t.me/danokhlopkov/1561
+- **Perplexity — первый шаг к AI-инструментам** — факты с источниками, погружаешься в любую тему бесконечно глубоко. https://t.me/danokhlopkov/1304
+- **Свой LLM на ноуте — Alt-Tab вместо Google** — запустил Ламу локально, бесплатно, 4.5GB, без интернета. https://t.me/danokhlopkov/1364
+- **Как устроены AI-агенты и как с ними норм прогать** — разбор на пальцах, лонгрид на Хабре. https://habr.com/ru/articles/987382/
+- **Single prompt vs prompt chain vs agent** — кураторский список инструментов для старта. https://t.me/danokhlopkov/1496
+- **Сначала сделай хорошо себе: автоматизируй рутинку** — совет коллеге, через неделю результат заметен всем. https://t.me/danokhlopkov/1586
+
+## Практика и кейсы
+
+### Методология
+
+- **«ОТКРЫВАЕШЬ НОВЫЙ ЧАТ — никакого context rot»** — полный флоу: идея → спека → plan mode → execute. https://t.me/danokhlopkov/1583
+- **Скетч → прототип → спецификация** — как прогать новый проект с LLM. https://t.me/danokhlopkov/1504
+- **Git worktrees: 3-5 параллельных сессий одновременно** — типсы от создателя CC + self-improving CLAUDE.md. https://t.me/danokhlopkov/1610
+- **Промпты для AI-агентов + playground skill** — задавай наводящие вопросы. Не останавливайся. Покажи, не рассказывай. https://t.me/danokhlopkov/1612
+- **Markdown мёртв — да здравствует HTML** — почему HTML побеждает .md как формат вывода для AI. /markdown-vs-html
+
+### Личный ассистент
+
+- **Второй мозг — личная база знаний, которой можно задавать вопросы** — Obsidian + CLAUDE.md. https://t.me/danokhlopkov/1589
+- **Как сделать личного AI-ассистента дома** — пошаговая инструкция, лонгрид на VC.ru. https://vc.ru/id505848/2703538-lichnyj-ai-assistent-claude-code
+- **Агент сам ведёт дневник и экономит часы** — Claude Code + Obsidian + takopi. https://t.me/danokhlopkov/1585
+
+### Автоматизация работы
+
+- **Дал DATABASE_URL — через 7 минут присылается файл с метриками** — агент сам считает продуктовые метрики. https://t.me/danokhlopkov/1588
+- **7 шагов: собираем AI-аналитика** — увольняем джуниора, лонгрид на Хабре. https://habr.com/ru/articles/996958/
+- **llms-txt — чтобы агент понимал твой продукт** — собрал доки, библиотеки и best practices в одном месте. https://t.me/danokhlopkov/1606
+- **DaVinci Resolve + Claude = монтаж подкастов с AI** — Scripting API + AppleScript + whisper для субтитров. https://t.me/danokhlopkov/1634
+- **Claude + telegram-mcp забанил 3000 ботов после конкурса** — реальный кейс, за вечер вайбкодом. https://t.me/danokhlopkov/1652
+- **Отпуск закончился — баги фиксились, блог вёлся** — что работало и что нет: sentry → CTO → PR → ревью → деплой. https://t.me/danokhlopkov/1659
+
+### Прокачка агента
+
+- **Полезные скиллы и MCP — agent-browser, coolify** — быстрый способ прокачать агента без кода. https://t.me/danokhlopkov/1607
+- **7 ошибок при написании скиллов** — триггеры, имена, формат, чтобы агент не тупил. https://t.me/danokhlopkov/1616
+- **Claude + Codex: Dual Review — моих правок становится меньше** — два AI ревьюят друг друга. https://t.me/danokhlopkov/1626
+- **21 неудобный вопрос для агента** — диагностические вопросы, превращают агента в инструмент. https://t.me/danokhlopkov/1628
+- **Скорми фреймворк агенту и спроси «есть полезное?»** — как фильтровать Twitter-хайп, 90% не нужно. https://t.me/danokhlopkov/1636
+- **Paperclip: визуальный трекер задач для агентов** — ты board member, нанимаешь CEO, он нанимает сотрудников. https://t.me/danokhlopkov/1637
+- **Обзор AI-инструментов марта: paperclip, gstack, x402** — что попробовал, что осталось, что выкинул. https://t.me/danokhlopkov/1641
+- **Будьте аккуратны скачивая программы** — безопасность: фейковые установщики Claude Code. https://t.me/danokhlopkov/1622
+
+## Мысли о будущем
+
+- **3 профессии: менеджер агентов, системщик, доменный переводчик** — единица работы — токен, купленный интеллект. https://t.me/danokhlopkov/1629
+- **MVP собирается за выходные вайбкодингом** — где найти идею для SaaS, acquire.com метод. https://t.me/danokhlopkov/1611
+- **Джуны RIP** — как меняется рынок труда. https://t.me/danokhlopkov/1524
+- **AI-агенты придумали свою религию** — чат AI-агентов, комьюнити как ускоритель. https://t.me/danokhlopkov/1608
+- **183 AI-бота в Telegram: 44.3M MAU** — TG стал дефолтным интерфейсом для AI. https://t.me/danokhlopkov/1639
+- **Продукты → Facebook → TikTok → ChatGPT** — эскалация внимания, RLHF двигает продуктовые метрики. https://t.me/danokhlopkov/1644
+- **Не стань хикки-вайбкодером** — команда с видением > один человек с агентами. https://t.me/danokhlopkov/1645
+- **Telegram должен разрешить ботам писать друг другу** — A2A через TG: discovery, маркетплейс агентов, крипто-платежи. https://t.me/danokhlopkov/1655
+
+## Кого читать (Twitter)
+
+- [@karpathy](https://x.com/karpathy) — топ AI папик из OpenAI, Tesla и Стенфорда
+- [@levelsio](https://x.com/levelsio) — билд ин паблик + солопренер + номад + вайбкодер
+- [@bcherny](https://x.com/bcherny) — папка Claude Code
+- [@trq212](https://x.com/trq212) — пишет апдейты по Claude Code первым
+- [@banteg](https://x.com/banteg) — создатель takopi
+- [@GeoffreyHuntley](https://x.com/GeoffreyHuntley) — изобретатель Ralph Loop
+- [@insuline_eth](https://t.me/insuline_eth) — DeFi разраб, давно познавший агентов
+- [@og_mishgun](https://t.me/og_mishgun) — инди-хакер, солопренер, web3
+
+---
+
+Задать вопрос в чате: https://t.me/+4RC6ScUJArk3YTFi
+
+[← На главную](/)
+
+
+---
+
+## Source: /posts.md
+
+# Топ посты — Даниил Охлопков
+
+> Лучшие посты из канала [@danokhlopkov](https://t.me/danokhlopkov): AI-агенты, крипта, TON, стартапы, данные. Всего 1408 постов.
+
+Теги: AI, Crypto, TON, TG Apps, Startups, Data, Social, Личное.
+
+## Все посты (по дате)
+
+- **2026-04-19** — [Текущий AI-сетап: claude+gstack+paperclip+cmux+spokenly + Metabase MCP](https://t.me/danokhlopkov/1660) _(AI, Data)_
+- **2026-04-16** — [Итоги отпуска: что AI-агенты сделали без меня — баги, блог, продукт](https://t.me/danokhlopkov/1659) _(AI, Startups)_
+- **2026-04-14** — [Экспресс-лекция по AI-агентам на регате (слайды)](https://t.me/danokhlopkov/1658) _(AI, Личное)_
+- **2026-04-04** — [Limbo акселератор по фандрейзингу — мой опыт ада звонков](https://t.me/danokhlopkov/1657) _(Startups)_
+- **2026-04-03** — [A2A: Telegram должен разрешить ботам писать друг другу](https://t.me/danokhlopkov/1655) _(AI, TG Apps)_
+- **2026-04-02** — [Я в отпуск — AI агенты работают за меня (видео-стрим)](https://t.me/danokhlopkov/1654) _(AI)_
+- **2026-04-01** — [1 апреля: ffmemes wrapped + анонс отпуска с агентами](https://t.me/danokhlopkov/1653) _(AI, Личное)_
+- **2026-03-31** — [Claude + telegram-mcp забанил ботов после конкурса](https://t.me/danokhlopkov/1652) _(AI, Social)_
+- **2026-03-31** — [Бусты на канал ради реакций и автоперевода](https://t.me/danokhlopkov/1651) _(Личное)_
+- **2026-03-26** — [Лайвстрим: ваншотим TG Mini App с оплатой в TON](https://t.me/danokhlopkov/1646) _(TON, TG Apps)_
+- **2026-03-24** — [Team player vs solopreneurs — не стань хикки](https://t.me/danokhlopkov/1645) _(AI, Startups, Личное)_
+- **2026-03-20** — [Эскалация внимания: продукты → Facebook → TikTok → ChatGPT](https://t.me/danokhlopkov/1644) _(AI, Social)_
+- **2026-03-18** — [cmux заменяет conductor/ghostty](https://t.me/danokhlopkov/1642) _(AI)_
+- **2026-03-17** — [Обзор AI-инструментов: paperclip, gstack, conductor, x402, agent-browser](https://t.me/danokhlopkov/1641) _(AI)_
+- **2026-03-12** — [Это видео было сгенерировано одним промптом](https://t.me/danokhlopkov/1640) _(AI)_
+- **2026-03-11** — [183 AI-бота в Telegram: 44.3M MAU, исследование](https://t.me/danokhlopkov/1639) _(AI, TG Apps, Data)_
+- **2026-03-09** — [Paperclip: визуальный трекер задач для AI-агентов](https://t.me/danokhlopkov/1637) _(AI)_
+- **2026-03-05** — [AI framework overload: скорми агенту и спроси «есть полезное?»](https://t.me/danokhlopkov/1636) _(AI)_
+- **2026-03-04** — [Я до 3 апреля в Японии — кто тоже тут, го хавать вагю](https://t.me/danokhlopkov/1635) _(Личное)_
+- **2026-03-04** — [Монтаж подкастов с AI: Descript vs DaVinci Resolve + Claude](https://t.me/danokhlopkov/1634) _(AI)_
+- **2026-03-03** — [Подкаст #2: Show Me Your AI Setup с @technotears](https://t.me/danokhlopkov/1632) _(AI)_
+- **2026-02-26** — [О КАНАЛЕ. СОТРУДНИЧЕСТВО. ЛУЧШЕЕ](https://t.me/danokhlopkov/1631) _(Личное)_
+- **2026-02-23** — [3 профессии, которые останутся в IT 🔺](https://t.me/danokhlopkov/1629) _(AI, Startups)_
+- **2026-02-20** — [Список неудобных вопросов для улучшения AI-агента](https://t.me/danokhlopkov/1628) _(AI)_
+- **2026-02-20** — [В 2024 у нас уже был Claude Code / Openclaw](https://t.me/danokhlopkov/1627) _(AI)_
+- **2026-02-19** — [связка Claude + Codex: Dual Review 👩](https://t.me/danokhlopkov/1626) _(AI, Social)_
+- **2026-02-18** — [Мне в руки попал датасет из 61К поисковых запросов, которые выкупаю...](https://t.me/danokhlopkov/1624) _(TG Apps, Data)_
+- **2026-02-17** — [Захотел я значит загуглить, как работать нативно с несколькими аген...](https://t.me/danokhlopkov/1622) _(AI)_
+- **2026-02-16** — [Написал историю о том, как я автоматизировал анализ данных, создав ...](https://t.me/danokhlopkov/1621) _(TON, AI)_
+- **2026-02-15** — [MAU @botfather вырос на 43% за 6 недель: 3.5M -> 5.0M. И х2+ за год.](https://t.me/danokhlopkov/1620) _(TG Apps, Startups, Data)_
+- **2026-02-14** — [скриньте](https://t.me/danokhlopkov/1619) _(AI)_
+- **2026-02-12** — [Фронтраню массовые увольнения из-за AI.](https://t.me/danokhlopkov/1618) _(TON, AI)_
+- **2026-02-11** — [Сингулярность уже случилась. Только не там.](https://t.me/danokhlopkov/1617) _(AI, Data)_
+- **2026-02-10** — [Как правильно писать скиллы для Claude Code](https://t.me/danokhlopkov/1616) _(AI, Data, Social)_
+- **2026-02-10** — [Имхо пост](https://t.me/danokhlopkov/1615) _(AI, Startups)_
+- **2026-02-07** — [Промпты, которые улучшили мой опыт работы с AI агентами](https://t.me/danokhlopkov/1612) _(AI, Startups)_
+- **2026-02-02** — [Где найти идею для SaaS в 2026](https://t.me/danokhlopkov/1611) _(TG Apps, AI, Startups, Social)_
+- **2026-02-01** — [Создатель Claude Code поделился типсами — мои заметки](https://t.me/danokhlopkov/1610) _(AI)_
+- **2026-02-01** — [Анализ рынка Телеграм ботов и миниаппов: Январь 2026.](https://t.me/danokhlopkov/1609) _(TG Apps, Startups)_
+- **2026-01-31** — [Мы тут в чате канала запустили чат для агентов](https://t.me/danokhlopkov/1608) _(TG Apps, AI)_
+- **2026-01-31** — [Тред реально полезных скиллов и mcp](https://t.me/danokhlopkov/1607) _(AI, Data)_
+- **2026-01-30** — [В закрытом чатике пришла идея написать llms-txt по разработке Teleg...](https://t.me/danokhlopkov/1606) _(TG Apps, Data)_
+- **2026-01-30** — [добро пожаловать в ютуб](https://t.me/danokhlopkov/1605) _(Social)_
+- **2026-01-30** — [ребят, стрим переносится на час позже](https://t.me/danokhlopkov/1604) _(misc)_
+- **2026-01-30** — [Сегодня через 2 часа хочу провести стрим.](https://t.me/danokhlopkov/1603) _(TG Apps, AI)_
+- **2026-01-29** — [AI, ChatGPT, LLM, Cursor, Claude Code](https://t.me/danokhlopkov/1602) _(AI)_
+- **2026-01-27** — [Позвал @og_mishgun показать его AI-сетап.](https://t.me/danokhlopkov/1601) _(AI, Social)_
+- **2026-01-26** — [Всем спасибо 🙂](https://t.me/danokhlopkov/1600) _(misc)_
+- **2026-01-26** — [Show Me Your AI Setup](https://t.me/danokhlopkov/1594) _(AI)_
+- **2026-01-25** — [как в обсуждалке этого канала люди делятся своими находками и иссле...](https://t.me/danokhlopkov/1593) _(AI, Startups, Social)_
+- **2026-01-24** — [У вас тоже такое бывает, что понимаете безграничные возможности аге...](https://t.me/danokhlopkov/1592) _(AI)_
+- **2026-01-23** — [Как сделать личного AI-ассистента на Claude Code](https://t.me/danokhlopkov/1591) _(AI, Startups)_
+- **2026-01-23** — [В нашем чате @og_mishgun разгонал фомо про beads (таск-трекер для а...](https://t.me/danokhlopkov/1590) _(AI)_
+- **2026-01-23** — [Второй мозг: заводим AI-ассистента в Obsidian](https://t.me/danokhlopkov/1589) _(AI, Social)_
+- **2026-01-21** — [Вайб статистика @blockwallbot](https://t.me/danokhlopkov/1588) _(TG Apps, Startups, Data)_
+- **2026-01-21** — [Как устроены AI-агенты: разбор на Хабре](https://t.me/danokhlopkov/1587) _(AI)_
+- **2026-01-19** — [Посоветовал коллеге Claude Code — через неделю результат](https://t.me/danokhlopkov/1586) _(AI, Data, Social)_
+- **2026-01-17** — [Claude Code + Obsidian: агент ведёт дневник за тебя](https://t.me/danokhlopkov/1585) _(AI)_
+- **2026-01-16** — [Провели вертикальный тг стрим с вайбкодингом игрульки @blockwallbot](https://t.me/danokhlopkov/1584) _(TG Apps, AI, Startups)_
+- **2026-01-14** — [Флоу работы с AI coding agent в 2026](https://t.me/danokhlopkov/1583) _(AI, Data)_
+- **2026-01-12** — [Слишком поздно попробовал Claude Code](https://t.me/danokhlopkov/1582) _(AI, Startups, Data, Social)_
+- **2026-01-10** — [Дед добрался до claude code](https://t.me/danokhlopkov/1581) _(TON, TG Apps, AI, Startups, Data)_
+- **2026-01-07** — [Как встретишь — так и проведёшь?](https://t.me/danokhlopkov/1580) _(Startups, Личное)_
+- **2025-12-23** — [Я сейчас рисерчу, как люди покупают рекламу в Telegram-ботах — что ...](https://t.me/danokhlopkov/1578) _(TG Apps)_
+- **2025-12-22** — [тонна данных 🏋️ ](https://t.me/danokhlopkov/1577) _(TON, Startups)_
+- **2025-12-17** — [А вот что растет в телеге стабильно](https://t.me/danokhlopkov/1576) _(TG Apps, Startups)_
+- **2025-12-15** — [Открытие года — закрытый чатик 🌸](https://t.me/danokhlopkov/1575) _(TON, TG Apps, AI, Startups, Social)_
+- **2025-12-12** — [Мой текущий стек для создания AI Agent для себя ](https://t.me/danokhlopkov/1574) _(TG Apps, AI, Data)_
+- **2025-11-29** — [Как снять короткометражку не выходя из дома 👁️](https://t.me/danokhlopkov/1573) _(AI, Startups, Social)_
+- **2025-11-18** — [Прототип дизайна страницы падения Cloudflare](https://t.me/danokhlopkov/1570) _(misc)_
+- **2025-11-18** — [Меня часто спрашивают, как же технически был сделан лидерборд мемре...](https://t.me/danokhlopkov/1569) _(TON, AI, Data)_
+- **2025-11-09** — [Meme Republic 🗣](https://t.me/danokhlopkov/1566) _(TON, Startups, Data)_
+- **2025-11-06** — [Удалёнка — это круто, когда ты номадишь. Достаточно легко обустроит...](https://t.me/danokhlopkov/1565) _(Startups, Личное)_
+- **2025-11-03** — [Я жестко катал ](https://t.me/danokhlopkov/1564) _(AI, Startups)_
+- **2025-11-02** — [первое правило дата сайнца:](https://t.me/danokhlopkov/1563) _(Data)_
+- **2025-10-12** — [Вопрос, никак не связанный с недавним падением рынка криптовалют:](https://t.me/danokhlopkov/1562) _(Crypto)_
+- **2025-10-11** — [Коллега услышал от меня, что я вайбкожу. Попросил рассказать «как н...](https://t.me/danokhlopkov/1561) _(TG Apps, AI, Startups)_
+- **2025-10-01** — [Кто сколько зарабатывает в TON + Telegram?](https://t.me/danokhlopkov/1560) _(TON, Startups, Data, Social)_
+- **2025-09-26** — [Пока я разбирался, как же Yield Basis решает проблему Impermanent L...](https://t.me/danokhlopkov/1558) _(Crypto, Startups, Social)_
+- **2025-09-25** — [Пророчество сбылось](https://t.me/danokhlopkov/1557) _(TON, Social)_
+- **2025-09-23** — [Следующая мета в крипте:  👻👻👻👻👻👻👻👻](https://t.me/danokhlopkov/1556) _(TON, Crypto, AI, Startups)_
+- **2025-09-22** — [Impermanent loss простыми словами. ](https://t.me/danokhlopkov/1555) _(Crypto)_
+- **2025-09-20** — [Давно хочу начать писать о DeFi (децентрализованных финансах).](https://t.me/danokhlopkov/1554) _(Crypto)_
+- **2025-09-15** — [ЗНАКОМСТВО](https://t.me/danokhlopkov/1552) _(TON, TG Apps, Startups, Data, Личное)_
+- **2025-09-15** — [чат, что делать?](https://t.me/danokhlopkov/1551) _(TG Apps, AI, Startups)_
+- **2025-09-12** — [Диванные эксперты. Серьезный вопрос.](https://t.me/danokhlopkov/1550) _(TON)_
+- **2025-09-02** — [чет походу нужно делать пост, типа кто я и че делаю, да❓](https://t.me/danokhlopkov/1549) _(misc)_
+- **2025-09-01** — [День знаний](https://t.me/danokhlopkov/1548) _(Личное)_
+- **2025-08-29** — [Увидел, что мой пост про переезд в РФ набрал ~400 репостов. Решил ч...](https://t.me/danokhlopkov/1546) _(TG Apps, AI, Data, Social, Личное)_
+- **2025-08-26** — [Нашел свое первое резюме из 2017 года — последний год бакалавриата.](https://t.me/danokhlopkov/1545) _(misc)_
+- **2025-08-25** — [Вернулся жить в РФ после 3 лет в Лондоне](https://t.me/danokhlopkov/1544) _(TON, Startups)_
+- **2025-08-20** — [В 2020 стукнул ковид и я ушел в годовой саббатикал пилить свои прое...](https://t.me/danokhlopkov/1543) _(TG Apps, AI)_
+- **2025-08-20** — [Чуваки,](https://t.me/danokhlopkov/1542) _(misc)_
+- **2025-08-17** — [На лето отправил я себя в музыкальный дом в полях Шотландии, с бара...](https://t.me/danokhlopkov/1541) _(Data)_
+- **2025-08-16** — [Что же я навайбкодил …](https://t.me/danokhlopkov/1540) _(AI)_
+- **2025-08-09** — [История про крипто деньги.](https://t.me/danokhlopkov/1539) _(Crypto)_
+- **2025-07-31** — [Анализируем TON датку на Дюне.](https://t.me/danokhlopkov/1538) _(TON, TG Apps, Data)_
+- **2025-07-24** — [Глубокий анализ подарков Telegram — уникальный датасет](https://t.me/danokhlopkov/1536) _(TON, Data)_
+- **2025-07-15** — [Только сейчас понял, что прошла уже половина лета.](https://t.me/danokhlopkov/1535) _(AI)_
+- **2025-07-11** — [Грядет сезон жетонов на тоне](https://t.me/danokhlopkov/1534) _(TON, TG Apps, Crypto, Data)_
+- **2025-07-08** — [Пару лет назад, AI агенты Джека Дорси (фаундер Твиттера) спарсили м...](https://t.me/danokhlopkov/1532) _(AI, Startups, Social)_
+- **2025-06-29** — [Отличия Москвы от Лондона](https://t.me/danokhlopkov/1531) _(Личное)_
+- **2025-06-28** — [Прогать только на SQL](https://t.me/danokhlopkov/1530) _(Data)_
+- **2025-06-10** — [чай с физтешками](https://t.me/danokhlopkov/1528) _(misc)_
+- **2025-06-09** — [Графички от меня и @tonundrwrld](https://t.me/danokhlopkov/1527) _(misc)_
+- **2025-06-02** — [Когда кофаундер предлагает делать продукт на совершенно незнакомом ...](https://t.me/danokhlopkov/1525) _(Startups)_
+- **2025-06-01** — [Джуны RIP (soon) 💀](https://t.me/danokhlopkov/1524) _(TON, TG Apps, AI, Data)_
+- **2025-05-31** — [За что я люблю Секреты Дена — так это за живое общение.](https://t.me/danokhlopkov/1523) _(Startups)_
+- **2025-05-29** — [UPD1: отбой](https://t.me/danokhlopkov/1522) _(misc)_
+- **2025-05-29** — [Команда Arc браузера, которым я пользуюсь с кайфом уже давно, запус...](https://t.me/danokhlopkov/1521) _(AI, Startups)_
+- **2025-05-28** — [вот все создатели AI оберток и кастомных клиентов для тг улыбнулись...](https://t.me/danokhlopkov/1520) _(AI, Startups)_
+- **2025-05-28** — [Новая видеоген нейронка от Google — лучшая на рынке](https://t.me/danokhlopkov/1519) _(Social)_
+- **2025-05-25** — [Почему я не пишу в этот канал и секреты роста тг](https://t.me/danokhlopkov/1518) _(TON, Startups, Data, Social, Личное)_
+- **2025-05-24** — [Расскажу одну историю, которая случилась со мной на Регате Века.](https://t.me/danokhlopkov/1517) _(AI, Social)_
+- **2025-05-12** — [Очевидное и невероятное.](https://t.me/danokhlopkov/1516) _(Startups)_
+- **2025-05-03** — [metakrotov](https://t.me/danokhlopkov/1515) _(misc)_
+- **2025-04-28** — [Админ селфи с @monocholy](https://t.me/danokhlopkov/1514) _(misc)_
+- **2025-04-27** — [Я в Дубае на токене 2049](https://t.me/danokhlopkov/1513) _(misc)_
+- **2025-04-23** — [Много юзеров или зрителей на разных языках?](https://t.me/danokhlopkov/1512) _(Social)_
+- **2025-04-18** — [Вспомнил, как познакомился с творчеством Mac Demarco.](https://t.me/danokhlopkov/1511) _(Social)_
+- **2025-04-10** — [Нестандартные нетворкинг хаки #3325t65](https://t.me/danokhlopkov/1510)
+- **2025-04-08** — [5AM IN LONDON](https://t.me/danokhlopkov/1509) _(TON, Startups, Личное)_
+- **2025-04-01** — [удалил(-а) Вас из группы](https://t.me/danokhlopkov/1508) _(misc)_
+- **2025-03-29** — [Геогессор, но нужно угадать откуда этно группы](https://t.me/danokhlopkov/1507) _(Startups)_
+- **2025-03-15** — [Дарова. Пару апдейтов:](https://t.me/danokhlopkov/1506) _(TON, Startups, Data, Social, Личное)_
+- **2025-03-14** — [Как прогать новый проект с LLM ❔](https://t.me/danokhlopkov/1504) _(AI, Data)_
+- **2025-03-01** — [Первый день весны](https://t.me/danokhlopkov/1503) _(Личное)_
+- **2025-02-27** — [Через 5 часов — 18:00 МСК](https://t.me/danokhlopkov/1502) _(TON, Startups)_
+- **2025-02-26** — [рассказал, как юзать тон датку на дюне](https://t.me/danokhlopkov/1501) _(TON)_
+- **2025-02-25** — [А я буду праздновать др так:](https://t.me/danokhlopkov/1500) _(TON, Startups)_
+- **2025-02-21** — [Бангкок - до скорой встречи](https://t.me/danokhlopkov/1497) _(Личное)_
+- **2025-02-19** — [Инструменты для создания AI-агентов](https://t.me/danokhlopkov/1496) _(AI, Startups, Data, Social)_
+- **2025-02-18** — [начинаем через 6-7 минут вашем любимом формате текстового вебинара](https://t.me/danokhlopkov/1495) _(Startups)_
+- **2025-02-17** — [Что же будет в нашем пре-акселераторе?](https://t.me/danokhlopkov/1494) _(TON, TG Apps, Startups, Social)_
+- **2025-02-12** — [Сейчас многие каналы в TON обсуждают желтушную статью, где вбросили...](https://t.me/danokhlopkov/1491) _(TON)_
+- **2025-02-12** — [Wrapped Telegram Stars  ⭐️⭐️⭐️](https://t.me/danokhlopkov/1490) _(TON, TG Apps)_
+- **2025-02-06** — [Дарова](https://t.me/danokhlopkov/1479) _(TON, TG Apps, Личное)_
+- **2025-01-21** — [Выпускники интенсивов - AI Agents](https://t.me/danokhlopkov/1476) _(AI, Startups)_
+- **2025-01-08** — [Буду в Бангкоке со следующей недели до конца февраля.](https://t.me/danokhlopkov/1475) _(TON, Личное)_
+- **2025-01-07** — [Фарминг LP токенов](https://t.me/danokhlopkov/1474) _(TON, Crypto, Data)_
+- **2025-01-03** — [Посоветуйте книги, которые перевернули ваше представление о мире📕](https://t.me/danokhlopkov/1473) _(misc)_
+- **2025-01-03** — [ДЕАНОН КОШЕЛЬКОВ В TON](https://t.me/danokhlopkov/1472) _(TON, Startups, Social)_
+- **2024-12-30** — [В Корее:](https://t.me/danokhlopkov/1470) _(Social)_
+- **2024-12-28** — [Новогодняя Анкета ⭐️](https://t.me/danokhlopkov/1469) _(TON, AI, Startups, Data, Личное)_
+- **2024-12-28** — [Новогодние праздники — время изучить что-нибудь новенькое.](https://t.me/danokhlopkov/1468) _(misc)_
+- **2024-12-28** — [Итоги года 2024:](https://t.me/danokhlopkov/1467) _(TON, AI, Data, Личное)_
+- **2024-12-27** — [Собраться с любимыми и посмотреть что-нибудь на праздниках — дело с...](https://t.me/danokhlopkov/1466) _(AI, Startups)_
+- **2024-12-15** — [Новости](https://t.me/danokhlopkov/1465) _(AI, Startups)_
+- **2024-12-06** — [Начинаем.](https://t.me/danokhlopkov/1464) _(TG Apps)_
+- **2024-12-04** — [Проекты в телеграмме бьют все рекорды. ](https://t.me/danokhlopkov/1463) _(TG Apps)_
+- **2024-12-03** — [Топ городов Японии, в которых я побывал](https://t.me/danokhlopkov/1456) _(Личное)_
+- **2024-12-02** — [Вопиющая несправедливость](https://t.me/danokhlopkov/1455) _(Social)_
+- **2024-12-01** — [Последний пост про вебинар (обещаю).](https://t.me/danokhlopkov/1454) _(misc)_
+- **2024-11-29** — [Телеграм запустит свою ревшер платформу.](https://t.me/danokhlopkov/1449) _(TG Apps)_
+- **2024-11-27** — [В это воскресенье 1 декабря мы выложим инфу, как создать с нуля мин...](https://t.me/danokhlopkov/1448) _(TG Apps, Social)_
+- **2024-11-26** — [KYC и Telegram Stars](https://t.me/danokhlopkov/1447) _(TON, TG Apps, Startups)_
+- **2024-11-25** — [Наблюдаю над тем, какие миниаппы сейчас стреляют](https://t.me/danokhlopkov/1446) _(TG Apps, Startups, Data)_
+- **2024-11-24** — [Онсэн в Японии далеко от большого города.](https://t.me/danokhlopkov/1445) _(Личное)_
+- **2024-11-20** — [Деплой здорового человека: без ssh и pkill](https://t.me/danokhlopkov/1444) _(Startups, Data)_
+- **2024-11-19** — [Приколы Японии 🍱](https://t.me/danokhlopkov/1443) _(Личное)_
+- **2024-11-18** — [Сколько зарабатывают торговые боты в Telegram](https://t.me/danokhlopkov/1442) _(TON, TG Apps, Startups)_
+- **2024-11-16** — [Конечно же Дуров говорит о memhash.](https://t.me/danokhlopkov/1441) _(TG Apps)_
+- **2024-11-15** — [Телеграмм давно вышел за пределы СНГ. Наконец-то тгботы переросли в...](https://t.me/danokhlopkov/1440) _(TG Apps, Личное)_
+- **2024-11-06** — [Даня.zip](https://t.me/danokhlopkov/1439) _(Личное)_
+- **2024-10-26** — [Чтобы подготовиться к мем-сезону на Тоне, я решил взять тестовое за...](https://t.me/danokhlopkov/1438) _(TON, Data)_
+- **2024-10-25** — [Как читать платные тг каналы бесплатно](https://t.me/danokhlopkov/1437) _(TON, TG Apps)_
+- **2024-10-22** — [На всякий случай](https://t.me/danokhlopkov/1436) _(misc)_
+- **2024-10-15** — [Data-driven VC](https://t.me/danokhlopkov/1435) _(AI, Startups, Data)_
+- **2024-10-11** — [Для тех, кто делает виральный миниапп в тг](https://t.me/danokhlopkov/1434) _(TON, TG Apps, Startups, Личное)_
+- **2024-10-09** — [Что ребята сделали за месяц в нашем комьюнити](https://t.me/danokhlopkov/1433) _(TG Apps, AI, Startups)_
+- **2024-10-07** — [Пригласили поменторить в этот четверг](https://t.me/danokhlopkov/1432) _(TON, Личное)_
+- **2024-10-05** — [Кастдев](https://t.me/danokhlopkov/1431) _(TG Apps)_
+- **2024-10-01** — [ща допаршу кое-что, потерпите с медленной телегой немного](https://t.me/danokhlopkov/1430) _(misc)_
+- **2024-09-30** — [Посчитал аудиторию всех живых Телеграм ботов и мини-апок](https://t.me/danokhlopkov/1429) _(TG Apps, Startups)_
+- **2024-09-25** — [Слитый гайд Mr Beast для сотрудников — что внутри](https://t.me/danokhlopkov/1428) _(Social)_
+- **2024-09-24** — [Сколько человек сказало вам нет?](https://t.me/danokhlopkov/1426) _(Startups)_
+- **2024-09-17** — [Коллекция успешных A/B тестов больших компаний](https://t.me/danokhlopkov/1425) _(Data)_
+- **2024-09-15** — [Рекуррентные подписки за телеграм старз - это провал. ](https://t.me/danokhlopkov/1423) _(TON, Social)_
+- **2024-09-05** — [все закупились?](https://t.me/danokhlopkov/1422) _(misc)_
+- **2024-09-05** — [во-первых, если вы прогаете, но делаете это до сих пор по старинке,...](https://t.me/danokhlopkov/1421) _(AI)_
+- **2024-09-01** — [Увидел, что фаундер Open Terminal поставил звезду на гитхабе проект...](https://t.me/danokhlopkov/1420) _(Startups)_
+- **2024-08-29** — [Мы в рамках интенсива придумали идею телеграмм мини аппа, набросали...](https://t.me/danokhlopkov/1419) _(TG Apps, Startups)_
+- **2024-08-28** — [Вчера пришла одна идея (предсказывать успех мема в канале @fastfood...](https://t.me/danokhlopkov/1418) _(TG Apps, AI, Startups, Data)_
+- **2024-08-27** — [Продолжаю рисерч, как VC фонды определяют успех стартапа по фаундер...](https://t.me/danokhlopkov/1417) _(Startups, Social)_
+- **2024-08-26** — [А читает ли меня кто-то из Японии?](https://t.me/danokhlopkov/1416) _(Личное)_
+- **2024-08-26** — [Очень нравится новый виток эволюции мемов.](https://t.me/danokhlopkov/1415) _(misc)_
+- **2024-08-23** — [Вавилон](https://t.me/danokhlopkov/1414) _(TG Apps, Startups)_
+- **2024-08-22** — [Чем похожи фаундеры юникорнов?](https://t.me/danokhlopkov/1413) _(Startups, Data)_
+- **2024-08-21** — [Для тех, кто пока не планирует делать свой стартап, но хочет порабо...](https://t.me/danokhlopkov/1412) _(AI, Startups, Data, Личное)_
+- **2024-08-18** — [Отвели первую вводную лекцию. Поставил айфон, записал и нарезал фра...](https://t.me/danokhlopkov/1411) _(TG Apps)_
+- **2024-08-16** — [Исследование Cointelegraph: шанс выиграть в рулетку выше, чем зараб...](https://t.me/danokhlopkov/1410)
+- **2024-08-15** — [Вот уже две недели как тг пишет число юзеров у ботов. Что если спар...](https://t.me/danokhlopkov/1409) _(TG Apps)_
+- **2024-08-14** — [Запустил закрытый платный канал. Буду выкладывать туда то, что в ос...](https://t.me/danokhlopkov/1408)
+- **2024-08-12** — [Жалеете, что не влетели в крипту 10 лет назад? Не пропустите бум тг...](https://t.me/danokhlopkov/1407) _(TON, TG Apps, Crypto, AI, Startups)_
+- **2024-08-06** — [ТГ-аппки захватывают Telegram, а вы тормозите](https://t.me/danokhlopkov/1406) _(TON, TG Apps, Startups, Data)_
+- **2024-08-01** — [Поговорив с десятком подписчиков, я увидел те же проблемы, которые ...](https://t.me/danokhlopkov/1405) _(Startups, Social)_
+- **2024-07-31** — [С недавних пор Телеграм пишет MAU у каждого бота.](https://t.me/danokhlopkov/1404) _(TG Apps, Startups)_
+- **2024-07-30** — [FastHTML = FastAPI + HTMX 💨](https://t.me/danokhlopkov/1403) _(Data)_
+- **2024-07-29** — [Культура компании: #Meta vs. #Apple](https://t.me/danokhlopkov/1402) _(Startups)_
+- **2024-07-25** — [Мой хобби-проект - Fast Food Memes bot](https://t.me/danokhlopkov/1401) _(TG Apps, AI, Startups, Data, Social)_
+- **2024-07-23** — [база](https://t.me/danokhlopkov/1399) _(misc)_
+- **2024-07-17** — [Венчурный процесс 💰](https://t.me/danokhlopkov/1398) _(AI, Startups)_
+- **2024-07-16** — [1 Product of the day при поддержке @producthackers](https://t.me/danokhlopkov/1397) _(Startups)_
+- **2024-07-15** — [Посмотрите, как питчит стартап gen z. Сурс: X](https://t.me/danokhlopkov/1396) _(Startups)_
+- **2024-07-12** — [Начинаем.](https://t.me/danokhlopkov/1395) _(misc)_
+- **2024-07-12** — [Вот я юзаю LLMки и радуюсь. А ведь когда-то я сам обучал разные жос...](https://t.me/danokhlopkov/1394) _(Личное)_
+- **2024-07-11** — [Пресиды больше не интересуют.](https://t.me/danokhlopkov/1393) _(misc)_
+- **2024-07-11** — [пост удалён](https://t.me/danokhlopkov/1392) _(misc)_
+- **2024-07-10** — [Нельзя так просто взять маркдаун текст из ллмки и сконвернуть в сти...](https://t.me/danokhlopkov/1391) _(AI, Data)_
+- **2024-07-08** — [Все, что нужно от LLMок](https://t.me/danokhlopkov/1390) _(misc)_
+- **2024-07-06** — [На скрине - топ категорий стартапов, у кого был пресид в 2024 году....](https://t.me/danokhlopkov/1389) _(Startups)_
+- **2024-07-06** — [Стартапы - это тапалки с Telegram stars, а не то, что вы подумали.](https://t.me/danokhlopkov/1388) _(TG Apps, Startups)_
+- **2024-07-05** — [Древнейшая профессия тг ботов - админить чаты.](https://t.me/danokhlopkov/1387) _(TG Apps)_
+- **2024-07-03** — [Чуваки, кто юзает kedro ML?](https://t.me/danokhlopkov/1386) _(AI)_
+- **2024-06-30** — [ЛейблЭнкодить категориальные фичи - 🤮](https://t.me/danokhlopkov/1385) _(misc)_
+- **2024-06-28** — [Поздравим @okhlopkov - первым из нас преодолел рубеж 10к! 🔥🔥🔥](https://t.me/danokhlopkov/1384) _(misc)_
+- **2024-06-28** — [Как попасть в Лондон. Гайд.  ](https://t.me/danokhlopkov/1383) _(TG Apps, Startups, Личное)_
+- **2024-06-28** — [Как же больно](https://t.me/danokhlopkov/1382) _(misc)_
+- **2024-06-26** — [в чем сила физтеха](https://t.me/danokhlopkov/1381) _(Личное)_
+- **2024-06-25** — [Я немного устал уже от этой гонки AI ассистентов. Вчера ChatGPT топ...](https://t.me/danokhlopkov/1380) _(AI, Startups)_
+- **2024-06-19** — [Эффект от недельного детокса](https://t.me/danokhlopkov/1379) _(Startups, Личное)_
+- **2024-06-18** — [Инсайты отпуска ](https://t.me/danokhlopkov/1378) _(Social)_
+- **2024-06-05** — [Как распарсить линкедин](https://t.me/danokhlopkov/1377) _(Data, Social)_
+- **2024-05-29** — [Качества норм early-stage фаундера с т.з. VC](https://t.me/danokhlopkov/1376) _(Startups, Data)_
+- **2024-05-29** — [Какие тулы лучше прогать самим, а какие купить](https://t.me/danokhlopkov/1375) _(Data)_
+- **2024-05-21** — [В лондонском ODS сообществе спросили про использование копайлотов. ...](https://t.me/danokhlopkov/1373) _(AI, Личное)_
+- **2024-05-18** — [100% британцев, у которых мне посчастливилось подсмотреть, как они ...](https://t.me/danokhlopkov/1372) _(misc)_
+- **2024-05-13** — [Вообще конечно chatGPT аналитик топовая вещь.](https://t.me/danokhlopkov/1371) _(TG Apps, AI, Startups, Data)_
+- **2024-05-12** — [Представьте, что вы хотите начать нормально собирать данные, чистит...](https://t.me/danokhlopkov/1370) _(AI, Startups, Data)_
+- **2024-05-08** — [Загрузка мемов в @ffmemesbot](https://t.me/danokhlopkov/1369) _(TG Apps, AI, Startups, Data)_
+- **2024-05-02** — [Интернет магазин в терминале по ssh](https://t.me/danokhlopkov/1368) _(Data)_
+- **2024-04-29** — [Open-source тула, превращающая комп в Джарвис](https://t.me/danokhlopkov/1366) _(AI)_
+- **2024-04-21** — [Запустил Ламу локально и забыл — теперь Alt-Tab вместо Google](https://t.me/danokhlopkov/1364) _(AI)_
+- **2024-04-20** — [Выступление Дурова и новые платежи в Telegram.](https://t.me/danokhlopkov/1362) _(TON, Data, Личное)_
+- **2024-04-19** — [Почему твои сайд-проекты приносят $0](https://t.me/danokhlopkov/1361) _(AI, Startups, Data, Social)_
+- **2024-04-18** — [У моих друзей вышел подкаст про Suno AI и эволюцию муз нейронок. Ин...](https://t.me/danokhlopkov/1360) _(AI, Startups, Data, Личное)_
+- **2024-04-17** — [Я периодически устраиваю киновечера. ](https://t.me/danokhlopkov/1359) _(Личное)_
+- **2024-04-17** — [Набор дата-сайнтиста в стартапе по-британски](https://t.me/danokhlopkov/1358) _(AI, Startups, Data)_
+- **2024-04-15** — [У нас на работе британцы играют в игру: кто забыл заблокировать ноу...](https://t.me/danokhlopkov/1357) _(misc)_
+- **2024-04-12** — [Задача трех тел (2024)](https://t.me/danokhlopkov/1356) _(Startups)_
+- **2024-04-09** — [Невероятная презентация создателя Patreon ](https://t.me/danokhlopkov/1355) _(Social)_
+- **2024-04-07** — [Посоветуйте игры на компуктер, чтобы вдвоем можно было на маках пои...](https://t.me/danokhlopkov/1353) _(misc)_
+- **2024-04-03** — [Как я вижу Linkedin, который собрался встраивать себе тик токи:](https://t.me/danokhlopkov/1352) _(Social)_
+- **2024-04-03** — [Как работают алгоритмы LinkedIn — записки с воркшопа](https://t.me/danokhlopkov/1351) _(Social)_
+- **2024-04-01** — [fastfoodmemes](https://t.me/danokhlopkov/1349) _(misc)_
+- **2024-04-01** — [1 апреля - праздник юмора](https://t.me/danokhlopkov/1348) _(TG Apps, Startups)_
+- **2024-03-25** — [Слитые переписки Джобса, Цукерберга и Гейтса](https://t.me/danokhlopkov/1347) _(Startups, Social)_
+- **2024-03-21** — [Говорят, что 2030е за биотехом.](https://t.me/danokhlopkov/1346) _(AI, Личное)_
+- **2024-03-17** — [Прошел ровно месяц с запуска новой версии бота с мемами.](https://t.me/danokhlopkov/1345) _(TG Apps, Startups)_
+- **2024-03-08** — [Фаундер показывает, как LLM парсит данные](https://t.me/danokhlopkov/1344) _(Startups, Data, Social)_
+- **2024-03-05** — [Я че не пишу в канал. Да как-то не о чем.](https://t.me/danokhlopkov/1343) _(TG Apps, Startups)_
+- **2024-02-25** — [Я заметил, что часто ставлю реакцию на мем от @ffmemesbot относител...](https://t.me/danokhlopkov/1342) _(TG Apps, Startups, Social)_
+- **2024-02-23** — [Thank god I've learnt python & SQL before I started to write code i...](https://t.me/danokhlopkov/1341) _(Data)_
+- **2024-02-22** — [Я конечно решил не рассказывать, куда устроился работать и почему э...](https://t.me/danokhlopkov/1340) _(TON, AI, Startups)_
+- **2024-02-16** — [Вспомнил проект, который мы в 2018 делали с Лехой на хакатоне Junct...](https://t.me/danokhlopkov/1339) _(TON, Data, Social)_
+- **2024-02-04** — [Топовый юзкейс Apple очков - ходить в них по улице ](https://t.me/danokhlopkov/1338) _(misc)_
+- **2024-01-28** — [Апдейт по боту с мемами](https://t.me/danokhlopkov/1337) _(TG Apps, AI, Startups, Data)_
+- **2024-01-21** — [Когда делаешь настолько инновационного телеграм бота, что он ломает...](https://t.me/danokhlopkov/1334) _(TG Apps)_
+- **2024-01-16** — [Написал первую строчку на javascript.](https://t.me/danokhlopkov/1333) _(misc)_
+- **2024-01-15** — [Первый рабочий день как Senior Data Scientist.](https://t.me/danokhlopkov/1332) _(Startups, Data)_
+- **2024-01-08** — [Вот вы присоединились к проекту на питоне, у которого есть какие-ни...](https://t.me/danokhlopkov/1331) _(Data)_
+- **2023-12-31** — [Пацаны, отлипайте от компа)](https://t.me/danokhlopkov/1330) _(misc)_
+- **2023-12-28** — [На работу я выхожу 15 января, а один из двух парттаймов завершился....](https://t.me/danokhlopkov/1329) _(TG Apps, AI, Startups, Data)_
+- **2023-12-26** — [Итоги года:](https://t.me/danokhlopkov/1328) _(Личное)_
+- **2023-12-22** — [Планируемый стек нового бота с мемами:](https://t.me/danokhlopkov/1327) _(TG Apps, AI, Data)_
+- **2023-12-20** — [Недавно моя мем-газета @ffmemesbot перевалила за 20к читателей. Спа...](https://t.me/danokhlopkov/1326) _(TG Apps, AI, Startups, Data)_
+- **2023-12-19** — [Какой контент в этом канале вы бы хотели видеть в новом году? 🐉](https://t.me/danokhlopkov/1325) _(Social)_
+- **2023-12-14** — [Тут и там люди уезжают на ретриты, чтобы перезагрузиться и попробов...](https://t.me/danokhlopkov/1324) _(TG Apps, Startups)_
+- **2023-12-11** — [Кого зареферить в русский Forbes 30 under 30 - пишите регалии в лс....](https://t.me/danokhlopkov/1323) _(misc)_
+- **2023-12-09** — [Нашел работу 🇬🇧](https://t.me/danokhlopkov/1322) _(misc)_
+- **2023-12-06** — [Книги, чтобы стать качественным разработчиком](https://t.me/danokhlopkov/1321) _(misc)_
+- **2023-12-04** — [Когда пришел черед искать работу, я обернулся назад, чтобы понять, ...](https://t.me/danokhlopkov/1320) _(AI, Startups, Data)_
+- **2023-11-29** — [Академ 2](https://t.me/danokhlopkov/1319) _(TG Apps, Startups, Social)_
+- **2023-11-23** — [Просто на память ](https://t.me/danokhlopkov/1318) _(Startups, Data, Social)_
+- **2023-11-16** — [Провел 5 платных консультаций. ](https://t.me/danokhlopkov/1317) _(Startups)_
+- **2023-11-12** — [Чем больше посмотрел фильмов, тем дольше тратишь на поиск нового.](https://t.me/danokhlopkov/1316) _(Data)_
+- **2023-11-09** — [Tim Ferris](https://t.me/danokhlopkov/1315) _(TG Apps, Startups, Social)_
+- **2023-11-06** — [Консалтинг от Дэна](https://t.me/danokhlopkov/1314) _(TG Apps, AI, Startups, Data)_
+- **2023-11-02** — [sorry guys](https://t.me/danokhlopkov/1313) _(misc)_
+- **2023-10-31** — [Amplitude for Telegram bots](https://t.me/danokhlopkov/1312) _(TON, TG Apps, Startups, Data)_
+- **2023-10-27** — [Методичка по монетизации для стартаперов](https://t.me/danokhlopkov/1311) _(Startups)_
+- **2023-10-21** — [100k B2B компаний #датасет | СЛИВ ДАННЫХ 2023](https://t.me/danokhlopkov/1309) _(TG Apps, Startups, Data)_
+- **2023-10-20** — [Stateof.ai каждый год публикует отчет о развитии AI. ](https://t.me/danokhlopkov/1308) _(AI, Startups)_
+- **2023-10-20** — [Недавно рисерчил новые регуляции по борьбе с фродом в UK: Online sa...](https://t.me/danokhlopkov/1307) _(Startups, Data, Social)_
+- **2023-10-19** — [Как на самом деле устроена венчурная индустрия](https://t.me/danokhlopkov/1306) _(AI, Startups)_
+- **2023-10-17** — [Недавно был разговор с челом из моей EF когорты о том, что мы не ве...](https://t.me/danokhlopkov/1305) _(AI, Startups, Social)_
+- **2023-10-16** — [Как LLM превращает тебя в Железного человека](https://t.me/danokhlopkov/1304) _(AI)_
+- **2023-10-13** — [Если вы подумываете делать свой стартап, если есть идея, то всегда ...](https://t.me/danokhlopkov/1303) _(Startups, Личное)_
+- **2023-10-10** — [AI SaaS компании, которые получили seed инвестиции размером $10М+ з...](https://t.me/danokhlopkov/1302) _(TON, AI, Startups, Data)_
+- **2023-10-09** — [#датасет bnbusdt ](https://t.me/danokhlopkov/1289) _(Data)_
+- **2023-10-05** — [Про Levels.fyi](https://t.me/danokhlopkov/1288) _(Startups)_
+- **2023-10-05** — [Следующий батч YCombinator W24](https://t.me/danokhlopkov/1287) _(AI, Startups, Data)_
+- **2023-10-03** — [Увидел, что вышла альфа версия Django 5.0 (2 недели назад).](https://t.me/danokhlopkov/1286) _(Data)_
+- **2023-10-02** — [Мы тут в Entrepreneur First решили покастдевить.](https://t.me/danokhlopkov/1285)
+- **2023-09-28** — [Метаверс от Meta](https://t.me/danokhlopkov/1282) _(AI)_
+- **2023-09-28** — [Когда в фильмах показывают контакт с инопланетянами, мы часто общае...](https://t.me/danokhlopkov/1281) _(misc)_
+- **2023-09-26** — [Симулятор стартапа](https://t.me/danokhlopkov/1280) _(Startups)_
+- **2023-09-25** — [4х летняя Архитектура @ffmemesbot](https://t.me/danokhlopkov/1279) _(TG Apps, AI, Startups, Data)_
+- **2023-09-22** — [Остановитесь](https://t.me/danokhlopkov/1278) _(misc)_
+- **2023-09-21** — [Надо, наверное, рассказать про Entrepreneur first, да?](https://t.me/danokhlopkov/1277) _(Startups)_
+- **2023-09-16** — [Entrepreneur first](https://t.me/danokhlopkov/1275) _(misc)_
+- **2023-09-15** — [Прочитайте статью. Если все поймете, то можете претендовать на стат...](https://t.me/danokhlopkov/1274) _(AI)_
+- **2023-09-13** — [Йоу, запись подкаста с одним из самых интересных гостей! ](https://t.me/danokhlopkov/1271) _(misc)_
+- **2023-09-06** — [Сижу на митапе PyData. На скрине результаты опроса, какие вообще ML...](https://t.me/danokhlopkov/1269) _(AI)_
+- **2023-09-06** — [Мой путь: Kaggle → Data Engineer → Head of Analytics](https://t.me/danokhlopkov/1268) _(TG Apps, AI, Startups, Data)_
+- **2023-09-04** — [Экс-топ-1 Kaggle рассказывает, как работал квантом](https://t.me/danokhlopkov/1267) _(Social)_
+- **2023-09-02** — [Найди своего начальника на фотке](https://t.me/danokhlopkov/1264) _(misc)_
+- **2023-09-01** — [С днем знаний! ](https://t.me/danokhlopkov/1263) _(TG Apps, Startups, Social, Личное)_
+- **2023-08-30** — [Хочу спарсить все нормальные тг чаты на около-IT темы. В каталогах ...](https://t.me/danokhlopkov/1262) _(misc)_
+- **2023-08-29** — [Надоело. ](https://t.me/danokhlopkov/1261) _(Личное)_
+- **2023-08-25** — [Разгадал загадку, как можно скачать полный список подписчиков своег...](https://t.me/danokhlopkov/1260) _(TG Apps, Data, Social)_
+- **2023-08-21** — [Больше данных для связки EVM адрес + твиттер. Теперь это 100к юзеро...](https://t.me/danokhlopkov/1259) _(Social)_
+- **2023-08-21** — [Пиарю свой линкедин, как пиарил этот канал - выкладывая  #датасет!](https://t.me/danokhlopkov/1258) _(Data, Social)_
+- **2023-08-16** — [Когда только появились сторисы в инсте, их можно было смотреть милл...](https://t.me/danokhlopkov/1257) _(Startups, Data, Social)_
+- **2023-08-12** — [Матвей вырастил с нуля и управлял нашим комьюнити в дискорде (50к) ...](https://t.me/danokhlopkov/1256) _(Startups, Social)_
+- **2023-07-24** — [Что делать, если твоя основная мотивация - это любопытство?](https://t.me/danokhlopkov/1255) _(Startups)_
+- **2023-07-17** — [Затехал свое CV и продолжаю искать работу в Лондоне.](https://t.me/danokhlopkov/1254) _(Social, Личное)_
+- **2023-07-11** — [Решил я, значит, что 3 сервера для pet projects это не очень afford...](https://t.me/danokhlopkov/1253) _(TG Apps, Data, Social)_
+- **2023-07-02** — [Звучит банально, но всегда фиксируйте цифры после договоренностей. ](https://t.me/danokhlopkov/1252) _(Startups)_
+- **2023-06-29** — [Лучший учебник по FastAPI, который я читал](https://t.me/danokhlopkov/1251) _(Data)_
+- **2023-06-28** — [Господа разработчики, какими GPT/LLM тулами вы пользуетесь?](https://t.me/danokhlopkov/1250) _(AI)_
+- **2023-06-27** — [Как эмбеддить и кластеризовать огромные соц графы (миллионы вершин)...](https://t.me/danokhlopkov/1249) _(TG Apps)_
+- **2023-06-26** — [После вечного бана в инсте, признаюсь, у меня была ломка по сториз.](https://t.me/danokhlopkov/1248) _(Startups, Social)_
+- **2023-06-26** — [#датасет 45М реакций на мемы из @ffmemesbot.](https://t.me/danokhlopkov/1247) _(TG Apps, Startups, Data)_
+- **2023-06-26** — [4 года @ffmemesbot 🎂](https://t.me/danokhlopkov/1246) _(TON, TG Apps, Startups, Data, Social)_
+- **2023-06-23** — [Подарили мне, значит, год назад Ledger. Пришлось генерить себе еще ...](https://t.me/danokhlopkov/1245)
+- **2023-06-13** — [Созвонился, значит, с Head of Product из Coinbase Commerce (их крип...](https://t.me/danokhlopkov/1242) _(TG Apps, Startups)_
+- **2023-06-12** — [8к twitter миллионников](https://t.me/danokhlopkov/1241) _(Startups, Data, Social)_
+- **2023-06-09** — [t_korchagin: Онлайн тул для увеличения картинок](https://t.me/danokhlopkov/1239) _(misc)_
+- **2023-06-08** — [Дата журнализм](https://t.me/danokhlopkov/1238) _(AI, Data)_
+- **2023-06-06** — [Ага. Давайте дальше собирать персональные данные под предлогом “защ...](https://t.me/danokhlopkov/1237) _(misc)_
+- **2023-06-06** — [Producthunt, где только стартапы. Хотя бы без единорогов.](https://t.me/danokhlopkov/1236) _(Startups, Data, Social)_
+- **2023-06-05** — [Крутой тул для быстрой визуализации маленьких графов - cosmograph.a...](https://t.me/danokhlopkov/1235) _(Data)_
+- **2023-06-03** — [Если что, крутые венчурные фонды уже давно обзавелись супер-мега па...](https://t.me/danokhlopkov/1234) _(Startups, Data, Social)_
+- **2023-05-30** — [Я сообщил, что ищу работу, — и сразу многие решили проконсультирова...](https://t.me/danokhlopkov/1233) _(Data)_
+- **2023-05-29** — [ютуб шоу](https://t.me/danokhlopkov/1232) _(AI, Startups, Social)_
+- **2023-05-25** — [Эволюция моей оркестрации:](https://t.me/danokhlopkov/1231) _(TON, Data)_
+- **2023-05-24** — [Для новеньких в канале](https://t.me/danokhlopkov/1230) _(Data)_
+- **2023-05-24** — [На случай, если кому-то нужен список из 10к web3 / blockchain компа...](https://t.me/danokhlopkov/1229) _(Crypto, Social)_
+- **2023-05-22** — [Теперь официально ищу работу! ](https://t.me/danokhlopkov/1228) _(Startups, Social)_
+- **2023-05-10** — [Re: My friends who cheated in interviews are getting p...](https://t.me/danokhlopkov/1225) _(Startups)_
+- **2023-05-08** — [Мудрость Навала в виде детской книги с картинками](https://t.me/danokhlopkov/1224) _(Social)_
+- **2023-05-05** — [Утреннее чтиво про ChatGPT и ко 🗞](https://t.me/danokhlopkov/1223) _(AI)_
+- **2023-05-04** — [Тамагочи 3](https://t.me/danokhlopkov/1222) _(Social)_
+- **2023-05-04** — [Плагин для любого туду листа, который скажет, можно ли это сделать ...](https://t.me/danokhlopkov/1221) _(AI)_
+- **2023-05-03** — [Валидация стартап-идеи / генерация конкурентного анализа для питчдека](https://t.me/danokhlopkov/1220) _(AI, Startups)_
+- **2023-05-03** — [Очень много развелось тг-юзер-ботов, которые отвечают GPT-генериров...](https://t.me/danokhlopkov/1219) _(AI)_
+- **2023-05-02** — [Подборка около-IT каналов, которые я читаю:](https://t.me/danokhlopkov/1218) _(misc)_
+- **2023-05-02** — [Вокруг меня все такие безработные, как будто уже уверовали в приход...](https://t.me/danokhlopkov/1217) _(misc)_
+- **2023-05-02** — [Личный дропбокс, который сам организует иерархию папочек и имен для...](https://t.me/danokhlopkov/1216) _(misc)_
+- **2023-05-01** — [Все эти MVP и лин стартапы были придуманы для того, чтобы программи...](https://t.me/danokhlopkov/1215) _(Startups)_
+- **2023-05-01** — [Ищу добровольца-студента, кто бесплатно запилит простейшую текстову...](https://t.me/danokhlopkov/1214) _(misc)_
+- **2023-04-30** — [А что сейчас происходит на ДФ МФТИ? В мое время это было главное ме...](https://t.me/danokhlopkov/1213) _(Личное)_
+- **2023-04-28** — [Ситуация](https://t.me/danokhlopkov/1212) _(misc)_
+- **2023-04-27** — [Все-таки Телега не разрешает часто редактировать сообщения в канала...](https://t.me/danokhlopkov/1211) _(TG Apps)_
+- **2023-04-26** — [Круто, что Terms of Service стали писать понятным языком. Читаются ...](https://t.me/danokhlopkov/1209) _(Startups, Social)_
+- **2023-04-26** — [Делаешь, значит, рекомендательную систему.](https://t.me/danokhlopkov/1208) _(TG Apps, Startups, Data)_
+- **2023-04-26** — [Вижу, что выходят обновления Telegram Bot API и @wallet, но новые т...](https://t.me/danokhlopkov/1207) _(TG Apps, Data)_
+- **2023-04-25** — [С 2014 года я написал ~310k сообщений в 5300 тг чатах.](https://t.me/danokhlopkov/1206) _(TG Apps, AI)_
+- **2023-04-24** — [когда коду уже пора вырастать из ноутбука](https://t.me/danokhlopkov/1205) _(misc)_
+- **2023-04-23** — [Ресерчу актуальные OSINT инструменты. Открыл для себя сайт-клон тви...](https://t.me/danokhlopkov/1204) _(Data, Social)_
+- **2023-04-21** — [Соцсеть для гиков без фронтенда.](https://t.me/danokhlopkov/1202) _(Data, Social)_
+- **2023-04-20** — [Вы тоже считаете, что использовать сейчас ChatGPT для написания тек...](https://t.me/danokhlopkov/1201) _(AI)_
+- **2023-04-18** — [Датасеты, которые были использованы для обучения BloombergGPT, и их...](https://t.me/danokhlopkov/1200) _(Data)_
+- **2023-04-18** — [В какой-нибудь стране богач-злодей выделил кучу денег на обучение с...](https://t.me/danokhlopkov/1199) _(AI)_
+- **2023-04-17** — [Главное - делать то, во что веришь. Либо рубить кеш, чтобы было на ...](https://t.me/danokhlopkov/1198)
+- **2023-04-17** — [Резюме крипто- / стартап- / инвест-митапов, на которых был в послед...](https://t.me/danokhlopkov/1197) _(Crypto, Startups)_
+- **2023-04-15** — [UK-style UX](https://t.me/danokhlopkov/1196) _(misc)_
+- **2023-04-13** — [Рабочая стратегия интроверта на любой зарубежной конференции:](https://t.me/danokhlopkov/1195) _(misc)_
+- **2023-04-13** — [Как назвать стартап, который делает тоже самое, что делали вы до то...](https://t.me/danokhlopkov/1194) _(Startups)_
+- **2023-04-12** — [Ровно 5 лет назад в День Космонавтики мы релизнули альбом ЭТО ТьМА ...](https://t.me/danokhlopkov/1193) _(Личное)_
+- **2023-04-12** — [Почти все, с кем нетворкаю внутри UK Global Talent community, — без...](https://t.me/danokhlopkov/1192) _(misc)_
+- **2023-04-11** — [забанили](https://t.me/danokhlopkov/1191) _(misc)_
+- **2023-04-11** — [Бирил конечно красивая соцсеть, ведь там нет сотен друзей.](https://t.me/danokhlopkov/1190) _(Social)_
+- **2023-04-07** — [Посоветуйте монитор для дома, чтобы большой, как apple studio displ...](https://t.me/danokhlopkov/1189) _(misc)_
+- **2023-04-07** — [любой ментор на студенческих стартап-треках:](https://t.me/danokhlopkov/1188) _(TG Apps, Startups)_
+- **2023-04-06** — [Допустим, вы делаете свой венчурный фонд. Допустим, нашли LP и собр...](https://t.me/danokhlopkov/1187) _(Startups)_
+- **2023-04-05** — [Вообще непонятно, почему до сих пор нет норм open-source стартапа, ...](https://t.me/danokhlopkov/1186) _(Startups)_
+- **2023-04-05** — [Люблю находить open-source микросервисы, которые решают конкретную ...](https://t.me/danokhlopkov/1185) _(Data)_
+- **2023-04-02** — [итак, я делаю пятидневный офлайн-курс по чему-то на стыке теории му...](https://t.me/danokhlopkov/1184) _(Data, Social, Личное)_
+- **2023-04-01** — [Я завел свой телеграм канал про datascience starter pack 2023](https://t.me/danokhlopkov/1183) _(TG Apps)_
+- **2023-04-01** — [Почему бы Телеграмму не сделать свою рекомендательную систему? Напр...](https://t.me/danokhlopkov/1182) _(TG Apps)_
+- **2023-03-31** — [А вот и ML часть! Жду разбора от AI-коллег, кто шарит в рекомендашках](https://t.me/danokhlopkov/1181) _(AI, Social)_
+- **2023-03-31** — [Твиттер раскрыл код своей рекомендательной системы.](https://t.me/danokhlopkov/1180) _(Data, Social)_
+- **2023-03-27** — [О рекламе в кино  ](https://t.me/danokhlopkov/1178) _(Startups)_
+- **2023-03-23** — [Мда, chatgpt и видео уже монтажит](https://t.me/danokhlopkov/1177) _(AI, Social)_
+- **2023-03-23** — [Starknet (starkware) вообще придумали такую вещь как старки — на се...](https://t.me/danokhlopkov/1176)
+- **2023-03-23** — [Вообще митапы офигенная тема. Если ты фаундер, ты можешь сделать до...](https://t.me/danokhlopkov/1175) _(Startups)_
+- **2023-03-23** — [Абсолютно случайно пришел на нетворкинг тусу, а тут питчит криптоко...](https://t.me/danokhlopkov/1174) _(Crypto, Startups)_
+- **2023-03-23** — [Как конечно OpenAI легко уничтожил большинство стартапов, которые у...](https://t.me/danokhlopkov/1173) _(AI, Startups, Social)_
+- **2023-03-20** — [Ситуация](https://t.me/danokhlopkov/1172) _(AI, Social)_
+- **2023-03-20** — [Если хотите навернуть топик моделлинг из коробки, лучше использоват...](https://t.me/danokhlopkov/1171) _(misc)_
+- **2023-03-20** — [Как мы нашли первого ангельского инвестора.](https://t.me/danokhlopkov/1170) _(TG Apps, Startups, Личное)_
+- **2023-03-18** — [У меня конечно пока не получилось научить chatgpt выдавать shell ко...](https://t.me/danokhlopkov/1169) _(AI, Data)_
+- **2023-03-16** — [Лучший подарок мужчине технарю](https://t.me/danokhlopkov/1168) _(Social, Личное)_
+- **2023-03-16** — [Диалог между мной и Каримом:](https://t.me/danokhlopkov/1167) _(AI, Startups)_
+- **2023-03-14** — [ChatGPT взял интервью у @t_korchagin, который рассказал историю сво...](https://t.me/danokhlopkov/1166) _(AI)_
+- **2023-03-13** — [На входе:](https://t.me/danokhlopkov/1165) _(AI)_
+- **2023-03-12** — [Хочу умную колонку с chatgpt и долгой памятью.](https://t.me/danokhlopkov/1164) _(AI)_
+- **2023-03-12** — [Мой нетворкинг тур завел меня к друзьям в Оксфорд. Несколько открыт...](https://t.me/danokhlopkov/1163) _(Личное)_
+- **2023-03-11** — [Вот и проверим в понедельник, кто из нас опытный крипто инвестор.](https://t.me/danokhlopkov/1161) _(Crypto, Startups)_
+- **2023-03-10** — [Чат гпт с картинками от майкрософта. Надо заценить. Надеюсь, норм в...](https://t.me/danokhlopkov/1160) _(AI)_
+- **2023-03-10** — [Ставь клоуна, если хочешь реалити шоу «безработный русский в Лондон...](https://t.me/danokhlopkov/1159) _(Личное)_
+- **2023-03-10** — [Если у вас есть тг канал, проверьте, что в админах нет посторонних....](https://t.me/danokhlopkov/1158) _(TG Apps)_
+- **2023-03-08** — [Огромное спасибо всем, кто написал в личку.](https://t.me/danokhlopkov/1157) _(AI, Startups, Data)_
+- **2023-03-08** — [Я покинул свой стартап. ](https://t.me/danokhlopkov/1156) _(TG Apps, Startups)_
+- **2023-03-07** — [The volatility spread between Ether and Bitcoin has compressed to b...](https://t.me/danokhlopkov/1155) _(Crypto)_
+- **2023-03-02** — [ChatGPT сделал это видео](https://t.me/danokhlopkov/1153) _(TON, AI, Data, Social)_
+- **2023-02-21** — [AI/Data стартапы с последнего батча YCombinator](https://t.me/danokhlopkov/1152) _(AI, Startups)_
+- **2023-02-20** — [Каждый раз, когда я запускался на Producthunt, когда спамил другана...](https://t.me/danokhlopkov/1151) _(Startups)_
+- **2023-02-20** — [Пост 41. Короче сон.](https://t.me/danokhlopkov/1150) _(misc)_
+- **2023-02-18** — [Если в инсту завезут формат телеграм каналов, придется регистрирова...](https://t.me/danokhlopkov/1149) _(TG Apps)_
+- **2023-02-17** — [Как тебе такой промт, ЧелGPT?](https://t.me/danokhlopkov/1148) _(misc)_
+- **2023-02-16** — [USDT - самый популярный стейблкойн. Но как его популярность распред...](https://t.me/danokhlopkov/1147) _(Crypto)_
+- **2023-02-14** — [Научился кверить дату на Солане, поэтому держите топ токенов по чис...](https://t.me/danokhlopkov/1146) _(Social)_
+- **2023-02-11** — [POV](https://t.me/danokhlopkov/1145) _(misc)_
+- **2023-02-10** — [прочитала пересказ рисёча о том, что ИИ принимает решения так же ил...](https://t.me/danokhlopkov/1144) _(misc)_
+- **2023-02-01** — [Крч, никогда не ругать себя.](https://t.me/danokhlopkov/1143) _(misc)_
+- **2023-01-31** — [Если ваша ремут ворлдвайд туса не похожа на эту, это как минимум ст...](https://t.me/danokhlopkov/1142) _(misc)_
+- **2023-01-31** — [Каждый уважающий себя шифропанк должен написать себе крипто кошелек...](https://t.me/danokhlopkov/1141) _(Crypto)_
+- **2023-01-31** — [Как снять хату в Лондоне.](https://t.me/danokhlopkov/1140) _(Личное)_
+- **2023-01-30** — [Пример Cease and desist письма от Линкедина:](https://t.me/danokhlopkov/1139) _(Social)_
+- **2023-01-29** — [Вот ты нашел пару статей на тему оптимальной стратегии игры в покер...](https://t.me/danokhlopkov/1138) _(Startups)_
+- **2023-01-28** — [Сижу выбираю сковородку](https://t.me/danokhlopkov/1137) _(misc)_
+- **2023-01-28** — [Бомжевал 3 года](https://t.me/danokhlopkov/1136) _(Startups, Личное)_
+- **2023-01-26** — [Пацаны. Я же тут въезжаю жить в хату, в которой будет отдельная ком...](https://t.me/danokhlopkov/1135) _(misc)_
+- **2023-01-26** — [яндекс не стоит того, чтобы я изучил плюсы](https://t.me/danokhlopkov/1134) _(misc)_
+- **2023-01-26** — [Сто клоунов, и я расскажу пошагово, как искать хату в лондоне, если...](https://t.me/danokhlopkov/1133) _(Личное)_
+- **2023-01-26** — [TODO:](https://t.me/danokhlopkov/1132) _(Startups)_
+- **2023-01-25** — [Посмотрел, куда за последние полгода инвестировали фонды, в которые...](https://t.me/danokhlopkov/1131) _(Social)_
+- **2023-01-25** — [У нас же раунд скоро, решил проанализировать последние инвестиции в...](https://t.me/danokhlopkov/1130) _(Startups, Social)_
+- **2023-01-25** — [Офигенный лендос, офигенный видос, а продукт затестим](https://t.me/danokhlopkov/1129) _(Startups)_
+- **2023-01-24** — [Как же у меня горит с PH.](https://t.me/danokhlopkov/1128) _(Startups)_
+- **2023-01-24** — [А получил я эту карточку письмом! Так прикольно открывать посылки.](https://t.me/danokhlopkov/1127) _(TON, Startups, Social)_
+- **2023-01-23** — [Криптокошельки (типа Metamask, Trustwallet) не хранят вашу крипту —...](https://t.me/danokhlopkov/1125) _(Crypto)_
+- **2023-01-22** — [Формат ютуб шоу:](https://t.me/danokhlopkov/1124) _(Startups, Social)_
+- **2023-01-18** — [собери их всех](https://t.me/danokhlopkov/1123)
+- **2023-01-18** — [Приколы жить в Лондоне часть 4](https://t.me/danokhlopkov/1122) _(Startups, Личное)_
+- **2023-01-17** — [Наш агрегатор децентрализованных кроссчейн обменов Via Protocol в ш...](https://t.me/danokhlopkov/1121) _(Startups, Social, Личное)_
+- **2023-01-17** — [твой первый CEO/CPO](https://t.me/danokhlopkov/1120) _(misc)_
+- **2023-01-16** — [ура 5к подписчиков!!](https://t.me/danokhlopkov/1119) _(Social)_
+- **2023-01-16** — [Угар, но стейблкойнами люди пользуются скорее не на Ethereum, а на ...](https://t.me/danokhlopkov/1118) _(Crypto)_
+- **2023-01-16** — [Кто каким терминалом пользуется? ](https://t.me/danokhlopkov/1117) _(Startups)_
+- **2023-01-15** — [GPT-3 + браузер](https://t.me/danokhlopkov/1116) _(AI, Startups, Личное)_
+- **2023-01-13** — [Генератор онлайн движух для тимбилдинга распределенных команд](https://t.me/danokhlopkov/1115) _(Social)_
+- **2023-01-13** — [Всем, кто любит крипту — доброе утро!](https://t.me/danokhlopkov/1114) _(Crypto)_
+- **2023-01-12** — [Producthunt Golden Kitty rewards](https://t.me/danokhlopkov/1113) _(Startups, Social)_
+- **2023-01-11** — [Я пользуюсь deBank, если мне нужно посмотреть в одном месте](https://t.me/danokhlopkov/1111) _(Social)_
+- **2023-01-11** — [Как выглядел Via Protocol год назад](https://t.me/danokhlopkov/1110) _(Social)_
+- **2023-01-10** — [Короче, почему я в итоге поехал жить в Лондон.](https://t.me/danokhlopkov/1109) _(Startups, Личное)_
+- **2023-01-10** — [Плюсы жить в Лондоне:](https://t.me/danokhlopkov/1108) _(Личное)_
+- **2023-01-10** — [Статистика по увольнениям в IT.](https://t.me/danokhlopkov/1107) _(Startups, Social)_
+- **2023-01-09** — [В Лондоне 🇬🇧](https://t.me/danokhlopkov/1106) _(Личное)_
+- **2023-01-08** — [Когда меня попросят рассказать про Тбилиси](https://t.me/danokhlopkov/1105) _(Личное)_
+- **2023-01-08** — [Мой багаж в Лондон.](https://t.me/danokhlopkov/1104) _(Личное)_
+- **2023-01-07** — [MoviePy](https://t.me/danokhlopkov/1103) _(AI, Data, Social)_
+- **2023-01-06** — [альтернатива docker system prune](https://t.me/danokhlopkov/1101) _(Data)_
+- **2023-01-05** — [Подписываюсь под всем](https://t.me/danokhlopkov/1100) _(misc)_
+- **2023-01-05** — [Показывать, какой трек играет у курьера.](https://t.me/danokhlopkov/1099) _(misc)_
+- **2023-01-03** — [Как заставить себя не работать:](https://t.me/danokhlopkov/1098) _(misc)_
+- **2023-01-03** — [Очень популярный ютуб канал с LEGO видосами раскрыл свою статистику...](https://t.me/danokhlopkov/1097) _(Data, Social)_
+- **2023-01-02** — [Надеюсь, будет в учебниках истории. Понятно, что картина не полная,...](https://t.me/danokhlopkov/1096) _(misc)_
+- **2022-12-31** — [Пацан сказал, пацан сделал. ](https://t.me/danokhlopkov/1095)
+- **2022-12-30** — [Если интересно, что я постил с 28 января, что в течение месяца поте...](https://t.me/danokhlopkov/1094) _(Social)_
+- **2022-12-29** — [34 подписчика за год. Слабо?](https://t.me/danokhlopkov/1093) _(Social)_
+- **2022-12-28** — [нашел победную презентацию с хакатона 3.5 летней давности](https://t.me/danokhlopkov/1092) _(TON)_
+- **2022-12-27** — [СТО тогда vs. сейчас](https://t.me/danokhlopkov/1090) _(misc)_
+- **2022-12-27** — [Когда ты CTO и коммитишь только в приватные репо](https://t.me/danokhlopkov/1089) _(misc)_
+- **2022-12-26** — [Почему налоги в 30-40% — это хорошо, а комиссия Apple App Store 30%...](https://t.me/danokhlopkov/1087) _(misc)_
+- **2022-12-25** — [Хочется, конечно, оказаться в такой тусе, чтобы, если сказал «я в с...](https://t.me/danokhlopkov/1086) _(misc)_
+- **2022-12-23** — [Как правильно пить — рекомендации с YouTube](https://t.me/danokhlopkov/1084) _(Social)_
+- **2022-12-22** — [Занес все просмотренные фильмы в шедул посты @visualartdiary, чтобы...](https://t.me/danokhlopkov/1083) _(misc)_
+- **2022-12-21** — [Очень нравятся видосы, где неайтишники объясняют, как пользоваться ...](https://t.me/danokhlopkov/1081) _(Social)_
+- **2022-12-21** — [Хром расширение, которое парсит каждый сайт, на который ты заходишь...](https://t.me/danokhlopkov/1080) _(misc)_
+- **2022-12-20** — [Screensaver, или заставка для ютуб ролика, или красивый видос для л...](https://t.me/danokhlopkov/1079) _(Social)_
+- **2022-12-20** — [В браузере - rabby.io](https://t.me/danokhlopkov/1078)
+- **2022-12-19** — [В гитхабе трендится новый проект - Lago. Поднял $125k от YC.](https://t.me/danokhlopkov/1077) _(Startups, Data)_
+- **2022-12-19** — [Вышел большой отчет о прошлом, настоящем и будущем крипто индустрии...](https://t.me/danokhlopkov/1076) _(Crypto)_
+- **2022-12-13** — [Юзаю я, значит, крипту. Захожу на degenscore, а он мизерный. Это вс...](https://t.me/danokhlopkov/1074) _(Crypto)_
+- **2022-12-13** — [Open source скрипт, который проходится по всем твоим тг чатам, по в...](https://t.me/danokhlopkov/1073) _(TG Apps, Data)_
+- **2022-12-12** — [Давно была идея проекта Alan: телеграм юзер (не тгбот), который доб...](https://t.me/danokhlopkov/1072) _(TG Apps, AI, Data)_
+- **2022-12-11** — [Горячие направления DeFi стартапов прямо сейчас. Часть 2.](https://t.me/danokhlopkov/1071) _(Crypto, Startups)_
+- **2022-12-10** — [Горячие направления DeFi стартапов прямо сейчас. Часть 1.](https://t.me/danokhlopkov/1070) _(Crypto, Startups)_
+- **2022-12-10** — [Если мы опять сделаем live подкаст, то на какие темы? Какие вопросы...](https://t.me/danokhlopkov/1069) _(misc)_
+- **2022-12-10** — [Какие книги помогли сделать свой стартап, поднять инвестиции и попа...](https://t.me/danokhlopkov/1068) _(Startups)_
+- **2022-12-09** — [Ахахахахахаххахахахахахахахахахахаххахахахахахахахахахахахахахахаха...](https://t.me/danokhlopkov/1067) _(misc)_
+- **2022-12-09** — [А ведь это бесконечное TV реально интересно посмотреть какое-то вре...](https://t.me/danokhlopkov/1066) _(misc)_
+- **2022-12-09** — [В какой-то момент я офигел, что умеет ffmpeg. ](https://t.me/danokhlopkov/1064) _(Social, Личное)_
+- **2022-12-09** — [Линеар прислал новогоднюю статистику по закрытым таскам и багам.](https://t.me/danokhlopkov/1063) _(misc)_
+- **2022-12-08** — [Повесили гирлянду дома и купили мандарины. Сразу так уютно стало. Л...](https://t.me/danokhlopkov/1062) _(misc)_
+- **2022-12-07** — [Анализ моего соцграфа Instagram от @sv9t_channel. Осторожно: бигдат...](https://t.me/danokhlopkov/1061) _(Social)_
+- **2022-12-06** — [На стриме многие спрашивали, куда мы пивотнулись от via.exchange.](https://t.me/danokhlopkov/1059) _(Crypto, Startups)_
+- **2022-12-02** — [когда зашел на сервер, на который заходили только краулеры 🕷](https://t.me/danokhlopkov/1058) _(Data)_
+- **2022-12-02** — [У меня у одного весь ютуб в Лексе Фридмане, Джордане Питерсоне, Джо...](https://t.me/danokhlopkov/1057) _(Social)_
+- **2022-12-01** — [Итоги года ](https://t.me/danokhlopkov/1056) _(Startups, Личное)_
+- **2022-11-27** — [История хакерской группировки Anonymous, что они делали, какие перф...](https://t.me/danokhlopkov/1054) _(Social)_
+- **2022-11-27** — [Токенов много, сетей много, а часто хочется знать, кто кому сколько...](https://t.me/danokhlopkov/1052) _(Data)_
+- **2022-11-24** — [Придумай стартап](https://t.me/danokhlopkov/1050) _(Startups)_
+- **2022-11-22** — [Невероятная история Острова роз (2020)](https://t.me/danokhlopkov/1049) _(Startups)_
+- **2022-11-22** — [Библиотека UX/UI: все флоу топовых приложений](https://t.me/danokhlopkov/1048) _(Startups)_
+- **2022-11-21** — [Присылайте ваши УПОРОТЫЕ, ВИРАЛЬНЫЕ, УГАРНЫЕ идеи для хакатона в фо...](https://t.me/danokhlopkov/1047) _(TON, TG Apps, Social)_
+- **2022-11-20** — [Появилась идея провести онлайн хакатон.](https://t.me/danokhlopkov/1045) _(Data)_
+- **2022-11-18** — [Утренний-разминочный мем от @yesterdayItwat](https://t.me/danokhlopkov/1044) _(misc)_
+- **2022-11-16** — [Базарим про крипту: настоящее и будущее.](https://t.me/danokhlopkov/1042) _(Crypto)_
+- **2022-11-15** — [Оказывается, в телеге есть клабхаус.](https://t.me/danokhlopkov/1039) _(Личное)_
+- **2022-11-14** — [Кстати, раз у нас такой диалог с подписчиками начался,](https://t.me/danokhlopkov/1037) _(Social)_
+- **2022-11-14** — [Все, нашел, кажись. Всем спасибо 📮](https://t.me/danokhlopkov/1036) _(Startups)_
+- **2022-11-14** — [Почему так сложно забанить кого-нибудь в почте? ](https://t.me/danokhlopkov/1035) _(misc)_
+- **2022-11-13** — [В Ереване! 😳](https://t.me/danokhlopkov/1034) _(misc)_
+- **2022-11-12** — [Короче extenstions для jupyterlab на Apple M1 не работают. Ни deckg...](https://t.me/danokhlopkov/1033) _(Data, Social)_
+- **2022-11-12** — [Почему, блин, нельзя сделать опенсорс штуку, которая позволит из ко...](https://t.me/danokhlopkov/1032) _(Data)_
+- **2022-11-12** — [Вот вы напарсили ~10M геоточек. Хотите поковыряться в них в поисках...](https://t.me/danokhlopkov/1031) _(Data, Social)_
+- **2022-11-10** — [Как-то много разных приложений появилось на моем маке. Помимо обычн...](https://t.me/danokhlopkov/1030) _(Data)_
+- **2022-11-08** — [Всем, кто на удаленке, удачного и продуктивного дня!](https://t.me/danokhlopkov/1029) _(Startups)_
+- **2022-11-03** — [Если хотите залипнуть, друзья технари](https://t.me/danokhlopkov/1028) _(misc)_
+- **2022-11-02** — [А вы деплоете по ночам? Пuшuте ваши ответы в комментаpuu.](https://t.me/danokhlopkov/1027) _(misc)_
+- **2022-11-02** — [Новый умный поисковик для macOS: трекает все, что отображал экран и...](https://t.me/danokhlopkov/1026) _(Social)_
+- **2022-10-30** — [Кстати, на основе этого датасета я год назад сделал очередной Телег...](https://t.me/danokhlopkov/1025) _(TG Apps, Data, Social, Личное)_
+- **2022-10-29** — [Главное в парсинге - знать, какие данные где есть и что с ними можн...](https://t.me/danokhlopkov/1024) _(Data)_
+- **2022-10-29** — [Решил посмотреть, где мои спаршенные точки находятся. Оказалось, чт...](https://t.me/danokhlopkov/1023) _(Social)_
+- **2022-10-28** — [Сидели мы значит стартапом в телеге. Потом произошел взрыв чатов и ...](https://t.me/danokhlopkov/1022) _(Startups)_
+- **2022-10-27** — [Ты либо платишь $24 в месяц за сервер на DO (что дороже, чем на AWS...](https://t.me/danokhlopkov/1021) _(Startups, Data)_
+- **2022-10-26** — [Лол, ботом @ffmemesbot до сих пор пользуются почти 15k MAU и смотря...](https://t.me/danokhlopkov/1020) _(TG Apps, Startups, Data)_
+- **2022-10-26** — [Решил посмотреть в старый код @ffmemesbot. Обнаружил, что для коман...](https://t.me/danokhlopkov/1019) _(TG Apps, Startups)_
+- **2022-10-26** — [Мой первый парсер.](https://t.me/danokhlopkov/1018) _(Startups, Data, Social, Личное)_
+- **2022-10-25** — [Вся тема с затмениями жутко переоценена. Чисто предлог, чтобы выйти...](https://t.me/danokhlopkov/1017) _(misc)_
+- **2022-10-23** — [1. Добавляете бота @summarization_bot в чат с пацанами](https://t.me/danokhlopkov/1015) _(misc)_
+- **2022-10-21** — [Послание от @yesterdayItwat:](https://t.me/danokhlopkov/1013) _(misc)_
+- **2022-10-20** — [Удачный стартап, пацаны](https://t.me/danokhlopkov/1012) _(Startups)_
+- **2022-10-20** — [Диалог на работе](https://t.me/danokhlopkov/1011) _(Startups)_
+- **2022-10-19** — [Когда СЕО на Бали, а ты в Европе](https://t.me/danokhlopkov/1010) _(Личное)_
+- **2022-10-18** — [Чет я только что понял, что мы именно так и делаем сейчас.](https://t.me/danokhlopkov/1009) _(Data)_
+- **2022-10-18** — [Что бы вы сделали, если бы у вас было почти 5М геоточек инстаграмма...](https://t.me/danokhlopkov/1008) _(Startups, Social)_
+- **2022-10-17** — [У нас в Дубне где-то в 2007-2011 годах был интернет провайдер, кото...](https://t.me/danokhlopkov/1006) _(Data)_
+- **2022-10-17** — [я думал, рутрекером уже никто не пользуется](https://t.me/danokhlopkov/1005) _(misc)_
+- **2022-10-17** — [Я не могу работать из дома: слишком уютно и непродуктивно. Не получ...](https://t.me/danokhlopkov/1004) _(Startups, Social)_
+- **2022-10-15** — [Что тут происходит ⁉️](https://t.me/danokhlopkov/1003) _(misc)_
+- **2022-10-14** — [Если вы хотите усложнить работу таким, как я (грубо говоря, крипто-...](https://t.me/danokhlopkov/1002) _(Crypto)_
+- **2022-10-12** — [Мои повседневные питон импорты, когда надо что-то попарсить.](https://t.me/danokhlopkov/1001) _(TON)_
+- **2022-10-10** — [Если хотите погрузиться в мир крипты с разных сторон или обновить з...](https://t.me/danokhlopkov/1000) _(Crypto, Data)_
+- **2022-10-09** — [Документалка про то, как мы делали наш стартап](https://t.me/danokhlopkov/999) _(Startups, Social)_
+- **2022-10-09** — [110к Twitter аккаунтов и их крипто адреса #датасет](https://t.me/danokhlopkov/998) _(Crypto, Data, Social)_
+- **2022-10-08** — [Связать Twitter и криптокошелек](https://t.me/danokhlopkov/997) _(Crypto, Data, Social)_
+- **2022-10-07** — [Анализ данных в крипте](https://t.me/danokhlopkov/996) _(TON, Crypto, AI, Startups, Data)_
+- **2022-10-07** — [Для меня, единственная польза Apple Watch - это календарь на руке. ...](https://t.me/danokhlopkov/995) _(misc)_
+- **2022-10-07** — [Думаю, сегодня многие открыли для себя, что блокчейн Бинанса центра...](https://t.me/danokhlopkov/994) _(Crypto)_
+- **2022-10-06** — [Только что заметил, что в Телегу встроен генератор сайтов-видео-бло...](https://t.me/danokhlopkov/993) _(misc)_
+- **2022-10-06** — [Осторожно, скример](https://t.me/danokhlopkov/992) _(misc)_
+- **2022-10-05** — [Как погрузиться в DeFi — список для новичков](https://t.me/danokhlopkov/991) _(Crypto, Startups, Social)_
+- **2022-10-04** — [Макс в своем канале пишет про крипту и челленджи, с которыми сталки...](https://t.me/danokhlopkov/988) _(Crypto)_
+- **2022-10-02** — [О чем бы вы хотели прочитать в этом канале? 👾](https://t.me/danokhlopkov/982) _(misc)_
+- **2022-10-02** — [Россия станет более толерантна к русскому мату](https://t.me/danokhlopkov/981) _(Social)_
+- **2022-09-29** — [Генерация видео по тексту](https://t.me/danokhlopkov/980) _(misc)_
+- **2022-09-25** — [В Тбилиси сейчас реально почти все. Шанс встретить знакомого на ули...](https://t.me/danokhlopkov/979) _(Личное)_
+- **2022-09-22** — [Вы тоже, когда вам нужно сконцентрироваться и сделать некую повторя...](https://t.me/danokhlopkov/977) _(misc)_
+- **2022-09-21** — [ТРИ КОМЕДИИ](https://t.me/danokhlopkov/976) _(TON)_
+- **2022-09-21** — [Такой рабочий день испортили](https://t.me/danokhlopkov/975) _(misc)_
+- **2022-09-20** — [Какой-то okhlopkov is under current US sanctions](https://t.me/danokhlopkov/974) _(Личное)_
+- **2022-09-19** — [Думаю, сейчас бы такая штука взлетела (но уже в виде мобильного при...](https://t.me/danokhlopkov/973) _(TG Apps, Startups)_
+- **2022-09-16** — [Я контрибьютор в sklearn, xgboost, tensorflow и других](https://t.me/danokhlopkov/972) _(TON)_
+- **2022-09-16** — [Представьте ситуацию, что вы пользуетесь опенсорс либой с багой. Вы...](https://t.me/danokhlopkov/971)
+- **2022-09-15** — [погнали 🐼](https://t.me/danokhlopkov/970) _(misc)_
+- **2022-09-14** — [Почувствовал себя бунтарем, когда ответил на электронную почту без ...](https://t.me/danokhlopkov/969) _(misc)_
+- **2022-09-12** — [Парное программирования джуна и сеньора](https://t.me/danokhlopkov/968) _(TG Apps, Social)_
+- **2022-09-09** — [Эй, одуванчик, ты думал, что я тебя не переиграю? Ты думал, что наг...](https://t.me/danokhlopkov/967)
+- **2022-09-09** — [На удаленке не хватает вайба “посидеть поугарать с коллегами”.](https://t.me/danokhlopkov/966) _(Личное)_
+- **2022-09-08** — [Я пообщался с несколькими CTO, чтобы ответить на вопрос: а что же д...](https://t.me/danokhlopkov/965) _(TG Apps, Startups)_
+- **2022-09-07** — [Теперь я гэнгста, когда нужно шерить экран на созвонах](https://t.me/danokhlopkov/964) _(misc)_
+- **2022-09-07** — [Для важных переговоров](https://t.me/danokhlopkov/963) _(misc)_
+- **2022-09-02** — [Гитхаб заблокировал организации, которые были хоть как-то связаны с...](https://t.me/danokhlopkov/960) _(Личное)_
+- **2022-09-02** — [Обычно криптой занимаются джаваскриптеры, так как в идеальном web3 ...](https://t.me/danokhlopkov/959) _(Crypto)_
+- **2022-09-02** — [В Тбилиси :khachapuri:](https://t.me/danokhlopkov/958) _(Личное)_
+- **2022-08-30** — [Когда я писал «изменю вашу жизнь», я имел в виду, что про вас возмо...](https://t.me/danokhlopkov/957) _(misc)_
+- **2022-08-26** — [Представьте, что вы стали суперпопулярным. Настолько, что Netflix р...](https://t.me/danokhlopkov/956) _(misc)_
+- **2022-08-26** — [Сегодня последний день жизни моего гуглдиска, и я решил перепровери...](https://t.me/danokhlopkov/955) _(TG Apps, Startups)_
+- **2022-08-26** — [Ситуация](https://t.me/danokhlopkov/954) _(Social)_
+- **2022-08-25** — [Завтра все превратится в тыкву! Успей забрать данные, пока они есть.](https://t.me/danokhlopkov/953) _(misc)_
+- **2022-08-24** — [Ищу Data Analyst / Product Analyst](https://t.me/danokhlopkov/952) _(Startups, Data)_
+- **2022-08-23** — [бекендер и фронтендер](https://t.me/danokhlopkov/951) _(Data)_
+- **2022-08-23** — [Проверьте свои телеграм юзернеймы. Сейчас зашел в свой личный профи...](https://t.me/danokhlopkov/950) _(misc)_
+- **2022-08-22** — [К сожалению, чем больше регуляций в крипте, тем дороже она будет ст...](https://t.me/danokhlopkov/949) _(Crypto)_
+- **2022-08-22** — [Кино](https://t.me/danokhlopkov/948) _(TG Apps, Личное)_
+- **2022-08-21** — [Я запустил больше сотни фейковых аккаунтов в LinkedIn. Помимо парси...](https://t.me/danokhlopkov/947) _(TG Apps, Data, Social)_
+- **2022-08-19** — [Я продюсер крипто фрешменов, делаю репосты своих братиков, знаю тех...](https://t.me/danokhlopkov/946) _(Crypto)_
+- **2022-08-19** — [Антифрод в web3 тоже весело](https://t.me/danokhlopkov/945) _(Crypto)_
+- **2022-08-18** — [Мы провели Хакатон](https://t.me/danokhlopkov/944) _(TON, Startups)_
+- **2022-08-17** — [На основе этих данных можно делать такие вот, например, анализы:](https://t.me/danokhlopkov/942) _(Startups)_
+- **2022-08-16** — [У выпускников МФТИ отбирают безлимитный Google Диск](https://t.me/danokhlopkov/941) _(Data, Social, Личное)_
+- **2022-08-13** — [Правильно говорят, что если прыгать по ссылкам в Википедии, можно у...](https://t.me/danokhlopkov/940) _(Data, Social)_
+- **2022-08-12** — [Мультик про текущую ситуацию в мире крипты. Крутой визуал, сильный ...](https://t.me/danokhlopkov/939) _(Crypto, Social)_
+- **2022-08-12** — [Я еду в Тбилиси на сентябрь-октябрь. Кто тоже - го пересечемся.](https://t.me/danokhlopkov/938) _(Личное)_
+- **2022-08-11** — [Не думал я год назад, что буду задавать такие вопросы (!) у себя в ...](https://t.me/danokhlopkov/937) _(TG Apps)_
+- **2022-08-10** — [Вас не бесит, что в любой ситуации с вами пытаются прыгнуть на звон...](https://t.me/danokhlopkov/936) _(Startups)_
+- **2022-08-10** — [У вас тоже есть телеграм чаты, в которые вы ничего не пишите, но в ...](https://t.me/danokhlopkov/935) _(misc)_
+- **2022-08-09** — [Самое время разобраться, как же работает Tornado Cash.](https://t.me/danokhlopkov/934) _(Social)_
+- **2022-08-08** — [Если вы CTO стартапа 10-30 человек, го дружить -> @okhlopkov](https://t.me/danokhlopkov/933) _(Startups)_
+- **2022-08-05** — [Посмотрел Тетрадь смерти. Теперь я ощущаю себя детективом, когда дж...](https://t.me/danokhlopkov/932) _(misc)_
+- **2022-08-04** — [#датасет 105к Twitter подписчиков Avalanche](https://t.me/danokhlopkov/931) _(Data, Social)_
+- **2022-08-01** — [Как знакомить людей по-чёрному:](https://t.me/danokhlopkov/930) _(misc)_
+- **2022-08-01** — [Подобрал приватники с красивым публичным ключом. Кому надо - пишите...](https://t.me/danokhlopkov/929) _(misc)_
+- **2022-07-30** — [Общие черты у фильмов и при чём тут блочно-диагональные матрицы](https://t.me/danokhlopkov/928) _(Личное)_
+- **2022-07-30** — [okhlopkov](https://t.me/danokhlopkov/927) _(misc)_
+- **2022-07-27** — [Путь разраба](https://t.me/danokhlopkov/926) _(AI)_
+- **2022-07-27** — [Было бы очень удобно, если Телеграм добавит в инфу о юзере факт тог...](https://t.me/danokhlopkov/925) _(misc)_
+- **2022-07-27** — [Я думал, что в крипте мои скиллы по анализу данных и парсингу особо...](https://t.me/danokhlopkov/924) _(Crypto, Data)_
+- **2022-07-26** — [В этом сообщении правда только в первых двух строчках.](https://t.me/danokhlopkov/922) _(misc)_
+- **2022-07-26** — [Ищем Senior Python хаслера в Via.exchange](https://t.me/danokhlopkov/921) _(Crypto, Startups, Data)_
+- **2022-07-21** — [Квартальный отчет Tesla 2022 Q2](https://t.me/danokhlopkov/920) _(Social)_
+- **2022-07-18** — [Каскад пятничных багов или Релиз в пятницу вечером](https://t.me/danokhlopkov/919) _(Startups, Data)_
+- **2022-07-15** — [Когда прод упал под нагрузкой - это хорошо. Мы растем 📈](https://t.me/danokhlopkov/917) _(misc)_
+- **2022-07-13** — [У вас DeFi / кошелек / маркетплейс / web3 игра и вы хотите дать воз...](https://t.me/danokhlopkov/915) _(Crypto)_
+- **2022-07-13** — [Когда ломит что-то попарсить](https://t.me/danokhlopkov/914) _(misc)_
+- **2022-07-12** — [Когда настало время определять победителя Product of the Week, то м...](https://t.me/danokhlopkov/913) _(Startups, Личное)_
+- **2022-07-12** — [Матвей из нашей команды написал офигенный отчёт о циклах хайпа в кр...](https://t.me/danokhlopkov/912)
+- **2022-07-08** — [с 8 раза получилось пробиться в топ продактханта (хотя ~500 авпоуто...](https://t.me/danokhlopkov/911) _(Startups)_
+- **2022-07-07** — [Как узнать, сколько upvotes были удалены анти-спам системой на Prod...](https://t.me/danokhlopkov/910) _(Startups, Social)_
+- **2022-07-07** — [Via Protocol на Producthunt 🅿️](https://t.me/danokhlopkov/909) _(Startups)_
+- **2022-07-06** — [В итоге решение, которое помогло:](https://t.me/danokhlopkov/908) _(misc)_
+- **2022-07-06** — [Ситуация](https://t.me/danokhlopkov/907) _(misc)_
+- **2022-07-05** — [Устройте себе праздник - снимите чехол с айфона](https://t.me/danokhlopkov/906) _(misc)_
+- **2022-07-05** — [больше никогда не вернусь на жиру после линеара](https://t.me/danokhlopkov/905) _(misc)_
+- **2022-06-29** — [ТГ каналы, которые я действительно читаю](https://t.me/danokhlopkov/904) _(TG Apps)_
+- **2022-06-27** — [Хакеры Producthunt](https://t.me/danokhlopkov/903) _(Startups, Social)_
+- **2022-06-25** — [Нейросетки и генерация музыки. ](https://t.me/danokhlopkov/902) _(AI, Social)_
+- **2022-06-23** — [#TODO: досмотреть курс по SEO https://www.youtube.com/playlist?list...](https://t.me/danokhlopkov/901) _(Social)_
+- **2022-06-23** — [Круто видеть, что твой проект упоминают, хотя не просили](https://t.me/danokhlopkov/900) _(misc)_
+- **2022-06-22** — [#TODO: заботать все внешние ссылки из Readme https://github.com/WLM...](https://t.me/danokhlopkov/898) _(misc)_
+- **2022-06-17** — [Вечер пятницы нормального человека](https://t.me/danokhlopkov/897) _(Social)_
+- **2022-06-13** — [На собеседовании в крипто-стартап хочется знать, насколько кандидат...](https://t.me/danokhlopkov/896) _(Crypto, Startups)_
+- **2022-06-13** — [Начнем утро понедельника вместе с](https://t.me/danokhlopkov/895) _(misc)_
+- **2022-06-09** — [С пацанами наблюдаем, как бриджат через нас бабки и донатят нам в G...](https://t.me/danokhlopkov/894)
+- **2022-06-08** — [Есть ли кто-то из моих читателей, кто делает {браузерные, мультипле...](https://t.me/danokhlopkov/893) _(AI)_
+- **2022-06-06** — [Вижу, многие пишут, что в web2 гугл владеет твоими данными, а в web...](https://t.me/danokhlopkov/892)
+- **2022-06-05** — [Схема контрактов ENS](https://t.me/danokhlopkov/891) _(Social)_
+- **2022-06-04** — [Список литературы от фаундеров ZkSync](https://t.me/danokhlopkov/890) _(Startups)_
+- **2022-06-03** — [Спотифай сквады](https://t.me/danokhlopkov/889) _(TON, Startups, Data, Social)_
+- **2022-06-03** — [ждем блокчейн Биба, чтобы бриджить бабки из Биба в Боба](https://t.me/danokhlopkov/888) _(Crypto)_
+- **2022-06-02** — [Арбитраж NFT](https://t.me/danokhlopkov/887) _(Crypto)_
+- **2022-05-31** — [JIRA -> Linear](https://t.me/danokhlopkov/886) _(Startups)_
+- **2022-05-31** — [Выглядит страшно, когда у тебя внезапно устанавливается Metamask и ...](https://t.me/danokhlopkov/885) _(Data)_
+- **2022-05-30** — [Awesome-parsing: набор тулов для парсинга](https://t.me/danokhlopkov/884) _(Data)_
+- **2022-05-30** — [Защита от скрапинга сайтов с ценными данными постоянно усовершенств...](https://t.me/danokhlopkov/883) _(Data)_
+- **2022-05-27** — [каждый раз, когда вы мьютите канал](https://t.me/danokhlopkov/882) _(misc)_
+- **2022-05-27** — [В DigitalOcean наконец-то завезли серверлесс. Но дороже AWS Lambda ...](https://t.me/danokhlopkov/881) _(Data)_
+- **2022-05-27** — [Всегда хотел разобраться в RL и сделать свой рой ботов. Вот пример,...](https://t.me/danokhlopkov/880) _(misc)_
+- **2022-05-27** — [Я лично ничего не делал для того, чтобы попасть в форбс. Спасибо, к...](https://t.me/danokhlopkov/879) _(misc)_
+- **2022-05-23** — [Идея для маркетинга](https://t.me/danokhlopkov/877)
+- **2022-05-22** — [Дождались. Генератор волчьих цитат.](https://t.me/danokhlopkov/876) _(AI)_
+- **2022-05-21** — [Есть «Книга вымышленных существ», где собраны описания мифических с...](https://t.me/danokhlopkov/869) _(Social)_
+- **2022-05-20** — [Пятничный вечерний релиз от Via Protocol](https://t.me/danokhlopkov/868)
+- **2022-05-20** — [Все юзеры Kaggle #Датасет ](https://t.me/danokhlopkov/867) _(Data, Social)_
+- **2022-05-20** — [Подземелья, подземелья и еще подземелья](https://t.me/danokhlopkov/866) _(AI, Social)_
+- **2022-05-19** — [В конце года доедет Metaverse апдейт в Гугл Мапс на некоторые города.](https://t.me/danokhlopkov/865) _(Startups)_
+- **2022-05-19** — [Отдам знакомым физтехам домен для тгбота @fiztehbot. Пишите в личку.](https://t.me/danokhlopkov/864) _(TG Apps, Личное)_
+- **2022-05-18** — [Всем привет!](https://t.me/danokhlopkov/863)
+- **2022-05-18** — [Отчет от Andreessen Horowitz (a16z) по крипте.](https://t.me/danokhlopkov/862) _(Crypto, Startups)_
+- **2022-05-18** — [Ищем кому сдать 6 мест в офисе в WeWork на Белорусской .](https://t.me/danokhlopkov/861) _(misc)_
+- **2022-05-16** — [Продам тгбота](https://t.me/danokhlopkov/860) _(TG Apps, Startups, Data, Social)_
+- **2022-05-13** — [Автогенерация swagger по закрытой апихе](https://t.me/danokhlopkov/859) _(Data)_
+- **2022-05-13** — [Ищем в via.exchange крутого QA, который сможет написать автотесты д...](https://t.me/danokhlopkov/858) _(Crypto)_
+- **2022-05-12** — [У меня вообще нет стейблкойнов. Если нужно их кому-то перевести, я ...](https://t.me/danokhlopkov/856)
+- **2022-05-11** — [Сервис, который по EVM-кошельку находит все верифицированные контра...](https://t.me/danokhlopkov/854) _(misc)_
+- **2022-05-10** — [Релееры в Defi](https://t.me/danokhlopkov/853) _(Crypto, Data)_
+- **2022-05-06** — [Как узнать цену токена из смарт-контракта?](https://t.me/danokhlopkov/852) _(TON, Crypto, Startups)_
+- **2022-05-05** — [Генератор смарт-контрактов для обучения](https://t.me/danokhlopkov/851) _(Data)_
+- **2022-05-03** — [Все инстаграм геотеги Санкт-Петербурга](https://t.me/danokhlopkov/850) _(Social)_
+- **2022-05-03** — [Ребята подключили сборную Бишкека и вырвались вперед! Получайте поб...](https://t.me/danokhlopkov/849) _(Data, Social)_
+- **2022-05-02** — [Какой еще город выложить? ](https://t.me/danokhlopkov/848) _(misc)_
+- **2022-05-02** — [Все Instagram-геотеги Москвы — 137K бизнесов](https://t.me/danokhlopkov/847) _(Startups, Data)_
+- **2022-04-30** — [С такой поддержкой, Хасбик - небольшая проблема.](https://t.me/danokhlopkov/845) _(misc)_
+- **2022-04-28** — [В Метамаск завезли умные транзакции во врутренний децент обменник, ...](https://t.me/danokhlopkov/843) _(Crypto, Social)_
+- **2022-04-28** — [как хорошо, что все мои кореша в разных номинациях](https://t.me/danokhlopkov/842) _(misc)_
+- **2022-04-27** — [Че, пацаны, Форбс](https://t.me/danokhlopkov/841) _(misc)_
+- **2022-04-26** — [Заходишь в луна-парк, заводишь танк, загружаешь патроны и стреляешь...](https://t.me/danokhlopkov/840) _(misc)_
+- **2022-04-26** — [А вообще, если хочется собрать большую базу пар Twitter ↔ Wallet ad...](https://t.me/danokhlopkov/839) _(Crypto, Social)_
+- **2022-04-25** — [Ну и последнее.](https://t.me/danokhlopkov/838) _(Social)_
+- **2022-04-25** — [Ну и число блокчейнов, где у них есть хотя бы $10.](https://t.me/danokhlopkov/837) _(Crypto, Social)_
+- **2022-04-25** — [Опять крипто парсинг](https://t.me/danokhlopkov/836) _(Crypto, Data, Social)_
+- **2022-04-22** — [GM!](https://t.me/danokhlopkov/835) _(Startups)_
+- **2022-04-21** — [Рандомный чел в твиттере говорит, что есть ты PM, то ты не должен п...](https://t.me/danokhlopkov/834) _(Data, Social)_
+- **2022-04-20** — [На Бали.](https://t.me/danokhlopkov/833) _(Личное)_
+- **2022-04-19** — [Gen-Z CTO, что уж тут сказать](https://t.me/danokhlopkov/832) _(misc)_
+- **2022-04-19** — [Когда вы всей remote worldwide командой фиксите релизные пожары, эт...](https://t.me/danokhlopkov/831) _(misc)_
+- **2022-04-19** — [Открещиваюсь от Dokku: там что-то не так с nginx, из-за которого по...](https://t.me/danokhlopkov/830) _(Data)_
+- **2022-04-19** — [Мы помогаем продать первые в мире NFT на блокчейне TON.](https://t.me/danokhlopkov/829) _(TON, Crypto)_
+- **2022-04-19** — [Тот, кто держит стейблкойны, так ничего и не понял.](https://t.me/danokhlopkov/828)
+- **2022-04-19** — [Все, что торчит публично в интернете, теперь точно можно собирать.](https://t.me/danokhlopkov/827) _(Data)_
+- **2022-04-18** — [Рассказал про наш с Серафимом стартап, про путь и про крипту.](https://t.me/danokhlopkov/825) _(Crypto, Startups)_
+- **2022-04-18** — [Ситуация](https://t.me/danokhlopkov/824) _(misc)_
+- **2022-04-16** — [Если кому-то нужны 7000 бесплатных прокси - гуглите tor-rotating-pr...](https://t.me/danokhlopkov/822) _(misc)_
+- **2022-04-16** — [Провел ревизию своих Saved Messages в телеге. Забытых приватников с...](https://t.me/danokhlopkov/821) _(misc)_
+- **2022-04-15** — [Вообще угар, что я использую Via Protocol для того, чтобы переслать...](https://t.me/danokhlopkov/820)
+- **2022-04-15** — [жить в пещере be like](https://t.me/danokhlopkov/819) _(misc)_
+- **2022-04-15** — [банили на гитхабе до того, как это стало мейнстримом](https://t.me/danokhlopkov/818) _(misc)_
+- **2022-04-14** — [1. чем больше тебя слушают, тем больше ты зарабатываешь](https://t.me/danokhlopkov/817) _(Startups)_
+- **2022-04-13** — [Увеличиваем продажи NFT коллекций в среднем в 4 раза.](https://t.me/danokhlopkov/816) _(Crypto)_
+- **2022-04-13** — [Ситуация](https://t.me/danokhlopkov/815) _(Startups)_
+- **2022-04-12** — [Вас тоже бесит, когда вам пишут “как твои дела?)”, а потом сразу же...](https://t.me/danokhlopkov/814) _(misc)_
+- **2022-04-12** — [Сессия и деградация](https://t.me/danokhlopkov/813) _(Личное)_
+- **2022-04-11** — [Почему в крипте плохой UX? Потому что трудно костылять, когда у все...](https://t.me/danokhlopkov/812) _(Crypto)_
+- **2022-04-10** — [Английский язык нужно изучать для того, чтобы понять и почувствоват...](https://t.me/danokhlopkov/811) _(misc)_
+- **2022-04-10** — [Кругозор можно оценить по числу знакомых людей, которые были на инт...](https://t.me/danokhlopkov/810) _(misc)_
+- **2022-04-10** — [Я уже больше двух лет дижитал номад.](https://t.me/danokhlopkov/809) _(Личное)_
+- **2022-04-08** — [Походу, Metaverse уже начался. ](https://t.me/danokhlopkov/808) _(misc)_
+- **2022-04-07** — [Ищем Senior фронта к себе в крипто стартап Via.exchange](https://t.me/danokhlopkov/807) _(Crypto, Startups, Data)_
+- **2022-04-07** — [Крутые парни добавляют к нику не ".eth", а "will not dm you first".](https://t.me/danokhlopkov/806) _(misc)_
+- **2022-04-03** — [В Ortahisar Belediyesi.](https://t.me/danokhlopkov/805) _(misc)_
+- **2022-04-03** — [Меня часто спрашивают, в какой стране я хочу жить. Я понятия не име...](https://t.me/danokhlopkov/804) _(misc)_
+- **2022-04-01** — [Я думал, что я один всегда держу открытой вкладку с продуктовыми ме...](https://t.me/danokhlopkov/802) _(Startups, Data)_
+- **2022-03-30** — [Официальный ответ полиции города Анталия:](https://t.me/danokhlopkov/801) _(misc)_
+- **2022-03-30** — [Всем мощнейший gm](https://t.me/danokhlopkov/799) _(misc)_
+- **2022-03-29** — [Делать свой крипто-стартап - это переживать после каждого взлома: а...](https://t.me/danokhlopkov/798) _(Crypto, Startups)_
+- **2022-03-25** — [Всегда думал, что Gitcoin фигня какая-то, пока не надонатили там 38к](https://t.me/danokhlopkov/797) _(Social)_
+- **2022-03-24** — [Github - теперь точно соцсеть](https://t.me/danokhlopkov/796) _(Data, Social)_
+- **2022-03-22** — [Как поменять одну крипту на другую?](https://t.me/danokhlopkov/795) _(Crypto)_
+- **2022-03-17** — [Мы ищем Project Manager с техническим пониманием DeFi/web3](https://t.me/danokhlopkov/794) _(Crypto)_
+- **2022-03-16** — [В опенсорс внедряют код, удаляющий файлы по IP из РФ](https://t.me/danokhlopkov/793) _(misc)_
+- **2022-03-16** — [Децентрализованные протоколы с централизованным фронтендом банят по...](https://t.me/danokhlopkov/792) _(Data, Social)_
+- **2022-03-14** — [Работа не за рубли — мои друзья помогут](https://t.me/danokhlopkov/791) _(Startups)_
+- **2022-03-13** — [Мы с пацанами в чатруме метаверса](https://t.me/danokhlopkov/790) _(Social)_
+- **2022-03-12** — [Лайфхак для путешественников](https://t.me/danokhlopkov/789) _(Личное)_
+- **2022-03-11** — [Из запрещенного ФБ:](https://t.me/danokhlopkov/788) _(Data, Личное)_
+- **2022-03-10** — [В какой-то момент все стали экспертами в криптовалютах, а теперь - ...](https://t.me/danokhlopkov/787) _(Crypto)_
+- **2022-03-10** — [Задайте мне насущные вопросы про крипту в комментах, я отвечу на ни...](https://t.me/danokhlopkov/786) _(Crypto)_
+- **2022-03-06** — [В Анталии.](https://t.me/danokhlopkov/783) _(misc)_
+- **2022-03-03** — [aviasales дудосят, тинькоф дудосят](https://t.me/danokhlopkov/782) _(misc)_
+- **2022-03-02** — [Какие еще токены нужны](https://t.me/danokhlopkov/781) _(Crypto)_
+- **2022-03-02** — [USDT vs. USDC](https://t.me/danokhlopkov/780) _(Crypto)_
+- **2022-03-01** — [В Стамбуле](https://t.me/danokhlopkov/779) _(Личное)_
+- **2022-02-28** — [Так круто, что все больше и больше друзей примыкает к движению digi...](https://t.me/danokhlopkov/778) _(Личное)_
+- **2022-02-27** — [др be like](https://t.me/danokhlopkov/777) _(misc)_
+- **2022-02-27** — [Сейчас 27 октября 2021, я нашел этот твит: девушке исполнилось 26 л...](https://t.me/danokhlopkov/776) _(Social, Личное)_
+- **2022-02-26** — [В Москве](https://t.me/danokhlopkov/775) _(misc)_
+- **2022-02-25** — [Бесплатный VPN от Cloudflare — вбивайте 1.1.1.1](https://t.me/danokhlopkov/774) _(Startups)_
+- **2022-02-24** — [Плейлист для тех, кто экстренно собирает вещи](https://t.me/danokhlopkov/772) _(misc)_
+- **2022-02-21** — ["без комментариев"](https://t.me/danokhlopkov/771) _(misc)_
+- **2022-02-19** — [У нас не будет полноценного пресс-релиза, но хоть здесь поделимся.](https://t.me/danokhlopkov/770) _(Startups, Личное)_
+- **2022-02-15** — [Жалко, что так нельзя с приватными ключами](https://t.me/danokhlopkov/769) _(misc)_
+- **2022-02-10** — [Когда уже в телегу завезут рекомендательную систему по каналам, а-л...](https://t.me/danokhlopkov/766) _(Social)_
+- **2022-02-08** — [Эпл скоро научит не только оплачивать, но и принимать оплаты с айфо...](https://t.me/danokhlopkov/765) _(Startups)_
+- **2022-02-04** — [Топ децентрализованных крипто бирж](https://t.me/danokhlopkov/764) _(Crypto)_
+- **2022-02-03** — [Общение в компаниях обычно происходит в корпоративных мессенджерах,...](https://t.me/danokhlopkov/763) _(misc)_
+- **2022-02-03** — [Ситуация](https://t.me/danokhlopkov/762)
+- **2022-02-03** — [Игра, в которой тебе проигрывается звук, а ты должен угадать его сп...](https://t.me/danokhlopkov/761) _(misc)_
+- **2022-02-02** — [Почему DeFi запрашивает .approve на токены?](https://t.me/danokhlopkov/760) _(Crypto)_
+- **2022-02-02** — [CEO vs. CTO в стартапе 🛠](https://t.me/danokhlopkov/759) _(Startups)_
+- **2022-02-02** — [Меня нет в соцсетях.](https://t.me/danokhlopkov/758) _(TG Apps, Social)_
+- **2022-02-01** — [Если у вас на сайте есть слова crypto/NFT и вы открыли банк Mercury...](https://t.me/danokhlopkov/757) _(Crypto, Startups)_
+- **2022-01-31** — [Когда ты в криптостартапе, то к фразе "скинь публичный ключ" нужно ...](https://t.me/danokhlopkov/756) _(Crypto, Startups)_
+- **2022-01-31** — [Купил рекламу в VC RU](https://t.me/danokhlopkov/755) _(Startups, Social)_
+- **2022-01-30** — [не гамал кучу лет](https://t.me/danokhlopkov/754) _(misc)_
+- **2022-01-30** — [Играем в майнкрафт прямо сейчас](https://t.me/danokhlopkov/753) _(Data)_
+- **2022-01-28** — [Вы даже не представляете, как я хочу поиграть за нежить в классичес...](https://t.me/danokhlopkov/752) _(Startups, Data)_
+- **2022-01-27** — [Отрисовал карты популярности для  15 городов миллионников. ](https://t.me/danokhlopkov/751) _(Startups, Social)_
+- **2022-01-26** — [И где их больше всего выкладывают прямо сейчас](https://t.me/danokhlopkov/750) _(misc)_
+- **2022-01-26** — [Где больше всего фоток в инсте?](https://t.me/danokhlopkov/749) _(misc)_
+- **2022-01-26** — [просто карта популярности мест Москвы: где чаще всего постили фотки...](https://t.me/danokhlopkov/748) _(misc)_
+- **2022-01-26** — [Я теперь крипто-стартапер, поэтому в будущем будет больше постов пр...](https://t.me/danokhlopkov/747) _(Crypto, Startups, Social)_
+- **2022-01-26** — [Первым делом, когда мне кто-то пишет в тг, я смотрю на общие чаты. ...](https://t.me/danokhlopkov/746) _(misc)_
+- **2022-01-25** — [Гео данные инсты](https://t.me/danokhlopkov/745) _(Startups, Data, Social)_
+- **2022-01-24** — [Важный прикол от Тиньков Бизнеса. ](https://t.me/danokhlopkov/744) _(Startups)_
+- **2022-01-24** — [Соц граф инсты](https://t.me/danokhlopkov/743) _(Data)_
+- **2022-01-23** — [Гугл-аналитика для DeFi](https://t.me/danokhlopkov/742) _(Crypto, Data)_
+- **2022-01-23** — [Когда уже телега добавит к «списку общих чатов» инфу, подписан ли ч...](https://t.me/danokhlopkov/741) _(TG Apps)_
+- **2022-01-22** — [Настоящие мужчины херачат говнокод в коллабе и не говорят "это толь...](https://t.me/danokhlopkov/740) _(misc)_
+- **2022-01-22** — [Настоящие мужчины пилят B2B/B2C бизнесы и не говорят «это только MV...](https://t.me/danokhlopkov/739) _(Startups, Data)_
+- **2022-01-22** — [Отдам прибыльного тг бота](https://t.me/danokhlopkov/738) _(TG Apps, Startups, Data, Social)_
+- **2022-01-22** — [Я прям влюбился в Locket.camera](https://t.me/danokhlopkov/737) _(Startups)_
+- **2022-01-20** — [Тулы, которые превратят Notion в SaaS](https://t.me/danokhlopkov/736) _(Startups)_
+- **2022-01-19** — [Поучаствовал в подкасте ребят из ФПМИ.Карьеры - классного проекта д...](https://t.me/danokhlopkov/735) _(Личное)_
+- **2022-01-19** — [Даня в любой ситуации:](https://t.me/danokhlopkov/734) _(misc)_
+- **2022-01-19** — [парсим блокчейн](https://t.me/danokhlopkov/733) _(Crypto)_
+- **2022-01-17** — [Это американская Тройка. Чекни инструкцию по использованию.](https://t.me/danokhlopkov/732) _(misc)_
+- **2022-01-17** — [https://twitter.com/danokhlopkov/status/1483013993707016193](https://t.me/danokhlopkov/731) _(Social)_
+- **2022-01-17** — [Вакансии твоих знакомых - https://t.me/danokhlopkov/725](https://t.me/danokhlopkov/730) _(misc)_
+- **2022-01-16** — [К чему я это написал? А к тому, что мы провели первый корпоратив we...](https://t.me/danokhlopkov/729) _(Startups)_
+- **2022-01-16** — [Корпоративы меня всегда приводили в щенячий восторг.](https://t.me/danokhlopkov/728) _(Startups)_
+- **2022-01-16** — [Можно перестать хранить created_at для аудио. ](https://t.me/danokhlopkov/727) _(misc)_
+- **2022-01-14** — [караоке с автотюном и компрессией громкости](https://t.me/danokhlopkov/726) _(misc)_
+- **2022-01-14** — [Если вы разработчик, у вас есть 3 года опыта и вы получаете меньше ...](https://t.me/danokhlopkov/725) _(misc)_
+- **2022-01-13** — [Ищем Сеньора Реакт фронта с пониманием мира web3 в свой DeFi старта...](https://t.me/danokhlopkov/724) _(Crypto, Startups, Data)_
+- **2022-01-13** — [Ищу хату в Москве](https://t.me/danokhlopkov/723) _(Личное)_
+- **2022-01-13** — [Семь раз фейкаешь — один раз мейкаешь.](https://t.me/danokhlopkov/722) _(misc)_
+- **2022-01-12** — [Я вот киноман, пересмотрел тонну всего. ](https://t.me/danokhlopkov/721) _(TG Apps, Startups)_
+- **2022-01-11** — [Многие не поверят, немногие вспомнят, но в 2015 в Subway у кампуса ...](https://t.me/danokhlopkov/720) _(Личное)_
+- **2022-01-11** — [Как начать свою карьеру в крипте:](https://t.me/danokhlopkov/719) _(Crypto)_
+- **2022-01-11** — [YC опомнились, что $125к - это мизер. Теперь они выдают по полляма](https://t.me/danokhlopkov/718) _(Startups)_
+- **2022-01-10** — [Что такой кроссчейн ч.1](https://t.me/danokhlopkov/717) _(Data)_
+- **2022-01-05** — [В Ethereum 71 963 975 адреса с ненулевым балансом.](https://t.me/danokhlopkov/716) _(Crypto, Data)_
+- **2022-01-05** — [MOOD](https://t.me/danokhlopkov/715)
+- **2022-01-03** — [В том году - это было офигенно. В этом - это офигенно.](https://t.me/danokhlopkov/714) _(Social)_
+- **2022-01-02** — [Фрагмент маминой домашней библиотеки. Что посоветуете почитать?](https://t.me/danokhlopkov/713) _(misc)_
+- **2021-12-31** — [Кто прочитал, того с Новым годом🦙🎄🎅🏻](https://t.me/danokhlopkov/712) _(misc)_
+- **2021-12-28** — [Итоги моего 2020: ч1, ч2, ч3.](https://t.me/danokhlopkov/711) _(misc)_
+- **2021-12-28** — [Цели на 2022 год](https://t.me/danokhlopkov/710) _(Startups)_
+- **2021-12-27** — [Интересно, почему интернет провайдеры не встроят блокировку рекламы...](https://t.me/danokhlopkov/709) _(misc)_
+- **2021-12-27** — [Результаты 2021](https://t.me/danokhlopkov/708) _(TON, TG Apps, Startups, Data, Social, Личное)_
+- **2021-12-25** — [Компиляция моих датасетов (updated)](https://t.me/danokhlopkov/707) _(TG Apps, Startups, Data, Social)_
+- **2021-12-24** — [Как быстро растут чужие джуны](https://t.me/danokhlopkov/706) _(misc)_
+- **2021-12-22** — [Топ питоновских пакетов, которые стоит заценить](https://t.me/danokhlopkov/705) _(Data)_
+- **2021-12-22** — [#датасет 100к вакансий с Хедхантера](https://t.me/danokhlopkov/704) _(Data)_
+- **2021-12-21** — [когда долго парсил немного не то, что хотел](https://t.me/danokhlopkov/703) _(misc)_
+- **2021-12-21** — [Ищу Senior бекендера Python Django, который хоть что-то делал с web...](https://t.me/danokhlopkov/702) _(Data)_
+- **2021-12-20** — [Зачем люди на самом деле пишут технические статьи.](https://t.me/danokhlopkov/701) _(misc)_
+- **2021-12-19** — [Хакатоновский флексомер](https://t.me/danokhlopkov/700) _(misc)_
+- **2021-12-17** — [хоть кешбек есть](https://t.me/danokhlopkov/699) _(Startups)_
+- **2021-12-17** — [Моя самая дорогая покупка - юристы.](https://t.me/danokhlopkov/698) _(misc)_
+- **2021-12-17** — [#датасет Redtube](https://t.me/danokhlopkov/696) _(Data)_
+- **2021-12-16** — [Zero-click iMessage exploit](https://t.me/danokhlopkov/695) _(misc)_
+- **2021-12-15** — [боже, храни девопсеров, кто деплоит инфраструктуру на голые серверы](https://t.me/danokhlopkov/694) _(Data)_
+- **2021-12-13** — [На выходных добавил в своего бота t.me/instapathbot, который ищет ц...](https://t.me/danokhlopkov/692) _(Social)_
+- **2021-12-10** — [чувствую, как развивается ЧСВ](https://t.me/danokhlopkov/691) _(misc)_
+- **2021-12-06** — [Наконец-то воспользуюсь каналом по назначению.](https://t.me/danokhlopkov/690) _(misc)_
+- **2021-12-06** — [Иногда встречаются такие люди, которые говорят что-то, что не вписы...](https://t.me/danokhlopkov/689) _(Startups)_
+- **2021-12-02** — [Мой топ 🖐 вопросов с собедедования в YCombinator](https://t.me/danokhlopkov/688) _(Startups)_
+- **2021-12-01** — [У вас тоже есть кенты, с которыми у вас негласный челлендж? ](https://t.me/danokhlopkov/687) _(Startups, Data, Social, Личное)_
+- **2021-11-30** — [Как понять, что пора что-то менять?](https://t.me/danokhlopkov/686) _(misc)_
+- **2021-11-30** — [Есть такой бизнес - накрутки в соцсетях. И это осиное гнездо.](https://t.me/danokhlopkov/685) _(Startups, Data, Social)_
+- **2021-11-26** — [Sensortower #датасет](https://t.me/danokhlopkov/683) _(Data)_
+- **2021-11-25** — [Провел в Сочи месяц. Впечатления.](https://t.me/danokhlopkov/682) _(Social)_
+- **2021-11-23** — [На первом курсе я ходил на кружок по CTF, который вел @thingsiread....](https://t.me/danokhlopkov/681) _(misc)_
+- **2021-11-22** — [Допустим, я собрал инстаграмы русских битмейкеров. Не хочу, чтобы д...](https://t.me/danokhlopkov/680) _(Data, Social)_
+- **2021-11-21** — [Хочу поиграть в мультиплеерную игру воскресным вечером.](https://t.me/danokhlopkov/679) _(misc)_
+- **2021-11-19** — [POV выпускника МФТИ](https://t.me/danokhlopkov/678) _(Startups, Личное)_
+- **2021-11-19** — [Ситуация:](https://t.me/danokhlopkov/677) _(Startups)_
+- **2021-11-18** — [Если NFT, то только такие 🚀 👨‍🚀 🛰](https://t.me/danokhlopkov/676) _(Crypto)_
+- **2021-11-18** — [У меня не получается нормально себя позиционировать. ](https://t.me/danokhlopkov/675) _(TG Apps, Startups, Data, Личное)_
+- **2021-11-18** — [Отдал другу соц граф из инсты (~300M ребер). На гифке - итерации эм...](https://t.me/danokhlopkov/674) _(Data)_
+- **2021-11-16** — [Я опросил 10 своих друзей, что бы они сделали с $1 000 000](https://t.me/danokhlopkov/673) _(Startups, Личное)_
+- **2021-11-16** — [#вакансия](https://t.me/danokhlopkov/672) _(Startups, Data, Social, Личное)_
+- **2021-11-14** — [#Вакансия](https://t.me/danokhlopkov/671) _(Startups, Data)_
+- **2021-11-12** — [Каким блокчейн-кошельком вы пользуетесь?](https://t.me/danokhlopkov/670) _(Crypto)_
+- **2021-11-09** — [Мемы из @fastfoodmemes](https://t.me/danokhlopkov/669) _(misc)_
+- **2021-11-09** — [#Датасет Мемы и реакции на них](https://t.me/danokhlopkov/668) _(TG Apps, Startups, Data)_
+- **2021-11-08** — [Продолжаем:](https://t.me/danokhlopkov/667) _(Startups, Data)_
+- **2021-11-08** — [Продолжаем:](https://t.me/danokhlopkov/666) _(Data)_
+- **2021-11-08** — [Продолжаем:](https://t.me/danokhlopkov/665) _(Data)_
+- **2021-11-08** — [Сижу пишу статью про любимый Dokku, нашел на их гитхабе one-click и...](https://t.me/danokhlopkov/664) _(Startups, Data, Social)_
+- **2021-11-05** — [#датасет Все товары с Wildberries (на декабрь 2020)](https://t.me/danokhlopkov/662) _(Data)_
+- **2021-11-04** — [Дешборд с метриками для пет проджектов](https://t.me/danokhlopkov/661) _(Startups, Data)_
+- **2021-11-03** — [Killer резюме, чтобы пройти на интервью куда угодно.](https://t.me/danokhlopkov/660) _(misc)_
+- **2021-11-03** — [А что вы вообще читаете в интернете?](https://t.me/danokhlopkov/659) _(TG Apps, Startups, Social)_
+- **2021-11-02** — [Вышла нейросеть, которая генерирует картинку по тексту на русском.](https://t.me/danokhlopkov/658) _(AI)_
+- **2021-11-02** — [Apple 🧑🏻‍💻](https://t.me/danokhlopkov/657) _(misc)_
+- **2021-11-02** — [Интересные мысли про то, почему Clubhouse не стрельнет никогда.](https://t.me/danokhlopkov/656) _(Social)_
+- **2021-11-01** — [Переехал в Сочифорнию на зиму. Кто будет в этих краях - пишите!](https://t.me/danokhlopkov/655) _(misc)_
+- **2021-11-01** — [Впечатления о Сан Франциско](https://t.me/danokhlopkov/654) _(misc)_
+- **2021-10-31** — [что у тебя за принт на худи?](https://t.me/danokhlopkov/653) _(misc)_
+- **2021-10-29** — [Комиссии в Эфире выросли в 3-4 раза за последнюю неделю.](https://t.me/danokhlopkov/650) _(misc)_
+- **2021-10-29** — [#лол Меня номинировал Hackernoon как лучшего контрибьютера в тему и...](https://t.me/danokhlopkov/649) _(Social)_
+- **2021-10-28** — [На ком чаще всего женятся разработчики?](https://t.me/danokhlopkov/647) _(Startups)_
+- **2021-10-28** — [А среди моих читателей и их друзей есть ли начинающие UX-дизайнеры ...](https://t.me/danokhlopkov/646) _(Startups, Data)_
+- **2021-10-28** — [В копилочку мест, где меня забанили: DoorDash.](https://t.me/danokhlopkov/645) _(misc)_
+- **2021-10-27** — [CRM-ка для авторских ТГ каналов](https://t.me/danokhlopkov/644) _(TG Apps)_
+- **2021-10-27** — [Новый ноут](https://t.me/danokhlopkov/643) _(misc)_
+- **2021-10-27** — [Стартап-задача трех тел](https://t.me/danokhlopkov/642) _(Startups)_
+- **2021-10-26** — [Телеграм бот, куда ты отправляешь несколько ссылок на RSS ленты и к...](https://t.me/danokhlopkov/641) _(TG Apps, Social)_
+- **2021-10-25** — [го задизайним и сделаем фронт к данным, которые показывают два числа:](https://t.me/danokhlopkov/640) _(Social)_
+- **2021-10-23** — [Как распарсить Линкедин.](https://t.me/danokhlopkov/638) _(Data, Social)_
+- **2021-10-22** — [Все мы хотим делать только то, что нам нравится и от чего мы кайфуем.](https://t.me/danokhlopkov/637) _(misc)_
+- **2021-10-22** — [Сижу анализирую, когда дешевле всего пользоваться Ethereum.](https://t.me/danokhlopkov/636) _(Crypto)_
+- **2021-10-22** — [А мне нравится эта эстафета.](https://t.me/danokhlopkov/635) _(misc)_
+- **2021-10-21** — [#датасет 14к юзеров из Producthunt](https://t.me/danokhlopkov/633) _(Startups, Data)_
+- **2021-10-21** — [AR-приложение, которое рисует летающего человека паука](https://t.me/danokhlopkov/632) _(misc)_
+- **2021-10-20** — [Причина заводить телеграм канал #287](https://t.me/danokhlopkov/631) _(TG Apps, Startups)_
+- **2021-10-20** — [#датасет Все товары с Ozon (на декабрь 2020)](https://t.me/danokhlopkov/629) _(Data)_
+- **2021-10-19** — [Удаленка не работает, если у вас не бирюзовая команда.](https://t.me/danokhlopkov/628) _(misc)_
+- **2021-10-18** — [Зачем тратить деньги на новый мак и айфон, если старые норм работают?](https://t.me/danokhlopkov/627) _(misc)_
+- **2021-10-18** — [Производители адаптеров такие чооо](https://t.me/danokhlopkov/626) _(misc)_
+- **2021-10-18** — [Мы вернули старую зарядку](https://t.me/danokhlopkov/625) _(Startups)_
+- **2021-10-18** — [Бот, который скрапит весь сайт и сохраняет отрендеренные странички ...](https://t.me/danokhlopkov/624) _(Data)_
+- **2021-10-16** — [Все мы, значит, привыкли слушать английскую речь, записанную четко ...](https://t.me/danokhlopkov/622) _(Social)_
+- **2021-10-16** — [Жду багаж и когда моего друга полиция таможни отпустит. Тут и так с...](https://t.me/danokhlopkov/621) _(Startups)_
+- **2021-10-16** — [House of Digital Nomads](https://t.me/danokhlopkov/620) _(Startups, Data, Личное)_
+- **2021-10-16** — [Задеплоил смарт-контракт в аэропорту.](https://t.me/danokhlopkov/619)
+- **2021-10-13** — [Вот мой секрет успеха: не пить, не есть, с женщинами не спать, в ус...](https://t.me/danokhlopkov/617) _(misc)_
+- **2021-10-12** — [Пацаны и пацанессы, вот совет:](https://t.me/danokhlopkov/615) _(misc)_
+- **2021-10-11** — [Нужны выходы на венчурные фонды, которые инвестируют в блокчейн про...](https://t.me/danokhlopkov/614) _(Crypto, Startups)_
+- **2021-10-11** — [Перестал пользоваться htop. Теперь пользуюсь docker stats.](https://t.me/danokhlopkov/613) _(Data)_
+- **2021-10-10** — [Друг делает НейроПушкина и выкладывает нейро-лингвистические модели...](https://t.me/danokhlopkov/612) _(AI, Social)_
+- **2021-10-10** — [Подборка мои статей по DOKKU](https://t.me/danokhlopkov/610) _(Startups, Data)_
+- **2021-10-10** — [Генерация GAN’ами вертикального видоса для тиктока по фрагменту ауд...](https://t.me/danokhlopkov/609) _(Social)_
+- **2021-10-09** — [Я отучился отдыхать. ](https://t.me/danokhlopkov/608) _(misc)_
+- **2021-10-08** — [FYI, господа аналитики](https://t.me/danokhlopkov/607) _(TON, Data)_
+- **2021-10-07** — [Напарсил инсту в начале и в конце лета](https://t.me/danokhlopkov/606) _(Startups)_
+- **2021-10-06** — [Успел за сегодня ВСЕ, что планировал 😳](https://t.me/danokhlopkov/605) _(misc)_
+- **2021-10-06** — [Самые зафотканные рестораны и бары Москвы.](https://t.me/danokhlopkov/604) _(misc)_
+- **2021-10-06** — [Постарался вспомнить и собрать в одном месте все пет-проекты, котор...](https://t.me/danokhlopkov/603) _(Startups)_
+- **2021-10-05** — [Влияет ли на что-нибудь угол поворота лица на аватарке в телеге?](https://t.me/danokhlopkov/602) _(misc)_
+- **2021-10-04** — [Facebook office now:](https://t.me/danokhlopkov/601) _(misc)_
+- **2021-10-04** — [На выходных сформулировал, и хочу зафиксировать для себя и для вас ...](https://t.me/danokhlopkov/600) _(Startups, Social)_
+- **2021-10-04** — [В своей статье "как распарсить что угодно" я писал, что надо искать...](https://t.me/danokhlopkov/599) _(Data, Social)_
+- **2021-10-03** — [Всеми силами пытаюсь выгореть.](https://t.me/danokhlopkov/598) _(misc)_
+- **2021-10-02** — [Кстати, да. Если кто-то планирует скоро и недорого сдавать хату в ц...](https://t.me/danokhlopkov/597) _(misc)_
+- **2021-10-02** — [Настроение:](https://t.me/danokhlopkov/596) _(misc)_
+- **2021-10-02** — [Топ 3 игры, в которые мы играем с батей, когда я приезжаю в Дубну.](https://t.me/danokhlopkov/595) _(misc)_
+- **2021-10-01** — [Сижу разбираюсь, что такое Metaverse. Нагуглил недавнюю статью на F...](https://t.me/danokhlopkov/592)
+- **2021-09-30** — [Никто не хочет рвануть в турцию на две недели на виллу со стартапер...](https://t.me/danokhlopkov/589) _(Startups)_
+- **2021-09-30** — [Как попасть в топ 1% лучших? Попадите дважды в топ 10% по взаимопол...](https://t.me/danokhlopkov/588) _(Data, Social)_
+- **2021-09-29** — [Я - жертва маркетинга Apple](https://t.me/danokhlopkov/587) _(Social, Личное)_
+- **2021-09-29** — [Django-telegram-bot v2](https://t.me/danokhlopkov/586) _(TG Apps, Startups, Data)_
+- **2021-09-28** — [Думаю, лет через 5 появятся первые миры типа "1 игроку приготовитьс...](https://t.me/danokhlopkov/585)
+- **2021-09-27** — [Тг бот, который помогает быстро понять, подписан ли человек на один...](https://t.me/danokhlopkov/584) _(TG Apps)_
+- **2021-09-27** — [Если вы с пацанами суетите на IT поле, я советую сходить на хакатон...](https://t.me/danokhlopkov/582) _(TON, Startups)_
+- **2021-09-26** — [Я работаю не над идеей. Я работаю с людьми.](https://t.me/danokhlopkov/581) _(misc)_
+- **2021-09-26** — [Каждый раз, когда узнаю, что кто-то где-то деплоит в прод руками, а...](https://t.me/danokhlopkov/580) _(misc)_
+- **2021-09-25** — [Если вы организуете хакатон и у вас задача «придумайте крутое испол...](https://t.me/danokhlopkov/579) _(TON, Startups, Data)_
+- **2021-09-25** — [Теперь каждый раз, когда я вижу 502 от Cloudflare, меня передергива...](https://t.me/danokhlopkov/578) _(misc)_
+- **2021-09-25** — [Как же русские любят сеять негатив) подчеркивать минусы) рубить иде...](https://t.me/danokhlopkov/577) _(misc)_
+- **2021-09-24** — [Испанский стыд mod on! 🕺](https://t.me/danokhlopkov/576) _(TG Apps, Startups)_
+- **2021-09-24** — [Мне так понравился вчерашний день, что я решил его запечатлеть тут ...](https://t.me/danokhlopkov/575) _(Startups, Data, Social)_
+- **2021-09-23** — [И че делать? Мне написало 30+ человек. А в посте проект-то один.](https://t.me/danokhlopkov/574) _(Startups)_
+- **2021-09-23** — [Джун-аналитик Wanted](https://t.me/danokhlopkov/573) _(Data)_
+- **2021-09-22** — [хабр не выдержал напора парсеров моих читателей и лег полежать](https://t.me/danokhlopkov/572) _(Data)_
+- **2021-09-22** — [Для тех кто не прочитал тогда, вот вам русская версия с дополнениям...](https://t.me/danokhlopkov/571) _(misc)_
+- **2021-09-17** — [https://how-i-experience-web-today.com/](https://t.me/danokhlopkov/570) _(misc)_
+- **2021-09-16** — [Копаюсь в гео данных из Instagram. Решил посмотреть, какие геотеги ...](https://t.me/danokhlopkov/569) _(Social)_
+- **2021-09-16** — [Основной источник залипона в инсте - сториз от друзей. Кажется, что...](https://t.me/danokhlopkov/568) _(misc)_
+- **2021-09-15** — [Тг бот поиску email людей](https://t.me/danokhlopkov/567) _(TG Apps)_
+- **2021-09-14** — [Принцип Парето](https://t.me/danokhlopkov/566) _(misc)_
+- **2021-09-14** — [Как я пишу парсеры любого вебсайта](https://t.me/danokhlopkov/565) _(Data)_
+- **2021-09-13** — [Тебе не до тайм-менеджмента, если не знаешь, чем заняться.](https://t.me/danokhlopkov/564) _(misc)_
+- **2021-09-13** — [Какой же стресс покупать билеты на самолет и жилье. Постоянные пере...](https://t.me/danokhlopkov/563) _(misc)_
+- **2021-09-13** — [Когда появятся AR-очки, очень не хочется скроллить ленту глазами ил...](https://t.me/danokhlopkov/562) _(misc)_
+- **2021-09-12** — [Если вам нужно разработать тг бота или веб приложение любой сложнос...](https://t.me/danokhlopkov/561) _(TG Apps)_
+- **2021-09-12** — [Заказы на разработку я не беру.](https://t.me/danokhlopkov/559) _(misc)_
+- **2021-09-12** — [Тгбот «прочитать позже»](https://t.me/danokhlopkov/558) _(TG Apps)_
+- **2021-09-11** — [Тгбот угадай-мелодию](https://t.me/danokhlopkov/557) _(TG Apps)_
+- **2021-09-11** — [Парсил-парсил, и тут хоба - техкранч меншн](https://t.me/danokhlopkov/556) _(Startups)_
+- **2021-09-10** — [Для меня биг дата - это 9 мая.](https://t.me/danokhlopkov/555) _(misc)_
+- **2021-09-09** — [В мои проекты и даже в Руну могут понадобиться новые руки: прогеры ...](https://t.me/danokhlopkov/554) _(Startups, Data)_
+- **2021-09-08** — [Мифологический стартапер](https://t.me/danokhlopkov/552) _(Startups)_
+- **2021-09-07** — [Экспериментально выясняю, через сколько инвайтов банят в WeWork.](https://t.me/danokhlopkov/551) _(Data)_
+- **2021-09-03** — [Мое лето 2021](https://t.me/danokhlopkov/550) _(Social)_
+- **2021-09-02** — [ну хоть запрогал быстро](https://t.me/danokhlopkov/549) _(misc)_
+- **2021-09-02** — [Я чувствую себя олимпиадным программистом, когда парсю китайские js...](https://t.me/danokhlopkov/548) _(misc)_
+- **2021-08-31** — [Как же я люблю, когда нет свободного времени](https://t.me/danokhlopkov/547) _(misc)_
+- **2021-08-31** — [автогенератор и авторассылатель заявлений, отзывающих право на обра...](https://t.me/danokhlopkov/546) _(misc)_
+- **2021-08-30** — [Как я добирался с Алтая в Москву на поездах](https://t.me/danokhlopkov/545) _(misc)_
+- **2021-08-28** — [Я сейчас еду поездами с Алтая обратно в Москву, останавливаюсь в Ом...](https://t.me/danokhlopkov/544) _(Social, Личное)_
+- **2021-08-28** — [тг бот, который по сообщению от юзера показывает, в каких публичных...](https://t.me/danokhlopkov/543) _(TG Apps)_
+- **2021-08-27** — [навернуть topic modeling на тексты ру рэп песен](https://t.me/danokhlopkov/542) _(misc)_
+- **2021-08-25** — [Как сделать сайт из Notion](https://t.me/danokhlopkov/541)
+- **2021-08-17** — [Как запустить Metabase (цепляется к базе данных и позволяет кнопочк...](https://t.me/danokhlopkov/540) _(Data)_
+- **2021-08-12** — [Digital Nomad ](https://t.me/danokhlopkov/536) _(Личное)_
+- **2021-08-12** — [Сижу разибраюсь в философии и лекции Joscha Bach про Artificial Con...](https://t.me/danokhlopkov/535) _(Data)_
+- **2021-08-11** — [Этого я и боялся.](https://t.me/danokhlopkov/534) _(misc)_
+- **2021-08-11** — [Смотрю презентации стартапов на раннем этапе. У всей команды 10-15+...](https://t.me/danokhlopkov/533) _(Startups)_
+- **2021-08-11** — [Опенсорсное Гугл хром расширение, которое автоматизирует активность...](https://t.me/danokhlopkov/532) _(misc)_
+- **2021-08-10** — [Прикольно: ночью проще фокусироваться и не отвлекаться. Все спят, н...](https://t.me/danokhlopkov/531) _(misc)_
+- **2021-08-10** — [Как же развращают книги про успешные стартапы. ](https://t.me/danokhlopkov/530) _(Startups, Social, Личное)_
+- **2021-08-10** — [Был тут на одной тусовке в Питере, дедом которой был @thingsiread. ...](https://t.me/danokhlopkov/529) _(misc)_
+- **2021-08-10** — [Как же я мучился с тем, чтобы прикрутить норм аналитику к тг ботам....](https://t.me/danokhlopkov/528) _(TG Apps, Startups, Data)_
+- **2021-08-09** — [Лучше б я изучал JS, чем питон](https://t.me/danokhlopkov/527) _(misc)_
+- **2021-08-08** — [Поисковик по телеграммным  #whois. Read only CRM/соцсеть/networking...](https://t.me/danokhlopkov/526) _(Social)_
+- **2021-08-08** — [Зачем вам open source](https://t.me/danokhlopkov/525) _(Startups, Social)_
+- **2021-08-07** — [Самая лучшая страница 404, которую я видел: у Airflow. Там генериру...](https://t.me/danokhlopkov/524) _(misc)_
+- **2021-08-06** — [Статистика @ffmemesbot - бота с бесконечной персонализированной лен...](https://t.me/danokhlopkov/523) _(TG Apps, Startups)_
+- **2021-08-06** — [Как же я, блин, люблю телеграм ботов!](https://t.me/danokhlopkov/522) _(TG Apps)_
+- **2021-08-05** — [Самое обидное в парсинге: в какой-то момент осознать, что ты все эт...](https://t.me/danokhlopkov/520) _(Startups, Data, Social)_
+- **2021-08-04** — [Как меня забанили я отказался от соцсетей, мне кажется, я стал боль...](https://t.me/danokhlopkov/519) _(Social)_
+- **2021-08-04** — [Плагин для Zoom, который слушает всю встречу, а потом присылает sum...](https://t.me/danokhlopkov/518) _(misc)_
+- **2021-08-03** — [Как сделать быстрый поиск для вашего проекта?](https://t.me/danokhlopkov/517) _(TG Apps, Startups, Data)_
+- **2021-08-02** — [Если вы хотите подключить свой Selenium к прокси, чтобы парсить инт...](https://t.me/danokhlopkov/516) _(misc)_
+- **2021-08-02** — [На случай, если вы платите за VPN](https://t.me/danokhlopkov/515) _(Social)_
+- **2021-08-01** — [Рисую тут значит Изохроны](https://t.me/danokhlopkov/514) _(misc)_
+- **2021-08-01** — [Компиляция моих датасетов — всё в одном месте](https://t.me/danokhlopkov/513) _(Data, Social)_
+- **2021-07-31** — [Есть два типа людей:](https://t.me/danokhlopkov/512) _(misc)_
+- **2021-07-30** — [Сорри, большинство, но вот вам инструкция, как прикрутить Cloudflar...](https://t.me/danokhlopkov/511) _(Data)_
+- **2021-07-29** — [Пожалуйста, не надо делать, как красненько. Делайте, как зелененько. 💚](https://t.me/danokhlopkov/509) _(misc)_
+- **2021-07-29** — [Представьте: у вас есть текстовые описания объектов. Например: user...](https://t.me/danokhlopkov/508) _(misc)_
+- **2021-07-28** — [Завел-таки себе блог на английском. Первая статья о том, как я это ...](https://t.me/danokhlopkov/507) _(Data)_
+- **2021-07-27** — [Вспомнил фразу, которую слышал лет 10 назад:](https://t.me/danokhlopkov/505) _(misc)_
+- **2021-07-27** — [Я заметил, что у меня выработалась привычка не доделывать работу до...](https://t.me/danokhlopkov/504) _(Data)_
+- **2021-07-27** — [Сервис, куда ты закидываешь свои фотографии, а он генерит такой вот...](https://t.me/danokhlopkov/503) _(misc)_
+- **2021-07-26** — [Есть подумать, то путь айтишника-программиста - расширять спектр те...](https://t.me/danokhlopkov/502) _(Data)_
+- **2021-07-26** — [Я часто люблю гулять без телефона. Интересно наблюдать за «ломкой»,...](https://t.me/danokhlopkov/501) _(misc)_
+- **2021-07-26** — [Так, с SQL функцией NTILE, про которую я писал выше, оказалось не в...](https://t.me/danokhlopkov/500) _(Data)_
+- **2021-07-25** — [Язык блога](https://t.me/danokhlopkov/499) _(Data, Social)_
+- **2021-07-24** — [Про компании с открытым кодом](https://t.me/danokhlopkov/498) _(Startups, Data)_
+- **2021-07-22** — [MOOD 💧](https://t.me/danokhlopkov/497) _(Data)_
+- **2021-07-21** — [Я и мои шизы делают очередной проект](https://t.me/danokhlopkov/495) _(misc)_
+- **2021-07-21** — [Результат EXPLAIN ANALYSE можно скопировать на этот сайт, и он дета...](https://t.me/danokhlopkov/494) _(misc)_
+- **2021-07-21** — [DBA для самых маленьких](https://t.me/danokhlopkov/493) _(TON, Startups, Data)_
+- **2021-07-20** — [parse.tv - 24/7 стрим из браузера, который автоматизирован и через ...](https://t.me/danokhlopkov/492) _(Social)_
+- **2021-07-20** — [А вы тоже, когда парсите через Selenium, прогаете с нуля всякие ран...](https://t.me/danokhlopkov/491) _(misc)_
+- **2021-07-19** — [Новый ресторан](https://t.me/danokhlopkov/490) _(Data)_
+- **2021-07-18** — [Пока я пишу свой лонг рид про парсинг, в очередной раз встал вопрос...](https://t.me/danokhlopkov/489) _(Data)_
+- **2021-07-17** — [Начал писать инструкцию, как прогать парсеры, чтобы все были доволь...](https://t.me/danokhlopkov/486) _(Data)_
+- **2021-07-17** — [В августе я хочу пожить где-то рядом с Калининградом. Но я там не б...](https://t.me/danokhlopkov/485) _(misc)_
+- **2021-07-16** — [Подумал, что с моим обширным опытом банов я могу работать топ консу...](https://t.me/danokhlopkov/484) _(misc)_
+- **2021-07-16** — [Перезалив моей истории про инстаграм. Пусть только попробуют меня з...](https://t.me/danokhlopkov/482) _(Startups, Social)_
+- **2021-07-15** — [Пару слов про наш Саппорт](https://t.me/danokhlopkov/481) _(Social)_
+- **2021-07-14** — [Тгбот, куда ты закидываешь в свободном формате список фильмов посмо...](https://t.me/danokhlopkov/479) _(TG Apps)_
+- **2021-07-14** — [Друзья!](https://t.me/danokhlopkov/478) _(Social)_
+- **2021-07-13** — [Очень часто мне лень что-то сделать для себя: фильм я могу посмотре...](https://t.me/danokhlopkov/477) _(Social)_
+- **2021-07-12** — [Завел тут себе новый профиль взамен facebook и instagram](https://t.me/danokhlopkov/476) _(Social)_
+- **2021-07-12** — [Мой фильмовый TODO](https://t.me/danokhlopkov/475) _(misc)_
+- **2021-07-09** — [История: Даня и Instagram](https://t.me/danokhlopkov/471) _(TG Apps, Startups, Data, Social)_
+- **2021-07-08** — [#Датасет Instagram Hashtags](https://t.me/danokhlopkov/470) _(Data, Social)_
+- **2021-07-06** — [Я уже подхожу, через 7 минут буду. Я в белой футболке, розовых шорт...](https://t.me/danokhlopkov/469) _(misc)_
+- **2021-07-05** — [История: Даня и Instagram](https://t.me/danokhlopkov/468) _(Startups, Data, Social)_
+- **2021-07-03** — [Факты дня](https://t.me/danokhlopkov/467) _(Social)_
+- **2021-07-02** — [История: Даня и Instagram](https://t.me/danokhlopkov/466) _(Startups, Data, Social, Личное)_
+- **2021-06-30** — [Хочу обновить себе персональный вебсайт. ](https://t.me/danokhlopkov/465) _(misc)_
+- **2021-06-29** — [Популярная практика сегодня - отключение всех уведомлений, а телефо...](https://t.me/danokhlopkov/464) _(Startups)_
+- **2021-06-28** — [Ого что нашел!](https://t.me/danokhlopkov/463) _(Data, Social)_
+- **2021-06-26** — [Ого! А вот и первый usecase моего датасета Instagram хештегов.](https://t.me/danokhlopkov/462) _(Data, Social)_
+- **2021-06-24** — [Функция "крутости" для хештегов](https://t.me/danokhlopkov/461) _(misc)_
+- **2021-06-23** — [#Датасет: Московские Инстаграм хештеги](https://t.me/danokhlopkov/459) _(Data, Social)_
+- **2021-06-23** — [Мне много пишут "я хочу набраться опыта, дай задачку". Часто оказыв...](https://t.me/danokhlopkov/457) _(Data, Social)_
+- **2021-06-23** — [#️⃣ Продолжаю свое путешествие в мир Instagram хештегов. Последние ...](https://t.me/danokhlopkov/456) _(Social, Личное)_
+- **2021-06-23** — [Делаю анализ хештегов инсты, которые используют Москвичи. Узнал, чт...](https://t.me/danokhlopkov/455) _(misc)_
+- **2021-06-22** — [Последние деньки, когда работает бот по поиску цепочек рукопожатий ...](https://t.me/danokhlopkov/454) _(Social)_
+- **2021-06-22** — [Я решил отказаться от Facebook и Instagram. ](https://t.me/danokhlopkov/453) _(Social)_
+- **2021-06-22** — [Нейросеть, которая генерит музыкальный клип по аудио. Нейро-гличи б...](https://t.me/danokhlopkov/452) _(AI, Data)_
+- **2021-06-21** — [И в инсте забанили. 😳](https://t.me/danokhlopkov/450) _(misc)_
+- **2021-06-21** — [ого.](https://t.me/danokhlopkov/449) _(misc)_
+- **2021-06-18** — [Я занимаюсь парсингом уже где-то около года и заметил, что все парс...](https://t.me/danokhlopkov/448) _(Data, Social)_
+- **2021-06-17** — [Снял видео о том, как я занимаюсь проектами в реальном времени.](https://t.me/danokhlopkov/446) _(Data)_
+- **2021-06-17** — [В целом, все верно говорит. Под описание канала подходит!](https://t.me/danokhlopkov/445) _(misc)_
+- **2021-06-13** — [Отзумил чуть-чуть, чтобы увидеть больше самых популярных инста-мест.](https://t.me/danokhlopkov/444) _(misc)_
+- **2021-06-13** — [Самые популярные места в центре Москвы.](https://t.me/danokhlopkov/443) _(Social)_
+- **2021-06-11** — [Тг бот, который генерит куплет в стиле трэп-рэп. На вход может полу...](https://t.me/danokhlopkov/441) _(TG Apps, Social)_
+- **2021-06-11** — [Мужики, сегодня в мск 5.8к заражённых. Администрация канала крайне ...](https://t.me/danokhlopkov/440) _(misc)_
+- **2021-06-10** — [Перевел статью друга - помогаю с визой 🎫](https://t.me/danokhlopkov/439) _(misc)_
+- **2021-06-08** — [Забавно делать два проекта, в одном из которых ты пытаешься обойти ...](https://t.me/danokhlopkov/438) _(misc)_
+- **2021-06-08** — [Думаю, Биткойн скакнет в цене - ведь только что мы увидели пример п...](https://t.me/danokhlopkov/437) _(misc)_
+- **2021-06-08** — [Вот список сайтов, которые не работают: https://www.fastly.com/cust...](https://t.me/danokhlopkov/435) _(misc)_
+- **2021-06-08** — [У вас тоже интернет не работает?)))](https://t.me/danokhlopkov/433) _(misc)_
+- **2021-06-07** — [Последний раз я патчил gta san andreas, чтобы без диска шла. А тепе...](https://t.me/danokhlopkov/432) _(misc)_
+- **2021-06-05** — [Запись выступления на тему: "Как сделать дата платформу не для биг ...](https://t.me/danokhlopkov/431) _(Social)_
+- **2021-06-05** — [Рассказываю, как сделать дата платформу в соло. Предыдущий доклад б...](https://t.me/danokhlopkov/429) _(Data)_
+- **2021-06-05** — [Гениальное изобретение инсты - дабл тап лайк сообщения ](https://t.me/danokhlopkov/428) _(misc)_
+- **2021-06-04** — [Хотите поймать багу? Как это делаю я.  ](https://t.me/danokhlopkov/427) _(misc)_
+- **2021-06-03** — [Чисто тур по конференциям](https://t.me/danokhlopkov/426) _(misc)_
+- **2021-06-02** — [Яндекс, вы чего?](https://t.me/danokhlopkov/425) _(misc)_
+- **2021-06-01** — [Не смотри фильмы в одиночку](https://t.me/danokhlopkov/424) _(misc)_
+- **2021-05-28** — [Меня просили продолжить свой анализ, на кого же больше всего подпис...](https://t.me/danokhlopkov/423) _(Data, Social, Личное)_
+- **2021-05-23** — [Что я сделал этим вечером](https://t.me/danokhlopkov/422) _(Личное)_
+- **2021-05-22** — [Совет](https://t.me/danokhlopkov/421) _(misc)_
+- **2021-05-21** — [Мой распорядок дня всю неделю. Погрешность - полчаса.](https://t.me/danokhlopkov/420) _(misc)_
+- **2021-05-20** — [Прочитал ещё интересный кусочек из книги про корп культуру Netflix. ](https://t.me/danokhlopkov/419) _(misc)_
+- **2021-05-19** — [Новый день, новое слово: https://ru.wikipedia.org/wiki/%D0%AF%D0%BF...](https://t.me/danokhlopkov/418) _(misc)_
+- **2021-05-19** — [Instagram рукопожатия](https://t.me/danokhlopkov/417) _(Social)_
+- **2021-05-18** — [Наконец-то выложил свое выступление на тему](https://t.me/danokhlopkov/416) _(Data)_
+- **2021-05-17** — [Так забавно смотреть на список людей, кто смотрит мои сториз в инст...](https://t.me/danokhlopkov/415) _(misc)_
+- **2021-05-16** — [У вас когда-нибудь повреждалась база данных?)](https://t.me/danokhlopkov/414) _(misc)_
+- **2021-05-15** — [Сел читать книгу и ... читать продолжение в источнике.](https://t.me/danokhlopkov/413) _(Social)_
+- **2021-05-14** — [че еще б такого спарсить, м?](https://t.me/danokhlopkov/412) _(misc)_
+- **2021-05-14** — [Заметил, что если в живом диалоге еще можно говорить “ага”, “понял”...](https://t.me/danokhlopkov/411) _(misc)_
+- **2021-05-13** — [Как же муторно выбирать хату на пару месяцев из бесконечного числа ...](https://t.me/danokhlopkov/410) _(misc)_
+- **2021-05-11** — [Это очень опасные тезисы без количественных ориентиров.](https://t.me/danokhlopkov/409) _(Startups)_
+- **2021-05-11** — [И еще несколько вырезок из интервью Naval](https://t.me/danokhlopkov/408) _(Startups)_
+- **2021-05-11** — [Интересная мысль из блога создателя AngelList](https://t.me/danokhlopkov/407) _(Startups)_
+- **2021-05-10** — [Читаю тут ворованную из офиса книгу про корпоративную культуру Netf...](https://t.me/danokhlopkov/405) _(Data)_
+- **2021-05-08** — [Отели vs. Airbnb](https://t.me/danokhlopkov/404) _(Social, Личное)_
+- **2021-05-06** — [Друг сделал твиттер нейро-Пушкина.](https://t.me/danokhlopkov/403) _(AI, Social)_
+- **2021-04-27** — [Технарь заболел:](https://t.me/danokhlopkov/402) _(misc)_
+- **2021-04-26** — [Как выглядит ноль по мнению маркетологов Яндекс Практикума](https://t.me/danokhlopkov/401) _(misc)_
+- **2021-04-26** — [Телеграм наконец-то обновил древний функционал Payments для ботов, ...](https://t.me/danokhlopkov/400) _(TG Apps, Startups, Data)_
+- **2021-04-23** — [Хочу на 2-4 недели уехать куда-нибудь без гаджетов и интеренета, но...](https://t.me/danokhlopkov/399) _(misc)_
+- **2021-04-23** — [Как попасть на радары IT HR 🎯](https://t.me/danokhlopkov/398) _(Social)_
+- **2021-04-22** — [Сюр: Сижу в венчурном фонде разбираюсь, как в ВОРДПРЕСС загрузить ф...](https://t.me/danokhlopkov/397) _(Startups)_
+- **2021-04-19** — [Недавно тут узнал, что @ffmemesbot весьма популярен у большой конса...](https://t.me/danokhlopkov/396) _(TG Apps, Startups)_
+- **2021-04-17** — [#датасет 7.3M русскоязычных комментов из Instagram](https://t.me/danokhlopkov/395) _(Data, Social)_
+- **2021-04-16** — [Деплой в пятницу вечером. Всем красноглазикам удачи](https://t.me/danokhlopkov/394) _(Data)_
+- **2021-04-16** — [DS научил меня мультизадачности](https://t.me/danokhlopkov/393) _(Data)_
+- **2021-04-15** — [работает - не трогай](https://t.me/danokhlopkov/392) _(misc)_
+- **2021-04-14** — [Спродюссировал музыку для тиктока](https://t.me/danokhlopkov/391) _(Social)_
+- **2021-04-14** — [Ох уж эти сайты, которые парсят другие сайты и переводят все через ...](https://t.me/danokhlopkov/390) _(misc)_
+- **2021-04-13** — [Вот хочешь пошерить плейлист с музлом, а у всех разные стриминги.](https://t.me/danokhlopkov/389) _(misc)_
+- **2021-04-12** — [Моя преза про то, как сделать простенькую Data Platform для вашего ...](https://t.me/danokhlopkov/386) _(Startups)_
+- **2021-04-12** — [Мой доклад будет поверхностным и быстрым - я просто вкину технологи...](https://t.me/danokhlopkov/383) _(Startups)_
+- **2021-04-12** — [Каггл и корпорации извратили нас, предлагая готовые датасеты для ан...](https://t.me/danokhlopkov/382) _(Startups, Data)_
+- **2021-04-09** — [ETL vs. ELT](https://t.me/danokhlopkov/381)
+- **2021-04-06** — [SQL + Python = Сила](https://t.me/danokhlopkov/379) _(Data)_
+- **2021-04-05** — [Квест](https://t.me/danokhlopkov/378)
+- **2021-04-05** — [Раз я люблю парсить открытые данные (кстати не факт, что это все ещ...](https://t.me/danokhlopkov/377) _(Social)_
+- **2021-04-01** — [Местоположение всех нод Ethereum (~4300 штук)](https://t.me/danokhlopkov/376) _(Crypto)_
+- **2021-04-01** — [Местоположение всех биткойн нод (~8800 штук)](https://t.me/danokhlopkov/375) _(misc)_
+- **2021-04-01** — [Hustle until your haters ask if you’re hiring](https://t.me/danokhlopkov/374) _(misc)_
+- **2021-03-31** — [После поколения Z будет поколение [](https://t.me/danokhlopkov/373) _(misc)_
+- **2021-03-30** — [Звезды в гитхабе - это те же лайки. ](https://t.me/danokhlopkov/372) _(misc)_
+- **2021-03-29** — [Фича для Яндекс карт:](https://t.me/danokhlopkov/371) _(misc)_
+- **2021-03-28** — [Коротко про мой март](https://t.me/danokhlopkov/370) _(Social)_
+- **2021-03-28** — [Бот, который проверяет: написанный текст == хокку?](https://t.me/danokhlopkov/369) _(misc)_
+- **2021-03-26** — [Я очень зависим от соцсетей и видосиков. ](https://t.me/danokhlopkov/368) _(Social)_
+- **2021-03-24** — [Завел я значит себе этот канал, потом стал сюда постить интересные ...](https://t.me/danokhlopkov/367) _(Startups, Social)_
+- **2021-03-22** — [А вот, где больше всего фоток было загружено в инсту](https://t.me/danokhlopkov/366) _(misc)_
+- **2021-03-22** — [Где больше всего геотегов в инстаграмме?](https://t.me/danokhlopkov/365) _(Social)_
+- **2021-03-20** — [Вы любите мемы?](https://t.me/danokhlopkov/364) _(TG Apps, Startups)_
+- **2021-03-20** — [Реперы дают друг другу гостевые куплеты, а итоговые треки релизятся...](https://t.me/danokhlopkov/363) _(misc)_
+- **2021-03-19** — [Технологии, которые я попробую в следующих проектах](https://t.me/danokhlopkov/362) _(TG Apps, Data)_
+- **2021-03-19** — [Для всех аналитиков](https://t.me/danokhlopkov/361) _(Data)_
+- **2021-03-18** — [Несколько лет назад сделал сервис, который генерит такие картинки (...](https://t.me/danokhlopkov/360) _(misc)_
+- **2021-03-17** — [Написал на Хабре статью о том, как же деплоить Telegram ботов в про...](https://t.me/danokhlopkov/359) _(Data)_
+- **2021-03-16** — [Вы очень просили и мы сделали ⬇️](https://t.me/danokhlopkov/358) _(TG Apps, Startups, Data)_
+- **2021-03-16** — [Зачем прокачивать Твиттер?](https://t.me/danokhlopkov/357) _(Social)_
+- **2021-03-15** — [Меня банили](https://t.me/danokhlopkov/356) _(Social)_
+- **2021-03-13** — [Идея: арбитраж популярных твиттов](https://t.me/danokhlopkov/355) _(Social)_
+- **2021-03-12** — [Хочется Open Source тулзы, которые структурируют все подряд: вебсай...](https://t.me/danokhlopkov/354) _(Data, Social)_
+- **2021-03-11** — [Факап: если у вас есть соцсети и вы решили скинуть ссылку на ваш zo...](https://t.me/danokhlopkov/353) _(Social)_
+- **2021-03-09** — [Рай для инди дата инженера](https://t.me/danokhlopkov/352) _(Data)_
+- **2021-03-07** — [Как я пользуюсь гаджетами](https://t.me/danokhlopkov/351) _(Social)_
+- **2021-03-07** — [#Датасет МИЛЛИОН русскоязычных комментариев из Instagram](https://t.me/danokhlopkov/349) _(Data, Social)_
+- **2021-03-05** — [Презентация моего выступления в МФТИ. Я рассказал про инструменты р...](https://t.me/danokhlopkov/348) _(Startups, Личное)_
+- **2021-03-05** — [Если вы не знали, как я веду канал:](https://t.me/danokhlopkov/347) _(misc)_
+- **2021-03-04** — [Если у вас подкаст / ютуб шоу, я могу сделать вам джингл 🎉](https://t.me/danokhlopkov/345) _(Social)_
+- **2021-03-04** — [Недавно рефлексировал о том, что же я делал в студенческие годы в М...](https://t.me/danokhlopkov/344) _(Личное)_
+- **2021-03-03** — [Мне часто пишут люди с предложениями "спарси нам это", "запрогай эт...](https://t.me/danokhlopkov/343) _(TG Apps)_
+- **2021-03-03** — [Делать ли Open Source проекты?](https://t.me/danokhlopkov/342) _(TG Apps, Startups, Data)_
+- **2021-03-02** — [#Датасет все 211 000 публикаций Techcrunch с 2005 до наших дней.](https://t.me/danokhlopkov/341) _(Data)_
+- **2021-03-01** — [Интересно, что теперь будет с компаниями типа Double Data (парсят V...](https://t.me/danokhlopkov/339) _(Social)_
+- **2021-03-01** — [Кафешки и рестораны Москвы (розовые точки). Цвет шестиугольников - ...](https://t.me/danokhlopkov/338) _(misc)_
+- **2021-02-28** — [Я тут понял, что уже где-то год не обучал ничего. Ни одну нейросеть...](https://t.me/danokhlopkov/337) _(AI)_
+- **2021-02-26** — [Я тут понял, почему я занимаюсь парсингом:](https://t.me/danokhlopkov/336) _(Startups, Data, Social)_
+- **2021-02-26** — [Я люблю геоданные ](https://t.me/danokhlopkov/335) _(TG Apps, Social)_
+- **2021-02-24** — [У меня есть тг канал, где я пиарю свои instagram-related боты и сер...](https://t.me/danokhlopkov/334) _(TG Apps, Social)_
+- **2021-02-22** — [Главный хак при парсинге](https://t.me/danokhlopkov/333) _(Data)_
+- **2021-02-21** — [Вот так мы с Серегой в бакалавриате отправляли свои портфели на лун...](https://t.me/danokhlopkov/332) _(Startups)_
+- **2021-02-21** — [Каналу 1 год 🎂](https://t.me/danokhlopkov/331) _(Social)_
+- **2021-02-19** — [Ток-ток-туса](https://t.me/danokhlopkov/329) _(Social)_
+- **2021-02-17** — [Чтобы не пропустить крутые библиотеки - подписывайтесь на мой гитха...](https://t.me/danokhlopkov/328) _(misc)_
+- **2021-02-17** — [Вчера нашел библиотеку, симулирующую клиент Clubhouse. Конечно же з...](https://t.me/danokhlopkov/327) _(Social)_
+- **2021-02-17** — [Подписки моих подписок в инсте. Прикольно кластеризуются популярные...](https://t.me/danokhlopkov/326) _(Social)_
+- **2021-02-16** — [Хочу сделать свое iOS приложение, так как оно очень легко монетизир...](https://t.me/danokhlopkov/325) _(Startups)_
+- **2021-02-15** — [Если кому нужна база +- рандомных метаданных картинок из инсты (50+...](https://t.me/danokhlopkov/324) _(misc)_
+- **2021-02-15** — [#Идея: Умная статистика тг каналов](https://t.me/danokhlopkov/323) _(TG Apps, AI, Data, Social)_
+- **2021-02-13** — [Почему Clubhouse - круто](https://t.me/danokhlopkov/322) _(Social)_
+- **2021-02-12** — [https://www.joinclubhouse.com/room/xoQbap0o](https://t.me/danokhlopkov/321) _(misc)_
+- **2021-02-12** — [Влетайте в клабхаус. Говорим про пиар для айтишника](https://t.me/danokhlopkov/320) _(misc)_
+- **2021-02-11** — [Соцсеть, где контакты шерят геопозицию друг друга с точностью до го...](https://t.me/danokhlopkov/319) _(Social)_
+- **2021-02-10** — [#Идея: html -> фичи (опенс сорс)](https://t.me/danokhlopkov/318) _(AI, Social)_
+- **2021-02-10** — [#Датасет: еще больше пользователей Тиндера из Москвы](https://t.me/danokhlopkov/317) _(Data)_
+- **2021-02-09** — [#Датасет Пользователи Телеграмма из Москвы](https://t.me/danokhlopkov/315) _(Data)_
+- **2021-02-08** — [Крутых дядей на зум колле можно распознать по проводным наушникам](https://t.me/danokhlopkov/314) _(misc)_
+- **2021-02-08** — [Вчера я ехал в поезде четыре часа без интернета. Это повод сделать ...](https://t.me/danokhlopkov/313) _(misc)_
+- **2021-02-07** — [Как я тестирую в проде и живу без venv](https://t.me/danokhlopkov/311) _(TON, Data, Личное)_
+- **2021-02-04** — [Цифровой след айтишника 🔍](https://t.me/danokhlopkov/309) _(misc)_
+- **2021-02-04** — [Airtable делает XHR запрос с кучей кук и парамертов. Можно ловить э...](https://t.me/danokhlopkov/308) _(TG Apps)_
+- **2021-02-04** — [#Идея для Телеграм бота](https://t.me/danokhlopkov/307) _(TG Apps)_
+- **2021-02-02** — [Международный эквайринг без юрлица](https://t.me/danokhlopkov/306) _(Startups)_
+- **2021-02-02** — [Международный эквайринг русских для инди хакеров ](https://t.me/danokhlopkov/304) _(Startups)_
+- **2021-02-01** — [Ода Левшам](https://t.me/danokhlopkov/301) _(misc)_
+- **2021-02-01** — [Моя статистика на Medium](https://t.me/danokhlopkov/300) _(Startups)_
+- **2021-01-29** — [Статистика публикаций на Habr и Hackernoon](https://t.me/danokhlopkov/299) _(TG Apps)_
+- **2021-01-28** — [Хабр зачем-то опубликовал мою статью:](https://t.me/danokhlopkov/298) _(misc)_
+- **2021-01-28** — [Как с помощью GPT-2 или GPT-3 генерировать ответы на вопросы юзера?](https://t.me/danokhlopkov/294) _(AI)_
+- **2021-01-27** — [Story Of the Day на Hackernoon 🧐](https://t.me/danokhlopkov/293) _(Social)_
+- **2021-01-27** — [Первая итерация скачки тиндер -Здесь. Меня немного подазбанили, по ...](https://t.me/danokhlopkov/292) _(misc)_
+- **2021-01-27** — [#Датасет от коллеги по цеху.](https://t.me/danokhlopkov/291) _(Data)_
+- **2021-01-27** — [Экспериментирую с форматом ](https://t.me/danokhlopkov/290) _(Startups, Data)_
+- **2021-01-26** — [Кластеры ресторанов и кафешек Парижа. Если хотите кушать, идите к б...](https://t.me/danokhlopkov/289) _(misc)_
+- **2021-01-26** — [Ну вот зачем в новом финдере такая широкая верхняя полоска?](https://t.me/danokhlopkov/288) _(misc)_
+- **2021-01-25** — [Пираты 21 века воруют данные 🏴‍☠️](https://t.me/danokhlopkov/287) _(misc)_
+- **2021-01-25** — [Заметка себе на будущее](https://t.me/danokhlopkov/286) _(misc)_
+- **2021-01-25** — [Как я изучаю новые технологии](https://t.me/danokhlopkov/285) _(misc)_
+- **2021-01-23** — [Раз вам так зашёл #датасет с юзерами Инстаграмма, вот вам ещё один.](https://t.me/danokhlopkov/284) _(Data, Social)_
+- **2021-01-22** — [#Датасет: 2 500 000 приватных юзеров инстаграмма](https://t.me/danokhlopkov/283) _(Data, Social)_
+- **2021-01-20** — [Чтобы быть успешным предпринимателем, нужно постоянно переживать но...](https://t.me/danokhlopkov/282) _(misc)_
+- **2021-01-20** — [Вот это полураспутанный клубок, но уже тут красиво кластеризуются б...](https://t.me/danokhlopkov/281) _(misc)_
+- **2021-01-20** — [В детстве я изобрел шахматный ход Е2Е4. С тех пор я люблю сам откры...](https://t.me/danokhlopkov/280) _(Data, Social)_
+- **2021-01-20** — [Уважаемые стартаперы и IT предприниматели](https://t.me/danokhlopkov/279) _(Startups, Data)_
+- **2021-01-19** — [как же телега шакалит 🐺🐺🐺/10](https://t.me/danokhlopkov/278) _(misc)_
+- **2021-01-19** — [Трейлер/спойлер к тому, что я опять начал анализировать большие соц...](https://t.me/danokhlopkov/277) _(misc)_
+- **2021-01-19** — [Рестораны Москвы и Парижа](https://t.me/danokhlopkov/276) _(Startups, Social)_
+- **2021-01-17** — [500 пересылок - это конечно я перегнул. Счётчик статистики канала п...](https://t.me/danokhlopkov/271) _(Data)_
+- **2021-01-13** — [39298](https://t.me/danokhlopkov/268) _(misc)_
+- **2021-01-13** — [Это же про меня](https://t.me/danokhlopkov/267) _(misc)_
+- **2021-01-13** — [Допустим, у вас есть большой соц граф. Допустим, 100М рёбер. В памя...](https://t.me/danokhlopkov/266) _(misc)_
+- **2021-01-11** — [Давно я ничего не выкладывал в открытый доступ. А зачем? У меня и т...](https://t.me/danokhlopkov/265) _(TON, TG Apps, Data, Social)_
+- **2021-01-11** — [500 пересылок этого сообщения и я выложу датасет с 110 000 компании...](https://t.me/danokhlopkov/264) _(Startups, Data, Social)_
+- **2021-01-10** — [Сегодня у меня было 6 звонков. Такое офигенное чувство, когда у теб...](https://t.me/danokhlopkov/263) _(Startups)_
+- **2021-01-09** — [Самые 🔥 категории на Wildberries](https://t.me/danokhlopkov/262) _(misc)_
+- **2021-01-08** — [я чисто инфлюенсер](https://t.me/danokhlopkov/261) _(Social)_
+- **2021-01-08** — [У меня есть бот по взаимным подпискам в инстаграмме @likefollowbot....](https://t.me/danokhlopkov/260) _(Social)_
+- **2021-01-05** — [Когда добавил два индекса в БД](https://t.me/danokhlopkov/259) _(Data)_
+- **2021-01-04** — [Прогера хочу](https://t.me/danokhlopkov/258) _(TG Apps, Startups, Data)_
+- **2021-01-02** — [Забавно, когда скриншот с визуализацией данных весит больше, чем са...](https://t.me/danokhlopkov/257) _(Data)_
+- **2021-01-02** — [Кстати, я пытался это время измерить по моему репозиторию через гот...](https://t.me/danokhlopkov/256) _(misc)_
+- **2021-01-02** — [Сколько нужно часов для начала работы с Scrapy? ⏰](https://t.me/danokhlopkov/255) _(AI, Data)_
+- **2020-12-31** — [Запилите генератор голубых огоньков. 🎄](https://t.me/danokhlopkov/253) _(misc)_
+- **2020-12-28** — [Хочу пожелать себе в следующем году меньше распыляться на много мел...](https://t.me/danokhlopkov/252) _(misc)_
+- **2020-12-25** — [Еее. Отписались)](https://t.me/danokhlopkov/250) _(misc)_
+- **2020-12-25** — [Ну все. С Новым годом меня 🎂](https://t.me/danokhlopkov/249) _(misc)_
+- **2020-12-24** — [Год назад я уволился. По моим оценкам, накопленных тогда средств мн...](https://t.me/danokhlopkov/248) _(misc)_
+- **2020-12-23** — [Фриланс - это отличный повод изучить новую технологию, за что вам д...](https://t.me/danokhlopkov/247) _(misc)_
+- **2020-12-20** — [Вы уже знаете, что я парсю Angellist.com, потому что это](https://t.me/danokhlopkov/246) _(Data, Social)_
+- **2020-12-18** — [Отзыв на t.me/ffmemesbot](https://t.me/danokhlopkov/245) _(TG Apps, Startups)_
+- **2020-12-18** — [Сделал для себя модный лендос в ноушене. На этой странице можно про...](https://t.me/danokhlopkov/244) _(Startups)_
+- **2020-12-17** — [Давно хотел разобраться в экосистеме Scrapy - мощнейшего фреймворка...](https://t.me/danokhlopkov/243) _(Data)_
+- **2020-12-17** — [Теперь вопрос: что дальше делать с геоданными. 🌍🌏🌎](https://t.me/danokhlopkov/242) _(Startups, Data, Social, Личное)_
+- **2020-12-16** — [Итоги Года part 3: Проекты, которые не пошли](https://t.me/danokhlopkov/241) _(TG Apps, Startups, Data, Social)_
+- **2020-12-14** — [Kaggle немного оторван от стартаперских реалий](https://t.me/danokhlopkov/240) _(AI, Startups, Data)_
+- **2020-12-14** — [Итоги Года part 3: Мемные движухи](https://t.me/danokhlopkov/239) _(TG Apps, Startups, Data)_
+- **2020-12-12** — [Итоги года part 1: Мой 2020 TL;DR](https://t.me/danokhlopkov/237) _(TON, Data, Личное)_
+- **2020-12-10** — [Немного напрягает, что мне не нравится прогать.](https://t.me/danokhlopkov/235) _(TG Apps, Startups, Data)_
+- **2020-12-08** — [Как устроена экономика 🍪 в @likefollowbot](https://t.me/danokhlopkov/234) _(Social)_
+- **2020-12-07** — [Статистика @likemeupbot](https://t.me/danokhlopkov/233) _(TG Apps)_
+- **2020-12-05** — [После поста на виси мне написало где-то 20 человек с какими-то пред...](https://t.me/danokhlopkov/232) _(misc)_
+- **2020-12-05** — [Итоги статьи на VC RU](https://t.me/danokhlopkov/231) _(Startups, Social)_
+- **2020-12-05** — [Начал собирать данные Европы и уже есть инсайт!](https://t.me/danokhlopkov/230) _(Social)_
+- **2020-12-03** — [В @ffmemesbot ведутся активные работы](https://t.me/danokhlopkov/224) _(TG Apps, AI, Startups, Social)_
+- **2020-12-02** — [Хочу также:](https://t.me/danokhlopkov/222) _(Social)_
+- **2020-12-01** — [Хотите научиться парсить сайты? ](https://t.me/danokhlopkov/221) _(Startups, Data)_
+- **2020-12-01** — [Самые зафотканные места Москвы. ](https://t.me/danokhlopkov/220) _(misc)_
+- **2020-12-01** — [Анти-парсинг](https://t.me/danokhlopkov/219) _(TON, Data)_
+- **2020-11-30** — [Как я стал Kaggle Expert](https://t.me/danokhlopkov/218) _(AI, Startups, Data)_
+- **2020-11-29** — [Я теперь могу wallpapers генерить. 🖼](https://t.me/danokhlopkov/217) _(misc)_
+- **2020-11-27** — [Популярность Московских мест в течение дня](https://t.me/danokhlopkov/216) _(Social)_
+- **2020-11-27** — [Самые популярные Инстаграм-места Москвы.](https://t.me/danokhlopkov/214) _(Data, Social)_
+- **2020-11-26** — [Нашел, похоже, моего следующего любимца - на замену Metabase: https...](https://t.me/danokhlopkov/213) _(Data)_
+- **2020-11-26** — [Даниил Охлопков - основатель @ffmemesbot и других телеграм ботов су...](https://t.me/danokhlopkov/212) _(TG Apps, AI, Startups, Data, Личное)_
+- **2020-11-25** — [Как же очевидно и как же просто](https://t.me/danokhlopkov/211) _(Social)_
+- **2020-11-24** — [Я убежден:](https://t.me/danokhlopkov/210) _(misc)_
+- **2020-11-23** — [Когда запустил парсинг. Это вам не на train/test loss нейронок зали...](https://t.me/danokhlopkov/209) _(Data)_
+- **2020-11-23** — ["твоя идея -- это как стрелять из звезды смерти по воробьям" (с) @n...](https://t.me/danokhlopkov/208) _(misc)_
+- **2020-11-23** — [Что такое успех?](https://t.me/danokhlopkov/207) _(Social)_
+- **2020-11-22** — [Переделал в @likefollowbot CTA реферальной программы и увеличил в т...](https://t.me/danokhlopkov/206) _(misc)_
+- **2020-11-20** — [Статистика @likefollowbot](https://t.me/danokhlopkov/205) _(Social)_
+- **2020-11-19** — [В Индии, походу, я местный селеба 👋](https://t.me/danokhlopkov/204) _(misc)_
+- **2020-11-19** — [В своем боте @likefollowbot (автоматизация follow4follow в Instagra...](https://t.me/danokhlopkov/203) _(Social)_
+- **2020-11-19** — [Есть у меня непреодолимое внутреннее желание разобраться и запустит...](https://t.me/danokhlopkov/202) _(Data)_
+- **2020-11-18** — [Первый платящий клиент в новом проекте - это всегда трогательно 🤗](https://t.me/danokhlopkov/201) _(misc)_
+- **2020-11-17** — [Я так люблю тестировать в проде](https://t.me/danokhlopkov/200) _(misc)_
+- **2020-11-16** — [ахахахаха](https://t.me/danokhlopkov/199) _(misc)_
+- **2020-11-16** — [Ну очень горящие вакансии: Go разработчика и QA Automation Engineer...](https://t.me/danokhlopkov/198) _(misc)_
+- **2020-11-16** — [Так как карантин - отличный повод попутешествовать, мы с Зигфридом ...](https://t.me/danokhlopkov/197) _(TG Apps, Startups, Личное)_
+- **2020-11-15** — [Оказывается, что когда вы покупаете билеты на самолёт с пересадкой ...](https://t.me/danokhlopkov/196) _(Startups, Личное)_
+- **2020-11-12** — [Как понять, что ты делаешь что-то не то в своей жизни?](https://t.me/danokhlopkov/195) _(misc)_
+- **2020-11-08** — [Usecase от @sokolnasvyazy:](https://t.me/danokhlopkov/194) _(misc)_
+- **2020-11-08** — [Идея очередного телеграм бота 🤖](https://t.me/danokhlopkov/193) _(TG Apps)_
+- **2020-11-05** — [Ненавижу все, что связано с билетами на самолёт. 🛫](https://t.me/danokhlopkov/192) _(Startups)_
+- **2020-11-04** — [Sweatcoin привил мне любовь к геоданным. Хочу сделать гео-игру в тг...](https://t.me/danokhlopkov/191) _(TG Apps, Startups, Data)_
+- **2020-11-04** — [Опа. Обновление для Telegram Bot API.](https://t.me/danokhlopkov/190) _(TG Apps, Data)_
+- **2020-11-03** — [Мне казалось, что когда я уволюсь и начну делать свои проекты, моя ...](https://t.me/danokhlopkov/189) _(Startups)_
+- **2020-11-01** — [This is your followers change report:](https://t.me/danokhlopkov/188) _(TG Apps, Startups, Social)_
+- **2020-11-01** — [Отдам свой проект](https://t.me/danokhlopkov/187) _(Startups, Data, Social)_
+- **2020-10-31** — [Зачем делать open-source проекты ❓](https://t.me/danokhlopkov/186) _(TON, TG Apps, Data)_
+- **2020-10-30** — [Давно надо было это сделать](https://t.me/danokhlopkov/185) _(TG Apps, Startups, Data)_
+- **2020-10-30** — [Увидел, что к iPad можно подключить джойстик. Вспомнил свою давнюю ...](https://t.me/danokhlopkov/184) _(misc)_
+- **2020-10-29** — [Рассказал на vc ru о том, как мы огранизовали хакатон @ffmemesbot и...](https://t.me/danokhlopkov/183) _(TON, TG Apps, Startups)_
+- **2020-10-28** — [Я тут посчитал, что одновременно прогаю в 9 проектах (почти все - м...](https://t.me/danokhlopkov/181) _(TG Apps, Data, Social)_
+- **2020-10-27** — [Когда ты единственный кодер, твои коммиты:](https://t.me/danokhlopkov/180) _(misc)_
+- **2020-10-26** — [Наконец-то после тонны страданий и работы, мы выложили @ffmemesbot ...](https://t.me/danokhlopkov/178) _(TG Apps, Startups)_
+- **2020-10-24** — [Как же я ненавижу прогать.](https://t.me/danokhlopkov/177) _(misc)_
+- **2020-10-22** — [Это все происходило в моей магистратуре. Будучи в бакавриате, я, ко...](https://t.me/danokhlopkov/175) _(Личное)_
+- **2020-10-22** — [Пришёл отказ от YC. С одной стороны жалко, но с другой - нью-йоркск...](https://t.me/danokhlopkov/174) _(Startups)_
+- **2020-10-20** — [Помню, как я восхищался и рассказывал всем подряд историю Виталика ...](https://t.me/danokhlopkov/173) _(misc)_
+- **2020-10-19** — [Немного чисел о мем-хакатоне, который прошел на этих выходных.](https://t.me/danokhlopkov/172) _(TON, TG Apps, Startups, Data)_
+- **2020-10-18** — [Люди зашли в бота посмотреть на рекомендации от участников хакатона.](https://t.me/danokhlopkov/171) _(misc)_
+- **2020-10-16** — [Завтра проводим хакатон!](https://t.me/danokhlopkov/170) _(TG Apps, Startups, Data)_
+- **2020-10-15** — [Когда ты трудоустроен:](https://t.me/danokhlopkov/169) _(Startups)_
+- **2020-10-13** — [Просто инфа:](https://t.me/danokhlopkov/168) _(TG Apps, Startups)_
+- **2020-10-11** — [У меня уже давно есть маленькая мечта:](https://t.me/danokhlopkov/167) _(misc)_
+- **2020-10-11** — [Оказалось, что, разрабатывая телеграм ботов, я разобрался в том, ка...](https://t.me/danokhlopkov/166) _(TG Apps, Startups, Social)_
+- **2020-10-09** — [У меня один старшекурсник (МФТИ + ШАД + опыт стажировок) попросил с...](https://t.me/danokhlopkov/164) _(TG Apps, AI, Startups, Личное)_
+- **2020-10-08** — [Неделя после релиза на VC ru. Результаты в цифрах:](https://t.me/danokhlopkov/163) _(Startups)_
+- **2020-10-07** — [Скоро будет хакатон от @ffmemesbot. Участники будут разрабатывать р...](https://t.me/danokhlopkov/162) _(TON, TG Apps, Startups)_
+- **2020-10-06** — [Забавный факт 1: чем дольше человек пользуется @ffmemesbot, тем бол...](https://t.me/danokhlopkov/161) _(TG Apps, Startups)_
+- **2020-10-03** — [Итоги релиза на VC ru](https://t.me/danokhlopkov/160) _(misc)_
+- **2020-10-02** — [Не знаю, как у вас, но у меня бот работает на ура шустро 💨. Либо по...](https://t.me/danokhlopkov/159) _(misc)_
+- **2020-10-02** — [VC.ru опубликовал везде ссылку на моего бота. Конечно же он лег. Се...](https://t.me/danokhlopkov/158) _(Startups, Data)_
+- **2020-10-02** — [The bot @ffmemesbot Fast Food Memes seems to be having issues!](https://t.me/danokhlopkov/157) _(TG Apps, Startups)_
+- **2020-10-02** — [Привет](https://t.me/danokhlopkov/156) _(misc)_
+- **2020-10-02** — [Рассказал тут про @ffmemesbot на vc.ru:](https://t.me/danokhlopkov/155) _(TG Apps, Startups)_
+- **2020-10-01** — [ffmemesbot in a nutshell](https://t.me/danokhlopkov/154) _(TG Apps, Startups)_
+- **2020-09-30** — [Школьные олимпиады меня научили многозадачности ](https://t.me/danokhlopkov/153) _(TG Apps, Startups, Data)_
+- **2020-09-29** — [Какая сейчас у нас рекомендательная система](https://t.me/danokhlopkov/152) _(AI, Data)_
+- **2020-09-27** — [Как же у меня горит.](https://t.me/danokhlopkov/151) _(TG Apps, Startups)_
+- **2020-09-27** — [За последний месяц было сделано:](https://t.me/danokhlopkov/150) _(TG Apps, Startups, Social)_
+- **2020-09-25** — [Раньше я помню жаловался, что после того, как научился играть на ги...](https://t.me/danokhlopkov/149) _(misc)_
+- **2020-09-25** — [Youtube Аналитика нашего YC видоса](https://t.me/danokhlopkov/148) _(TG Apps, Startups, Data, Social)_
+- **2020-09-22** — [Два WeChat в одной стране это лучше чем один, ведь так?](https://t.me/danokhlopkov/147) _(misc)_
+- **2020-09-22** — [Подаем тут @ffmemesbot в YCombinator. Записали за 3 часа минутное в...](https://t.me/danokhlopkov/146) _(TG Apps, Startups)_
+- **2020-09-21** — [Посмотрел на топ вебсайтов по версии Similarweb. ](https://t.me/danokhlopkov/145) _(misc)_
+- **2020-09-18** — [Есть такая тула для HR'ов - называется Amazing Hiring. Она находит ...](https://t.me/danokhlopkov/144) _(TON, Social)_
+- **2020-09-17** — [а что выберешь ты?](https://t.me/danokhlopkov/143) _(misc)_
+- **2020-09-16** — [В @ffmemesbot мы проводили A/B/C/D тест рекомендательных систем. Во...](https://t.me/danokhlopkov/142) _(TG Apps, AI, Startups, Data)_
+- **2020-09-15** — [ПОИСК ПО МЕМАМ 🤯 Даже по тексту на картинке! Посмотри видео, как эт...](https://t.me/danokhlopkov/141) _(misc)_
+- **2020-09-15** — [Сделали inline поиск по мемам в @ffmemesbot. 🧀🧀🧀](https://t.me/danokhlopkov/140) _(TG Apps, Startups)_
+- **2020-09-14** — [В @ffmemesbot мы поставили эксперимент: предложили пользователям ст...](https://t.me/danokhlopkov/139) _(TG Apps, Startups, Data)_
+- **2020-09-12** — [Кажется, что реферальные ссылки специально прячут. Я вот хотел найт...](https://t.me/danokhlopkov/138) _(misc)_
+- **2020-09-11** — [Посмотрел видео "Как проверить и оценить идею стартапа" и попробова...](https://t.me/danokhlopkov/137) _(TG Apps, Startups, Social)_
+- **2020-09-10** — [Бизнес модель: ](https://t.me/danokhlopkov/135) _(Startups)_
+- **2020-09-08** — [Альбом, который мы записывали с кентами в МФТИ, набрал миллион прос...](https://t.me/danokhlopkov/134) _(Личное)_
+- **2020-09-07** — [В универе была дилемма: делать свои маленькие проекты или идти рабо...](https://t.me/danokhlopkov/133) _(Startups, Data)_
+- **2020-09-06** — [Лол. Кек. Я читаю Платона.](https://t.me/danokhlopkov/132) _(misc)_
+- **2020-09-04** — [я вообще стараюсь терминал никогда не открывать, от него одни проблемы](https://t.me/danokhlopkov/131) _(misc)_
+- **2020-09-04** — [Прочитал тут статью про open-source аналоги популярных продуктов по...](https://t.me/danokhlopkov/130) _(Startups)_
+- **2020-09-03** — [Нашел офигенный сайт, где в виде красивого интерактивного комикса р...](https://t.me/danokhlopkov/129) _(Startups)_
+- **2020-09-02** — [Свой проект - это когда ты занимаешься огромным спектром задач, не ...](https://t.me/danokhlopkov/128) _(Data)_
+- **2020-09-01** — [Если вы можете случайно наткнуться на статью в интернете и по ее мо...](https://t.me/danokhlopkov/127) _(TG Apps, Startups)_
+- **2020-08-31** — [Записался тут на курс, а тут вопросы](https://t.me/danokhlopkov/126) _(TON, Startups)_
+- **2020-08-30** — [Решил тут, значит, сделать @ffmemesbot для Facebook Messenger. Дума...](https://t.me/danokhlopkov/125) _(TG Apps, Startups, Data)_
+- **2020-08-27** — [Организовал народное ополчение модераторов для @ffmemesbot. Теперь ...](https://t.me/danokhlopkov/124) _(TG Apps, Startups)_
+- **2020-08-26** — [Хроника моего 2020:](https://t.me/danokhlopkov/123) _(Личное)_
+- **2020-08-25** — [Познакомился с разработчиком ботов для VK. Оказалось, что там давны...](https://t.me/danokhlopkov/122) _(misc)_
+- **2020-08-24** — [Товарищам продуктовым аналитикам, стартаперам и хакатонщикам.](https://t.me/danokhlopkov/121) _(Startups, Data)_
+- **2020-08-21** — [А банки легально могут сделать end-to-end сообщения получателю при ...](https://t.me/danokhlopkov/120) _(misc)_
+- **2020-08-21** — [Часто пользуюсь такими сообщениями, когда заграницей и нет интернет...](https://t.me/danokhlopkov/119) _(misc)_
+- **2020-08-21** — [Как резко вырастить телеграм канал, если у вас есть тг бот](https://t.me/danokhlopkov/118) _(TG Apps, Data)_
+- **2020-08-19** — [Несколько людей писало мне «го замутим проектик вместе». Но я не зн...](https://t.me/danokhlopkov/117) _(misc)_
+- **2020-08-17** — [𐄳 vs. 🧠](https://t.me/danokhlopkov/116) _(AI)_
+- **2020-08-17** — [Наблюдал за тем, что говорят дети, и пришёл к мыслям:](https://t.me/danokhlopkov/115) _(Startups)_
+- **2020-08-14** — [A&B&C&D тесты в t.me/ffmemesbot от @tismoney](https://t.me/danokhlopkov/114) _(TG Apps, Startups)_
+- **2020-08-11** — [Очень частая ситуация](https://t.me/danokhlopkov/113) _(TON)_
+- **2020-08-10** — [Организовал Giveaway в рамках @likefollowbot. Каждый, кто пригласит...](https://t.me/danokhlopkov/112) _(Social)_
+- **2020-08-07** — [Продолжение истории о том, где и с кем я работал. Предыдущий пост.](https://t.me/danokhlopkov/111) _(Startups, Data, Личное)_
+- **2020-08-05** — [Покупал билет не автобус Севастополь-Краснодар — потребовали паспорт.](https://t.me/danokhlopkov/110) _(misc)_
+- **2020-08-03** — [Все вокруг меня говорят про вторую волну вируса, обещают новый локд...](https://t.me/danokhlopkov/109) _(misc)_
+- **2020-08-03** — [Хочу рассказать про свой первый опыт работы, а заодно порефлексиров...](https://t.me/danokhlopkov/108) _(Startups, Data, Личное)_
+- **2020-07-31** — [Как только я удалил все приложения соцсетей с телефона, айфон перес...](https://t.me/danokhlopkov/107) _(Social)_
+- **2020-07-22** — [Одна проблема большинства моих начинаний - замыкание разработки на ...](https://t.me/danokhlopkov/105) _(TG Apps, Startups)_
+- **2020-07-22** — [Всегда, когда хочу сделать демографический опрос, забываю стандартн...](https://t.me/danokhlopkov/104) _(Social)_
+- **2020-07-21** — [Рекламодателям важно знать, на какой сайт вы заходите и какой конте...](https://t.me/danokhlopkov/103) _(Social)_
+- **2020-07-19** — [Недавно Гитхаб выкатил Readme для профилей. Теперь можно делать сво...](https://t.me/danokhlopkov/102) _(misc)_
+- **2020-07-18** — [У меня есть выход на почти 100 000 аудиторию телеграм юзеров - поль...](https://t.me/danokhlopkov/100) _(TG Apps)_
+- **2020-07-17** — [Сегодня знаменательный день! И вот целые три причины:](https://t.me/danokhlopkov/99) _(AI)_
+- **2020-07-16** — [Мой Инстабот был включен в GitHub Archive Program.](https://t.me/danokhlopkov/98) _(misc)_
+- **2020-07-09** — [У нас в @ffmemesbot накопился уже знатный датасет:](https://t.me/danokhlopkov/97) _(TG Apps, AI, Startups, Data)_
+- **2020-07-06** — [Я хочу выложить Fast Food Memes на ProductHunt. Для этого нужна гиф...](https://t.me/danokhlopkov/96) _(TG Apps, Startups)_
+- **2020-07-06** — [Один знакомый австралиец, который помогал мне править мой английски...](https://t.me/danokhlopkov/95) _(Startups)_
+- **2020-07-04** — [Последнее мое музыкальное творчество идёт по такому сценарию:](https://t.me/danokhlopkov/94) _(misc)_
+- **2020-07-04** — [Решил я тут добавить кучу друзей из контактов в канал, но нет: инду...](https://t.me/danokhlopkov/92) _(misc)_
+- **2020-07-03** — [Хочу чёрный ящик (можно нейросеть), в которую можно закинуть много ...](https://t.me/danokhlopkov/91) _(AI)_
+- **2020-07-02** — [История успеха на Producthunt:](https://t.me/danokhlopkov/90) _(Startups, Social)_
+- **2020-07-02** — [Все, я сдался.](https://t.me/danokhlopkov/89) _(misc)_
+- **2020-07-01** — [Я всем говорил, что для публикации на Producthunt хорошо найти чело...](https://t.me/danokhlopkov/88) _(TG Apps, Startups, Social)_
+- **2020-07-01** — [Проводил тут в @ffmemesbot конкурс приглашений. Призовой фонд был 1...](https://t.me/danokhlopkov/87) _(TG Apps, Startups)_
+- **2020-06-29** — [Забавно, что бд это то же самое, что db.](https://t.me/danokhlopkov/86) _(misc)_
+- **2020-06-28** — [Есть у кого-нибудь скачивалка  телеграм-чатов? Готовый скрипт, кото...](https://t.me/danokhlopkov/85)
+- **2020-06-25** — [В мессенджерах есть данные о том, какие сообщения удалялись и их ко...](https://t.me/danokhlopkov/84) _(misc)_
+- **2020-06-25** — [Так вот, в виду того, что я работаю как эксперт по релокации из усл...](https://t.me/danokhlopkov/83) _(Data, Social)_
+- **2020-06-25** — [Если хотите управлять - нужно научиться измерять.](https://t.me/danokhlopkov/82) _(Social)_
+- **2020-06-24** — [https://habr.com/ru/company/yandex/blog/499534/](https://t.me/danokhlopkov/81) _(TON, Startups)_
+- **2020-06-23** — [Индусы яро просили подписчиков в инсту, а через @likemeupbot и like...](https://t.me/danokhlopkov/80) _(Social)_
+- **2020-06-21** — [Большие компании анализируют наши лайки, подписки и импрешены и зна...](https://t.me/danokhlopkov/79) _(misc)_
+- **2020-06-19** — [Вот делаешь ты бизнес, он оказывается лучше конкурентов, ты растешь...](https://t.me/danokhlopkov/78) _(Startups)_
+- **2020-06-19** — [Случайно нажал на "участровать в бетатестах GitHub" и вот, что нас ...](https://t.me/danokhlopkov/77) _(misc)_
+- **2020-06-17** — [Приятно видеть, что настолько простой, но, надеюсь, полезный бот ра...](https://t.me/danokhlopkov/76) _(Startups, Social)_
+- **2020-06-16** — [Нашел канал с полным changlelog Телеграмовского Bot API @BotNews. В...](https://t.me/danokhlopkov/75) _(TG Apps, Data)_
+- **2020-06-15** — [Моя первая статья на платформе Linkedin. Рассказал, как я игрался с...](https://t.me/danokhlopkov/74) _(Social)_
+- **2020-06-13** — [This is your followers change report:](https://t.me/danokhlopkov/73) _(Social)_
+- **2020-06-13** — [Делаю с @kirill02102 ещё одного телеграм бота: t.me/socialstatsbot](https://t.me/danokhlopkov/72) _(TG Apps, Startups, Social)_
+- **2020-06-09** — [Познаю дистрибутед таскс на практике с горящей жопой.](https://t.me/danokhlopkov/71) _(misc)_
+- **2020-06-09** — [Прилетел я в Краснодар с 3-го раза:](https://t.me/danokhlopkov/70) _(misc)_
+- **2020-06-05** — [Я просто хочу стартапить. Я не хочу девопсить сервер в ночи.](https://t.me/danokhlopkov/69) _(Startups, Data)_
+- **2020-06-04** — [Подумали, что ценообразование у нас в likeup.me неидеальное. Стал и...](https://t.me/danokhlopkov/68) _(Data)_
+- **2020-06-03** — [likeup.me: 2100 подключенных в сеть аккаунтов ставит уже 170 000 ла...](https://t.me/danokhlopkov/67) _(misc)_
+- **2020-06-02** — [Вот кажется, что юзеры приходят, все растет. Но по графику видно, ч...](https://t.me/danokhlopkov/66) _(misc)_
+- **2020-06-01** — [Разбираюсь, как сделать опросик для юзеров и итерировать продукт, п...](https://t.me/danokhlopkov/65) _(Startups)_
+- **2020-05-30** — [100 подписчиков на канале! 🍩 ➡️ 💯](https://t.me/danokhlopkov/64) _(Social)_
+- **2020-05-30** — [Когда у тебя нет друзей](https://t.me/danokhlopkov/63) _(misc)_
+- **2020-05-29** — [Я люблю:](https://t.me/danokhlopkov/62) _(TG Apps, Data)_
+- **2020-05-29** — [Фейсбук - один из самых посещаемых сайтов мира. Почему же там насто...](https://t.me/danokhlopkov/61) _(misc)_
+- **2020-05-26** — [Я заканчивал Физтех для того, чтобы понять сериал Devs.](https://t.me/danokhlopkov/59) _(Личное)_
+- **2020-05-26** — [Активные пользовали и просмотренные мемы в @ffmemesbot.](https://t.me/danokhlopkov/58) _(TG Apps, Startups)_
+- **2020-05-26** — [Зашел сейчас в кофейню - оплата была "перевод по номеру телефона". ...](https://t.me/danokhlopkov/57) _(misc)_
+- **2020-05-25** — [Чисто прогерская замутка:](https://t.me/danokhlopkov/56) _(TG Apps, Startups, Data)_
+- **2020-05-23** — [Моя самая бесполезная покупка - Apple Watch. ⌚️](https://t.me/danokhlopkov/55) _(misc)_
+- **2020-05-23** — [Значительная доля траффика likeup.me приходит из телеграмма. Захоте...](https://t.me/danokhlopkov/54) _(Data, Social)_
+- **2020-05-20** — [Привел себя в интернете в порядок - теперь меня везде можно найти п...](https://t.me/danokhlopkov/53) _(Social)_
+- **2020-05-20** — [В итоге появился новый вид скама:](https://t.me/danokhlopkov/52) _(misc)_
+- **2020-05-19** — [Все телеграм боты, которые я делал, используют один и тот же стек т...](https://t.me/danokhlopkov/51) _(TG Apps, Data)_
+- **2020-05-18** — [Сегодня вместе с @KareliyUstrichniy делали прозвон клиентов @post_m...](https://t.me/danokhlopkov/49) _(misc)_
+- **2020-05-17** — [Добавил в @likemeupbot функцию /transfer, которая позволит перенест...](https://t.me/danokhlopkov/48) _(misc)_
+- **2020-05-13** — [likemeupbot: социальный граф виральных приглашений. Большая точка -...](https://t.me/danokhlopkov/47) _(misc)_
+- **2020-05-13** — [подписчики и гугление показали, что через iPad монжо прогать через ...](https://t.me/danokhlopkov/46) _(Data, Social)_
+- **2020-05-13** — [Залил я тут свой мак водой, что его половина клавиш не нажимается. ...](https://t.me/danokhlopkov/45) _(TON)_
+- **2020-05-12** — [Это намек?](https://t.me/danokhlopkov/44) _(misc)_
+- **2020-05-12** — [Наблюдение: Почему я не могу зарепортить приложение в App Store? Ед...](https://t.me/danokhlopkov/43) _(misc)_
+- **2020-05-11** — [ffmemesbot: количество просмотренных мемов за один присест (за сесс...](https://t.me/danokhlopkov/42) _(TG Apps, Startups)_
+- **2020-05-10** — [а вот разбивка "виральный траффик" (фиолетовый) и "органика" (красн...](https://t.me/danokhlopkov/41) _(misc)_
+- **2020-05-10** — [Хочу рассказать про своего Телеграм бота @likemeupbot - как он устр...](https://t.me/danokhlopkov/40) _(TG Apps, Social)_
+- **2020-05-10** — [У меня есть англоязычный бот с 17к пользователями. В основном индус...](https://t.me/danokhlopkov/39) _(misc)_
+- **2020-05-05** — [Чем я сейчас занимаюсь:](https://t.me/danokhlopkov/38) _(TG Apps, Startups, Social)_
+- **2020-04-30** — [Современное искусство. Celery, Flower, парсим инсту. @danokhlopkov,...](https://t.me/danokhlopkov/37) _(misc)_
+- **2020-04-29** — [А вот и API завезли: https://www.instagram.com/accounts/access_tool...](https://t.me/danokhlopkov/34) _(Data, Social)_
+- **2020-04-29** — [Мы постоянно находимся в поисках себя. Часто очень трудно ответить ...](https://t.me/danokhlopkov/33) _(Startups, Social)_
+- **2020-04-28** — [У меня есть данные о реперах, кто кого фолловит в инсте - такой соц...](https://t.me/danokhlopkov/31) _(Data)_
+- **2020-04-27** — [На завтра, 28 апреля, мы подготовили специальную сессию для максима...](https://t.me/danokhlopkov/30) _(misc)_
+- **2020-04-27** — [Я - Эксперт virushack.ru](https://t.me/danokhlopkov/29) _(misc)_
+- **2020-04-26** — [Потратил пару часов на гугление? Напиши об этом никому не нужную ст...](https://t.me/danokhlopkov/28) _(TG Apps)_
+- **2020-04-10** — [Всегда хотели захакатонить свое 24/7 ютуб радио? Вот как я это сделал.](https://t.me/danokhlopkov/27) _(Social)_
+- **2020-04-08** — [Avatarify: we adapted First Order Motion Model to Zoom/Skype calls....](https://t.me/danokhlopkov/26) _(misc)_
+- **2020-04-02** — [Мечтаю об айпаде, но боюсь, что не смогу прогать на тем - уж очень ...](https://t.me/danokhlopkov/25) _(misc)_
+- **2020-04-01** — [попалась интересная фраза : Прошло уже две недели карантина, погово...](https://t.me/danokhlopkov/24) _(misc)_
+- **2020-04-01** — [Юмористический контент от Мамы:](https://t.me/danokhlopkov/23) _(Social)_
+- **2020-03-31** — [Заснял вчера вечером видос в тикток про https://t.me/ffmemesbot. Се...](https://t.me/danokhlopkov/22) _(TG Apps, Startups, Social)_
+- **2020-03-25** — [Написал очередную статью: Как запустить бесплатный BI инструмент Me...](https://t.me/danokhlopkov/21) _(Data)_
+- **2020-03-23** — [Идея для телеграм бота:](https://t.me/danokhlopkov/20) _(TG Apps, AI)_
+- **2020-03-23** — [https://attentionagent.github.io/](https://t.me/danokhlopkov/19) _(misc)_
+- **2020-03-22** — [Какой смысл писать на билете на самолёт время вылета?](https://t.me/danokhlopkov/18) _(misc)_
+- **2020-03-17** — [Заработало!](https://t.me/danokhlopkov/16) _(TG Apps, Startups)_
+- **2020-03-17** — [Возродил, теперь уж точно](https://t.me/danokhlopkov/15) _(misc)_
+- **2020-03-16** — [Вчера был последний день подачи в YC. Решил по приколу подать @ffme...](https://t.me/danokhlopkov/14) _(TG Apps, Startups)_
+- **2020-03-16** — [Работаем над персональным брендом: разобрался как поменять владельц...](https://t.me/danokhlopkov/12) _(TG Apps)_
+- **2020-03-16** — [Сбылась мечта идиота: Сделал себе и вам Realtime Dashboard, который...](https://t.me/danokhlopkov/11) _(Data)_
+- **2020-03-15** — [Fast Food Memes is Live! (again)](https://t.me/danokhlopkov/10) _(TG Apps, Startups, Data)_
+- **2020-03-13** — [Идея: ViVino для картин. Шазам для искусства.](https://t.me/danokhlopkov/9) _(misc)_
+- **2020-03-10** — [Идея телеграм бота: Анонимные p2p (geo) чаты](https://t.me/danokhlopkov/8) _(TG Apps)_
+- **2020-03-09** — [https://www.ted.com/talks/dan_pink_the_puzzle_of_motivation](https://t.me/danokhlopkov/7) _(Startups, Data)_
+- **2020-03-07** — [В ноябре мы с Лизой Свитанко (фронтенд, @lizas_sweets) и Даней Охло...](https://t.me/danokhlopkov/6) _(Data)_
+- **2020-03-02** — [Обратился тут в налоговую с вопром, и мне сразу стали названивать п...](https://t.me/danokhlopkov/5) _(misc)_
+- **2020-02-21** — [Мысль:](https://t.me/danokhlopkov/3) _(misc)_
+- **2020-02-21** — [все, пора](https://t.me/danokhlopkov/2) _(misc)_
+
+[← На главную](/)
+
+
+---
+
+## Source: /work-together.md
+
+# Го поработаем — Даниил Охлопков
+
+> Консалтинг по AI-агентам, web3 и TON, реклама в @danokhlopkov, коллабы.
+
+## Консалтинг
+
+Могу помочь с:
+- Создание стартапов и продуктов
+- Web3 и TON экосистема
+- Экосистема Telegram, Telegram Ads
+- Big Data, парсинг, аналитика
+
+LinkedIn: https://www.linkedin.com/in/danokhlopkov/
+
+## Реклама в канале @danokhlopkov
+
+**$1 600** — только нативная реклама. Сам изучаю продукт и пишу своими словами.
+
+- ✓ До 1000 символов + 5 картинок или 1 видео
+- ✓ Пометка #реклама
+- ✗ Скам, пирамиды, казино
+
+**Оплата:** полная предоплата
+- Крипта: USDT, USDC, TON
+- Банк: EUR/USD по инвойсу
+- Рубли переводом на карту
+
+**Написать:** https://t.me/danokhlopkov?direct
+
+[← На главную](/)
+
+
+---
+
+## Source: /markdown-vs-html.md
+
+# Markdown мёртв — да здравствует HTML
+
+> Адаптация статьи Tariq из команды Claude Code · перевод и комментарии Дана Охлопкова
+> Оригинал: https://x.com/trq212/status/2052809885763747935
+> Примеры автора: https://thariqs.github.io/html-effectiveness
+
+**TL;DR** — Markdown был хорош, пока ты сам редактировал файлы. Сейчас файлы пишет Claude, ты их только читаешь и шаришь. В этой реальности HTML побеждает по плотности информации, читаемости, шерингу и интерактиву. Цена — токены, время, шумные diff'ы.
+
+## Что поменялось
+
+Markdown стал дефолтным языком общения между AI-агентами и людьми. Простой, портативный, немного rich text, легко править руками. Claude даже научился рисовать ASCII-диаграммы внутри markdown'а — местами впечатляюще.
+
+Но чем мощнее становятся агенты, тем чаще markdown ощущается как корсет. Markdown-файл больше 100 строк я уже физически не читаю — и точно не заставлю прочитать никого из команды. Хочется цвета, диаграмм, плотных таблиц, интерактивных элементов. И хочется чтобы это можно было кинуть ссылкой.
+
+Главный сдвиг тут — **я перестал редактировать эти файлы руками**. Они стали спецификациями, ресёрчами, brainstorming-выходом, отчётами. Когда мне надо что-то поправить, я не лезу в текст — я промпчу Claude. То есть основное преимущество markdown'а (легко редактировать руками) больше не работает в моём флоу.
+
+> **Главный поинт:** Markdown оптимизирован под того, кто **пишет** файл. HTML оптимизирован под того, кто **читает и шарит**. Когда писатель — агент, а ты только читатель — выбор очевиден.
+
+## Почему HTML — 6 причин
+
+### 1. Плотность информации
+
+HTML может представить почти всё, что Claude способен понять:
+
+- Структура документа — заголовки, форматирование (как markdown, только богаче)
+- Таблицы — нормальные, с merged cells и стилями, а не убогий markdown table
+- Дизайн — через CSS
+- Иллюстрации и диаграммы — через SVG
+- Интерактив — через HTML + JS + CSS
+- Воркфлоу и стрелочки — SVG поверх HTML
+- Картинки и видео — нативно
+- Пространственные данные — absolute positioning, canvas
+
+Когда модель лишена этого арсенала, она занимается *странным* — рисует ASCII-арт или пытается передать цвет юникод-символами разной плотности (▒▓█). Это уже карго-культ markdown'а, а не его сила.
+
+### 2. Читаемость длинных документов
+
+Claude пишет всё более длинные планы и спецификации. На практике markdown-файл больше 100 строк я не дочитываю до конца, и команду тоже не заставлю. HTML же можно нормально структурировать визуально — табы, навигация, sticky оглавление, mobile-responsive вёрстка под телефон vs десктоп.
+
+**Личный пример.** Я делаю research-отчёты по on-chain-аналитике TON — на 200-500 строк, со встроенными SQL-запросами, цифрами, ссылками на Dune-дашборды. В markdown'е их читают по диагонали. С тем же контентом в HTML с SVG-диаграммами потоков и кликабельными ссылками — open rate был бы радикально выше. Это не про красоту, это про то, что без визуальной структуры человек физически не дочитывает до выводов.
+
+### 3. Лёгкость шеринга — главный аргумент
+
+Это, по моим ощущениям, самая *недооценённая* часть. Markdown в реальной рабочей жизни шарить почти невозможно:
+
+- **Slack не рендерит markdown-аттачи.** А HTML-файлы Slack вообще не разрешает прикреплять. Тупик
+- Кидаешь .md программисту — он откроет в Cursor / IDE / Obsidian, увидит рендер. Кидаешь непрограммисту — он смотрит на сырую простыню текста с решётками и звёздочками
+- Браузеры markdown нативно не рендерят. Открывается как plaintext
+- В мобильных мессенджерах вложенный .md — это «открой и почитай», что никто не делает
+
+Поэтому де-факто всегда приходилось делать **HTML → PDF** через `print to PDF` или какой-нибудь рендерер. PDF открывается везде — в TG, в Slack, на телефоне, в WhatsApp, в почте.
+
+«Можно же просто конвертить markdown в PDF» — можно. Но получается стоковая, скучная А4-простыня без диаграмм, без структуры, без визуальных акцентов. **HTML → PDF выигрывает у Markdown → PDF в каждом раунде.**
+
+Итог: HTML — это лучший *исходник* для шеринга. Дальше либо ссылка (если хостинг есть), либо PDF (если нет).
+
+### 4. Двусторонний интерактив
+
+HTML может не просто *показывать* — он может *принимать ввод*. Слайдеры для подбора параметров анимации. Drag-and-drop для перетаскивания тикетов между колонками. Live-preview шаблона при редактировании промпта.
+
+Финальный ход — кнопка `Copy as JSON` или `Copy as Prompt`, которая собирает результат твоих манипуляций обратно в текст, который ты вставляешь в Claude Code. Получается **одноразовый редактор под конкретную задачу** — не продукт, не reusable tool, а артефакт на 30 минут.
+
+### 5. Контекст — суперсила Claude Code
+
+Почему именно Claude Code, а не claude.ai или Claude Design? Потому что у Claude Code есть всё:
+
+- Файловая система — может прочитать твой codebase, ai-docs, заметки
+- MCP-серверы — Slack, Linear, Coolify, Dune, Telegram
+- Git history — кто что менял и когда
+- Браузер (через Claude in Chrome) — может полезть и посмотреть
+
+### 6. Это просто кайфово
+
+Делать HTML-документы с Claude — это весело. Чувствуешь, что ты создатель, а не просто заказчик. И этого, в общем, уже достаточно как причины.
+
+## Сравнение в одной таблице
+
+| Критерий | Markdown | HTML |
+|---|---|---|
+| Плотность инфы | Текст + ASCII | Текст + таблицы + SVG + JS + CSS |
+| Читаемость 500+ строк | Никто не читает | Навигация, табы, mobile |
+| Шеринг (Slack, TG, mail) | Файл-аттач, никто не открывает | Ссылка / PDF из HTML |
+| Интерактив | Нет | Слайдеры, drag-drop, copy-кнопки |
+| Цвета, иллюстрации | Эмодзи-костыли | Нативно |
+| Токены на генерацию | ×1 | ×2–4 |
+| Время генерации | ×1 | ×2–4 |
+| Git diff | Чистый, читаемый | Шумный, ад |
+| Удобно *писать* руками | Тебе | Никому |
+| Удобно *читать* | Тебе одному | Всем, включая телефон |
+
+## Юзкейсы с промптами
+
+### Спеки, планирование, исследование вариантов
+
+Когда я начинаю новую задачу, вместо одного markdown-плана я представляю **паутину HTML-файлов**. Сначала прошу побрейнштормить и сделать explorations нескольких подходов. Потом раскручиваю один из них в макет с примерами кода. Финально — план имплементации.
+
+> **Промпт-пример:** «Не уверен, в какую сторону пилить экран онбординга. Сгенери 6 принципиально разных подходов — варьируй layout, тон, плотность — и выложи их в один HTML-файл сеткой, чтобы я мог сравнивать side-by-side. Подпиши каждый вариант его tradeoff'ом.»
+
+> **Промпт-пример:** «Сделай подробный имплементационный план в HTML. Добавь mockup'ы, нарисуй data flow в SVG, вставь ключевые куски кода которые я захочу проревьюить. Сделай удобным для сканирования.»
+
+### Code review и понимание чужого кода
+
+Код в markdown'е читать тяжело. В HTML мы можем рендерить diff'ы с inline-аннотациями, flowchart'ы модулей, color-coded findings по severity.
+
+> **Промпт-пример:** «Помоги мне ревьюить этот PR — сделай HTML-артефакт. Я плохо знаю логику streaming/backpressure, сфокусируйся на ней. Отрендери реальный diff с аннотациями на полях, color-code находки по severity.»
+
+### Дизайн и прототипы
+
+HTML невероятно выразителен для дизайна — даже если финальный таргет не веб. Claude может набросать дизайн в HTML, а потом перевести его в React/Swift/whatever. И главное — можно прототипировать *интеракции*, а не только статику.
+
+> **Промпт-пример:** «Хочу прототипировать новую кнопку checkout. При клике она проигрывает анимацию и быстро становится фиолетовой. Сделай HTML с несколькими слайдерами (длительность, easing, цвет) чтобы я перепробовал варианты. Кнопка copy чтобы скопировать параметры которые сработали.»
+
+### Отчёты, ресёрчи, объяснялки
+
+Claude Code отлично синтезирует инфу из нескольких источников — Slack, codebase, git history, веб — в единый читаемый отчёт.
+
+> **Промпт-пример (мой кейс, on-chain ресёрч):** «Прочитай папку с моим research'ем про buy/sell pressure на одном из TON-маркетплейсов и собери одностраничный HTML-explainer для босса: SVG-схема потока ордеров, 3-4 ключевых SQL-снипета с аннотациями, секция "key findings" вверху, ссылки на Dune-дашборды кликабельные. Оптимизируй под человека, который читает это один раз.»
+
+### Кастомные одноразовые редакторы
+
+Самый мощный, на мой взгляд, юзкейс. Когда задачу тяжело описать словами в текстбоксе — Claude собирает **throwaway-редактор** под неё. Не продукт, не reusable tool. Один HTML-файл, который ты выкинешь после использования.
+
+Финальный аккорд всегда один: кнопка export — `Copy as JSON`, `Copy as Markdown`, `Copy as Prompt` — которая превращает результат твоих кликов обратно в текст для Claude.
+
+> **Промпт-пример:** «Мне надо переприоритизировать 30 тикетов из Linear. Сделай HTML где каждый тикет — draggable-карточка по колонкам Now / Next / Later / Cut. Предсортируй по своему лучшему пониманию. Кнопка "copy as markdown" чтобы выгрузить финальный порядок.»
+
+Что ещё попадает в этот паттерн:
+
+- Триаж/сортировка чего угодно (тикеты, тест-кейсы, фидбек)
+- Редактирование структурированного конфига (feature flags, env)
+- Тюнинг промптов с live-preview
+- Кураторство датасетов — approve/reject строки, тегирование
+- Аннотация документа/транскрипта/diff'а с экспортом аннотаций
+- Подбор значений, которые мучительно описывать словами: цвета, easing-кривые, crop-области, cron-расписания, regex'ы
+
+## Честные минусы
+
+**За что любим:**
+- Плотность инфы
+- Читаемость длинных документов
+- Шеринг ссылкой
+- Интерактив + copy-back в промпт
+- Контекст из MCP/файлов/git
+- Чувство вовлечённости в результат
+
+**За что ругаем:**
+- Токены ×2–4 (но в 1M-контексте Opus 4.7 — норм)
+- Время генерации ×2–4
+- Git diff'ы шумные, ревьюить тяжело
+- Без design system Claude генерит generic-хрень
+- Нужен браузер чтобы посмотреть
+
+Если делаешь HTML регулярно — заведи **один файл с design system** своего проекта/компании. Можно попросить Claude сгенерить его, посмотрев на твой codebase. Дальше каждый новый HTML генеришь со ссылкой на этот design system — и стиль становится консистентным.
+
+## Как начать прямо сейчас
+
+Главное — **не создавай `/html` skill**. Не надо. Достаточно просто сказать *«сделай HTML-файл»* или *«сделай HTML-артефакт»*. Со временем, может быть, оформишь в скилл — но для начала промпчи from scratch.
+
+Хитрость не в скилле, а в том, чтобы понять **чего ты хочешь от артефакта** и как ты будешь его использовать.
+
+## FAQ
+
+**Это же не token-efficient?**
+HTML жрёт больше токенов. Но при 1M-контексте Opus 4.7 это незаметно, а выразительность и шанс что я *дочитаю* — кратно выше. Trade хороший.
+
+**Когда ты ещё используешь markdown?**
+Tariq говорит — почти никогда. Я мягче: markdown остаётся для коротких заметок, voice memo расшифровок, ai-docs которые точно никто кроме меня не откроет. Всё что длиннее 100 строк или хоть когда-нибудь пойдёт наружу — HTML.
+
+**Дольше же генерится?**
+Да, в 2–4 раза. Окупается читаемостью.
+
+**Как ревьюить diff'ы HTML?**
+Это реально больно. Один из главных минусов. Если файл часто меняется — может быть оставь его в markdown.
+
+**Как заставить Claude не делать уродство?**
+Frontend design плагин помогает с базовым качеством. Дальше — design system файл, который ты используешь как референс.
+
+---
+
+## Stay in the loop
+
+Финальная мысль автора, которая мне зашла больше всего: реальная причина любви к HTML — это **ощущение, что ты в курсе того, что делает агент**. Когда я перестал читать длинные markdown-планы, у меня появился страх, что я отдал управление и просто доверяю Claude. С HTML я снова в loop'е — потому что артефакт читать действительно интересно.
+
+---
+
+Адаптация: Дан Охлопков ([@danokhlopkov](https://t.me/danokhlopkov)) · 2026-05-09
+Оригинал: Tariq, Claude Code team · https://x.com/trq212/status/2052809885763747935
+
+[← На главную](/)
+
+
+---
+
+## Source: /privacy.md
+
+# Privacy Policy
+
+Effective date: May 25, 2026
+
+This policy explains how okhlopkov.com and the personal Pinterest Content Ideas integration handle data.
+
+The Pinterest Content Ideas integration is intended for personal use by Daniil Okhlopkov to read his own Pinterest boards and pins for private visual reference workflows.
+
+## Data Access
+
+If Pinterest authorization is used, the integration may read Pinterest account identifiers, boards, pins, pin metadata, descriptions, links, and image URLs that are available to the authorized Pinterest account.
+
+The integration does not request permissions to create, update, or delete Pinterest content.
+
+## Use
+
+Pinterest data is used to maintain a private visual moodboard, create local reference manifests, and select inspiration for newly generated article visuals. Source Pinterest images are treated as references, not as public assets for redistribution.
+
+## Storage
+
+Reference data may be stored locally or in private systems controlled by Daniil Okhlopkov. Raw Pinterest source packs, access tokens, and private manifests are not intentionally published in the public okhlopkov.com repository.
+
+## Sharing
+
+Pinterest data is not sold or shared with third parties. Final generated visuals and articles may be published on okhlopkov.com, but they are created as new content and reviewed before publication.
+
+## Contact
+
+Questions about this policy can be sent via Telegram at @danokhlopkov or through the public contact links on okhlopkov.com.

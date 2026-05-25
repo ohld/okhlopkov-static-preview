@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deploy Elasticsearch &amp; Kibana with Dokku</title>
+  <meta name="description" content="Archived article from okhlopkov.com" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://static-preview.okhlopkov.com/deploy-elasticsearch-kibana-with-dokku/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Deploy Elasticsearch &amp; Kibana with Dokku" />
+  <meta property="og:description" content="Archived article from okhlopkov.com" />
+  <meta property="og:url" content="https://static-preview.okhlopkov.com/deploy-elasticsearch-kibana-with-dokku/" />
+  <meta property="og:image" content="https://okhlopkov.com/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" />
+  <meta property="article:published_time" content="2021-12-20T13:38:14.000Z" />
+  <meta property="article:modified_time" content="2026-05-25T00:00:00+03:00" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Deploy Elasticsearch &amp; Kibana with Dokku" />
+  <meta name="twitter:description" content="Archived article from okhlopkov.com" />
+  <meta name="twitter:image" content="https://okhlopkov.com/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Deploy Elasticsearch & Kibana with Dokku",
+  "description": "Archived article from okhlopkov.com",
+  "image": "https://okhlopkov.com/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg",
+  "datePublished": "2021-12-20T13:38:14.000Z",
+  "dateModified": "2026-05-25T00:00:00+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Даниил Охлопков",
+    "url": "https://static-preview.okhlopkov.com/"
+  },
+  "mainEntityOfPage": "https://static-preview.okhlopkov.com/deploy-elasticsearch-kibana-with-dokku/",
+  "inLanguage": "en"
+}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z5T725JJD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9Z5T725JJD');
+  </script>
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(46266270, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  </script>
+  <style>
+    :root { --bg:#F5F5F0; --text:#1A1A1A; --accent:#5F6F85; --border:rgba(26,26,26,.14); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-underline-offset:3px; }
+    .legacy-shell { max-width:820px; margin:0 auto; padding:20px 24px 56px; }
+    .legacy-top { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:0 0 28px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    .legacy-nav { display:flex; flex-wrap:wrap; gap:12px; }
+    .legacy-note { border:1px solid var(--border); border-radius:4px; padding:14px 16px; margin:0 0 28px; font-size:14px; color:rgba(26,26,26,.72); }
+    .legacy-note p { margin:0; }
+    .legacy-note p + p { margin-top:6px; }
+    .legacy-article :is(h1,h2,h3) { line-height:1.15; letter-spacing:0; }
+    .legacy-article h1 { font-size:38px; margin:0 0 16px; }
+    .legacy-article h2 { font-size:25px; margin:42px 0 12px; }
+    .legacy-article h3 { font-size:19px; margin:28px 0 10px; }
+    .legacy-article p, .legacy-article li { font-size:18px; }
+    .legacy-article img { max-width:100%; height:auto; border-radius:4px; }
+    .legacy-article pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:4px; background:rgba(255,255,255,.45); }
+    .legacy-article code { font-family:'JetBrains Mono','SF Mono',monospace; font-size:.9em; }
+    .legacy-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono','SF Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+    @media (max-width:640px) { .legacy-shell { padding:16px 18px 40px; } .legacy-article h1 { font-size:30px; } .legacy-article p, .legacy-article li { font-size:16px; } }
+  </style>
+</head>
+<body>
+  <noscript><div><img src="https://mc.yandex.ru/watch/46266270" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <div class="legacy-shell">
+    <header class="legacy-top">
+      <a href="/">okhlopkov.com</a>
+      <nav class="legacy-nav" aria-label="Site">
+        <a href="/">RU</a>
+        <a href="/en/">EN</a>
+        <a href="/ai-agents/">AI Agents</a>
+        <a href="/posts/">Posts</a>
+      </nav>
+    </header>
+    <div class="legacy-note">
+      <p>Static migration update: 2026-05-25. This indexed URL is preserved from the previous Ghost version of okhlopkov.com.</p>
+      <p>Original Ghost modified date: 2026-02-19T18:30:10.000Z.</p>
+    </div>
+    <main class="legacy-article"><article class="article post no-image ">
+
+    <header class="article-header gh-canvas">
+
+        <div class="article-tag post-card-tags">
+        </div>
+
+        <h1 class="article-title">Deploy Elasticsearch &amp; Kibana with Dokku</h1>
+
+
+        <div class="article-byline">
+        <section class="article-byline-content">
+
+            <ul class="author-list instapaper_ignore">
+                <li class="author-list-item">
+                    <a href="/author/okhlopkov/" class="author-avatar" aria-label="Read more of Daniil Okhlopkov">
+                        <img class="author-profile-image" src="/content/images/size/w100/2024/10/Dan-Okhlopkov-LinkedIn.jpeg" alt="Daniil Okhlopkov" />
+                    </a>
+                </li>
+            </ul>
+
+            <div class="article-byline-meta">
+                <h4 class="author-name"><a href="/author/okhlopkov/">Daniil Okhlopkov</a></h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="2021-12-20">20 Dec 2021</time>
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> 3 min read</span>
+                </div>
+            </div>
+
+        </section>
+        </div>
+
+
+    </header>
+
+    <section class="gh-content gh-canvas">
+        <p>I really love to use Dokku as it drastically simplifies the deployment of my nodejs and python apps. I also try to deploy other popular open-source apps with it. This is my attempt to deploy ELK stack with Dokku. Enjoy.</p><h1 id="install-dokku">Install Dokku</h1><p><a href="https://dokku.com/docs/getting-started/installation/?ref=okhlopkov.com">Install latest</a> Dokku (mid-December 2021):</p><pre><code>wget https://raw.githubusercontent.com/dokku/dokku/v0.26.6/bootstrap.sh;
+sudo DOKKU_TAG=v0.26.6 bash bootstrap.sh</code></pre><p>Finish the installation by providing your public ssh key <code>cat .ssh/id_rsa.pub</code>:</p><pre><code># usually your key is already available under the current user's `~/.ssh/authorized_keys` file
+cat ~/.ssh/authorized_keys | dokku ssh-keys:add admin
+
+# you can use any domain you already have access to
+dokku domains:set-global yourdomain.com</code></pre><h1 id="install-elasticsearch-with-dokku">Install Elasticsearch with Dokku</h1><p>Install the dokku elasticsearch plugin:</p><pre><code>sudo dokku plugin:install https://github.com/dokku/dokku-elasticsearch.git elasticsearch</code></pre><p>Find the version that you want to deploy <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/es-release-notes.html?ref=okhlopkov.com">on the official site</a>. I take the latest - 7.16.1</p><pre><code>export ELASTICSEARCH_IMAGE_VERSION="7.16.1"
+</code></pre><p>Create Elasticsearch:</p><pre><code>dokku elasticsearch:create elastic</code></pre><p>If you received an error from dokku - just copy-paste the suggested bash command, run it and try to create Elastic again.</p><p>You may also want to expose ports of elasticsearch container to make it accessible outside:</p><pre><code>dokku elasticsearch:expose elastic
+
+-----&gt; Service elastic exposed on port(s) [container-&gt;host]: 9200-&gt;27701 9300-&gt;16897</code></pre><p>Let's check that everything is installed and run (notice that I used not 9200 port but the <em>exposed</em> one).</p><pre><code>curl -X GET http://localhost:27701/
+
+{
+  "name" : "dokku.elasticsearch.elastic-1",
+  "cluster_name" : "dokku.elasticsearch.elastic-cluster",
+  "cluster_uuid" : "8T5-w6S2345KYUON66J6Q",
+  "version" : {
+    "number" : "7.16.1",
+    "build_flavor" : "default",
+    "build_type" : "docker",
+    "build_hash" : "5b38441b16b14444447c107a4c3865776e20c53",
+    "build_date" : "2021-12-11T00:29:38.865893768Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.10.1",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}</code></pre><h1 id="install-kibana-with-dokku">Install Kibana with Dokku</h1><p>Create Dokku app and add essential environment variables.</p><pre><code>dokku apps:create kibana
+
+dokku elasticsearch:link elastic kibana
+# take ELASTICSEARCH_URL variable and put it below
+# for my setup it looks like 'http://dokku-elasticsearch-elastic:9200'
+
+dokku config:set kibana ELASTICSEARCH_HOSTS=http://dokku-elasticsearch-elastic:9200</code></pre><p>You need to make your Kibana storage persistent (for future config editing and kibana-keystore saving across deployments):</p><pre><code>dokku storage:ensure-directory kibana
+# created folder at path '/var/lib/dokku/data/storage/kibana'
+
+mkdir /var/lib/dokku/data/storage/kibana/config/
+mkdir /var/lib/dokku/data/storage/kibana/data/
+
+dokku storage:mount kibana /var/lib/dokku/data/storage/kibana/config/:/usr/share/kibana/config/
+dokku storage:mount kibana /var/lib/dokku/data/storage/kibana/data/:/usr/share/kibana/data/
+
+echo "server.host: "0.0.0.0"" &gt; /var/lib/dokku/data/storage/kibana/config/kibana.yml
+
+
+echo "0000-0000-0000-0000" &gt; /usr/share/kibana/data/uuid
+
+sudo chmod a+rwx /root/kibana/</code></pre><p>The latest lines create an empty <code>kibana.yml</code> and <code>uuid</code> files - somehow Kibana doesn't automatically create all required files so we have to create them from scratch (our new shiny folders are empty).</p><p>Now we are ready to deploy an official Kibana docker image:</p><pre><code>dokku git:from-image kibana docker.elastic.co/kibana/kibana:7.16.1</code></pre><h4 id="additional-setup">Additional Setup</h4><p>Let your Kibana have a pretty URL and HTTPS. Proxy its port to 80:</p><pre><code>dokku proxy:ports-set kibana http:80:5601</code></pre><p>Specify a subdomain for Kibana:</p><pre><code>dokku domains:set kibana kibana.yourdomain.com
+dokku config:set kibana SERVER_HOST=kibana.yourdomain.com SERVER_PORT=80</code></pre><p>If you want to enable HTTPS on your Kibana, use letsencrypt plugin:</p><pre><code>sudo dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+dokku letsencrypt:enable kibana</code></pre><p>Now open your browser on <em>kibana.yourdomain.com</em>. It should work 🤗</p><hr><h2 id="enable-basic-security-for-elasticsearch-kibana">Enable basic security for Elasticsearch &amp; Kibana</h2><p>Note that by default your Elasticsearch and Kibana are not secured: anyone can access your web address and start to operate with your data. So you need to setup authentication on Elasticsearch and Kibana.</p><pre><code>dokku elasticsearch:info elastic
+
+# find path to config dir
+cd /var/lib/dokku/services/elasticsearch/elastic/config</code></pre><p>Enable security in config file (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/security-minimal-setup.html?ref=okhlopkov.com">official docs</a> are large and quite misleading). Just add two lines (you can open a file like this <code>vim elasticsearch.yml</code>:</p><pre><code>xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true</code></pre><p>Enter the container with Elasticsearch and create passwords for default services:</p><pre><code>dokku elasticsearch:enter elastic
+
+./bin/elasticsearch-setup-passwords auto</code></pre><p>Copy-paste them somewhere.</p><p>Now add creadentials to Kibana:</p><pre><code>dokku config:set kibana ELASTICSEARCH_USERNAME="kibana_system"</code></pre><p>Enter Kibana container and add generated password:</p><pre><code>dokku enter kibana
+
+./bin/kibana-keystore create
+./bin/kibana-keystore add elasticsearch.password
+
+&lt;copy-paste generate password now&gt;</code></pre><p>And on that point, I decided to use Elastic.co cloud version because I spent almost 8 hours figuring out how to deploy it. And I failed to secure the elasticsearch &amp; kibana. And I don't know if is it even possible to do without paid license. Sorry, guys.</p><hr><p><strong>Dan Okhlopkov</strong> — AI agent practitioner. Building tools for TON Blockchain analysis and Telegram automation.</p><p><a href="https://t.me/danokhlopkov?ref=okhlopkov.com" rel="noopener">Telegram</a> · <a href="https://x.com/danokhlopkov?ref=okhlopkov.com" rel="noopener">Twitter/X</a> · <a href="https://instagram.com/d7733o?ref=okhlopkov.com" rel="noopener">Instagram</a> · <a href="https://threads.net/d7733o?ref=okhlopkov.com" rel="noopener">Threads</a> · <a href="https://youtube.com/@danokhlopkov?ref=okhlopkov.com" rel="noopener">YouTube</a></p>
+    </section>
+
+
+</article></main>
+    <footer class="legacy-footer">
+      <a href="/">Home</a>
+      <a href="https://t.me/danokhlopkov">Telegram</a>
+      <a href="https://x.com/danokhlopkov">X</a>
+      <a href="https://github.com/ohld">GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>

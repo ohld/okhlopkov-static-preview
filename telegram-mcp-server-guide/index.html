@@ -111,11 +111,10 @@
   <header class="site-header">
     <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Primary navigation">
-      <a class="site-header-link" href="/">Home</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
-      <a class="site-header-link" href="/blog/">Blog</a>
-      <a class="site-header-link" href="/posts/">Posts</a>
-      <a class="site-header-link" href="/about/">About</a>
+      <a class="site-header-link" href="/en/">Home</a>
+      <a class="site-header-link" href="/en/blog/">Blog</a>
+      <a class="site-header-link" href="/en/articles/">Articles</a>
+      <a class="site-header-link" href="/en/about/">About</a>
     </nav>
     <nav class="language-switcher" aria-label="Language">
       <a class="" href="/">RU</a>
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">Build a Telegram MCP Server for Claude Code: Complete Guide</h1>
           <p class="legacy-description">Build a Telegram MCP server with Telethon and Python. Read messages, send replies, manage chats — all from Claude Code.</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/2026/03/telegram-mcp-server-guide.png" alt="Build a Telegram MCP Server for Claude Code: Complete Guide" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/2026/03/telegram-mcp-server-guide.png" alt="Build a Telegram MCP Server for Claude Code: Complete Guide" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>I have an AI agent that sits in Telegram 24/7, reads my chats, replies to messages, and manages contacts. All of this runs through an MCP Server that wraps Telethon into a set of tools for Claude Code. Here's how it works and how to build one yourself.</p><h2 id="why-telegram-as-an-mcp-server">Why Telegram as an MCP server</h2><p>MCP (Model Context Protocol) is the standard for connecting AI models to external tools. Claude Code supports MCP natively — you describe a server, and the model gets access to its functions as regular tools.</p><p>Telegram via MCP gives Claude Code the ability to:</p><ul><li>Read message history from any chat</li><li>Send messages and replies</li><li>Full-text search across chats</li><li>Get information about contacts and groups</li><li>React to messages, forward, delete</li></ul><p>This isn't the Bot API. This is a userbot via Telethon — an MTProto client that operates as a real user account. The Bot API is too limited: it can't see other people's message history, can't search across chats, and has no access to private groups where the bot isn't added.</p><h2 id="architecture-telethon-fastmcp">Architecture: Telethon + FastMCP</h2><p>The stack is straightforward:</p><ul><li><strong>Telethon</strong> — Python library for MTProto. Connects to Telegram as a regular client</li><li><strong>FastMCP</strong> — framework for building MCP servers in Python. Minimal boilerplate</li><li><strong>nest_asyncio</strong> — critically important. Without it, async code inside MCP calls crashes with "event loop already running"</li></ul><p>Basic structure:</p><pre><code>from mcp.server.fastmcp import FastMCP
 from telethon import TelegramClient
@@ -198,10 +197,9 @@ result = asyncio.get_event_loop().run_until_complete(main())</code></pre><p><cod
       <nav class="footer-links" aria-label="Site sections">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/blog/">Blog</a>
-        <a href="/posts/">Posts</a>
-        <a href="/about/">About</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/about/">About</a>
       </nav>
       <div class="footer-socials">
         <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>

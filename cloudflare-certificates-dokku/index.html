@@ -111,11 +111,10 @@
   <header class="site-header">
     <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Primary navigation">
-      <a class="site-header-link" href="/">Home</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
-      <a class="site-header-link" href="/blog/">Blog</a>
-      <a class="site-header-link" href="/posts/">Posts</a>
-      <a class="site-header-link" href="/about/">About</a>
+      <a class="site-header-link" href="/en/">Home</a>
+      <a class="site-header-link" href="/en/blog/">Blog</a>
+      <a class="site-header-link" href="/en/articles/">Articles</a>
+      <a class="site-header-link" href="/en/about/">About</a>
     </nav>
     <nav class="language-switcher" aria-label="Language">
       <a class="" href="/">RU</a>
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">Cloudflare certificates + Dokku</h1>
           <p class="legacy-description">How to create and install Cloudflare SSL / TLS encryption certificates for your Dokku app (instead of Letsencrypt).</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/Screenshot-2021-07-27-at-02.51.52.png" alt="Cloudflare certificates + Dokku" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/Screenshot-2021-07-27-at-02.51.52.png" alt="Cloudflare certificates + Dokku" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>I'll show you how I did it with the blog you are currently reading: <a href="/">okhlopkov.com</a>.</p><p>Cloudflare is a free worldwide CDN which also can issue a TLS/HTTPS certificate for your domain or subdomain.</p><p>Dokku is a free open-source self-hosted Heroku alternative which I use in all my production environments.</p><h2 id="why-you-might-want-to-do-it">Why you might want to do it</h2><ol><li>Letsencrypt is cool but you need to renew its certificates every 3 months. Yes, you can create a crontab task to automatically do it but I always forget to. CF certificates are valid for 15+ years. 😎</li><li>Cloudflare is not only DNS but also a CDN. If your Dokku apps have a frontend you might want to benefit from worldwide &amp; free CDN to speed up your stuff and decrease the load on servers.</li></ol><h2 id="step-1-attach-your-domain-to-cloudflare">Step 1: Attach your domain to Cloudflare</h2><p>You need to change the nameservers on your DNS provider (probably just where you have bought your domain). Create an account on Cloudflare and it will show you a step-by-step guide on how to do that (great onboarding by the way).</p><figure class="kg-card kg-embed-card"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Really loved <a href="https://twitter.com/Cloudflare?ref_src=twsrc%5Etfw&ref=okhlopkov.com">@Cloudflare</a> onboarding! So easy to start and transfer my domains</p>— Dan Okhlopkov 🍪 (@danokhlopkov) <a href="https://twitter.com/danokhlopkov/status/1419800321166094336?ref_src=twsrc%5Etfw&ref=okhlopkov.com">July 26, 2021</a></blockquote>
 
@@ -159,10 +158,9 @@ dokku proxy:build-config ghost</code></pre><h2 id="step-5-enable-cf-proxy-and-fu
       <nav class="footer-links" aria-label="Site sections">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/blog/">Blog</a>
-        <a href="/posts/">Posts</a>
-        <a href="/about/">About</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/about/">About</a>
       </nav>
       <div class="footer-socials">
         <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>

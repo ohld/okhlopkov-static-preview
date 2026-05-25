@@ -111,11 +111,10 @@
   <header class="site-header">
     <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Primary navigation">
-      <a class="site-header-link" href="/">Home</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
-      <a class="site-header-link" href="/blog/">Blog</a>
-      <a class="site-header-link" href="/posts/">Posts</a>
-      <a class="site-header-link" href="/about/">About</a>
+      <a class="site-header-link" href="/en/">Home</a>
+      <a class="site-header-link" href="/en/blog/">Blog</a>
+      <a class="site-header-link" href="/en/articles/">Articles</a>
+      <a class="site-header-link" href="/en/about/">About</a>
     </nav>
     <nav class="language-switcher" aria-label="Language">
       <a class="" href="/">RU</a>
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">Run Metabase with Dokku</h1>
           <p class="legacy-description">How to deploy Metabase (open-source BI tool) to production using Dokku PaaS (open-source Heroku alternative).</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/08/Screenshot-2021-08-16-at-19.32.00.png" alt="Run Metabase with Dokku" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/08/Screenshot-2021-08-16-at-19.32.00.png" alt="Run Metabase with Dokku" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>How to deploy <a href="https://metabase.com/?ref=okhlopkov.com">Metabase</a> (open-source BI tool) to production using <a href="https://dokku.com/?ref=okhlopkov.com">Dokku</a> PaaS (open-source Heroku alternative).</p><h1 id="step-by-step-guide">Step-by-step guide</h1><h2 id="install-dokku">Install Dokku</h2><p>Imagine that you have already rent a server for your project. I use Digital Ocean droplets (this is <a href="https://m.do.co/c/260555f64021?ref=okhlopkov.com">my referral link</a> with a $100 deposit for new users). Id' suggest having at least 2CPU and 2Gb RAM on your server.</p><p>The latest Dokku installation one-liner can be found on <a href="https://dokku.com/?ref=okhlopkov.com">their official website</a> but I'd suggest reading <a href="/deploy-ghost-blog-with-dokku/">my blog post</a> where I cover more details.</p><h2 id="install-metabase">Install Metabase</h2><figure class="kg-card kg-embed-card"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">All cool open-source projects must have a prebuilt docker image and environment variables support. This will drastically improve the onboarding of new users.</p>— Dan Okhlopkov 🍪 (@danokhlopkov) <a href="https://twitter.com/danokhlopkov/status/1427222749626486785?ref_src=twsrc%5Etfw&ref=okhlopkov.com">August 16, 2021</a></blockquote>
 
@@ -155,10 +154,9 @@ dokku letsencrypt:enable metabase</code></pre><p>Now just open YOURDOMAIN.COM in
       <nav class="footer-links" aria-label="Site sections">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/blog/">Blog</a>
-        <a href="/posts/">Posts</a>
-        <a href="/about/">About</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/about/">About</a>
       </nav>
       <div class="footer-socials">
         <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>

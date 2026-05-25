@@ -112,14 +112,13 @@
     <a class="site-header-brand" href="/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Основная навигация">
       <a class="site-header-link" href="/">Главная</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
       <a class="site-header-link" href="/blog/">Блог</a>
-      <a class="site-header-link" href="/posts/">Посты</a>
+      <a class="site-header-link" href="/articles/">Статьи</a>
       <a class="site-header-link" href="/about/">Обо мне</a>
     </nav>
     <nav class="language-switcher" aria-label="Выбор языка">
-      <a class="language-switcher-active" href="/">RU</a>
-      <a class="" href="/en/">EN</a>
+      <a class="language-switcher-active" href="/claude-codex-dual-review/">RU</a>
+      <a class="" href="/en-claude-codex-dual-review/">EN</a>
     </nav>
   </header>
   <div class="page">
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">Связка Claude Code + Codex: как два AI агента проверяют план друг друга</h1>
           <p class="legacy-description">Как настроить кросс-проверку планов между Claude Code и OpenAI Codex через MCP. Пошаговый протокол Dual Review с примерами промптов.</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/2026/02/claude-codex-dual-review-2.png" alt="Связка Claude Code + Codex: как два AI агента проверяют план друг друга" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/2026/02/claude-codex-dual-review-2.png" alt="Связка Claude Code + Codex: как два AI агента проверяют план друг друга" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>👨 связка Claude + Codex: Dual Review 👩</p><p>Так оказалось, что у меня 2 подписки:<br>👟 для него — Claude Code за $100<br>👟 и для нее — ChatGPT за $20</p><p>Не хотел, чтобы кодекс простаивал, стал рисерчить связки. @vlad_shlapakov подсказал: можно подключить codex как тул через codex mcp.</p><p>Вставьте это в <a href="https://t.me/danokhlopkov/1582?ref=okhlopkov.com" rel="noopener">CLAUDE.md</a> и в конце каждого plan mode план будет кидаться на кросс-проверку в codex:</p><h2 id="dual-review-claude-codex">Dual Review: Claude + Codex</h2><p>In plan mode ALWAYS run Codex review before ExitPlanMode.</p><h3 id="protocol">Protocol</h3><p><strong>1. First call:</strong><br></p><pre><code>mcp__codex__codex(
   prompt: "Review this implementation plan.
@@ -160,9 +159,8 @@
       <nav class="footer-links" aria-label="Разделы сайта">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
         <a href="/blog/">Блог</a>
-        <a href="/posts/">Посты</a>
+        <a href="/articles/">Статьи</a>
         <a href="/about/">Обо мне</a>
       </nav>
       <div class="footer-socials">

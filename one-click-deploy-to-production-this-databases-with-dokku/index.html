@@ -111,11 +111,10 @@
   <header class="site-header">
     <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Primary navigation">
-      <a class="site-header-link" href="/">Home</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
-      <a class="site-header-link" href="/blog/">Blog</a>
-      <a class="site-header-link" href="/posts/">Posts</a>
-      <a class="site-header-link" href="/about/">About</a>
+      <a class="site-header-link" href="/en/">Home</a>
+      <a class="site-header-link" href="/en/blog/">Blog</a>
+      <a class="site-header-link" href="/en/articles/">Articles</a>
+      <a class="site-header-link" href="/en/about/">About</a>
     </nav>
     <nav class="language-switcher" aria-label="Language">
       <a class="" href="/">RU</a>
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">Deploy database to production with official Dokku plugins</h1>
           <p class="legacy-description">Self-hosted prod deployment with 3 lines of code: Postgres, MySQL, Mongo, Redis, MariaDB, Elastic, Clickhouse, RabbitMQ, Rethink, CouchDB and more</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/11/Screenshot-2021-11-03-at-12.47.14.png" alt="Deploy database to production with official Dokku plugins" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/11/Screenshot-2021-11-03-at-12.47.14.png" alt="Deploy database to production with official Dokku plugins" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>I'll give a list of databases that already has Dokku integrations (plugins or addons). It means that you can easily attach them to your Dokku apps and run everything in production using literally 3 bash commands.</p><h1 id="what-is-dokku">What is Dokku</h1><blockquote>TL;DR: Dokku is a self-hosted Heroku alternative.</blockquote><p>Many of devs really like Heroku which automatically deploys the code from Github repo so you don't have to spend time on DevOps stuff. But when your project grows Heroku becomes very-very expensive. Moreover, you have to pay separately for a service and for attached databases.</p><p>So here comes Dokku - open-source Heroku clone. It has the same things you liked Heroku for except for GUI (yes, Dokku has a CLI only but there are a plenty free <a href="https://github.com/ledokku/ledokku?ref=okhlopkov.com">open-source web interfaces</a> on Github). You can easily <a href="https://dokku.com/docs/getting-started/installation/?ref=okhlopkov.com">install Dokku</a> to any machine, e.g. I use <a href="https://m.do.co/c/260555f64021?ref=okhlopkov.com">Digital Ocean droplets</a>.</p><h2 id="what-about-database-add-ons-on-heroku">What about database add-ons on Heroku</h2><p>There are two ways to run any service on Heroku (e.g. Mongo, Postgres, MySQL): using official add-ons or run them on a Dyno. First way is more production-friendly, but in this case you would be charged a lot to have something more than a free tier.</p><p>The second way is a real DevOps challenge. Hopefully, there are a bunch of Heroku buildpacks out there but there (e.g. for <a href="https://elements.heroku.com/buildpacks/creativegeekjp/heroku-buildpack-couchdb?ref=okhlopkov.com">CouchDB</a>). But again: Heroku free tiers are pretty limited so you would need to pay a lot real soon.</p><p>So that's why I prefer to rent a Droplet on <a href="https://m.do.co/c/260555f64021?ref=okhlopkov.com">DigitalOcean</a>, install Dokku and then run anything I want. If I need to scale things up, I just enlarge a droplet using DigitalOcean's website.</p><h1 id="how-to-attach-database-to-dokku-app">How to attach database to Dokku app</h1><p>Let's assume that you have a Django app and you need to create &amp; attach <strong>Postgres</strong> database to your Dokku app (you don't want to run Sqlite3 in production).</p><p>First of all, you need to install the integration you need (if now installed yet): go to the <a href="https://github.com/dokku/dokku-postgres?ref=okhlopkov.com">official integration Github repo</a> and copy-paste the installation script:</p><pre><code class="language-bash">sudo dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres</code></pre><p>Then you need to create the database.</p><pre><code class="language-bash">dokku postgres:create my_sexy_database</code></pre><p>And then link it to your Dokku app:</p><pre><code class="language-bash">dokku postgres:link my_sexy_database my_sexy_dokku_app
 </code></pre><p>In result, your Dokku app will receive a new <code>DATABASE_URL</code> environment variable with a connection string (with host, port, login, password and database name).</p><blockquote><a href="https://github.com/jacobian/dj-database-url?ref=okhlopkov.com">dj_database_url</a></blockquote><pre><code class="language-python">DATABASES = {
@@ -152,10 +151,9 @@
       <nav class="footer-links" aria-label="Site sections">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/blog/">Blog</a>
-        <a href="/posts/">Posts</a>
-        <a href="/about/">About</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/about/">About</a>
       </nav>
       <div class="footer-socials">
         <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>

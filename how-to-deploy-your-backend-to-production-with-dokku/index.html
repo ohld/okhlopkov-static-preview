@@ -111,11 +111,10 @@
   <header class="site-header">
     <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Primary navigation">
-      <a class="site-header-link" href="/">Home</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
-      <a class="site-header-link" href="/blog/">Blog</a>
-      <a class="site-header-link" href="/posts/">Posts</a>
-      <a class="site-header-link" href="/about/">About</a>
+      <a class="site-header-link" href="/en/">Home</a>
+      <a class="site-header-link" href="/en/blog/">Blog</a>
+      <a class="site-header-link" href="/en/articles/">Articles</a>
+      <a class="site-header-link" href="/en/about/">About</a>
     </nav>
     <nav class="language-switcher" aria-label="Language">
       <a class="" href="/">RU</a>
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">How to deploy your backend to production with Dokku</h1>
           <p class="legacy-description">Archived article from okhlopkov.com</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" alt="How to deploy your backend to production with Dokku" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" alt="How to deploy your backend to production with Dokku" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>Imagine that you've created a backend app on Node.js, FastAPI, Django or any other framework and now you want to deploy your fancy endpoints to the world. I'll show you the step-by-step guide on how to do it with Dokku - open source PaaS which acts like a CLI &amp; Free version of Heroku. Let's go!</p><p>We will also create a CI/CD pipeline which will trigger the deploy after each commit on main branch. What a miracle!</p><h3 id="1-install-dokku-on-a-machine">1. Install Dokku on a machine</h3><p>Check <a href="https://dokku.com/?ref=okhlopkov.com">https://dokku.com/</a> for Dokku latest installation instructions.</p><h3 id="2-add-your-ssh-keys">2. Add your ssh keys</h3><p>You've probably should already done that on the previous step. Read more about <a href="https://dokku.com/docs/deployment/user-management/?ref=okhlopkov.com">dokku ssh-keys</a>.</p><pre><code class="language-bash">echo "$CONTENTS_OF_YOUR_PUBLIC_SSH_KEY_HERE" | dokku ssh-keys:add KEY_NAME</code></pre><p>You will need to send your SSH private key to Github's encrypted storage because Github Actions need to have an SSH access to your machine to trigger the deploy. You also can create a new SSH pair to keep your own's in secret.</p><h3 id="3-create-dokku-app">3. Create Dokku app</h3><p>Let's call your backend app just <code>api</code>.</p><pre><code>dokku apps:create api</code></pre><h3 id="4-set-environment-variables">4. Set environment variables</h3><p>Your app probably needs some envs to start. If you are deploying an open-source project, the repo probably should have a file like <code>.env.example</code> which states all the env variables required for the app to run.</p><pre><code>dokku config:set api ENVIRONMENT=PRODUCTION TOKEN=asdadgs ...</code></pre><p>You can also see all set env variables using <code>dokku config:show api</code> command.</p><h3 id="5-create-databases-postgres-redis">5. Create databases (postgres, redis, ...)</h3><p>If your app needs a database you can install them using Dokku plugins. Check for example <a href="https://github.com/dokku/dokku-postgres?ref=okhlopkov.com">dokku-postgres</a> plugin, read its readme and feel that it is so much easier to use rather than deploying a database on your own.</p><pre><code>dokku postgres:create api
 dokku postgres:link api api</code></pre><p>I called the database with the same name as my dokku app <code>api</code>  for simplicity. The <code>postgres:link</code> comman sets DATABASE_URL .env variable with a connection string to your database.</p><p>If you need to have a Redis plugin you can create and link it the same way (after <a href="https://github.com/dokku/dokku-redis?ref=okhlopkov.com">installation</a>):</p><pre><code>dokku redis:create api
@@ -151,10 +150,9 @@ dokku redis:link api api</code></pre><p>Redis will create .env called <code>REDI
       <nav class="footer-links" aria-label="Site sections">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/blog/">Blog</a>
-        <a href="/posts/">Posts</a>
-        <a href="/about/">About</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/about/">About</a>
       </nav>
       <div class="footer-socials">
         <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>

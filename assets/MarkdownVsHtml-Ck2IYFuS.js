@@ -1,4 +1,4 @@
-import{u as t,a as o,j as e,F as a}from"./index-iPEocg0a.js";import{B as i}from"./BackButton-CLS2pX91.js";const r=`
+import{u as t,a as o,j as e,F as a}from"./index-D-Gy3AdF.js";import{B as i}from"./BackButton-BiPjqXEU.js";const r=`
 <div class="mvh-meta">
   Адаптация статьи Tariq из команды Claude Code · перевод и комментарии Дана Охлопкова<br>
   Оригинал: <a href="https://x.com/trq212/status/2052809885763747935" target="_blank" rel="noopener">x.com/trq212</a> · примеры автора: <a href="https://thariqs.github.io/html-effectiveness" target="_blank" rel="noopener">thariqs.github.io/html-effectiveness</a>

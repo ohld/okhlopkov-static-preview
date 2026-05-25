@@ -20,11 +20,9 @@
 ## Контент
 
 - [Обо мне](https://okhlopkov.com/about.md): подробно о роли, опыте, проектах
-- [Блог](https://okhlopkov.com/blog.md): индексируемые evergreen-статьи из видео, Telegram-постов и source packs
-- [AI-инструменты для дизайнеров](https://okhlopkov.com/blog-ai-tools-for-designers-design-engineering-agents.md): design engineering, AI-assisted frontend, Paper/Figma-to-code и борьба с AI-slop
-- [Топ-посты](https://okhlopkov.com/posts.md): лучшие материалы из Telegram-канала по темам — AI, crypto, TON, стартапы, данные
-- [AI-агенты](https://okhlopkov.com/ai-agents.md): индексируемый хаб по Claude Code, Codex, MCP, skills, Obsidian и browser agents
-- [Курс по AI-агентам](https://okhlopkov.com/ai-course.md): бесплатный курс на основе моих публикаций — Claude Code, MCP, vibe-coding, реальные кейсы
+- [Блог](https://okhlopkov.com/blog.md): Telegram-посты, сохранённые как индексируемые страницы
+- [Статьи](https://okhlopkov.com/articles.md): SEO-гайды, сравнения, туториалы и source-pack driven материалы
+- [AI-инструменты для дизайнеров](https://okhlopkov.com/articles-ai-tools-for-designers-design-engineering-agents.md): design engineering, AI-assisted frontend, Paper/Figma-to-code и борьба с AI-slop
 - [Markdown мёртв — да здравствует HTML](https://okhlopkov.com/markdown-vs-html.md): почему HTML побеждает markdown как формат вывода для AI-агентов
 - [Privacy Policy](https://okhlopkov.com/privacy.md): privacy policy for okhlopkov.com and the Pinterest Content Ideas integration
 

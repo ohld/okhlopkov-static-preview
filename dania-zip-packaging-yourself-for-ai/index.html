@@ -111,11 +111,10 @@
   <header class="site-header">
     <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Primary navigation">
-      <a class="site-header-link" href="/">Home</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
-      <a class="site-header-link" href="/blog/">Blog</a>
-      <a class="site-header-link" href="/posts/">Posts</a>
-      <a class="site-header-link" href="/about/">About</a>
+      <a class="site-header-link" href="/en/">Home</a>
+      <a class="site-header-link" href="/en/blog/">Blog</a>
+      <a class="site-header-link" href="/en/articles/">Articles</a>
+      <a class="site-header-link" href="/en/about/">About</a>
     </nav>
     <nav class="language-switcher" aria-label="Language">
       <a class="" href="/">RU</a>
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">dania.zip: packaging yourself for AI agents</h1>
           <p class="legacy-description">How I created an exportable personality spec for AI agents. File structure, tone extraction, and real use cases for a digital twin.</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" alt="dania.zip: packaging yourself for AI agents" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" alt="dania.zip: packaging yourself for AI agents" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>I have an Obsidian vault that runs my life. API tokens, private diary entries, NDA content from work, raw voice memos where I think out loud at 2 AM. My <a href="/second-brain-obsidian-claude-code/">Second Brain</a> knows everything about me.</p><p>And that's exactly the problem.</p><p>I wanted an AI agent that could write in my voice, answer questions in community chats, draft content for my channels. But giving that agent access to the full vault? Absolutely not. One successful prompt injection and my Telegram bot token, TON Foundation work notes, and financial details are out in the open.</p><p>So I needed something else: a portable, safe export of <em>who I am</em> without any of the secrets. I called it <code>dania.zip</code>.</p><h2 id="what-daniazip-actually-is">What dania.zip actually is</h2><p>Think of <code>CLAUDE.md</code>. If you've used <a href="/claude-code-workflow-2026/">Claude Code</a>, you know the concept: a markdown file at the root of your project that tells the AI agent what the project is about, how it's structured, and what rules to follow. The agent reads it, gets context, and works better.</p><p><code>dania.zip</code> is the same idea, but for a person instead of a codebase.</p><p>It's a set of markdown files that any AI agent can read to understand who I am, how I think, and how I write. No tokens, no passwords, no private diary entries. Just the stuff that's safe to deploy on an external server.</p><p>The architecture is simple:</p><pre><code>Obsidian Vault (raw data, private)
        | generation / extraction
@@ -193,10 +192,9 @@
       <nav class="footer-links" aria-label="Site sections">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/blog/">Blog</a>
-        <a href="/posts/">Posts</a>
-        <a href="/about/">About</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/about/">About</a>
       </nav>
       <div class="footer-socials">
         <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>

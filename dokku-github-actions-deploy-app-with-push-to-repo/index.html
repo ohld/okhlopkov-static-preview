@@ -111,11 +111,10 @@
   <header class="site-header">
     <a class="site-header-brand" href="/en/"><span class="site-header-mark"></span><span>okhlopkov.com</span></a>
     <nav class="site-header-nav" aria-label="Primary navigation">
-      <a class="site-header-link" href="/">Home</a>
-      <a class="site-header-link" href="/ai-agents/">AI Agents</a>
-      <a class="site-header-link" href="/blog/">Blog</a>
-      <a class="site-header-link" href="/posts/">Posts</a>
-      <a class="site-header-link" href="/about/">About</a>
+      <a class="site-header-link" href="/en/">Home</a>
+      <a class="site-header-link" href="/en/blog/">Blog</a>
+      <a class="site-header-link" href="/en/articles/">Articles</a>
+      <a class="site-header-link" href="/en/about/">About</a>
     </nav>
     <nav class="language-switcher" aria-label="Language">
       <a class="" href="/">RU</a>
@@ -135,7 +134,7 @@
           <h1 class="legacy-title">Dokku + Github Actions: automatically deploy app with push to repository</h1>
           <p class="legacy-description">Archived article from okhlopkov.com</p>
         </header>
-        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" alt="Dokku + Github Actions: automatically deploy app with push to repository" loading="lazy" /></figure>
+        <figure class="legacy-hero-image"><img src="/content/images/size/w1200/2021/07/camphoto_959030623-copy-2.jpg" alt="Dokku + Github Actions: automatically deploy app with push to repository" fetchpriority="high" /></figure>
         <section class="legacy-content">
         <p>I love Heroku Github integration because it can automatically deploy my Python or Node.js app after a commit or PR is merged to master/main branch. But Dokku doesn't have this integration. In this article, I'll show you how to integrate Github CI to deploy your app instantly after a commit. I'm using it for a <strong>production deployment</strong> of my pet projects.</p><p>I hope you know what Dokku is, why is it cool and how to create a Dokku app using CLI on your server.</p><h2 id="how-does-it-work">How does it work?</h2><p>The integration flow is simple:</p><ol><li>You push to <code>main</code> branch</li><li>Github Actions server connects to your server via ssh</li><li>Updates internal Dokku app code repo and triggers rebuild script</li></ol><p>So you need to specify the proper Github Actions workflow and set up <code>ssh private key</code> to allow GH actions server to connect to your server where your app is deployed.</p><h2 id="dokku-github-actions-workflow">Dokku + Github actions workflow</h2><p>Take a look at this snippet from my <a href="https://github.com/ohld/django-telegram-bot/blob/main/.github/workflows/dokku.yml?ref=okhlopkov.com">Django-Telegram-bot</a> integration: it deploys a demo telegram bot to a production server. I'm using Dokku integration made by a Github user <a href="https://github.com/idoberko2/dokku-deploy-github-action?ref=okhlopkov.com">idoberko2</a>.</p><pre><code class="language-yml">name: CI
 
@@ -173,10 +172,9 @@ jobs:
       <nav class="footer-links" aria-label="Site sections">
         <a href="/">RU</a>
         <a href="/en/">EN</a>
-        <a href="/ai-agents/">AI Agents</a>
-        <a href="/blog/">Blog</a>
-        <a href="/posts/">Posts</a>
-        <a href="/about/">About</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/about/">About</a>
       </nav>
       <div class="footer-socials">
         <a href="https://t.me/danokhlopkov" rel="me noopener noreferrer" aria-label="Telegram">TG</a>

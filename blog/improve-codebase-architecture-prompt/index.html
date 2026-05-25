@@ -106,8 +106,8 @@
       }(window.location));
     </script>
 
-    <script type="module" crossorigin src="/assets/index-BCjVVPqJ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BJcrzwDm.css">
+    <script type="module" crossorigin src="/assets/index-Bjc2Eqik.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CFm_4JBT.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -134,24 +134,6 @@
     "ai агент",
     "refactoring",
     "codex"
-  ],
-  "isBasedOn": "https://t.me/danokhlopkov/1664",
-  "interactionStatistic": [
-    {
-      "@type": "InteractionCounter",
-      "interactionType": "https://schema.org/ViewAction",
-      "userInteractionCount": 7331
-    },
-    {
-      "@type": "InteractionCounter",
-      "interactionType": "https://schema.org/ShareAction",
-      "userInteractionCount": 480
-    },
-    {
-      "@type": "InteractionCounter",
-      "interactionType": "https://schema.org/CommentAction",
-      "userInteractionCount": 34
-    }
   ]
 }
 </script>
@@ -187,34 +169,14 @@
     <div id="root"><header><h1>Что попросить AI-агента сделать, когда задачи закончились: improve-codebase-architecture и рефакторинг без магии</h1></header><article><h2>Коротко</h2>
 <p>Есть момент, который узнают все, кто активно вайбкодит: проект вроде работает, очевидные таски закрыты, но хочется сказать агенту “сделай лучше”. Обычно это плохой промпт. Агент начнет полировать не то, трогать случайные файлы и делать косметический refactor без понимания архитектуры.</p>
 <p>Более рабочий вариант: дать агенту конкретную роль и skill, который заставляет его ревьюить кодовую базу по архитектурным принципам, искать реальные deepening opportunities и объяснять tradeoffs.</p>
-<h2>Оригинальный Telegram-пост</h2>
-<blockquote>
+<h2>Когда хочется сказать “сделай лучше”</h2>
 <p>Опытные вайбкодеры поймут.</p>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
 <p>У вас проект. Вроде как все желанные таски сделали.</p>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
 <p>Иногда хочется закинуть туда промпт а-ля</p>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
 <p>Почисти код там туда-сюда. Улучши что-нибудь. Сделай то, что я подсознательно хочу, но явно не говорю. Make no mistakes</p>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<p>Недавно в <a href="https://t.me/danokhlopkov/1575">приватке</a> нашли такой промпт: ревьюит, что напрогано, и предлагает рефакторинг архитектуры по учебникам уважаемых дядек. Я кидаю ссылку, говорю “изучи и предложи улучшения”. Отрабатывает годно.</p>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
+<p>Недавно в приватке нашли такой промпт: ревьюит, что напрогано, и предлагает рефакторинг архитектуры по учебникам уважаемых дядек. Я кидаю ссылку, говорю “изучи и предложи улучшения”. Отрабатывает годно.</p>
 <p>https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture</p>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<p>А у вас есть такие промты формата “сделай лучше”? Скиньте в <a href="https://t.me/ohld_chat">чат</a></p>
-</blockquote>
+<p>А у вас есть такие промты формата “сделай лучше”?</p>
 <h2>Почему “сделай лучше” плохо работает</h2>
 <p>Потому что это не задача, а настроение. Человек примерно понимает, что в проекте накопилась грязь, но не формулирует, где именно:</p>
 <ul>
@@ -237,7 +199,7 @@
 - где есть дублирование, которое реально повышает стоимость изменений;
 - где UI/доменные сущности перемешаны;
 - где тесты не покрывают опасные переходы;
-- где текущая структура мешает будущим SEO/content workflows.
+- где текущая структура мешает будущим content workflows.
 
 Для каждого пункта дай:
 1. почему это проблема;
@@ -248,7 +210,7 @@
 
 После этого предложи один самый безопасный первый шаг.</code></pre>
 <p>Такой промпт не заменяет хороший skill, но уже меняет режим: агент перестает “полировать” и начинает объяснять технические ставки.</p>
-<h2>Что обсуждали в Telegram-чате</h2>
+<h2>Что добавилось из обсуждений</h2>
 <p>В чате похожий запрос повторяется в разных формах: “что дать агенту, когда он уже сделал очевидное?”. Самый полезный ответ: не просить больше кода, а просить лучшее понимание системы.</p>
 <p>Для этого хорошо работают:</p>
 <ul>
@@ -256,7 +218,7 @@
 <li>security review;</li>
 <li>dead code review;</li>
 <li>UI/design review;</li>
-<li>SEO/crawlability review;</li>
+<li>crawlability review;</li>
 <li>“что я не заметил?” review;</li>
 <li>сравнение текущего решения с domain model из docs.</li>
 </ul>
@@ -282,6 +244,6 @@
 <h3>Можно ли сразу дать агенту править архитектуру?</h3>
 <p>Лучше нет. Сначала попросите список проблем, blast radius и первый безопасный шаг. Архитектурные изменения без ревью легко ломают больше, чем чинят.</p>
 <h3>Почему этот пост в блоге, а не в articles?</h3>
-<p>Потому что источник — мой Telegram-пост и живой опыт. Позже из него можно сделать отдельную SEO-статью в <code>articles</code> с шаблонами skills, примерами diff и сравнением Claude Code/Codex.</p></article><nav><a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/articles/">Статьи</a> · <a href="/about/">Обо мне</a> · <a href="/en/">English</a> · <a href="/privacy/">Privacy</a></nav><footer><a href="https://t.me/danokhlopkov" rel="me">Telegram</a> · <a href="https://youtube.com/@danokhlopkov" rel="me">YouTube</a> · <a href="https://instagram.com/d7733o" rel="me">Instagram</a> · <a href="https://x.com/danokhlopkov" rel="me">X</a> · <a href="https://www.linkedin.com/in/danokhlopkov/" rel="me">LinkedIn</a> · <a href="https://github.com/ohld" rel="me">GitHub</a></footer></div>
+<p>Потому что это личная рабочая заметка и живой опыт. Позже из него можно сделать отдельную прикладную статью в <code>articles</code> с шаблонами skills, примерами diff и сравнением Claude Code/Codex.</p></article><nav><a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/articles/">Статьи</a> · <a href="/about/">Обо мне</a> · <a href="/en/">English</a> · <a href="/privacy/">Privacy</a></nav><footer><a href="https://t.me/danokhlopkov" rel="me">Telegram</a> · <a href="https://youtube.com/@danokhlopkov" rel="me">YouTube</a> · <a href="https://instagram.com/d7733o" rel="me">Instagram</a> · <a href="https://x.com/danokhlopkov" rel="me">X</a> · <a href="https://www.linkedin.com/in/danokhlopkov/" rel="me">LinkedIn</a> · <a href="https://github.com/ohld" rel="me">GitHub</a></footer></div>
   </body>
 </html>

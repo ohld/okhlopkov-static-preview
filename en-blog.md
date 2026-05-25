@@ -10,7 +10,5 @@ has an English version or was originally written in English.
 
 - [My Claude Code Setup After 4 Months of Daily Use](/claude-code-setup-mcp-hooks-skills-2026/)
 - [Second Brain: Obsidian and Claude Code Assistant](/en-second-brain-obsidian-claude-code-assistant/)
-- [Web Scraping Is Dead: What AI Agents Replaced It With](/web-scraping-ai-agents-2026/)
-- [Best Skills and MCP for Claude Code](/en-best-skills-mcp-claude-code-agent-browser/)
 - [Show Me Your AI Setup #1: Ghostty, ownyourchat, Descript](/en-show-me-ai-setup-ghostty-ownyourchat-descript/)
 - [My AI Dev Tools in 2026](/ai-tools-setup-january-2026/)
